@@ -1,5 +1,7 @@
 <?php 
 
+	/* Template Name: My Page */
+
 	// get header
 	get_header();
 
