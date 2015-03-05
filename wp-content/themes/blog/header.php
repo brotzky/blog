@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
   <head>
     <!-- UI Meta -->
     <meta charset="utf-8">
@@ -24,16 +24,12 @@
     <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="/favicon.ico">
-    For development purposes 
+    For development purposes
     <link rel="shortcut icon" href="http://www.dennisbrotzky.me/favicon.ico?v=2" />
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff"> -->
-    <!-- Icon -->
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/build/style.min.css">
     <!-- jQuery UI -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
     <!-- Font -->
@@ -72,6 +68,6 @@
     <!-- Site Header -->
     <header>
         <!-- change info in the settings -->
-        <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>   
-        <h5><?php bloginfo('description'); ?></h5>    
+        <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+        <h5><?php bloginfo('description'); ?></h5>
     </header><!-- /Site Header -->
