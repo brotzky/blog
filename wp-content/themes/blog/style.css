@@ -20,3 +20,7 @@ h2 {
 html, body {
   background-image: url(/img/ebay-background.jpg);
 }
+
+a:visted {
+  color: blue;
+}

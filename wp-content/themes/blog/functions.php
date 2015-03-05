@@ -17,4 +17,9 @@
 	// executing function that grabs style sheet
 	add_action('wp_enqueue_scripts', 'blog_themes');
 
+  // Navigation Menus
+    register_nav_menus(array(
+        'primary' => __( 'Primary Menu'),
+        'footer' => __('Footer Menu'),
+      ))
 ?>

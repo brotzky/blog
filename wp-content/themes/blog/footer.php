@@ -1,3 +1,4 @@
+
 		<!-- Footer -->
 		<footer>
 			<div id="sharedfooter">
@@ -7,12 +8,21 @@
 					</div>
 				</div>
 		</div>
+
+            <?php
+              $args = array(
+                  'theme_location' => 'footer'
+                );
+            ?>
+            <nav class="fixed-nav">
+              <?php wp_nav_menu($args); ?>
+            </nav>
 		</footer> <!-- /Footer -->
 
 		</div> <!-- /Site Header -->
 
 		<!-- Footer Hook -->
 		<?php wp_footer(); ?>
-		
+
 	</body>
 </html>
