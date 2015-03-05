@@ -15,6 +15,6 @@
 
 	}
 	// executing function that grabs style sheet
-	add_action('wo_enqueue_scripts', 'blog_themes');
+	add_action('wp_enqueue_scripts', 'blog_themes');
 
 ?>

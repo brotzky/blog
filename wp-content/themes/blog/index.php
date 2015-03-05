@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	// get header
 	get_header();
@@ -7,7 +7,7 @@
 	if(have_posts()) :
 		// Executewhile have posts. Do the posts
 		while (have_posts()) : the_post(); ?>
-	
+
 		<!-- Main article posts -->
 		<article>
 			<h2><a href='<?php the_permalink(); ?>'><?php the_title();?></a></h2>
@@ -17,10 +17,14 @@
 
 		<?php endwhile;
 		// If not posts: 'No Content Found'
-		else :
-			echo '<p>No Content Found</p>';
+		 else :
+		// 	<?php echo '<p>No Content Found</p>';
+            endif;
+             ?>
 
+
+ <?php
 	// get footer
-	get_footer (); 
+	get_footer ();
 
 ?>
