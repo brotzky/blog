@@ -24,3 +24,7 @@ html, body {
 a:visted {
   color: blue;
 }
+
+.test {
+  background-color: orange;
+}

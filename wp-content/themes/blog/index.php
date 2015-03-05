@@ -11,6 +11,7 @@
 		<!-- Main article posts -->
 		<article>
 			<h2><a href='<?php the_permalink(); ?>'><?php the_title();?></a></h2>
+                  <div>Posted: <?php the_time('F j, Y'); ?></div>
 			<?php the_content(); ?>
 		</article>
 		<!-- /Main article posts -->
