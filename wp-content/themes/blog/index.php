@@ -12,7 +12,7 @@
 		<article>
               <div class="blog-content">
 			<h2><a href='<?php the_permalink(); ?>'><?php the_title();?></a></h2>
-                  <div>Posted: <?php the_time('F j, Y'); ?></div>
+                  <div class="post-date">Posted: <?php the_time('F j, Y'); ?></div>
 			<?php the_content(); ?>
               </div>
 		</article>
