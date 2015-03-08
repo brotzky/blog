@@ -9,11 +9,6 @@
 		// Executewhile have posts. Do the posts
 		while (have_posts()) : the_post(); ?>
 
-            <!-- Aside -->
-            <aside>
-              <h3>Side</h3>
-            </aside>
-
 		<!-- Main article posts -->
 		<article class="test">
 			<h2><a href='<?php the_permalink(); ?>'><?php the_title();?></a></h2>

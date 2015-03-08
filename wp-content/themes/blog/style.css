@@ -11,14 +11,166 @@
   Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+* { -webkit-box-sizing:     border-box;
+    -moz-box-sizing:         border-box;
+    box-sizing:                  border-box;
+    -webkit-font-smoothing:  antialiased;
+    font-smoothing:               antialiased;
+}
 html, body {
-  /*background-image: url(/img/ebay-background.jpg);*/
+  margin: 0;
+  padding: 0;
+  background-color: #EEE;
+  background-image: url('img/header-background.png');
+  color: #4A4A4A;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  word-spacing: 0.1em;
+}
+.hero-image-one {
+    position: relative;
+    height: 0;
+    padding-bottom: 55%;
+    z-index: 1;
+}
+body.postid-7 .hero-image{
+  position: relative;
+  top: 60px;
+  background: url(img/grunt-hero-image-opt.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body.postid-4 .hero-image{
+  position: relative;
+  top: 60px;
+  background: url(img/svg-hero-image-opt.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.container {
+  background-image: url(/img/header-background.png);
+  top: 61px;
+}
+.blog-home {
+  display: inline-block;
+  float: left;
+  margin: 9px auto auto 22px;
+}
+.blog-home a {
+  text-decoration: none;
+  color: #4A4A4A;
+  -webkit-transition: all 250ms ease-in-out;
+  -moz-transition:     all 250ms ease-in-out;
+  -ms-transition:       all 250ms ease-in-out;
+  -o-transition:          all 250ms ease-in-out;
+  transition:              all 250ms ease-in-out;
+}
+.blog-home a:hover {
+  color: #111111;
+}
+.fixed-nav {
+  z-index: 99999;
+  position: fixed;
+  top: 0px;
+  height: 60px;
+   width: 100%;
+  background-color: #f9f9f9;
 }
 
-a:visted {
-  color: blue;
+.nav-box-shadow {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.16);
 }
 
-.test {
-  background-color: orange;
+
+
+.fixed-nav ul li {
+  display: inline-block;
+  float: right;
+  line-height: 1;
+}
+.fixed-nav ul li a {
+  text-decoration: none;
+  color: #4A4A4A;
+  padding: 19px 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1px;
+  line-height: 1.6;
+  -webkit-transition: all 150ms ease-in-out;
+  -moz-transition:     all 150ms ease-in-out;
+  -ms-transition:       all 150ms ease-in-out;
+  -o-transition:          all 150ms ease-in-out;
+  transition:              all 150ms ease-in-out;
+}
+.menu-item-16 {
+  margin-right: 10px;
+}
+.fixed-nav ul li a:hover {
+  color: #111111;
+  box-shadow: inset 0px 5px 0px #F44336;
+}
+footer {
+  position: relative;
+  top: 60px;
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+footer p {
+  position: relative;
+  line-height: 4;
+  opacity: 0.6;
+}
+.blog-content {
+  position: relative;
+  top: 61px;
+  bottom: 80px;
+  max-width: 960px;
+  width: 60%;
+  margin: 20px auto;
+  padding: 20px 40px;
+  background-color: #f9f9f9;
+  border-radius: 2px;
+
+  border: 1px solid #eee;
+  border-bottom: 2px solid #D7D7D7;
+  box-shadow: 0px 2px 5px #E2E2E2;
+}
+
+.blog-content p {
+  font-family: "Droid Serif", Georgia,Cambria,"Times New Roman",Times,serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color:  rgba(0,0,0,0.8);;
+}
+
+h2 {
+  margin: 10px auto;
+}
+h2 a {
+  text-decoration: none;
+  color: #D50000;
+  letter-spacing: 1px;
+  font-size: 2.4rem;
+   -webkit-transition: all 250ms ease-in-out;
+  -moz-transition:     all 250ms ease-in-out;
+  -ms-transition:       all 250ms ease-in-out;
+  -o-transition:          all 250ms ease-in-out;
+  transition:              all 250ms ease-in-out;
+}
+h2 a:hover {
+  color: #E53935;
+}
+.more-link {
+  text-decoration: none;
+  color: #4A4A4A;
+  opacity: 0.6;
 }

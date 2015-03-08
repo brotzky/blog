@@ -7,12 +7,14 @@
 	if(have_posts()) :
 		// Execute while have posts. Do the posts
 		while (have_posts()) : the_post(); ?>
-
+          <div class="hero-image"></div>
 		<!-- Main article posts -->
 		<article>
+              <div class="blog-content">
 			<h2><a href='<?php the_permalink(); ?>'><?php the_title();?></a></h2>
                   <div>Posted: <?php the_time('F j, Y'); ?></div>
 			<?php the_content(); ?>
+              </div>
 		</article>
 		<!-- / Main article posts -->
 
