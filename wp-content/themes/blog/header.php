@@ -30,10 +30,9 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff"> -->
-    <!-- jQuery UI -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
     <!-- Font -->
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
     <!-- Meta -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="language" content="en-us" />
@@ -65,9 +64,18 @@
   <body <?php body_class(); ?>>
     <!-- Site Container -->
     <div class="container">
-    <!-- Site Header -->
+
+    <?php
+      $args = array(
+          'theme_location' => 'primary'
+        );
+    ?>
+    <!-- Site Navigation -->
+    <nav class="fixed-nav">
+      <!-- Site Header -->
     <header>
         <!-- change info in the settings -->
-        <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-        <h5><?php bloginfo('description'); ?></h5>
+        <h1 class="blog-home"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
     </header><!-- /Site Header -->
+      <?php wp_nav_menu($args); ?>
+    </nav>
