@@ -32,6 +32,15 @@
 	// executing function that grabs style sheet
 	add_action('wp_enqueue_scripts', 'blog_themes');
 
+      add_filter( 'wp_title', 'baw_hack_wp_title_for_home' );
+      function baw_hack_wp_title_for_home( $title )
+      {
+        if( empty( $title ) && ( is_home() || is_front_page() ) ) {
+          return __( 'Dennis Brotzky' ) . ' | ' . get_bloginfo( 'description' );
+        }
+        return $title;
+      }
+
        // Navigation Menus
       register_nav_menus(array(
           'primary' => __( 'Primary Menu'),
