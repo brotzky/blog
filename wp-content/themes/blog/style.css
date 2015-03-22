@@ -31,6 +31,10 @@ html, body {
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   word-spacing: 0.1em;
 }
+p a img {
+  width: 100%;
+  height: auto;
+}
 .hero-image-one {
     position: relative;
     height: 0;
