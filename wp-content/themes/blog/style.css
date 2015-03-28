@@ -21,7 +21,7 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: #EEE;
-  background-image: url('img/header-background.png');
+  background-image: url('../../img/header-background.png');
   color: #4A4A4A;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
@@ -41,10 +41,28 @@ a img {
     padding-bottom: 55%;
     z-index: 1;
 }
+body.postid-140 .hero-image {
+  position: relative;
+  top: 60px;
+  background: url(../../img/middleman-hero-image.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body.postid-127 .hero-image{
+  position: relative;
+  top: 60px;
+  background: url(../../img/foundation-five.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 body.postid-7 .hero-image{
   position: relative;
   top: 60px;
-  background: url(img/grunt-hero-image-opt.jpg) no-repeat center center;
+  background: url(../../img/grunt-hero-image-opt.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -53,7 +71,7 @@ body.postid-7 .hero-image{
 body.postid-4 .hero-image{
   position: relative;
   top: 60px;
-  background: url(img/svg-hero-image-opt.png) no-repeat center center;
+  background: url(../../img/svg-hero-image-opt.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -62,14 +80,15 @@ body.postid-4 .hero-image{
 body.postid-1 .hero-image{
   position: relative;
   top: 60px;
-  background: url(img/wordpress-hero-image-opt.png) no-repeat center center;
+  background: url(../../img/wordpress-hero-image-opt.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 .container {
-  background-image: url(/img/header-background.png);
+  background-image: url(../../img/header-background.png);
+  background-color: #eee;
   top: 61px;
 }
 .blog-home {
@@ -80,6 +99,9 @@ body.postid-1 .hero-image{
 .blog-home a {
   text-decoration: none;
   color: #4A4A4A;
+  position: relative;
+  bottom: 6px;
+  font-size: 2.25rem;
   -webkit-transition: all 150ms ease-in-out;
   -moz-transition:     all 150ms ease-in-out;
   -ms-transition:       all 150ms ease-in-out;
@@ -160,7 +182,7 @@ footer p {
   top: 61px;
   bottom: 80px;
   max-width: 960px;
-  width: 60%;
+  width: 57%;
   margin: 20px auto;
   padding: 20px 40px;
   background-color: #f9f9f9;
@@ -192,13 +214,15 @@ a:hover {
 }
 h2 {
   margin: 10px auto;
-  font-size: 2.4rem;
+  font-size: 2.75rem;
+  line-height: 1;
 }
 h2 a {
   text-decoration: none;
   color: #0D47A1;
   letter-spacing: 1px;
-  font-size: 2.4rem;
+  font-size: 2.75rem;
+  line-height: 1;
    -webkit-transition: all 250ms ease-in-out;
   -moz-transition:     all 250ms ease-in-out;
   -ms-transition:       all 250ms ease-in-out;
@@ -212,6 +236,7 @@ h2 a {
    text-decoration: none;
   color: #0D47A1;
   font-size: 3rem;
+  line-height: 1;
    -webkit-transition: all 250ms ease-in-out;
   -moz-transition:     all 250ms ease-in-out;
   -ms-transition:       all 250ms ease-in-out;
@@ -271,11 +296,7 @@ h2 a:hover {
   h2 a{
     font-size: 1.6rem;
   }
-  #menu-item-19{
-    display: none;
-  }
   .fixed-nav ul li {
-    display: block;
     margin-top: 6px;
   }
   .fixed-nav ul li a {
@@ -286,6 +307,9 @@ h2 a:hover {
 .menu-item-16 {
   margin-right: 10px;
 }
+  #menu-item-99{
+    display: none;
+  }
 .fixed-nav ul li a:hover {
   color: #111111;
   box-shadow:none;

@@ -2,7 +2,7 @@
     <div class="blog-content">
       <h2>Contact Me</h2>
       <ul class="unordered-list">
-      <li>Address: 3837 St Ubrain, Montreal, QC, Canada</li>
+      <li>Address: Plateau Area, Montreal</li>
         <li>Email: <a href="mailto:brotzky@gmail.com">brotzky@gmail.com</a></li>
         <li>Phone: (514) 632-6321</li>
         <li>Portfolio: <a target="_blank" href="http://dennisbrotzky.me">http://dennisbrotzky.me</a></li>
