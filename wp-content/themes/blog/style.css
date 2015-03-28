@@ -41,6 +41,15 @@ a img {
     padding-bottom: 55%;
     z-index: 1;
 }
+body.postid-127 .hero-image{
+  position: relative;
+  top: 60px;
+  background: url(img/foundation-five.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 body.postid-7 .hero-image{
   position: relative;
   top: 60px;
