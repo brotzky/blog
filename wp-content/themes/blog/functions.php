@@ -4,10 +4,12 @@
 	function blog_themes() {
 
 		// importing style sheets
-		wp_enqueue_style('style', get_template_directory_uri(). '/style.css');
+             wp_enqueue_style('style', get_template_directory_uri(). '/css/build/style.min.css');
 		//wp_enqueue_style('foundation', get_template_directory_uri(). '/css/foundation.css');
-            wp_enqueue_style('normalize', get_template_directory_uri(). '/css/normalize.css');
+
 		// wp_enqueue_style('foundtain.min', get_template_directory_uri(). 'css/foundation.min.css');
+
+
 
 		// Include ONLY if home page
 		// if(is_page('home')) {
