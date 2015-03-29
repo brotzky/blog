@@ -2227,6 +2227,9 @@ ul.pagination {
     font-smoothing:               antialiased;
 }
 html, body {
+  -webkit-box-sizing:     border-box;
+    -moz-box-sizing:         border-box;
+    box-sizing:                  border-box;
   margin: 0;
   padding: 0;
   background-color: #EEE;
@@ -2239,6 +2242,9 @@ html, body {
   height: 100%;
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   word-spacing: 0.1em;
+}
+h1 {
+  font-size: 1rem;
 }
 a img {
   width: 100%;
@@ -2493,7 +2499,7 @@ h2 a:hover {
 }
 @media screen and (max-width: 510px) {
   .blog-content {
-    width: 95%;
+    width: 85%;
     padding: 10px 20px;
   }
   .blog-content p {
@@ -2545,5 +2551,9 @@ h2 a:hover {
 @media screen and (max-width: 350px){
    .fixed-nav ul li a {
     font-size: 0.8rem;
+  }
+  .blog-home a {
+    bottom: 4px;
+    font-size: 2rem;
   }
 }
