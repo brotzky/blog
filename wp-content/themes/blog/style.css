@@ -290,7 +290,7 @@ h2 a:hover {
 }
 @media screen and (max-width: 510px) {
   .blog-content {
-    width: 85%;
+    width: 83%;
     padding: 10px 20px;
   }
   .blog-content p {
