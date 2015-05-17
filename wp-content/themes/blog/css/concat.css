@@ -2256,6 +2256,15 @@ a img {
     padding-bottom: 55%;
     z-index: 1;
 }
+body.postid-164 .hero-image {
+  position: relative;
+  top: 60px;
+  background: url(../../img/responsive-design-hero-image-opt.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 body.postid-140 .hero-image {
   position: relative;
   top: 60px;
@@ -2499,7 +2508,7 @@ h2 a:hover {
 }
 @media screen and (max-width: 510px) {
   .blog-content {
-    width: 85%;
+    width: 83%;
     padding: 10px 20px;
   }
   .blog-content p {
