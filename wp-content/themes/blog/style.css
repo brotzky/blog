@@ -37,6 +37,10 @@ html, body {
 h1 {
   font-size: 1rem;
 }
+h2:not(:first-child)  {
+  font-size: 2.4rem;
+  margin: 50px 0px 20px;
+}
 a img {
   width: 100%;
   height: auto;
@@ -135,7 +139,7 @@ body.postid-1 .hero-image{
   background-color: #f9f9f9;
 }
 .nav-box-shadow {
-  box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.16);
 }
 .unordered-list {
     width: 90%;
@@ -199,7 +203,7 @@ footer p {
   max-width: 960px;
   width: 57%;
   margin: 20px auto;
-  padding: 20px 40px;
+  padding: 40px 80px;
   background-color: #f9f9f9;
   border-radius: 2px;
   border: 1px solid #DADADA;
