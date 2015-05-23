@@ -2260,6 +2260,16 @@ a img {
     padding-bottom: 55%;
     z-index: 1;
 }
+
+body.postid-210 .hero-image {
+  position: relative;
+  top: 60px;
+  background: url(../../img/smacss-hero-image-opt.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 body.postid-164 .hero-image {
   position: relative;
   top: 60px;
@@ -2353,14 +2363,14 @@ body.postid-1 .hero-image{
 .unordered-list {
     width: 90%;
     margin: 20px auto;
-    margin-left: 6%;
+    margin-left: 1%;
 }
 .unordered-list li {
       padding: 4px 6px;
       margin: 5px auto;
       list-style-type: disc;
       font-size: 1.125rem;
-      opacity: 0.8;
+      opacity: 0.9;
       line-height: 1.5;
        -webkit-word-wrap: break-word;
     -ms-word-wrap: break-word;
@@ -2426,8 +2436,8 @@ footer p {
 .blog-content p {
   font-family: "Droid Serif", Georgia,Cambria,"Times New Roman",Times,serif;
   font-size: 1.2rem;
-  line-height: 1.6;
-  color:  rgba(0,0,0,0.8);
+  line-height: 1.7;
+  color:  rgba(0,0,0,0.77);
 }
 a {
   color: #1976D2;
@@ -2543,7 +2553,7 @@ h2 a:hover {
   box-shadow:none;
   }
   .unordered-list {
-    width: 90%;
+    width: 95%;
     margin: 20px auto;
     margin-left: 2%;
     overflow:
@@ -2553,7 +2563,7 @@ h2 a:hover {
       margin: 5px auto;
       list-style-type: disc;
       font-size: 1rem;
-      opacity: 0.8;
+      opacity: 0.9;
       line-height: 1.4;
 }
 .post-title a {
