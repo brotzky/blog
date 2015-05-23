@@ -18,8 +18,6 @@ $( document ).ready(function() {
      var navTop = $(window).scrollTop();
        var fixedNav =  $('.fixed-nav');
 
-       console.log(navTop);
-
        if (navTop > 0){
          fixedNav.addClass('nav-box-shadow');
        } else {
