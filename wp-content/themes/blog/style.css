@@ -204,6 +204,7 @@ body.postid-1 .hero-image{
 }
 footer {
   position: relative;
+  z-index: -1;
   top: 60px;
   height: 60px;
   width: 100%;
@@ -301,11 +302,45 @@ h2 a:hover {
   padding: 2px 5px;
 }
 
+.progress-indicator {
+  position: fixed;
+  bottom: 00px;
+  left: 00px;
+  width: 102px;
+  height: 95px;
+}
+.progress-count {
+  font-size: 0.7rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 100px;
+  color: #323a45;
+}
+circle {
+  fill: rgba(255,255,255,0);
+}
+svg .animated-circle {
+  fill: transparent;
+  stroke-width: 5px;
+
+  stroke: rgba(25, 118, 210,0.4);
+  stroke-dasharray: 126;
+  stroke-dashoffset: 126;
+}
 
 @media screen and (max-width: 960px) {
   .blog-content {
     width: 75%;
   }
+  .progress-indicator {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 720px) {
   .blog-content {
     width: 80%;
@@ -351,7 +386,7 @@ h2 a:hover {
   margin-right: 10px;
 }
   #menu-item-99,
-  #menu-item-264{
+  #menu-item-264 {
     display: none;
   }
 .fixed-nav ul li a:hover {
