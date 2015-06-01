@@ -44,7 +44,7 @@ $( document ).ready(function() {
     sHeight = h - wh;
   }
 
-  setSizes();
+ setTimeout(function() {  setSizes(); }, 300);
 
   $w.on('scroll', function(){
     var perc = Math.max(0, Math.min(1, $w.scrollTop()/sHeight));
