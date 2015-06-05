@@ -28,7 +28,7 @@
             wp_enqueue_script( 'jquery' );
 
             // Local Javascript File
-            wp_enqueue_script( 'javascript',  get_template_directory_uri(). '/js/javascript.js', array(), '1.0.0', true);
+            wp_enqueue_script( 'javascript',  get_template_directory_uri(). '/js/build/javascript.min.js', array(), '1.0.0', true);
 
 	}
 	// executing function that grabs style sheet
