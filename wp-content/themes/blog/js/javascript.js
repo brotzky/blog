@@ -25,10 +25,8 @@ $( document ).ready(function() {
       }
   }
 
-});
 
-
-(function(){
+  (function(){
     var $w = $(window);
   var $circ = $('.animated-circle');
   var $progCount = $('.progress-count');
@@ -65,3 +63,6 @@ $( document ).ready(function() {
   }
 
 }());
+});
+
+

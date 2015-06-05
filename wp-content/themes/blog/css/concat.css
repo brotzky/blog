@@ -2512,6 +2512,7 @@ h2 a:hover {
 }
 
 .progress-indicator {
+  opacity: 0.75;
   position: fixed;
   bottom: 00px;
   left: 00px;
