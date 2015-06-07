@@ -49,19 +49,6 @@
 
   </section>
   <!-- /section -->
-
-  <div class="progress-indicator">
-  <svg>
-    <g>
-      <circle cx="0" cy="0" r="20" stroke="black" class="animated-circle" transform="translate(50,50) rotate(-90)"  transform="-moz-translate(50,50) rotate(-90)"/>
-    </g>
-    <g>
-      <circle cx="0" cy="0" r="20" transform="translate(50,50) rotate(-90)"  />
-    </g>
-  </svg>
-  <div class="progress-count"></div>
-</div>
-
   </main>
 
 

@@ -22,15 +22,6 @@
     <meta property="og:image" content="http://dennisbrotzky.me/img/dennis_introduction.png" />
     <meta property="og:description" content="Dennis Brotzky is a Web Designer / Front-End Developer with a focus on design and aesthetic. He is able
                                                                         to bring together the technicality of programming with the simplicity of aesthetics." />
-
-    <?php if(is_home()) { ?>
-      <style>
-        .blog-content {
-          padding: 30px 50px;
-        }
-      </style>
-    <?php } ?>
-
   </head>
   <body <?php body_class(); ?>>
     <!-- Site Container -->
