@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
   <head>
-    <!-- UI Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title -->
     <title><?php wp_title(''); ?></title>
     <?php wp_head(); ?>
-    <!-- Font -->
-    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css' media="none" onload="if(media!='all')media='all'">
+    <noscript><link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'></noscript>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
-    <!-- Meta -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="language" content="en-us" />
     <meta name="google-site-verification" content="DKyz7VnkbOa5LINwu-cpRANpBCRSpo2B5cEIBMtpPeM" />
@@ -19,33 +16,12 @@
     <meta name="copyright" content="Copyright Dennis Brotzky 2015" />
     <meta name="description" content="Dennis Brotzky is a Web Designer / Front-End Developer with a focus on design and aesthetic. He is able
                                                                         to bring together the technicality of programming with the simplicity of aesthetics." />
-    <!-- Facebook OG Meta -->
     <meta property="og:title" content="Dennis Brotzky" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://dennisbrotzky.co/blog" />
     <meta property="og:image" content="http://dennisbrotzky.me/img/dennis_introduction.png" />
     <meta property="og:description" content="Dennis Brotzky is a Web Designer / Front-End Developer with a focus on design and aesthetic. He is able
                                                                         to bring together the technicality of programming with the simplicity of aesthetics." />
-    <!-- Google Analytics -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-59445007-2', 'auto');
-      ga('send', 'pageview');
-
-    </script>
-
-    <?php if(is_home()) { ?>
-      <style>
-        .blog-content {
-          padding: 30px 50px;
-        }
-      </style>
-    <?php } ?>
-
   </head>
   <body <?php body_class(); ?>>
     <!-- Site Container -->

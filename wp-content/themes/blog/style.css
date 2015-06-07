@@ -58,6 +58,15 @@ a img {
     padding-bottom: 55%;
     z-index: 1;
 }
+body.postid-266 .hero-image {
+  position: relative;
+  top: 60px;
+  background: url(../../img/load-time-hero-image-opt.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 body.postid-210 .hero-image {
   position: relative;
   top: 60px;
@@ -67,9 +76,6 @@ body.postid-210 .hero-image {
   -o-background-size: cover;
   background-size: cover;
 }
-
-
-
 body.postid-164 .hero-image {
   position: relative;
   top: 60px;
@@ -138,7 +144,7 @@ body.postid-1 .hero-image{
   text-decoration: none;
   color: #4A4A4A;
   position: relative;
-  bottom: 6px;
+  bottom: 3px;
   font-size: 2.25rem;
   -webkit-transition: all 150ms ease-in-out;
   -moz-transition:     all 150ms ease-in-out;
