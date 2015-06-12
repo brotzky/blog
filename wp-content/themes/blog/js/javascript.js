@@ -37,8 +37,6 @@ $( document ).ready(function() {
   function setSizes(){
     wh = $w.height();
     h = $(document).height();
-    console.log('doucment height: ' + h);
-    console.log('window height: ' + wh);
     sHeight = h - wh;
   }
 
