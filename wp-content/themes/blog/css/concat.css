@@ -474,6 +474,8 @@ h2:not(:first-child)  {
   font-size: 2.4rem;
   margin: 30px 0px 10px;
 }
+
+img,
 a img {
   width: 100%;
   height: auto;
@@ -656,13 +658,19 @@ footer p {
   max-width: 960px;
   width: 57%;
   margin: 20px auto;
-  padding: 40px 80px;
+  padding: 35px 75px 35px;
   background-color: #f9f9f9;
   border-radius: 2px;
   border: 1px solid #DADADA;
   border-bottom: 2px solid #CBCBCB;
   border-top: 1px solid #E2E2E2;
   box-shadow: 0px 2px 5px #D0D0D0;
+}
+.blog-permalink {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
 }
 .post-date {
   opacity: 0.6;
