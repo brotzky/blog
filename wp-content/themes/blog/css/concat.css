@@ -480,6 +480,9 @@ a img {
   width: 100%;
   height: auto;
 }
+img  {
+  margin: 25px auto;
+}
 
 .hero-image-one {
     position: relative;
@@ -490,7 +493,7 @@ a img {
 body.postid-298 .hero-image {
   position: relative;
   top: 60px;
-  background: url(../../img/javascript-closures-hero-image.jpg) no-repeat center center;
+  background: url(../../img/javascript-closures-hero-image-opt.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
