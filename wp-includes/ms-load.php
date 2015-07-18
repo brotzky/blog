@@ -308,8 +308,11 @@ function get_site_by_path( $domain, $path, $segments = null ) {
 		$path_segments = array_slice( $path_segments, 0, $segments );
 	}
 
+<<<<<<< HEAD
 	$paths = array();
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	while ( count( $path_segments ) ) {
 		$paths[] = '/' . implode( '/', $path_segments ) . '/';
 		array_pop( $path_segments );
@@ -395,6 +398,7 @@ function get_site_by_path( $domain, $path, $segments = null ) {
 function ms_not_installed() {
 	global $wpdb, $domain, $path;
 
+<<<<<<< HEAD
 	if ( ! is_admin() ) {
 		dead_db();
 	}
@@ -404,10 +408,20 @@ function ms_not_installed() {
 	$title = __( 'Error establishing a database connection' );
 
 	$msg  = '<h1>' . $title . '</h1>';
+=======
+	wp_load_translations_early();
+
+	$title = __( 'Error establishing a database connection' );
+	$msg  = '<h1>' . $title . '</h1>';
+	if ( ! is_admin() ) {
+		die( $msg );
+	}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$msg .= '<p>' . __( 'If your site does not display, please contact the owner of this network.' ) . '';
 	$msg .= ' ' . __( 'If you are the owner of this network please check that MySQL is running properly and all tables are error free.' ) . '</p>';
 	$query = $wpdb->prepare( "SHOW TABLES LIKE %s", $wpdb->esc_like( $wpdb->site ) );
 	if ( ! $wpdb->get_var( $query ) ) {
+<<<<<<< HEAD
 		$msg .= '<p>' . sprintf(
 			/* translators: %s: table name */
 			__( '<strong>Database tables are missing.</strong> This means that MySQL is not running, WordPress was not installed properly, or someone deleted %s. You really should look at your database now.' ),
@@ -424,6 +438,14 @@ function ms_not_installed() {
 	}
 	$msg .= '<p><strong>' . __( 'What do I do now?' ) . '</strong> ';
 	$msg .= __( 'Read the <a target="_blank" href="https://codex.wordpress.org/Debugging_a_WordPress_Network">bug report</a> page. Some of the guidelines there may help you figure out what went wrong.' );
+=======
+		$msg .= '<p>' . sprintf( __( '<strong>Database tables are missing.</strong> This means that MySQL is not running, WordPress was not installed properly, or someone deleted <code>%s</code>. You really should look at your database now.' ), $wpdb->site ) . '</p>';
+	} else {
+		$msg .= '<p>' . sprintf( __( '<strong>Could not find site <code>%1$s</code>.</strong> Searched for table <code>%2$s</code> in database <code>%3$s</code>. Is that right?' ), rtrim( $domain . $path, '/' ), $wpdb->blogs, DB_NAME ) . '</p>';
+	}
+	$msg .= '<p><strong>' . __( 'What do I do now?' ) . '</strong> ';
+	$msg .= __( 'Read the <a target="_blank" href="http://codex.wordpress.org/Debugging_a_WordPress_Network">bug report</a> page. Some of the guidelines there may help you figure out what went wrong.' );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$msg .= ' ' . __( 'If you&#8217;re still stuck with this message, then check that your database contains the following tables:' ) . '</p><ul>';
 	foreach ( $wpdb->tables('global') as $t => $table ) {
 		if ( 'sitecategories' == $t )
@@ -432,7 +454,11 @@ function ms_not_installed() {
 	}
 	$msg .= '</ul>';
 
+<<<<<<< HEAD
 	wp_die( $msg, $title, array( 'response' => 500 ) );
+=======
+	wp_die( $msg, $title );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**

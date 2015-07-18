@@ -2,7 +2,11 @@
 /**
  * WordPress Upgrade API
  *
+<<<<<<< HEAD
  * Most of the functions are pluggable and can be overwritten.
+=======
+ * Most of the functions are pluggable and can be overwritten
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @package WordPress
  * @subpackage Administration
@@ -20,6 +24,7 @@ require_once(ABSPATH . 'wp-admin/includes/schema.php');
 
 if ( !function_exists('wp_install') ) :
 /**
+<<<<<<< HEAD
  * Installs the site.
  *
  * Runs the required functions to set up and populate the database,
@@ -35,6 +40,22 @@ if ( !function_exists('wp_install') ) :
  * @param string $user_password Optional. User's chosen password. Default empty (random password).
  * @param string $language      Optional. Language chosen. Default empty.
  * @return array Array keys 'url', 'user_id', 'password', and 'password_message'.
+=======
+ * Installs the blog
+ *
+ * {@internal Missing Long Description}}
+ *
+ * @since 2.1.0
+ *
+ * @param string $blog_title Blog title.
+ * @param string $user_name User's username.
+ * @param string $user_email User's email.
+ * @param bool $public Whether blog is public.
+ * @param string $deprecated Optional. Not used.
+ * @param string $user_password Optional. User's chosen password. Will default to a random password.
+ * @param string $language Optional. Language chosen.
+ * @return array Array keys 'url', 'user_id', 'password', 'password_message'.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function wp_install( $blog_title, $user_name, $user_email, $public, $deprecated = '', $user_password = '', $language = '' ) {
 	if ( !empty( $deprecated ) )
@@ -75,7 +96,11 @@ function wp_install( $blog_title, $user_name, $user_email, $public, $deprecated 
 		$user_id = wp_create_user($user_name, $user_password, $user_email);
 		update_user_option($user_id, 'default_password_nag', true, true);
 		$email_password = true;
+<<<<<<< HEAD
 	} elseif ( ! $user_id ) {
+=======
+	} else if ( !$user_id ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		// Password has been provided
 		$message = '<em>'.__('Your chosen password.').'</em>';
 		$user_id = wp_create_user($user_name, $user_password, $user_email);
@@ -88,8 +113,11 @@ function wp_install( $blog_title, $user_name, $user_email, $public, $deprecated 
 
 	wp_install_defaults($user_id);
 
+<<<<<<< HEAD
 	wp_install_maybe_enable_pretty_permalinks();
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	flush_rewrite_rules();
 
 	wp_new_blog_notification($blog_title, $guessurl, $user_id, ($email_password ? $user_password : __('The password you chose during the install.') ) );
@@ -111,10 +139,16 @@ endif;
 
 if ( !function_exists('wp_install_defaults') ) :
 /**
+<<<<<<< HEAD
  * Creates the initial content for a newly-installed site.
  *
  * Adds the default "Uncategorized" category, the first post (with comment),
  * first page, and default widgets for default theme for the current version.
+=======
+ * {@internal Missing Short Description}}
+ *
+ * {@internal Missing Long Description}}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @since 2.1.0
  *
@@ -144,9 +178,15 @@ function wp_install_defaults( $user_id ) {
 	$cat_tt_id = $wpdb->insert_id;
 
 	// First post
+<<<<<<< HEAD
 	$now = current_time( 'mysql' );
 	$now_gmt = current_time( 'mysql', 1 );
 	$first_post_guid = get_option( 'home' ) . '/?p=1';
+=======
+	$now = date('Y-m-d H:i:s');
+	$now_gmt = gmdate('Y-m-d H:i:s');
+	$first_post_guid = get_option('home') . '/?p=1';
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	if ( is_multisite() ) {
 		$first_post = get_site_option( 'first_post' );
@@ -264,6 +304,7 @@ As a new WordPress user, you should go to <a href=\"%s\">your dashboard</a> to d
 }
 endif;
 
+<<<<<<< HEAD
 /**
  * Maybe enable pretty permalinks on install.
  *
@@ -344,13 +385,26 @@ if ( !function_exists('wp_new_blog_notification') ) :
  *
  * Sends an email with wp_mail to the new administrator that the site setup is complete,
  * and provides them with a record of their login credentials.
+=======
+if ( !function_exists('wp_new_blog_notification') ) :
+/**
+ * {@internal Missing Short Description}}
+ *
+ * {@internal Missing Long Description}}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @since 2.1.0
  *
  * @param string $blog_title Blog title.
+<<<<<<< HEAD
  * @param string $blog_url   Blog url.
  * @param int    $user_id    User ID.
  * @param string $password   User's Password.
+=======
+ * @param string $blog_url Blog url.
+ * @param int $user_id User ID.
+ * @param string $password User's Password.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function wp_new_blog_notification($blog_title, $blog_url, $user_id, $password) {
 	$user = new WP_User( $user_id );
@@ -379,6 +433,7 @@ endif;
 
 if ( !function_exists('wp_upgrade') ) :
 /**
+<<<<<<< HEAD
  * Runs WordPress Upgrade functions.
  *
  * Upgrades the database if needed during a site update.
@@ -386,6 +441,15 @@ if ( !function_exists('wp_upgrade') ) :
  * @since 2.1.0
  *
  * @return null If no update is necessary or site isn't completely installed, null.
+=======
+ * Run WordPress Upgrade functions.
+ *
+ * {@internal Missing Long Description}}
+ *
+ * @since 2.1.0
+ *
+ * @return null
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function wp_upgrade() {
 	global $wp_current_db_version, $wp_db_version, $wpdb;
@@ -430,12 +494,18 @@ endif;
 /**
  * Functions to be called in install and upgrade scripts.
  *
+<<<<<<< HEAD
  * Contains conditional checks to determine which upgrade scripts to run,
  * based on database version and WP version being updated-to.
  *
  * @since 1.0.1
  *
  * @return null If no update is necessary, null.
+=======
+ * {@internal Missing Long Description}}
+ *
+ * @since 1.0.1
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function upgrade_all() {
 	global $wp_current_db_version, $wp_db_version;
@@ -524,6 +594,7 @@ function upgrade_all() {
 	if ( $wp_current_db_version < 29630 )
 		upgrade_400();
 
+<<<<<<< HEAD
 	// Don't harsh my mellow. upgrade_422() must be called before
 	// upgrade_420() to catch bad comments prior to any auto-expansion of
 	// MySQL column widths.
@@ -533,6 +604,8 @@ function upgrade_all() {
 	if ( $wp_current_db_version < 31351 )
 		upgrade_420();
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	maybe_disable_link_manager();
 
 	maybe_disable_automattic_widgets();
@@ -576,7 +649,10 @@ function upgrade_100() {
 
 	$done_ids = $wpdb->get_results("SELECT DISTINCT post_id FROM $wpdb->post2cat");
 	if ($done_ids) :
+<<<<<<< HEAD
 		$done_posts = array();
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		foreach ($done_ids as $done_id) :
 			$done_posts[] = $done_id->post_id;
 		endforeach;
@@ -861,7 +937,11 @@ function upgrade_210() {
 			if ( 'static' == $status ) {
 				$status = 'publish';
 				$type = 'page';
+<<<<<<< HEAD
 			} elseif ( 'attachment' == $status ) {
+=======
+			} else if ( 'attachment' == $status ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				$status = 'inherit';
 				$type = 'attachment';
 			}
@@ -1421,6 +1501,7 @@ function upgrade_400() {
 }
 
 /**
+<<<<<<< HEAD
  * Execute changes made in WordPress 4.2.0.
  *
  * @since 4.2.0
@@ -1499,6 +1580,9 @@ function upgrade_422() {
 
 /**
  * Executes network-level upgrade routines.
+=======
+ * Execute network level changes
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @since 3.0.0
  */
@@ -1593,6 +1677,7 @@ function upgrade_network() {
 			update_site_option( 'illegal_names', $illegal_names );
 		}
 	}
+<<<<<<< HEAD
 
 	// 4.2
 	if ( $wp_current_db_version < 31351 && $wpdb->charset === 'utf8mb4' ) {
@@ -1639,6 +1724,18 @@ function upgrade_network() {
  * This method checks for an existing database and creates a new one if it's not
  * already present. It doesn't rely on MySQL's "IF NOT EXISTS" statement, but chooses
  * to query all tables first and then run the SQL statement creating the table.
+=======
+}
+
+// The functions we use to actually do stuff
+
+// General
+
+/**
+ * {@internal Missing Short Description}}
+ *
+ * {@internal Missing Long Description}}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @since 1.0.0
  *
@@ -1666,7 +1763,13 @@ function maybe_create_table($table_name, $create_ddl) {
 }
 
 /**
+<<<<<<< HEAD
  * Drops a specified index from a table.
+=======
+ * {@internal Missing Short Description}}
+ *
+ * {@internal Missing Long Description}}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @since 1.0.1
  *
@@ -1687,7 +1790,13 @@ function drop_index($table, $index) {
 }
 
 /**
+<<<<<<< HEAD
  * Adds an index to a specified table.
+=======
+ * {@internal Missing Short Description}}
+ *
+ * {@internal Missing Long Description}}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @since 1.0.1
  *
@@ -1703,6 +1812,7 @@ function add_clean_index($table, $index) {
 }
 
 /**
+<<<<<<< HEAD
  * Adds column to a database table if it doesn't already exist.
  *
  * @since 1.3.0
@@ -1711,6 +1821,12 @@ function add_clean_index($table, $index) {
  * @param string $column_name The column name to add to the table.
  * @param string $create_ddl  The SQL statement used to add the column.
  * @return True if already exists or on successful completion, false on error.
+=======
+ ** maybe_add_column()
+ ** Add column to db table if it doesn't exist.
+ ** Returns:  true if already exists or on successful completion
+ **           false on error
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function maybe_add_column($table_name, $column_name, $create_ddl) {
 	global $wpdb;
@@ -1733,6 +1849,7 @@ function maybe_add_column($table_name, $column_name, $create_ddl) {
 }
 
 /**
+<<<<<<< HEAD
  * If a table only contains utf8 or utf8mb4 columns, convert it to utf8mb4.
  *
  * @since 4.2.0
@@ -1763,6 +1880,8 @@ function maybe_convert_table_to_utf8mb4( $table ) {
 }
 
 /**
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * Retrieve all options as it was for 1.2.
  *
  * @since 1.2.0
@@ -1783,9 +1902,14 @@ function get_alloptions_110() {
 }
 
 /**
+<<<<<<< HEAD
  * Utility version of get_option that is private to install/upgrade.
  *
  * @ignore
+=======
+ * Version of get_option that is private to install/upgrade.
+ *
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @since 1.5.1
  * @access private
  *
@@ -1813,12 +1937,23 @@ function __get_option($setting) {
 }
 
 /**
+<<<<<<< HEAD
  * Filters for content to remove unnecessary slashes.
  *
  * @since 1.5.0
  *
  * @param string $content The content to modify.
  * @return string The de-slashed content.
+=======
+ * {@internal Missing Short Description}}
+ *
+ * {@internal Missing Long Description}}
+ *
+ * @since 1.5.0
+ *
+ * @param string $content
+ * @return string
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function deslash($content) {
 	// Note: \\\ inside a regex denotes a single backslash.
@@ -1842,6 +1977,7 @@ function deslash($content) {
 }
 
 /**
+<<<<<<< HEAD
  * Modifies the database based on specified SQL statements.
  *
  * Useful for creating new tables and updating existing tables to a new structure.
@@ -1854,6 +1990,17 @@ function deslash($content) {
  * @param bool         $execute Optional. Whether or not to execute the query right away.
  *                              Default true.
  * @return array Strings containing the results of the various update queries.
+=======
+ * {@internal Missing Short Description}}
+ *
+ * {@internal Missing Long Description}}
+ *
+ * @since 1.5.0
+ *
+ * @param string $queries
+ * @param bool   $execute
+ * @return array
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function dbDelta( $queries = '', $execute = true ) {
 	global $wpdb;
@@ -1882,6 +2029,7 @@ function dbDelta( $queries = '', $execute = true ) {
 
 	// Create a tablename index for an array ($cqueries) of queries
 	foreach($queries as $qry) {
+<<<<<<< HEAD
 		if ( preg_match( "|CREATE TABLE ([^ ]*)|", $qry, $matches ) ) {
 			$cqueries[ trim( $matches[1], '`' ) ] = $qry;
 			$for_update[$matches[1]] = 'Created table '.$matches[1];
@@ -1890,6 +2038,16 @@ function dbDelta( $queries = '', $execute = true ) {
 		} elseif ( preg_match( "|INSERT INTO ([^ ]*)|", $qry, $matches ) ) {
 			$iqueries[] = $qry;
 		} elseif ( preg_match( "|UPDATE ([^ ]*)|", $qry, $matches ) ) {
+=======
+		if (preg_match("|CREATE TABLE ([^ ]*)|", $qry, $matches)) {
+			$cqueries[ trim( $matches[1], '`' ) ] = $qry;
+			$for_update[$matches[1]] = 'Created table '.$matches[1];
+		} else if (preg_match("|CREATE DATABASE ([^ ]*)|", $qry, $matches)) {
+			array_unshift($cqueries, $qry);
+		} else if (preg_match("|INSERT INTO ([^ ]*)|", $qry, $matches)) {
+			$iqueries[] = $qry;
+		} else if (preg_match("|UPDATE ([^ ]*)|", $qry, $matches)) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$iqueries[] = $qry;
 		} else {
 			// Unrecognized query type
@@ -2023,7 +2181,11 @@ function dbDelta( $queries = '', $execute = true ) {
 
 		if ($tableindices) {
 			// Clear the index array.
+<<<<<<< HEAD
 			$index_ary = array();
+=======
+			unset($index_ary);
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			// For every index in the table.
 			foreach ($tableindices as $tableindex) {
@@ -2041,7 +2203,11 @@ function dbDelta( $queries = '', $execute = true ) {
 				$index_string = '';
 				if ($index_name == 'PRIMARY') {
 					$index_string .= 'PRIMARY ';
+<<<<<<< HEAD
 				} elseif ( $index_data['unique'] ) {
+=======
+				} else if($index_data['unique']) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 					$index_string .= 'UNIQUE ';
 				}
 				$index_string .= 'KEY ';
@@ -2060,6 +2226,7 @@ function dbDelta( $queries = '', $execute = true ) {
 						$index_columns .= '('.$column_data['subpart'].')';
 					}
 				}
+<<<<<<< HEAD
 
 				// The alternative index string doesn't care about subparts
 				$alt_index_columns = preg_replace( '/\([^)]*\)/', '', $index_columns );
@@ -2077,6 +2244,14 @@ function dbDelta( $queries = '', $execute = true ) {
 						// todo: Remove this?
 						//echo "<pre style=\"border:1px solid #ccc;margin-top:5px;\">{$table}:<br />Found index:".$index_string."</pre>\n";
 					}
+=======
+				// Add the column list to the index create string.
+				$index_string .= ' ('.$index_columns.')';
+				if (!(($aindex = array_search($index_string, $indices)) === false)) {
+					unset($indices[$aindex]);
+					// todo: Remove this?
+					//echo "<pre style=\"border:1px solid #ccc;margin-top:5px;\">{$table}:<br />Found index:".$index_string."</pre>\n";
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				}
 				// todo: Remove this?
 				//else echo "<pre style=\"border:1px solid #ccc;margin-top:5px;\">{$table}:<br /><b>Did not find index:</b>".$index_string."<br />".print_r($indices, true)."</pre>\n";
@@ -2107,6 +2282,7 @@ function dbDelta( $queries = '', $execute = true ) {
 }
 
 /**
+<<<<<<< HEAD
  * Updates the database tables to a new schema.
  *
  * By default, updates all the tables to use the latest defined schema, but can also
@@ -2117,6 +2293,13 @@ function dbDelta( $queries = '', $execute = true ) {
  * @uses dbDelta
  *
  * @param string $tables Optional. Which set of tables to update. Default is 'all'.
+=======
+ * {@internal Missing Short Description}}
+ *
+ * {@internal Missing Long Description}}
+ *
+ * @since 1.5.0
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function make_db_current( $tables = 'all' ) {
 	$alterations = dbDelta( $tables );
@@ -2126,6 +2309,7 @@ function make_db_current( $tables = 'all' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Updates the database tables to a new schema, but without displaying results.
  *
  * By default, updates all the tables to use the latest defined schema, but can
@@ -2136,20 +2320,36 @@ function make_db_current( $tables = 'all' ) {
  * @see make_db_current()
  *
  * @param string $tables Optional. Which set of tables to update. Default is 'all'.
+=======
+ * {@internal Missing Short Description}}
+ *
+ * {@internal Missing Long Description}}
+ *
+ * @since 1.5.0
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function make_db_current_silent( $tables = 'all' ) {
 	dbDelta( $tables );
 }
 
 /**
+<<<<<<< HEAD
  * Creates a site theme from an existing theme.
+=======
+ * {@internal Missing Short Description}}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * {@internal Missing Long Description}}
  *
  * @since 1.5.0
  *
+<<<<<<< HEAD
  * @param string $theme_name The name of the theme.
  * @param string $template   The directory name of the theme.
+=======
+ * @param string $theme_name
+ * @param string $template
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @return bool
  */
 function make_site_theme_from_oldschool($theme_name, $template) {
@@ -2225,14 +2425,23 @@ function make_site_theme_from_oldschool($theme_name, $template) {
 }
 
 /**
+<<<<<<< HEAD
  * Creates a site theme from the default theme.
+=======
+ * {@internal Missing Short Description}}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * {@internal Missing Long Description}}
  *
  * @since 1.5.0
  *
+<<<<<<< HEAD
  * @param string $theme_name The name of the theme.
  * @param string $template   The directory name of the theme.
+=======
+ * @param string $theme_name
+ * @param string $template
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @return null|false
  */
 function make_site_theme_from_default($theme_name, $template) {
@@ -2289,8 +2498,14 @@ function make_site_theme_from_default($theme_name, $template) {
 	@closedir($images_dir);
 }
 
+<<<<<<< HEAD
 /**
  * Creates a site theme.
+=======
+// Create a site theme from the default theme.
+/**
+ * {@internal Missing Short Description}}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * {@internal Missing Long Description}}
  *
@@ -2369,7 +2584,13 @@ function translate_level_to_role($level) {
 }
 
 /**
+<<<<<<< HEAD
  * Checks the version of the installed MySQL binary.
+=======
+ * {@internal Missing Short Description}}
+ *
+ * {@internal Missing Long Description}}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @since 2.1.0
  */
@@ -2398,7 +2619,11 @@ function maybe_disable_automattic_widgets() {
 }
 
 /**
+<<<<<<< HEAD
  * Disables the Link Manager on upgrade if, at the time of upgrade, no links exist in the DB.
+=======
+ * Disables the Link Manager on upgrade, if at the time of upgrade, no links exist in the DB.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @since 3.5.0
  */
@@ -2450,6 +2675,7 @@ function pre_schema_upgrade() {
 		// dbDelta() can recreate but can't drop the index.
 		$wpdb->query( "ALTER TABLE $wpdb->terms DROP INDEX slug" );
 	}
+<<<<<<< HEAD
 
 	// Upgrade versions prior to 4.2.
 	if ( $wp_current_db_version < 31351 ) {
@@ -2462,6 +2688,8 @@ function pre_schema_upgrade() {
 		$wpdb->query( "ALTER TABLE $wpdb->postmeta DROP INDEX meta_key, ADD INDEX meta_key(meta_key(191))" );
 		$wpdb->query( "ALTER TABLE $wpdb->posts DROP INDEX post_name, ADD INDEX post_name(post_name(191))" );
 	}
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**

@@ -195,7 +195,11 @@ img.alignleft {
 }
 
 .ie7 .screen-reader-text {
+<<<<<<< HEAD
 	clip: rect(1px 1px 1px 1px);
+=======
+	clip: rect(1px 1px 1px 1px); /* IE7 */
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .ie7 .site-header {

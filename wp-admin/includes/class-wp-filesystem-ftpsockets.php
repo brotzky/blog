@@ -15,10 +15,16 @@
  * @uses WP_Filesystem_Base Extends class
  */
 class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
+<<<<<<< HEAD
 	/**
 	 * @var ftp
 	 */
 	public $ftp;
+=======
+	public $ftp = false;
+	public $errors = null;
+	public $options = array();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	public function __construct($opt = '') {
 		$this->method = 'ftpsockets';
@@ -26,7 +32,11 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 
 		// Check if possible to use ftp functions.
 		if ( ! @include_once( ABSPATH . 'wp-admin/includes/class-ftp.php' ) ) {
+<<<<<<< HEAD
 			return;
+=======
+			return false;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 		$this->ftp = new ftp();
 
@@ -40,6 +50,12 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 		else
 			$this->options['hostname'] = $opt['hostname'];
 
+<<<<<<< HEAD
+=======
+		if ( ! empty($opt['base']) )
+			$this->wp_base = $opt['base'];
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		// Check if the options provided are OK.
 		if ( empty ($opt['username']) )
 			$this->errors->add('empty_username', __('FTP username is required'));
@@ -81,7 +97,11 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 
 	/**
 	 * @param string $file
+<<<<<<< HEAD
 	 * @return false|string
+=======
+	 * @return bool|string
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 */
 	public function get_contents( $file ) {
 		if ( ! $this->exists($file) )
@@ -176,6 +196,18 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 
 	/**
 	 * @param string $file
+<<<<<<< HEAD
+=======
+	 * @param bool $group
+	 * @param bool $recursive
+	 */
+	public function chgrp($file, $group, $recursive = false ) {
+		return false;
+	}
+
+	/**
+	 * @param string $file
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * @param int|bool $mode
 	 * @param bool $recursive
 	 * @return bool
@@ -274,11 +306,14 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 	 */
 	public function exists( $file ) {
 		$list = $this->ftp->nlist( $file );
+<<<<<<< HEAD
 
 		if ( empty( $list ) && $this->is_dir( $file ) ) {
 			return true; // File is an empty directory.
 		}
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		return !empty( $list ); //empty list = no file, so invert.
 		// Return $this->ftp->is_exists($file); has issues with ABOR+426 responses on the ncFTPd server.
 	}
@@ -374,6 +409,13 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 		if ( ! $chmod )
 			$chmod = FS_CHMOD_DIR;
 		$this->chmod($path, $chmod);
+<<<<<<< HEAD
+=======
+		if ( $chown )
+			$this->chown($path, $chown);
+		if ( $chgrp )
+			$this->chgrp($path, $chgrp);
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		return true;
 	}
 

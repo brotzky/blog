@@ -69,6 +69,12 @@ function delete_theme($stylesheet, $redirect = '') {
 		return new WP_Error( 'could_not_remove_theme', sprintf( __( 'Could not fully remove the theme %s.' ), $stylesheet ) );
 	}
 
+<<<<<<< HEAD
+=======
+	$translations_dir = $wp_filesystem->wp_lang_dir();
+	$translations_dir = trailingslashit( $translations_dir );
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$theme_translations = wp_get_installed_translations( 'themes' );
 
 	// Remove language files, silently.
@@ -146,9 +152,14 @@ function get_theme_update_available( $theme ) {
 	if ( !isset($themes_update) )
 		$themes_update = get_site_transient('update_themes');
 
+<<<<<<< HEAD
 	if ( ! ( $theme instanceof WP_Theme ) ) {
 		return false;
 	}
+=======
+	if ( ! is_a( $theme, 'WP_Theme' ) )
+		return false;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	$stylesheet = $theme->get_stylesheet();
 
@@ -165,7 +176,11 @@ function get_theme_update_available( $theme ) {
 			if ( ! current_user_can('update_themes') ) {
 				$html = sprintf( '<p><strong>' . __( 'There is a new version of %1$s available. <a href="%2$s" class="thickbox" title="%3$s">View version %4$s details</a>.' ) . '</strong></p>',
 					$theme_name, esc_url( $details_url ), esc_attr( $theme['Name'] ), $update['new_version'] );
+<<<<<<< HEAD
 			} elseif ( empty( $update['package'] ) ) {
+=======
+			} else if ( empty( $update['package'] ) ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				$html = sprintf( '<p><strong>' . __( 'There is a new version of %1$s available. <a href="%2$s" class="thickbox" title="%3$s">View version %4$s details</a>. <em>Automatic update is unavailable for this theme.</em>' ) . '</strong></p>',
 					$theme_name, esc_url( $details_url ), esc_attr( $theme['Name'] ), $update['new_version'] );
 			} else {
@@ -359,19 +374,31 @@ function themes_api( $action, $args = null ) {
 		if ( $ssl = wp_http_supports( array( 'ssl' ) ) )
 			$url = set_url_scheme( $url, 'https' );
 
+<<<<<<< HEAD
 		$http_args = array(
+=======
+		$args = array(
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			'body' => array(
 				'action' => $action,
 				'request' => serialize( $args )
 			)
 		);
+<<<<<<< HEAD
 		$request = wp_remote_post( $url, $http_args );
+=======
+		$request = wp_remote_post( $url, $args );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		if ( $ssl && is_wp_error( $request ) ) {
 			if ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) {
 				trigger_error( __( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/">support forums</a>.' ) . ' ' . __( '(WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.)' ), headers_sent() || WP_DEBUG ? E_USER_WARNING : E_USER_NOTICE );
 			}
+<<<<<<< HEAD
 			$request = wp_remote_post( $http_url, $http_args );
+=======
+			$request = wp_remote_post( $http_url, $args );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 
 		if ( is_wp_error($request) ) {
@@ -409,6 +436,7 @@ function themes_api( $action, $args = null ) {
 function wp_prepare_themes_for_js( $themes = null ) {
 	$current_theme = get_stylesheet();
 
+<<<<<<< HEAD
 	/**
 	 * Filter theme data before it is prepared for JavaScript.
 	 *
@@ -429,6 +457,10 @@ function wp_prepare_themes_for_js( $themes = null ) {
 
 	// Make sure the current theme is listed first.
 	$prepared_themes[ $current_theme ] = array();
+=======
+	// Make sure the current theme is listed first.
+	$prepared_themes = array( $current_theme => array() );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	if ( null === $themes ) {
 		$themes = wp_get_themes( array( 'allowed' => true ) );
@@ -446,9 +478,12 @@ function wp_prepare_themes_for_js( $themes = null ) {
 	}
 
 	WP_Theme::sort_by_name( $themes );
+<<<<<<< HEAD
 
 	$parents = array();
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	foreach ( $themes as $theme ) {
 		$slug = $theme->get_stylesheet();
 		$encoded_slug = urlencode( $slug );
@@ -488,7 +523,11 @@ function wp_prepare_themes_for_js( $themes = null ) {
 	}
 
 	// Remove 'delete' action if theme has an active child
+<<<<<<< HEAD
 	if ( ! empty( $parents ) && array_key_exists( $current_theme, $parents ) ) {
+=======
+	if ( isset( $parents ) && array_key_exists( $current_theme, $parents ) ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		unset( $prepared_themes[ $parents[ $current_theme ] ]['actions']['delete'] );
 	}
 
@@ -502,6 +541,7 @@ function wp_prepare_themes_for_js( $themes = null ) {
 	 * @param array $prepared_themes Array of themes.
 	 */
 	$prepared_themes = apply_filters( 'wp_prepare_themes_for_js', $prepared_themes );
+<<<<<<< HEAD
 	$prepared_themes = array_values( $prepared_themes );
 	return array_filter( $prepared_themes );
 }
@@ -562,3 +602,7 @@ function customize_themes_print_templates() {
 	<?php
 }
 add_action( 'customize_controls_print_footer_scripts', 'customize_themes_print_templates' );
+=======
+	return array_values( $prepared_themes );
+}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

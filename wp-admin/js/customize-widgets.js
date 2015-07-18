@@ -177,7 +177,11 @@
 			// If the available widgets panel is open and the customize controls are
 			// interacted with (i.e. available widgets panel is blurred) then close the
 			// available widgets panel.
+<<<<<<< HEAD
 			$( '#customize-controls, .customize-overlay-close' ).on( 'click keydown', function( e ) {
+=======
+			$( '#customize-controls' ).on( 'click keydown', function( e ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				var isAddNewBtn = $( e.target ).is( '.add-new-widget, .add-new-widget *' );
 				if ( $( 'body' ).hasClass( 'adding-widget' ) && ! isAddNewBtn ) {
 					self.close();
@@ -250,7 +254,11 @@
 
 		// Adds a selected widget to the sidebar
 		submit: function( widgetTpl ) {
+<<<<<<< HEAD
 			var widgetId, widget, widgetFormControl;
+=======
+			var widgetId, widget;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			if ( ! widgetTpl ) {
 				widgetTpl = this.selected;
@@ -268,10 +276,14 @@
 				return;
 			}
 
+<<<<<<< HEAD
 			widgetFormControl = this.currentSidebarControl.addWidget( widget.get( 'id_base' ) );
 			if ( widgetFormControl ) {
 				widgetFormControl.focus();
 			}
+=======
+			this.currentSidebarControl.addWidget( widget.get( 'id_base' ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			this.close();
 		},
@@ -294,9 +306,13 @@
 			// Reset search
 			this.collection.doSearch( '' );
 
+<<<<<<< HEAD
 			if ( ! api.settings.browser.mobile ) {
 				this.$search.focus();
 			}
+=======
+			this.$search.focus();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		},
 
 		// Closes the panel
@@ -626,8 +642,12 @@
 			 * Update available sidebars when their rendered state changes
 			 */
 			updateAvailableSidebars = function() {
+<<<<<<< HEAD
 				var $sidebarItems = $moveWidgetArea.find( 'li' ), selfSidebarItem,
 					renderedSidebarCount = 0;
+=======
+				var $sidebarItems = $moveWidgetArea.find( 'li' ), selfSidebarItem;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 				selfSidebarItem = $sidebarItems.filter( function(){
 					return $( this ).data( 'id' ) === self.params.sidebar_id;
@@ -635,6 +655,7 @@
 
 				$sidebarItems.each( function() {
 					var li = $( this ),
+<<<<<<< HEAD
 						sidebarId, sidebar, sidebarIsRendered;
 
 					sidebarId = li.data( 'id' );
@@ -657,6 +678,20 @@
 				} else {
 					self.container.find( '.move-widget' ).hide();
 				}
+=======
+						sidebarId,
+						sidebar;
+
+					sidebarId = li.data( 'id' );
+					sidebar = api.Widgets.registeredSidebars.get( sidebarId );
+
+					li.toggle( sidebar.get( 'is_rendered' ) );
+
+					if ( li.hasClass( 'selected' ) && ! sidebar.get( 'is_rendered' ) ) {
+						selectSidebarItem( selfSidebarItem );
+					}
+				} );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			};
 
 			updateAvailableSidebars();
@@ -687,10 +722,17 @@
 
 					if ( isMoveUp ) {
 						self.moveUp();
+<<<<<<< HEAD
 						wp.a11y.speak( l10n.widgetMovedUp );
 					} else {
 						self.moveDown();
 						wp.a11y.speak( l10n.widgetMovedDown );
+=======
+						$( '#screen-reader-messages' ).text( l10n.widgetMovedUp );
+					} else {
+						self.moveDown();
+						$( '#screen-reader-messages' ).text( l10n.widgetMovedDown );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 					}
 
 					$( this ).focus(); // re-focus after the container was moved
@@ -700,11 +742,19 @@
 			/**
 			 * Handle selecting a sidebar to move to
 			 */
+<<<<<<< HEAD
 			this.container.find( '.widget-area-select' ).on( 'click keypress', 'li', function( event ) {
 				if ( event.type === 'keypress' && ( event.which !== 13 && event.which !== 32 ) ) {
 					return;
 				}
 				event.preventDefault();
+=======
+			this.container.find( '.widget-area-select' ).on( 'click keypress', 'li', function( e ) {
+				if ( event.type === 'keypress' && ( event.which !== 13 && event.which !== 32 ) ) {
+					return;
+				}
+				e.preventDefault();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				selectSidebarItem( $( this ) );
 			} );
 
@@ -929,6 +979,7 @@
 		},
 
 		/**
+<<<<<<< HEAD
 		 * Get the state for an input depending on its type.
 		 *
 		 * @param {jQuery|Element} input
@@ -973,6 +1024,21 @@
 				} );
 			} else {
 				input.val( state );
+=======
+		 * Get the property that represents the state of an input.
+		 *
+		 * @param {jQuery|DOMElement} input
+		 * @returns {string}
+		 * @private
+		 */
+		_getInputStatePropertyName: function( input ) {
+			var $input = $( input );
+
+			if ( $input.is( ':radio, :checkbox' ) ) {
+				return 'checked';
+			} else {
+				return 'value';
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			}
 		},
 
@@ -1049,7 +1115,13 @@
 			// we know if it got sanitized; if there is no difference in the sanitized value,
 			// then we do not need to touch the UI and mess up the user's ongoing editing.
 			$inputs.each( function() {
+<<<<<<< HEAD
 				$( this ).data( 'state' + updateNumber, self._getInputState( this ) );
+=======
+				var input = $( this ),
+					property = self._getInputStatePropertyName( this );
+				input.data( 'state' + updateNumber, input.prop( property ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			} );
 
 			if ( instanceOverride ) {
@@ -1059,11 +1131,15 @@
 			}
 			data += '&' + $widgetContent.find( '~ :input' ).serialize();
 
+<<<<<<< HEAD
 			if ( this._previousUpdateRequest ) {
 				this._previousUpdateRequest.abort();
 			}
 			jqxhr = $.post( wp.ajax.settings.url, data );
 			this._previousUpdateRequest = jqxhr;
+=======
+			jqxhr = $.post( wp.ajax.settings.url, data );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			jqxhr.done( function( r ) {
 				var message, sanitizedForm,	$sanitizedInputs, hasSameInputsInResponse,
@@ -1102,6 +1178,7 @@
 						$inputs.each( function( i ) {
 							var $input = $( this ),
 								$sanitizedInput = $( $sanitizedInputs[i] ),
+<<<<<<< HEAD
 								submittedState, sanitizedState,	canUpdateState;
 
 							submittedState = $input.data( 'state' + updateNumber );
@@ -1111,6 +1188,18 @@
 							canUpdateState = ( ! _.isEqual( submittedState, sanitizedState ) && ( args.ignoreActiveElement || ! $input.is( document.activeElement ) ) );
 							if ( canUpdateState ) {
 								self._setInputState( $input, sanitizedState );
+=======
+								property = self._getInputStatePropertyName( this ),
+								submittedState, sanitizedState,	canUpdateState;
+
+							submittedState = $input.data( 'state' + updateNumber );
+							sanitizedState = $sanitizedInput.prop( property );
+							$input.data( 'sanitized', sanitizedState );
+
+							canUpdateState = ( submittedState !== sanitizedState && ( args.ignoreActiveElement || ! $input.is( document.activeElement ) )	);
+							if ( canUpdateState ) {
+								$input.prop( property, sanitizedState );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 							}
 						} );
 
@@ -1686,10 +1775,14 @@
 			});
 
 			if ( ! widgetControls.length ) {
+<<<<<<< HEAD
 				this.container.find( '.reorder-toggle' ).hide();
 				return;
 			} else {
 				this.container.find( '.reorder-toggle' ).show();
+=======
+				return;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			}
 
 			$( widgetControls ).each( function () {
@@ -1743,6 +1836,7 @@
 		},
 
 		/**
+<<<<<<< HEAD
 		 * Get the widget_form Customize controls associated with the current sidebar.
 		 *
 		 * @since 3.9
@@ -1757,6 +1851,22 @@
 				if ( formControl ) {
 					formControls.push( formControl );
 				}
+=======
+		 * @return {wp.customize.controlConstructor.widget_form[]}
+		 */
+		getWidgetFormControls: function() {
+			var formControls;
+
+			formControls = _( this.setting() ).map( function( widgetId ) {
+				var settingId = widgetIdToSettingId( widgetId ),
+					formControl = api.control( settingId );
+
+				if ( ! formControl ) {
+					return;
+				}
+
+				return formControl;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			} );
 
 			return formControls;
@@ -1881,9 +1991,24 @@
 
 			controlContainer.slideDown( function() {
 				if ( isExistingWidget ) {
+<<<<<<< HEAD
 					widgetFormControl.updateWidget( {
 						instance: widgetFormControl.setting()
 					} );
+=======
+					widgetFormControl.expand();
+					widgetFormControl.updateWidget( {
+						instance: widgetFormControl.setting(),
+						complete: function( error ) {
+							if ( error ) {
+								throw error;
+							}
+							widgetFormControl.focus();
+						}
+					} );
+				} else {
+					widgetFormControl.focus();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				}
 			} );
 
@@ -1900,11 +2025,14 @@
 		sidebar_widgets: api.Widgets.SidebarControl
 	});
 
+<<<<<<< HEAD
 	// Refresh the nonce if login sends updated nonces over.
 	api.bind( 'nonce-refresh', function( nonces ) {
 		api.Widgets.data.nonce = nonces['update-widget'];
 	});
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	/**
 	 * Init Customizer for widgets.
 	 */

@@ -7,6 +7,7 @@
  */
 ( function( $ ) {
 	var body    = $( 'body' ),
+<<<<<<< HEAD
 		_window = $( window ),
 		nav, button, menu;
 
@@ -17,15 +18,33 @@
 	// Enable menu toggle for small screens.
 	( function() {
 		if ( ! nav || ! button ) {
+=======
+		_window = $( window );
+
+	// Enable menu toggle for small screens.
+	( function() {
+		var nav = $( '#primary-navigation' ), button, menu;
+		if ( ! nav ) {
+			return;
+		}
+
+		button = nav.find( '.menu-toggle' );
+		if ( ! button ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			return;
 		}
 
 		// Hide button if menu is missing or empty.
+<<<<<<< HEAD
+=======
+		menu = nav.find( '.nav-menu' );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		if ( ! menu || ! menu.children().length ) {
 			button.hide();
 			return;
 		}
 
+<<<<<<< HEAD
 		button.on( 'click.twentyfourteen', function() {
 			nav.toggleClass( 'toggled-on' );
 			if ( nav.hasClass( 'toggled-on' ) ) {
@@ -35,6 +54,10 @@
 				$( this ).attr( 'aria-expanded', 'false' );
 				menu.attr( 'aria-expanded', 'false' );
 			}
+=======
+		$( '.menu-toggle' ).on( 'click.twentyfourteen', function() {
+			nav.toggleClass( 'toggled-on' );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		} );
 	} )();
 
@@ -69,18 +92,25 @@
 		// Search toggle.
 		$( '.search-toggle' ).on( 'click.twentyfourteen', function( event ) {
 			var that    = $( this ),
+<<<<<<< HEAD
 				wrapper = $( '#search-container' ),
 				container = that.find( 'a' );
+=======
+				wrapper = $( '.search-box-wrapper' );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			that.toggleClass( 'active' );
 			wrapper.toggleClass( 'hide' );
 
+<<<<<<< HEAD
 			if ( that.hasClass( 'active' ) ) {
 				container.attr( 'aria-expanded', 'true' );
 			} else {
 				container.attr( 'aria-expanded', 'false' );
 			}
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			if ( that.is( '.active' ) || $( '.search-toggle .screen-reader-text' )[0] === event.target ) {
 				wrapper.find( '.search-field' ).focus();
 			}
@@ -121,6 +151,7 @@
 		} );
 	} );
 
+<<<<<<< HEAD
 	/**
 	 * @summary Add or remove ARIA attributes.
 	 * Uses jQuery's width() function to determine the size of the window and add
@@ -145,6 +176,8 @@
 			onResizeARIA();
 	} );
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	_window.load( function() {
 		// Arrange footer widgets vertically.
 		if ( $.isFunction( $.fn.masonry ) ) {

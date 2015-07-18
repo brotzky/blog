@@ -36,7 +36,11 @@ tinymce.PluginManager.add('tabfocus', function(editor) {
 			}
 
 			function canSelect(el) {
+<<<<<<< HEAD
 				return /INPUT|TEXTAREA|BUTTON/.test(el.tagName) && tinymce.get(e.id) && el.tabIndex != -1 && canSelectRecursive(el);
+=======
+				return /INPUT|TEXTAREA|BUTTON/.test(el.tagName) && tinymce.get(e.id)  && el.tabIndex != -1 && canSelectRecursive(el);
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			}
 
 			each(el, function(e, i) {

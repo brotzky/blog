@@ -11,7 +11,11 @@
  * {@link http://us2.php.net/manual/en/language.pseudo-types.php#language.types.callback 'callback'}
  * type are valid.
  *
+<<<<<<< HEAD
  * Also see the {@link https://codex.wordpress.org/Plugin_API Plugin API} for
+=======
+ * Also see the {@link http://codex.wordpress.org/Plugin_API Plugin API} for
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * more information and examples on how to use a lot of these functions.
  *
  * @package WordPress
@@ -325,10 +329,17 @@ function remove_all_filters( $tag, $priority = false ) {
 	global $wp_filter, $merged_filters;
 
 	if ( isset( $wp_filter[ $tag ]) ) {
+<<<<<<< HEAD
 		if ( false === $priority ) {
 			$wp_filter[ $tag ] = array();
 		} elseif ( isset( $wp_filter[ $tag ][ $priority ] ) ) {
 			$wp_filter[ $tag ][ $priority ] = array();
+=======
+		if ( false !== $priority && isset( $wp_filter[ $tag ][ $priority ] ) ) {
+			$wp_filter[ $tag ][ $priority ] = array();
+		} else {
+			$wp_filter[ $tag ] = array();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 	}
 
@@ -479,7 +490,11 @@ function do_action($tag, $arg = '') {
 		$args[] =& $arg[0];
 	else
 		$args[] = $arg;
+<<<<<<< HEAD
 	for ( $a = 2, $num = func_num_args(); $a < $num; $a++ )
+=======
+	for ( $a = 2; $a < func_num_args(); $a++ )
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$args[] = func_get_arg($a);
 
 	// Sort
@@ -839,7 +854,11 @@ function _wp_call_all_hook($args) {
  * Build Unique ID for storage and retrieval.
  *
  * The old way to serialize the callback caused issues and this function is the
+<<<<<<< HEAD
  * solution. It works by checking for objects and creating a new property in
+=======
+ * solution. It works by checking for objects and creating an a new property in
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * the class to keep track of the object and new objects of the same class that
  * need to be added.
  *
@@ -900,7 +919,11 @@ function _wp_filter_build_unique_id($tag, $function, $priority) {
 
 			return $obj_idx;
 		}
+<<<<<<< HEAD
 	} elseif ( is_string( $function[0] ) ) {
+=======
+	} else if ( is_string($function[0]) ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		// Static Calling
 		return $function[0] . '::' . $function[1];
 	}

@@ -13,7 +13,11 @@
 tinymce.PluginManager.add('charmap', function(editor) {
 	var charmap = [
 		['160', 'no-break space'],
+<<<<<<< HEAD
 		['173', 'soft hyphen'],
+=======
+		['38', 'ampersand'],
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		['34', 'quotation mark'],
 	// finance
 		['162', 'cent sign'],
@@ -225,9 +229,15 @@ tinymce.PluginManager.add('charmap', function(editor) {
 		['969', 'omega'],
 	// symbols
 		['8501', 'alef symbol'],
+<<<<<<< HEAD
 		['982', 'pi symbol'],
 		['8476', 'real part symbol'],
 		['978', 'upsilon - hook symbol'],
+=======
+		['982',  'pi symbol'],
+		['8476', 'real part symbol'],
+		['978',  'upsilon - hook symbol'],
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		['8472', 'Weierstrass p'],
 		['8465', 'imaginary part'],
 	// arrows
@@ -269,7 +279,12 @@ tinymce.PluginManager.add('charmap', function(editor) {
 		['8204', 'zero width non-joiner'],
 		['8205', 'zero width joiner'],
 		['8206', 'left-to-right mark'],
+<<<<<<< HEAD
 		['8207', 'right-to-left mark']
+=======
+		['8207', 'right-to-left mark'],
+		['173',  'soft hyphen']
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	];
 
 	function showDialog() {
@@ -288,6 +303,7 @@ tinymce.PluginManager.add('charmap', function(editor) {
 		gridHtml = '<table role="presentation" cellspacing="0" class="mce-charmap"><tbody>';
 
 		var width = 25;
+<<<<<<< HEAD
 		var height = Math.ceil(charmap.length / width);
 		for (y = 0; y < height; y++) {
 			gridHtml += '<tr>';
@@ -302,6 +318,16 @@ tinymce.PluginManager.add('charmap', function(editor) {
 				} else {
 					gridHtml += '<td />';
 				}
+=======
+		for (y = 0; y < 10; y++) {
+			gridHtml += '<tr>';
+
+			for (x = 0; x < width; x++) {
+				var chr = charmap[y * width + x];
+
+				gridHtml += '<td title="' + chr[1] + '"><div tabindex="-1" title="' + chr[1] + '" role="button">' +
+					(chr ? String.fromCharCode(parseInt(chr[0], 10)) : '&nbsp;') + '</div></td>';
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			}
 
 			gridHtml += '</tr>';
@@ -314,6 +340,7 @@ tinymce.PluginManager.add('charmap', function(editor) {
 			html: gridHtml,
 			onclick: function(e) {
 				var target = e.target;
+<<<<<<< HEAD
 				if (/^(TD|DIV)$/.test(target.nodeName)) {
 					if (getParentTd(target).firstChild) {
 						editor.execCommand('mceInsertContent', false, tinymce.trim(target.innerText || target.textContent));
@@ -321,18 +348,35 @@ tinymce.PluginManager.add('charmap', function(editor) {
 						if (!e.ctrlKey) {
 							win.close();
 						}
+=======
+
+				if (target.tagName == 'TD') {
+					target = target.firstChild;
+				}
+
+				if (target.tagName == 'DIV') {
+					editor.execCommand('mceInsertContent', false, target.firstChild.data);
+
+					if (!e.ctrlKey) {
+						win.close();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 					}
 				}
 			},
 			onmouseover: function(e) {
 				var td = getParentTd(e.target);
 
+<<<<<<< HEAD
 				if (td && td.firstChild) {
 					win.find('#preview').text(td.firstChild.firstChild.data);
 					win.find('#previewTitle').text(td.title);
 				} else {
 					win.find('#preview').text(' ');
 					win.find('#previewTitle').text(' ');
+=======
+				if (td) {
+					win.find('#preview').text(td.firstChild.firstChild.data);
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				}
 			}
 		};
@@ -344,6 +388,7 @@ tinymce.PluginManager.add('charmap', function(editor) {
 			items: [
 				charMapPanel,
 				{
+<<<<<<< HEAD
 					type: 'container',
 					layout: 'flex',
 					direction: 'column',
@@ -371,6 +416,15 @@ tinymce.PluginManager.add('charmap', function(editor) {
 							minHeight: 80
 						}
 					]
+=======
+					type: 'label',
+					name: 'preview',
+					text: ' ',
+					style: 'font-size: 40px; text-align: center',
+					border: 1,
+					minWidth: 100,
+					minHeight: 80
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				}
 			],
 			buttons: [

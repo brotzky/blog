@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* global ajaxurl, attachMediaBoxL10n, _wpMediaGridSettings */
+=======
+/* global ajaxurl, attachMediaBoxL10n */
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 var findPosts;
 ( function( $ ){
@@ -32,7 +36,11 @@ var findPosts;
 		},
 
 		close: function() {
+<<<<<<< HEAD
 			$('#find-posts-response').empty();
+=======
+			$('#find-posts-response').html('');
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$('#find-posts').hide();
 			$( '.ui-find-overlay' ).hide();
 		},
@@ -51,14 +59,22 @@ var findPosts;
 				},
 				spinner = $( '.find-box-search .spinner' );
 
+<<<<<<< HEAD
 			spinner.addClass( 'is-active' );
+=======
+			spinner.show();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			$.ajax( ajaxurl, {
 				type: 'POST',
 				data: post,
 				dataType: 'json'
 			}).always( function() {
+<<<<<<< HEAD
 				spinner.removeClass( 'is-active' );
+=======
+				spinner.hide();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			}).done( function( x ) {
 				if ( ! x.success ) {
 					$( '#find-posts-response' ).text( attachMediaBoxL10n.error );
@@ -72,6 +88,7 @@ var findPosts;
 	};
 
 	$( document ).ready( function() {
+<<<<<<< HEAD
 		var settings, $mediaGridWrap = $( '#wp-media-grid' );
 
 		// Open up a manage media frame into the grid.
@@ -82,6 +99,15 @@ var findPosts;
 				frame: 'manage',
 				container: $mediaGridWrap,
 				library: settings.queryVars
+=======
+		var $mediaGridWrap = $( '#wp-media-grid' );
+
+		// Open up a manage media frame into the grid.
+		if ( $mediaGridWrap.length && window.wp && window.wp.media ) {
+			window.wp.media({
+				frame: 'manage',
+				container: $mediaGridWrap
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			}).open();
 		}
 

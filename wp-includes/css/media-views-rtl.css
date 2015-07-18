@@ -19,7 +19,10 @@
 .media-frame {
 	font-family: "Open Sans", sans-serif;
 	font-size: 12px;
+<<<<<<< HEAD
 	-webkit-overflow-scrolling: touch;
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .media-frame input,
@@ -43,11 +46,19 @@
 }
 
 .media-frame a.button {
+<<<<<<< HEAD
 	color: #32373c;
 }
 
 .media-frame a.button:hover {
 	color: #23282d;
+=======
+	color: #333;
+}
+
+.media-frame a.button:hover {
+	color: #222;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .media-frame a.button-primary,
@@ -106,17 +117,28 @@
 }
 
 /*!
+<<<<<<< HEAD
  * jQuery UI Draggable/Sortable 1.11.4
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
+=======
+ * jQuery UI Draggable/Sortable 1.11.2
+ * http://jqueryui.com
+ *
+ * Copyright 2014 jQuery Foundation and other contributors
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * Released under the MIT license.
  * http://jquery.org/license
  */
 .ui-draggable-handle,
 .ui-sortable-handle {
 	-ms-touch-action: none;
+<<<<<<< HEAD
 	touch-action: none;
+=======
+	touch-action:     none;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
@@ -188,7 +210,11 @@
 }
 
 .media-modal-close:hover .media-modal-icon:before {
+<<<<<<< HEAD
 	color: #00a0d2;
+=======
+	color: #2ea2cc;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .media-modal-close:active {
@@ -232,11 +258,19 @@
 .media-toolbar-primary {
 	float: left;
 	height: 100%;
+<<<<<<< HEAD
+=======
+	max-width: 33%;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .media-toolbar-secondary {
 	float: right;
 	height: 100%;
+<<<<<<< HEAD
+=======
+	max-width: 66%;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .media-toolbar-primary > .media-button,
@@ -448,8 +482,12 @@
 
 .compat-item .field {
 	float: left;
+<<<<<<< HEAD
 	width: 65%;
 	margin: 1px;
+=======
+	width: 66%;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .compat-item .field input[type="text"],
@@ -458,6 +496,7 @@
 .compat-item .field input[type="number"],
 .compat-item .field input[type="search"],
 .compat-item .field input[type="tel"],
+<<<<<<< HEAD
 .compat-item .field input[type="url"],
 .compat-item .field textarea {
 	width: 100%;
@@ -465,6 +504,11 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+=======
+.compat-item .field input[type="url"] {
+	width: 100%;
+	margin: 0;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .sidebar-for-errors .attachment-details,
@@ -502,7 +546,11 @@
 	margin: 0;
 	line-height: 18px;
 	font-size: 14px;
+<<<<<<< HEAD
 	color: #0073aa;
+=======
+	color: #0074a2;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	text-decoration: none;
 }
 
@@ -517,7 +565,11 @@
 
 .media-menu .active,
 .media-menu .active:hover {
+<<<<<<< HEAD
 	color: #23282d;
+=======
+	color: #222;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	font-weight: bold;
 }
 
@@ -568,7 +620,11 @@
 
 .media-router .active,
 .media-router .active:hover {
+<<<<<<< HEAD
 	color: #32373c;
+=======
+	color: #333;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .media-router .active,
@@ -738,6 +794,7 @@
 .media-frame select.attachment-filters {
 	margin-top: 11px;
 	margin-left: 2%;
+<<<<<<< HEAD
 	max-width: 42%;
 	max-width: -webkit-calc(48% - 12px);
 	max-width: calc(48% - 12px);
@@ -745,6 +802,9 @@
 
 .media-frame select.attachment-filters:last-of-type {
 	margin-left: 0;
+=======
+	max-width: 47%;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
@@ -766,7 +826,11 @@
 /**
  * Attachments
  */
+<<<<<<< HEAD
 .wp-core-ui .attachments {
+=======
+.attachments {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	margin: 0;
 	-webkit-overflow-scrolling: touch;
 }
@@ -774,7 +838,11 @@
 /**
  * Attachment
  */
+<<<<<<< HEAD
 .wp-core-ui .attachment {
+=======
+.attachment {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	position: relative;
 	float: right;
 	padding: 8px;
@@ -793,9 +861,15 @@
 	box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 .wp-core-ui .attachment:focus,
 .wp-core-ui .selected.attachment:focus,
 .wp-core-ui .attachment.details:focus {
+=======
+.attachment:focus,
+.selected.attachment:focus,
+.attachment.details:focus {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-box-shadow:
 		inset 0 0 2px 3px #fff,
 		inset 0 0 0 7px #5b9dd9;
@@ -805,7 +879,11 @@
 	outline: none;
 }
 
+<<<<<<< HEAD
 .wp-core-ui .selected.attachment {
+=======
+.selected.attachment {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-box-shadow:
 		inset 0 0 0 5px #fff,
 		inset 0 0 0 7px #ccc;
@@ -814,7 +892,11 @@
 		inset 0 0 0 7px #ccc;
 }
 
+<<<<<<< HEAD
 .wp-core-ui .attachment.details {
+=======
+.attachment.details {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-box-shadow:
 		inset 0 0 0 3px #fff,
 		inset 0 0 0 7px #1e8cbe;
@@ -823,7 +905,11 @@
 		inset 0 0 0 7px #1e8cbe;
 }
 
+<<<<<<< HEAD
 .wp-core-ui .attachment-preview {
+=======
+.attachment-preview {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	position: relative;
 	-webkit-box-shadow:
 		inset 0 0 15px rgba( 0, 0, 0, 0.1 ),
@@ -835,18 +921,30 @@
 	cursor: pointer;
 }
 
+<<<<<<< HEAD
 .wp-core-ui .attachment-preview:before {
+=======
+.attachment-preview:before {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	content: '';
 	display: block;
 	padding-top: 100%;
 }
 
+<<<<<<< HEAD
 .wp-core-ui .attachment .icon {
+=======
+.attachment .icon {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	margin: 0 auto;
 	overflow: hidden;
 }
 
+<<<<<<< HEAD
 .wp-core-ui .attachment .thumbnail {
+=======
+.attachment .thumbnail {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	overflow: hidden;
 	position: absolute;
 	top: 0;
@@ -858,6 +956,7 @@
 	transition: opacity .1s;
 }
 
+<<<<<<< HEAD
 .wp-core-ui .attachment .portrait img {
 	max-width: 100%;
 }
@@ -867,6 +966,17 @@
 }
 
 .wp-core-ui .attachment .thumbnail:after {
+=======
+.attachment .portrait img {
+	max-width: 100%;
+}
+
+.attachment .landscape img {
+	max-height: 100%;
+}
+
+.attachment .thumbnail:after {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	content: '';
 	display: block;
 	position: absolute;
@@ -879,6 +989,7 @@
 	overflow: hidden;
 }
 
+<<<<<<< HEAD
 .wp-core-ui .attachment .thumbnail img {
 	top: 0;
 	right: 0;
@@ -908,11 +1019,48 @@
 }
 
 .ie8 .wp-core-ui .attachment img.icon {
+=======
+/* @noflip */
+.attachment .thumbnail img {
+	top: 0;
+	left: 0;
+}
+
+/* @noflip */
+.attachment .thumbnail .centered {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-transform: translate( 50%, 50% );
+	-ms-transform: translate(50%,50%); /* Fails with spaces?? Weird! */
+	transform: translate( 50%, 50% );
+}
+
+.attachment .thumbnail .centered img {
+	-webkit-transform: translate( -50%, -50% );
+	-ms-transform: translate(-50%,-50%);
+	transform: translate( -50%, -50% );
+}
+
+.attachment .thumbnail .centered img.icon {
+	-webkit-transform: translate( -50%, -70% );
+	-ms-transform: translate(-50%,-70%);
+	transform: translate( -50%, -70% );
+}
+
+.ie8 .attachment img.icon {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	top: 20%;
 	position: relative;
 }
 
+<<<<<<< HEAD
 .wp-core-ui .attachment .filename {
+=======
+.attachment .filename {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	position: absolute;
 	right: 0;
 	left: 0;
@@ -927,6 +1075,7 @@
 	box-shadow: inset 0 0 0 1px rgba( 0, 0, 0, 0.15 );
 }
 
+<<<<<<< HEAD
 .wp-core-ui .attachment .filename div {
 	padding: 5px 10px;
 }
@@ -936,6 +1085,17 @@
 }
 
 .wp-core-ui .attachment .close {
+=======
+.attachment .filename div {
+	padding: 5px 10px;
+}
+
+.attachment .thumbnail img {
+	position: absolute;
+}
+
+.attachment .close {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	display: block;
 	position: absolute;
 	top: 5px;
@@ -961,15 +1121,24 @@
 	transition-property: none;
 }
 
+<<<<<<< HEAD
 .wp-core-ui .attachment a.close:hover,
 .wp-core-ui .attachment a.close:focus {
+=======
+.attachment a.close:hover,
+.attachment a.close:focus {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-box-shadow: 0 0 0 1px rgba( 0, 0, 0, 0.6 );
 	box-shadow: 0 0 0 1px rgba( 0, 0, 0, 0.6 );
 	background-position: -36px 4px;
 
 }
 
+<<<<<<< HEAD
 .wp-core-ui .attachment .check {
+=======
+.attachment .check {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	display: none;
 	height: 24px;
 	width: 24px;
@@ -983,13 +1152,18 @@
 	box-shadow: 0 0 0 1px #fff, 0 0 0 2px rgba( 0, 0, 0, 0.15 );
 }
 
+<<<<<<< HEAD
 .wp-core-ui .attachment .check div {
+=======
+.attachment .check div {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	background-position: -1px 0;
 	height: 15px;
 	width: 15px;
 	margin: 5px;
 }
 
+<<<<<<< HEAD
 .wp-core-ui .attachment .check:hover div {
 	background-position: -40px 0;
 }
@@ -1001,6 +1175,19 @@
 .wp-core-ui .attachment.details .check,
 .wp-core-ui .attachment.selected .check:focus,
 .wp-core-ui .media-frame.mode-grid .attachment.selected .check {
+=======
+.attachment .check:hover div {
+	background-position: -40px 0;
+}
+
+.attachment.selected .check {
+	display: block;
+}
+
+.attachment.details .check,
+.attachment.selected .check:focus,
+.media-frame.mode-grid .attachment.selected .check {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	background-color: #1e8cbe;
 	-webkit-box-shadow:
 		0 0 0 1px #fff,
@@ -1010,6 +1197,7 @@
 		0 0 0 2px #1e8cbe;
 }
 
+<<<<<<< HEAD
 .wp-core-ui .attachment.details .check div,
 .wp-core-ui .media-frame.mode-grid .attachment.selected .check div {
 	background-position: -21px 0;
@@ -1022,6 +1210,20 @@
 }
 
 .wp-core-ui .media-frame .attachment .describe {
+=======
+.attachment.details .check div,
+.media-frame.mode-grid .attachment.selected .check div {
+	background-position: -21px 0;
+}
+
+.attachment.details .check:hover div,
+.attachment.selected .check:focus div,
+.media-frame.mode-grid .attachment.selected .check:hover div {
+	background-position: -60px 0;
+}
+
+.media-frame .attachment .describe {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	position: relative;
 	display: block;
 	width: 100%;
@@ -1077,6 +1279,7 @@
 	display: none;
 }
 
+<<<<<<< HEAD
 .attachments-browser .media-toolbar-primary {
 	max-width: 33%;
 }
@@ -1085,6 +1288,8 @@
 	max-width: 66%;
 }
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .uploader-inline .close {
 	background-color: transparent;
 	border: 0;
@@ -1453,6 +1658,11 @@
 	width: 40px;
 	padding: 0;
 	margin: 4px;
+<<<<<<< HEAD
+=======
+	-webkit-box-shadow: none;
+	box-shadow: none;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .media-selection .attachment .thumbnail {
@@ -1472,6 +1682,7 @@
 	background: none;
 }
 
+<<<<<<< HEAD
 .wp-core-ui .media-selection .attachment:focus,
 .wp-core-ui .media-selection .selected.attachment:focus,
 .wp-core-ui .media-selection .attachment.details:focus {
@@ -1489,6 +1700,9 @@
 }
 
 .wp-core-ui .media-selection .attachment.details {
+=======
+.media-selection .attachment.selection.details .thumbnail {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-box-shadow:
 		0 0 0 1px #fff,
 		0 0 0 3px #1e8cbe;
@@ -1521,19 +1735,26 @@
 	background: url(../images/spinner.gif) no-repeat;
 	-webkit-background-size: 20px 20px;
 	background-size: 20px 20px;
+<<<<<<< HEAD
 	float: left;
 	display: inline-block;
 	visibility: hidden;
+=======
+	display: none;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	opacity: 0.7;
 	filter: alpha(opacity=70);
 	width: 20px;
 	height: 20px;
 	margin: 0;
+<<<<<<< HEAD
 	vertical-align: middle;
 }
 
 .media-frame .spinner.is-active {
 	visibility: visible;
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .media-toolbar .spinner {
@@ -1555,7 +1776,11 @@
 }
 
 .attachment-details .settings-save-status .spinner {
+<<<<<<< HEAD
 	margin-right: 5px;
+=======
+	margin: 0 5px 0;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .attachment-details .settings-save-status .saved {
@@ -1563,10 +1788,14 @@
 	display: none;
 }
 
+<<<<<<< HEAD
 .attachment-details.save-waiting .settings-save-status .spinner {
 	visibility: visible;
 }
 
+=======
+.attachment-details.save-waiting .settings-save-status .spinner,
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .attachment-details.save-complete .settings-save-status .saved {
 	display: block;
 }
@@ -1798,8 +2027,13 @@
 	padding: 12px 14px;
 	width: 100%;
 	min-width: 200px;
+<<<<<<< HEAD
 	-webkit-box-shadow: inset -2px 2px 4px -2px rgba( 0, 0, 0, 0.1 );
 	box-shadow: inset -2px 2px 4px -2px rgba( 0, 0, 0, 0.1 );
+=======
+	-webkit-box-shadow: inset 2px 2px 4px -2px rgba( 0, 0, 0, 0.1 );
+	box-shadow: inset 2px 2px 4px -2px rgba( 0, 0, 0, 0.1 );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .media-frame .embed-url .spinner {
@@ -1809,7 +2043,11 @@
 }
 
 .media-frame .embed-loading .embed-url .spinner {
+<<<<<<< HEAD
 	visibility: visible;
+=======
+	display: block;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .embed-link-settings,
@@ -1823,6 +2061,7 @@
 	overflow: auto;
 }
 
+<<<<<<< HEAD
 .embed-preview img,
 .embed-preview iframe,
 .embed-preview embed {
@@ -1835,6 +2074,13 @@
 
 .embed-preview img {
 	display: block;
+=======
+.embed-preview img, .embed-preview iframe, .embed-preview embed {
+	max-width: 100%;
+}
+
+.embed-preview img {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	height: auto;
 }
 
@@ -2401,7 +2647,11 @@
 	}
 
 	.media-modal .attachments-browser .media-toolbar .spinner {
+<<<<<<< HEAD
 		margin: 14px 2px 0;
+=======
+		margin: 14px 8px 0;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/* Text inputs need to be 16px, or they force zooming on iOS */
@@ -2538,6 +2788,10 @@
  * HiDPI Displays
  */
 @media print,
+<<<<<<< HEAD
+=======
+  (-o-min-device-pixel-ratio: 5/4),
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
   (-webkit-min-device-pixel-ratio: 1.25),
   (min-resolution: 120dpi) {
 

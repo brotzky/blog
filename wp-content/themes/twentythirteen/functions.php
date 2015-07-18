@@ -6,8 +6,13 @@
  * theme as custom template tags. Others are attached to action and filter
  * hooks in WordPress to change core functionality.
  *
+<<<<<<< HEAD
  * When using a child theme (see https://codex.wordpress.org/Theme_Development
  * and https://codex.wordpress.org/Child_Themes), you can override certain
+=======
+ * When using a child theme (see http://codex.wordpress.org/Theme_Development
+ * and http://codex.wordpress.org/Child_Themes), you can override certain
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * functions (those wrapped in a function_exists() call) by defining them first
  * in your child theme's functions.php file. The child theme's functions.php
  * file is included before the parent theme's file, so the child theme
@@ -16,7 +21,11 @@
  * Functions that are not pluggable (not wrapped in function_exists()) are
  * instead attached to a filter or action hook.
  *
+<<<<<<< HEAD
  * For more information on hooks, actions, and filters, @link https://codex.wordpress.org/Plugin_API
+=======
+ * For more information on hooks, actions, and filters, @link http://codex.wordpress.org/Plugin_API
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @package WordPress
  * @subpackage Twenty_Thirteen
@@ -87,7 +96,11 @@ function twentythirteen_setup() {
 
 	/*
 	 * This theme supports all available post formats by default.
+<<<<<<< HEAD
 	 * See https://codex.wordpress.org/Post_Formats
+=======
+	 * See http://codex.wordpress.org/Post_Formats
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video'
@@ -146,7 +159,11 @@ function twentythirteen_fonts_url() {
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
+<<<<<<< HEAD
 		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+=======
+		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	return $fonts_url;
@@ -170,7 +187,11 @@ function twentythirteen_scripts_styles() {
 		wp_enqueue_script( 'jquery-masonry' );
 
 	// Loads JavaScript file with functionality specific to Twenty Thirteen.
+<<<<<<< HEAD
 	wp_enqueue_script( 'twentythirteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150330', true );
+=======
+	wp_enqueue_script( 'twentythirteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2014-06-08', true );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	// Add Source Sans Pro and Bitter fonts, used in the main stylesheet.
 	wp_enqueue_style( 'twentythirteen-fonts', twentythirteen_fonts_url(), array(), null );
@@ -319,7 +340,11 @@ if ( ! function_exists( 'twentythirteen_entry_meta' ) ) :
  */
 function twentythirteen_entry_meta() {
 	if ( is_sticky() && is_home() && ! is_paged() )
+<<<<<<< HEAD
 		echo '<span class="featured-post">' . esc_html__( 'Sticky', 'twentythirteen' ) . '</span>';
+=======
+		echo '<span class="featured-post">' . __( 'Sticky', 'twentythirteen' ) . '</span>';
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	if ( ! has_post_format( 'link' ) && 'post' == get_post_type() )
 		twentythirteen_entry_date();
@@ -413,7 +438,11 @@ function twentythirteen_the_attached_image() {
 		'post_type'      => 'attachment',
 		'post_mime_type' => 'image',
 		'order'          => 'ASC',
+<<<<<<< HEAD
 		'orderby'        => 'menu_order ID',
+=======
+		'orderby'        => 'menu_order ID'
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	) );
 
 	// If there is more than 1 attachment in a gallery...
@@ -431,7 +460,11 @@ function twentythirteen_the_attached_image() {
 
 		// or get the URL of the first image attachment.
 		else
+<<<<<<< HEAD
 			$next_attachment_url = get_attachment_link( reset( $attachment_ids ) );
+=======
+			$next_attachment_url = get_attachment_link( array_shift( $attachment_ids ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	printf( '<a href="%1$s" title="%2$s" rel="attachment">%3$s</a>',

@@ -9,6 +9,7 @@ div#media-upload-header {
 	background: #f9f9f9;
 }
 
+<<<<<<< HEAD
 #sidemenu {
 	overflow: hidden;
 	float: none;
@@ -53,6 +54,15 @@ div#media-upload-header {
 	border-bottom-color: #f1f1f1;
 	background-color: #f1f1f1;
 	color: #000;
+=======
+body#media-upload ul#sidemenu {
+	font-weight: normal;
+	margin: 0 5px;
+	left: 0;
+	bottom: -1px;
+	float: none;
+	overflow: hidden;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 #media-upload:after { /* clearfix */
@@ -229,7 +239,11 @@ abbr.required {
 
 .ui-sortable-helper {
 	background-color: #fff;
+<<<<<<< HEAD
 	border: 1px solid #a0a5aa;
+=======
+	border: 1px solid #aaa;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	opacity: 0.6;
 	filter: alpha(opacity=60);
 }
@@ -378,6 +392,10 @@ table.not-image tr.image-only {
  * HiDPI Displays
  */
 @media print,
+<<<<<<< HEAD
+=======
+  (-o-min-device-pixel-ratio: 5/4),
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
   (-webkit-min-device-pixel-ratio: 1.25),
   (min-resolution: 120dpi) {
 

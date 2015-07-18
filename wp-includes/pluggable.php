@@ -260,7 +260,11 @@ function wp_mail( $to, $subject, $message, $headers = '', $attachments = array()
 	global $phpmailer;
 
 	// (Re)create it, if it's gone missing
+<<<<<<< HEAD
 	if ( ! ( $phpmailer instanceof PHPMailer ) ) {
+=======
+	if ( !is_object( $phpmailer ) || !is_a( $phpmailer, 'PHPMailer' ) ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		require_once ABSPATH . WPINC . '/class-phpmailer.php';
 		require_once ABSPATH . WPINC . '/class-smtp.php';
 		$phpmailer = new PHPMailer( true );
@@ -302,6 +306,7 @@ function wp_mail( $to, $subject, $message, $headers = '', $attachments = array()
 				switch ( strtolower( $name ) ) {
 					// Mainly for legacy -- process a From: header if it's there
 					case 'from':
+<<<<<<< HEAD
 						$bracket_pos = strpos( $content, '<' );
 						if ( $bracket_pos !== false ) {
 							// Text before the bracketed email is the "From" name.
@@ -317,11 +322,24 @@ function wp_mail( $to, $subject, $message, $headers = '', $attachments = array()
 
 						// Avoid setting an empty $from_email.
 						} elseif ( '' !== trim( $content ) ) {
+=======
+						if ( strpos($content, '<' ) !== false ) {
+							// So... making my life hard again?
+							$from_name = substr( $content, 0, strpos( $content, '<' ) - 1 );
+							$from_name = str_replace( '"', '', $from_name );
+							$from_name = trim( $from_name );
+
+							$from_email = substr( $content, strpos( $content, '<' ) + 1 );
+							$from_email = str_replace( '>', '', $from_email );
+							$from_email = trim( $from_email );
+						} else {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 							$from_email = trim( $content );
 						}
 						break;
 					case 'content-type':
 						if ( strpos( $content, ';' ) !== false ) {
+<<<<<<< HEAD
 							list( $type, $charset_content ) = explode( ';', $content );
 							$content_type = trim( $type );
 							if ( false !== stripos( $charset_content, 'charset=' ) ) {
@@ -333,6 +351,17 @@ function wp_mail( $to, $subject, $message, $headers = '', $attachments = array()
 
 						// Avoid setting an empty $content_type.
 						} elseif ( '' !== trim( $content ) ) {
+=======
+							list( $type, $charset ) = explode( ';', $content );
+							$content_type = trim( $type );
+							if ( false !== stripos( $charset, 'charset=' ) ) {
+								$charset = trim( str_replace( array( 'charset=', '"' ), '', $charset ) );
+							} elseif ( false !== stripos( $charset, 'boundary=' ) ) {
+								$boundary = trim( str_replace( array( 'BOUNDARY=', 'boundary=', '"' ), '', $charset ) );
+								$charset = '';
+							}
+						} else {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 							$content_type = trim( $content );
 						}
 						break;
@@ -1071,6 +1100,7 @@ if ( !function_exists('check_admin_referer') ) :
  *
  * @since 1.2.0
  *
+<<<<<<< HEAD
  * @param int|string $action    Action nonce.
  * @param string     $query_arg Optional. Key to check for nonce in `$_REQUEST` (since 2.5).
  *                              Default '_wpnonce'.
@@ -1078,6 +1108,12 @@ if ( !function_exists('check_admin_referer') ) :
  *                   0-12 hours ago, 2 if the nonce is valid and generated between 12-24 hours ago.
  */
 function check_admin_referer( $action = -1, $query_arg = '_wpnonce' ) {
+=======
+ * @param int|string $action    Action nonce
+ * @param string     $query_arg Where to look for nonce in $_REQUEST (since 2.5)
+ */
+function check_admin_referer($action = -1, $query_arg = '_wpnonce') {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	if ( -1 == $action )
 		_doing_it_wrong( __FUNCTION__, __( 'You should specify a nonce action to be verified by using the first parameter.' ), '3.2' );
 
@@ -1094,9 +1130,14 @@ function check_admin_referer( $action = -1, $query_arg = '_wpnonce' ) {
 	 *
 	 * @since 1.5.1
 	 *
+<<<<<<< HEAD
 	 * @param string    $action The nonce action.
 	 * @param false|int $result False if the nonce is invalid, 1 if the nonce is valid and generated between
 	 *                          0-12 hours ago, 2 if the nonce is valid and generated between 12-24 hours ago.
+=======
+	 * @param string $action The nonce action.
+	 * @param bool   $result Whether the admin request nonce was validated.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 */
 	do_action( 'check_admin_referer', $action, $result );
 	return $result;
@@ -1109,6 +1150,7 @@ if ( !function_exists('check_ajax_referer') ) :
  *
  * @since 2.0.3
  *
+<<<<<<< HEAD
  * @param int|string   $action    Action nonce.
  * @param false|string $query_arg Optional. Key to check for the nonce in `$_REQUEST` (since 2.5). If false,
  *                                `$_REQUEST` values will be evaluated for '_ajax_nonce', and '_wpnonce'
@@ -1117,6 +1159,10 @@ if ( !function_exists('check_ajax_referer') ) :
  *                                Default true.
  * @return false|int False if the nonce is invalid, 1 if the nonce is valid and generated between
  *                   0-12 hours ago, 2 if the nonce is valid and generated between 12-24 hours ago.
+=======
+ * @param int|string $action    Action nonce
+ * @param string     $query_arg Where to look for nonce in $_REQUEST (since 2.5)
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function check_ajax_referer( $action = -1, $query_arg = false, $die = true ) {
 	$nonce = '';
@@ -1142,9 +1188,14 @@ function check_ajax_referer( $action = -1, $query_arg = false, $die = true ) {
 	 *
 	 * @since 2.1.0
 	 *
+<<<<<<< HEAD
 	 * @param string    $action The AJAX nonce action.
 	 * @param false|int $result False if the nonce is invalid, 1 if the nonce is valid and generated between
 	 *                          0-12 hours ago, 2 if the nonce is valid and generated between 12-24 hours ago.
+=======
+	 * @param string $action The AJAX nonce action.
+	 * @param bool   $result Whether the AJAX request nonce was validated.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 */
 	do_action( 'check_ajax_referer', $action, $result );
 
@@ -1190,7 +1241,11 @@ function wp_redirect($location, $status = 302) {
 
 	$location = wp_sanitize_redirect($location);
 
+<<<<<<< HEAD
 	if ( !$is_IIS && PHP_SAPI != 'cgi-fcgi' )
+=======
+	if ( !$is_IIS && php_sapi_name() != 'cgi-fcgi' )
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		status_header($status); // This causes problems on IIS and some FastCGI setups
 
 	header("Location: $location", true, $status);
@@ -1208,6 +1263,7 @@ if ( !function_exists('wp_sanitize_redirect') ) :
  * @return string redirect-sanitized URL
  **/
 function wp_sanitize_redirect($location) {
+<<<<<<< HEAD
 	$regex = '/
 		(
 			(?: [\xC2-\xDF][\x80-\xBF]        # double-byte sequences   110xxxxx 10xxxxxx
@@ -1221,6 +1277,8 @@ function wp_sanitize_redirect($location) {
 		){1,40}                              # ...one or more times
 		)/x';
 	$location = preg_replace_callback( $regex, '_wp_sanitize_utf8_in_redirect', $location );
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$location = preg_replace('|[^a-z0-9-~+_.?#=&;,/:%!*\[\]()]|i', '', $location);
 	$location = wp_kses_no_null($location);
 
@@ -1229,6 +1287,7 @@ function wp_sanitize_redirect($location) {
 	$location = _deep_replace($strip, $location);
 	return $location;
 }
+<<<<<<< HEAD
 
 /**
  * URL encode UTF-8 characters in a URL.
@@ -1242,6 +1301,8 @@ function wp_sanitize_redirect($location) {
 function _wp_sanitize_utf8_in_redirect( $matches ) {
 	return urlencode( $matches[0] );
 }
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 endif;
 
 if ( !function_exists('wp_safe_redirect') ) :
@@ -1424,20 +1485,34 @@ function wp_notify_postauthor( $comment_id, $deprecated = null ) {
 	switch ( $comment->comment_type ) {
 		case 'trackback':
 			$notify_message  = sprintf( __( 'New trackback on your post "%s"' ), $post->post_title ) . "\r\n";
+<<<<<<< HEAD
 			/* translators: 1: website name, 2: website IP, 3: website hostname */
 			$notify_message .= sprintf( __('Website: %1$s (IP: %2$s, %3$s)'), $comment->comment_author, $comment->comment_author_IP, $comment_author_domain ) . "\r\n";
 			$notify_message .= sprintf( __( 'URL: %s' ), $comment->comment_author_url ) . "\r\n";
 			$notify_message .= sprintf( __( 'Comment: %s' ), "\r\n" . $comment->comment_content ) . "\r\n\r\n";
+=======
+			/* translators: 1: website name, 2: author IP, 3: author domain */
+			$notify_message .= sprintf( __('Website: %1$s (IP: %2$s , %3$s)'), $comment->comment_author, $comment->comment_author_IP, $comment_author_domain ) . "\r\n";
+			$notify_message .= sprintf( __( 'URL: %s' ), $comment->comment_author_url ) . "\r\n";
+			$notify_message .= sprintf( __( 'Comment: %s' ), $comment->comment_content ) . "\r\n\r\n";
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$notify_message .= __( 'You can see all trackbacks on this post here:' ) . "\r\n";
 			/* translators: 1: blog name, 2: post title */
 			$subject = sprintf( __('[%1$s] Trackback: "%2$s"'), $blogname, $post->post_title );
 			break;
 		case 'pingback':
 			$notify_message  = sprintf( __( 'New pingback on your post "%s"' ), $post->post_title ) . "\r\n";
+<<<<<<< HEAD
 			/* translators: 1: website name, 2: website IP, 3: website hostname */
 			$notify_message .= sprintf( __('Website: %1$s (IP: %2$s, %3$s)'), $comment->comment_author, $comment->comment_author_IP, $comment_author_domain ) . "\r\n";
 			$notify_message .= sprintf( __( 'URL: %s' ), $comment->comment_author_url ) . "\r\n";
 			$notify_message .= sprintf( __( 'Comment: %s' ), "\r\n" . $comment->comment_content ) . "\r\n\r\n";
+=======
+			/* translators: 1: comment author, 2: author IP, 3: author domain */
+			$notify_message .= sprintf( __('Website: %1$s (IP: %2$s , %3$s)'), $comment->comment_author, $comment->comment_author_IP, $comment_author_domain ) . "\r\n";
+			$notify_message .= sprintf( __( 'URL: %s' ), $comment->comment_author_url ) . "\r\n";
+			$notify_message .= sprintf( __( 'Comment: %s' ), $comment->comment_content ) . "\r\n\r\n";
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$notify_message .= __( 'You can see all pingbacks on this post here:' ) . "\r\n";
 			/* translators: 1: blog name, 2: post title */
 			$subject = sprintf( __('[%1$s] Pingback: "%2$s"'), $blogname, $post->post_title );
@@ -1445,11 +1520,19 @@ function wp_notify_postauthor( $comment_id, $deprecated = null ) {
 		default: // Comments
 			$notify_message  = sprintf( __( 'New comment on your post "%s"' ), $post->post_title ) . "\r\n";
 			/* translators: 1: comment author, 2: author IP, 3: author domain */
+<<<<<<< HEAD
 			$notify_message .= sprintf( __( 'Author: %1$s (IP: %2$s, %3$s)' ), $comment->comment_author, $comment->comment_author_IP, $comment_author_domain ) . "\r\n";
 			$notify_message .= sprintf( __( 'E-mail: %s' ), $comment->comment_author_email ) . "\r\n";
 			$notify_message .= sprintf( __( 'URL: %s' ), $comment->comment_author_url ) . "\r\n";
 			$notify_message .= sprintf( __( 'Whois: %s' ), "http://whois.arin.net/rest/ip/{$comment->comment_author_IP}" ) . "\r\n";
 			$notify_message .= sprintf( __('Comment: %s' ), "\r\n" . $comment->comment_content ) . "\r\n\r\n";
+=======
+			$notify_message .= sprintf( __( 'Author: %1$s (IP: %2$s , %3$s)' ), $comment->comment_author, $comment->comment_author_IP, $comment_author_domain ) . "\r\n";
+			$notify_message .= sprintf( __( 'E-mail: %s' ), $comment->comment_author_email ) . "\r\n";
+			$notify_message .= sprintf( __( 'URL: %s' ), $comment->comment_author_url ) . "\r\n";
+			$notify_message .= sprintf( __( 'Whois: %s' ), "http://whois.arin.net/rest/ip/{$comment->comment_author_IP}" ) . "\r\n";
+			$notify_message .= sprintf( __('Comment: %s' ), $comment->comment_content ) . "\r\n\r\n";
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$notify_message .= __( 'You can see all comments on this post here:' ) . "\r\n";
 			/* translators: 1: blog name, 2: post title */
 			$subject = sprintf( __('[%1$s] Comment: "%2$s"'), $blogname, $post->post_title );
@@ -1560,27 +1643,45 @@ function wp_notify_moderator($comment_id) {
 		case 'trackback':
 			$notify_message  = sprintf( __('A new trackback on the post "%s" is waiting for your approval'), $post->post_title ) . "\r\n";
 			$notify_message .= get_permalink($comment->comment_post_ID) . "\r\n\r\n";
+<<<<<<< HEAD
 			/* translators: 1: website name, 2: website IP, 3: website hostname */
 			$notify_message .= sprintf( __( 'Website: %1$s (IP: %2$s, %3$s)' ), $comment->comment_author, $comment->comment_author_IP, $comment_author_domain ) . "\r\n";
 			$notify_message .= sprintf( __( 'URL: %s' ), $comment->comment_author_url ) . "\r\n";
+=======
+			$notify_message .= sprintf( __('Website : %1$s (IP: %2$s , %3$s)'), $comment->comment_author, $comment->comment_author_IP, $comment_author_domain ) . "\r\n";
+			$notify_message .= sprintf( __('URL    : %s'), $comment->comment_author_url ) . "\r\n";
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$notify_message .= __('Trackback excerpt: ') . "\r\n" . $comment->comment_content . "\r\n\r\n";
 			break;
 		case 'pingback':
 			$notify_message  = sprintf( __('A new pingback on the post "%s" is waiting for your approval'), $post->post_title ) . "\r\n";
 			$notify_message .= get_permalink($comment->comment_post_ID) . "\r\n\r\n";
+<<<<<<< HEAD
 			/* translators: 1: website name, 2: website IP, 3: website hostname */
 			$notify_message .= sprintf( __( 'Website: %1$s (IP: %2$s, %3$s)' ), $comment->comment_author, $comment->comment_author_IP, $comment_author_domain ) . "\r\n";
 			$notify_message .= sprintf( __( 'URL: %s' ), $comment->comment_author_url ) . "\r\n";
+=======
+			$notify_message .= sprintf( __('Website : %1$s (IP: %2$s , %3$s)'), $comment->comment_author, $comment->comment_author_IP, $comment_author_domain ) . "\r\n";
+			$notify_message .= sprintf( __('URL    : %s'), $comment->comment_author_url ) . "\r\n";
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$notify_message .= __('Pingback excerpt: ') . "\r\n" . $comment->comment_content . "\r\n\r\n";
 			break;
 		default: // Comments
 			$notify_message  = sprintf( __('A new comment on the post "%s" is waiting for your approval'), $post->post_title ) . "\r\n";
 			$notify_message .= get_permalink($comment->comment_post_ID) . "\r\n\r\n";
+<<<<<<< HEAD
 			$notify_message .= sprintf( __( 'Author: %1$s (IP: %2$s, %3$s)' ), $comment->comment_author, $comment->comment_author_IP, $comment_author_domain ) . "\r\n";
 			$notify_message .= sprintf( __( 'E-mail: %s' ), $comment->comment_author_email ) . "\r\n";
 			$notify_message .= sprintf( __( 'URL: %s' ), $comment->comment_author_url ) . "\r\n";
 			$notify_message .= sprintf( __( 'Whois: %s' ), "http://whois.arin.net/rest/ip/{$comment->comment_author_IP}" ) . "\r\n";
 			$notify_message .= sprintf( __( 'Comment: %s' ), "\r\n" . $comment->comment_content ) . "\r\n\r\n";
+=======
+			$notify_message .= sprintf( __('Author : %1$s (IP: %2$s , %3$s)'), $comment->comment_author, $comment->comment_author_IP, $comment_author_domain ) . "\r\n";
+			$notify_message .= sprintf( __('E-mail : %s'), $comment->comment_author_email ) . "\r\n";
+			$notify_message .= sprintf( __('URL    : %s'), $comment->comment_author_url ) . "\r\n";
+			$notify_message .= sprintf( __('Whois  : http://whois.arin.net/rest/ip/%s'), $comment->comment_author_IP ) . "\r\n";
+			$notify_message .= __('Comment: ') . "\r\n" . $comment->comment_content . "\r\n\r\n";
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			break;
 	}
 
@@ -1739,8 +1840,12 @@ if ( !function_exists('wp_verify_nonce') ) :
  *
  * @param string     $nonce  Nonce that was used in the form to verify
  * @param string|int $action Should give context to what is taking place and be the same when nonce was created.
+<<<<<<< HEAD
  * @return false|int False if the nonce is invalid, 1 if the nonce is valid and generated between
  *                   0-12 hours ago, 2 if the nonce is valid and generated between 12-24 hours ago.
+=======
+ * @return bool Whether the nonce check passed or failed.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function wp_verify_nonce( $nonce, $action = -1 ) {
 	$nonce = (string) $nonce;
@@ -2129,6 +2234,7 @@ endif;
 
 if ( !function_exists( 'get_avatar' ) ) :
 /**
+<<<<<<< HEAD
  * Retrieve the avatar `<img>` tag for a user, email address, MD5 hash, comment, or post.
  *
  * @since 2.5.0
@@ -2253,20 +2359,137 @@ function get_avatar( $id_or_email, $size = 96, $default = '', $alt = '', $args =
 		$args['extra_attr']
 	);
 
+=======
+ * Retrieve the avatar for a user who provided a user ID or email address.
+ *
+ * @since 2.5.0
+ *
+ * @param int|string|object $id_or_email A user ID,  email address, or comment object
+ * @param int $size Size of the avatar image
+ * @param string $default URL to a default image to use if no avatar is available
+ * @param string $alt Alternative text to use in image tag. Defaults to blank
+ * @return false|string `<img>` tag for the user's avatar.
+*/
+function get_avatar( $id_or_email, $size = '96', $default = '', $alt = false ) {
+	if ( ! get_option('show_avatars') )
+		return false;
+
+	if ( false === $alt)
+		$safe_alt = '';
+	else
+		$safe_alt = esc_attr( $alt );
+
+	if ( !is_numeric($size) )
+		$size = '96';
+
+	$email = '';
+	if ( is_numeric($id_or_email) ) {
+		$id = (int) $id_or_email;
+		$user = get_userdata($id);
+		if ( $user )
+			$email = $user->user_email;
+	} elseif ( is_object($id_or_email) ) {
+		// No avatar for pingbacks or trackbacks
+
+		/**
+		 * Filter the list of allowed comment types for retrieving avatars.
+		 *
+		 * @since 3.0.0
+		 *
+		 * @param array $types An array of content types. Default only contains 'comment'.
+		 */
+		$allowed_comment_types = apply_filters( 'get_avatar_comment_types', array( 'comment' ) );
+		if ( ! empty( $id_or_email->comment_type ) && ! in_array( $id_or_email->comment_type, (array) $allowed_comment_types ) )
+			return false;
+
+		if ( ! empty( $id_or_email->user_id ) ) {
+			$id = (int) $id_or_email->user_id;
+			$user = get_userdata($id);
+			if ( $user )
+				$email = $user->user_email;
+		}
+
+		if ( ! $email && ! empty( $id_or_email->comment_author_email ) )
+			$email = $id_or_email->comment_author_email;
+	} else {
+		$email = $id_or_email;
+	}
+
+	if ( empty($default) ) {
+		$avatar_default = get_option('avatar_default');
+		if ( empty($avatar_default) )
+			$default = 'mystery';
+		else
+			$default = $avatar_default;
+	}
+
+	if ( !empty($email) )
+		$email_hash = md5( strtolower( trim( $email ) ) );
+
+	if ( is_ssl() ) {
+		$host = 'https://secure.gravatar.com';
+	} else {
+		if ( !empty($email) )
+			$host = sprintf( "http://%d.gravatar.com", ( hexdec( $email_hash[0] ) % 2 ) );
+		else
+			$host = 'http://0.gravatar.com';
+	}
+
+	if ( 'mystery' == $default )
+		$default = "$host/avatar/ad516503a11cd5ca435acc9bb6523536?s={$size}"; // ad516503a11cd5ca435acc9bb6523536 == md5('unknown@gravatar.com')
+	elseif ( 'blank' == $default )
+		$default = $email ? 'blank' : includes_url( 'images/blank.gif' );
+	elseif ( !empty($email) && 'gravatar_default' == $default )
+		$default = '';
+	elseif ( 'gravatar_default' == $default )
+		$default = "$host/avatar/?s={$size}";
+	elseif ( empty($email) )
+		$default = "$host/avatar/?d=$default&amp;s={$size}";
+	elseif ( strpos($default, 'http://') === 0 )
+		$default = add_query_arg( 's', $size, $default );
+
+	if ( !empty($email) ) {
+		$out = "$host/avatar/";
+		$out .= $email_hash;
+		$out .= '?s='.$size;
+		$out .= '&amp;d=' . urlencode( $default );
+
+		$rating = get_option('avatar_rating');
+		if ( !empty( $rating ) )
+			$out .= "&amp;r={$rating}";
+
+		$out = str_replace( '&#038;', '&amp;', esc_url( $out ) );
+		$avatar = "<img alt='{$safe_alt}' src='{$out}' class='avatar avatar-{$size} photo' height='{$size}' width='{$size}' />";
+	} else {
+		$out = esc_url( $default );
+		$avatar = "<img alt='{$safe_alt}' src='{$out}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
+	}
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	/**
 	 * Filter the avatar to retrieve.
 	 *
 	 * @since 2.5.0
+<<<<<<< HEAD
 	 * @since 4.2.0 The `$args` parameter was added.
 	 *
 	 * @param string            $avatar      &lt;img&gt; tag for the user's avatar.
+=======
+	 *
+	 * @param string            $avatar      Image tag for the user's avatar.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * @param int|object|string $id_or_email A user ID, email address, or comment object.
 	 * @param int               $size        Square avatar width and height in pixels to retrieve.
 	 * @param string            $alt         Alternative text to use in the avatar image tag.
 	 *                                       Default empty.
+<<<<<<< HEAD
 	 * @param array             $args        Arguments passed to get_avatar_data(), after processing.
 	 */
 	return apply_filters( 'get_avatar', $avatar, $id_or_email, $args['size'], $args['default'], $args['alt'], $args );
+=======
+	 */
+	return apply_filters( 'get_avatar', $avatar, $id_or_email, $size, $default, $alt );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 endif;
 

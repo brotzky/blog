@@ -203,8 +203,13 @@ function wp_prepare_revisions_for_js( $post, $selected_revision_id, $from = null
 			'id'         => $revision->ID,
 			'title'      => get_the_title( $post->ID ),
 			'author'     => $authors[ $revision->post_author ],
+<<<<<<< HEAD
 			'date'       => date_i18n( __( 'M j, Y @ H:i' ), $modified ),
 			'dateShort'  => date_i18n( _x( 'j M @ H:i', 'revision date short format' ), $modified ),
+=======
+			'date'       => date_i18n( __( 'M j, Y @ G:i' ), $modified ),
+			'dateShort'  => date_i18n( _x( 'j M @ G:i', 'revision date short format' ), $modified ),
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			'timeAgo'    => sprintf( __( '%s ago' ), human_time_diff( $modified_gmt, $now_gmt ) ),
 			'autosave'   => $autosave,
 			'current'    => $current,
@@ -221,8 +226,13 @@ function wp_prepare_revisions_for_js( $post, $selected_revision_id, $from = null
 			'id'         => $post->ID,
 			'title'      => get_the_title( $post->ID ),
 			'author'     => $authors[ $post->post_author ],
+<<<<<<< HEAD
 			'date'       => date_i18n( __( 'M j, Y @ H:i' ), strtotime( $post->post_modified ) ),
 			'dateShort'  => date_i18n( _x( 'j M @ H:i', 'revision date short format' ), strtotime( $post->post_modified ) ),
+=======
+			'date'       => date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->modified ) ),
+			'dateShort'  => date_i18n( _x( 'j M @ G:i', 'revision date short format' ), strtotime( $post->modified ) ),
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			'timeAgo'    => sprintf( __( '%s ago' ), human_time_diff( strtotime( $post->post_modified_gmt ), $now_gmt ) ),
 			'autosave'   => false,
 			'current'    => true,

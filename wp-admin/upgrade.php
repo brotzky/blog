@@ -35,8 +35,11 @@ if ( 'upgrade_db' === $step ) {
 	die( '0' );
 }
 
+<<<<<<< HEAD
 global $wp_version, $required_php_version, $required_mysql_version;
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 $step = (int) $step;
 
 $php_version    = phpversion();
@@ -71,20 +74,33 @@ else
 
 <?php elseif ( !$php_compat || !$mysql_compat ) :
 	if ( !$mysql_compat && !$php_compat )
+<<<<<<< HEAD
 		printf( __('You cannot update because <a href="https://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> requires PHP version %2$s or higher and MySQL version %3$s or higher. You are running PHP version %4$s and MySQL version %5$s.'), $wp_version, $required_php_version, $required_mysql_version, $php_version, $mysql_version );
 	elseif ( !$php_compat )
 		printf( __('You cannot update because <a href="https://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> requires PHP version %2$s or higher. You are running version %3$s.'), $wp_version, $required_php_version, $php_version );
 	elseif ( !$mysql_compat )
 		printf( __('You cannot update because <a href="https://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> requires MySQL version %2$s or higher. You are running version %3$s.'), $wp_version, $required_mysql_version, $mysql_version );
+=======
+		printf( __('You cannot update because <a href="http://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> requires PHP version %2$s or higher and MySQL version %3$s or higher. You are running PHP version %4$s and MySQL version %5$s.'), $wp_version, $required_php_version, $required_mysql_version, $php_version, $mysql_version );
+	elseif ( !$php_compat )
+		printf( __('You cannot update because <a href="http://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> requires PHP version %2$s or higher. You are running version %3$s.'), $wp_version, $required_php_version, $php_version );
+	elseif ( !$mysql_compat )
+		printf( __('You cannot update because <a href="http://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> requires MySQL version %2$s or higher. You are running version %3$s.'), $wp_version, $required_mysql_version, $mysql_version );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 ?>
 <?php else :
 switch ( $step ) :
 	case 0:
 		$goback = wp_get_referer();
+<<<<<<< HEAD
 		if ( $goback ) {
 			$goback = esc_url_raw( $goback );
 			$goback = urlencode( $goback );
 		}
+=======
+		$goback = esc_url_raw( $goback );
+		$goback = urlencode( $goback );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 ?>
 <h2><?php _e( 'Database Update Required' ); ?></h2>
 <p><?php _e( 'WordPress has been updated! Before we send you on your way, we have to update your database to the newest version.' ); ?></p>

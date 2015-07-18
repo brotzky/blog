@@ -7,7 +7,11 @@
  * It is used to display a page when nothing more specific matches a query,
  * e.g., it puts together the home page when no home.php file exists.
  *
+<<<<<<< HEAD
  * @link https://codex.wordpress.org/Template_Hierarchy
+=======
+ * @link http://codex.wordpress.org/Template_Hierarchy
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @package WordPress
  * @subpackage Twenty_Fourteen

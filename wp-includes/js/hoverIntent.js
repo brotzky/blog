@@ -1,10 +1,18 @@
 /*!
+<<<<<<< HEAD
  * hoverIntent v1.8.1 // 2014.08.11 // jQuery v1.9.1+
+=======
+ * hoverIntent r7 // 2013.03.11 // jQuery 1.9.1+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * http://cherne.net/brian/resources/jquery.hoverIntent.html
  *
  * You may use hoverIntent under the terms of the MIT license. Basically that
  * means you are free to use hoverIntent as long as this header is left intact.
+<<<<<<< HEAD
  * Copyright 2007, 2014 Brian Cherne
+=======
+ * Copyright 2007, 2013 Brian Cherne
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 
 /* hoverIntent is similar to jQuery's built-in "hover" method except that
@@ -35,7 +43,11 @@
         // default configuration values
         var cfg = {
             interval: 100,
+<<<<<<< HEAD
             sensitivity: 6,
+=======
+            sensitivity: 7,
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
             timeout: 0
         };
 
@@ -62,10 +74,17 @@
         var compare = function(ev,ob) {
             ob.hoverIntent_t = clearTimeout(ob.hoverIntent_t);
             // compare mouse positions to see if they've crossed the threshold
+<<<<<<< HEAD
             if ( Math.sqrt( (pX-cX)*(pX-cX) + (pY-cY)*(pY-cY) ) < cfg.sensitivity ) {
                 $(ob).off("mousemove.hoverIntent",track);
                 // set hoverIntent state to true (so mouseOut can be called)
                 ob.hoverIntent_s = true;
+=======
+            if ( ( Math.abs(pX-cX) + Math.abs(pY-cY) ) < cfg.sensitivity ) {
+                $(ob).off("mousemove.hoverIntent",track);
+                // set hoverIntent state to true (so mouseOut can be called)
+                ob.hoverIntent_s = 1;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
                 return cfg.over.apply(ob,[ev]);
             } else {
                 // set previous coordinates for next time
@@ -78,34 +97,55 @@
         // A private function for delaying the mouseOut function
         var delay = function(ev,ob) {
             ob.hoverIntent_t = clearTimeout(ob.hoverIntent_t);
+<<<<<<< HEAD
             ob.hoverIntent_s = false;
+=======
+            ob.hoverIntent_s = 0;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
             return cfg.out.apply(ob,[ev]);
         };
 
         // A private function for handling mouse 'hovering'
         var handleHover = function(e) {
             // copy objects to be passed into t (required for event object to be passed in IE)
+<<<<<<< HEAD
             var ev = $.extend({},e);
+=======
+            var ev = jQuery.extend({},e);
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
             var ob = this;
 
             // cancel hoverIntent timer if it exists
             if (ob.hoverIntent_t) { ob.hoverIntent_t = clearTimeout(ob.hoverIntent_t); }
 
+<<<<<<< HEAD
             // if e.type === "mouseenter"
             if (e.type === "mouseenter") {
+=======
+            // if e.type == "mouseenter"
+            if (e.type == "mouseenter") {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
                 // set "previous" X and Y position based on initial entry point
                 pX = ev.pageX; pY = ev.pageY;
                 // update "current" X and Y position based on mousemove
                 $(ob).on("mousemove.hoverIntent",track);
                 // start polling interval (self-calling timeout) to compare mouse coordinates over time
+<<<<<<< HEAD
                 if (!ob.hoverIntent_s) { ob.hoverIntent_t = setTimeout( function(){compare(ev,ob);} , cfg.interval );}
+=======
+                if (ob.hoverIntent_s != 1) { ob.hoverIntent_t = setTimeout( function(){compare(ev,ob);} , cfg.interval );}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
                 // else e.type == "mouseleave"
             } else {
                 // unbind expensive mousemove event
                 $(ob).off("mousemove.hoverIntent",track);
                 // if hoverIntent state is true, then call the mouseOut function after the specified delay
+<<<<<<< HEAD
                 if (ob.hoverIntent_s) { ob.hoverIntent_t = setTimeout( function(){delay(ev,ob);} , cfg.timeout );}
+=======
+                if (ob.hoverIntent_s == 1) { ob.hoverIntent_t = setTimeout( function(){delay(ev,ob);} , cfg.timeout );}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
             }
         };
 

@@ -182,9 +182,13 @@ class WP_Http {
 		if ( function_exists( 'wp_kses_bad_protocol' ) ) {
 			if ( $r['reject_unsafe_urls'] )
 				$url = wp_http_validate_url( $url );
+<<<<<<< HEAD
 			if ( $url ) {
 				$url = wp_kses_bad_protocol( $url, array( 'http', 'https', 'ssl' ) );
 			}
+=======
+			$url = wp_kses_bad_protocol( $url, array( 'http', 'https', 'ssl' ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 
 		$arrURL = @parse_url( $url );
@@ -228,7 +232,11 @@ class WP_Http {
 			$r['headers'] = array();
 
 		if ( ! is_array( $r['headers'] ) ) {
+<<<<<<< HEAD
 			$processedHeaders = self::processHeaders( $r['headers'], $url );
+=======
+			$processedHeaders = WP_Http::processHeaders( $r['headers'], $url );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$r['headers'] = $processedHeaders['headers'];
 		}
 
@@ -247,7 +255,11 @@ class WP_Http {
 		}
 
 		// Construct Cookie: header if any cookies are set.
+<<<<<<< HEAD
 		self::buildCookieHeader( $r );
+=======
+		WP_Http::buildCookieHeader( $r );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		// Avoid issues where mbstring.func_overload is enabled.
 		mbstring_binary_safe_encoding();
@@ -895,12 +907,21 @@ class WP_Http_Streams {
 
 		$r = wp_parse_args( $args, $defaults );
 
+<<<<<<< HEAD
 		if ( isset( $r['headers']['User-Agent'] ) ) {
 			$r['user-agent'] = $r['headers']['User-Agent'];
 			unset( $r['headers']['User-Agent'] );
 		} elseif ( isset( $r['headers']['user-agent'] ) ) {
 			$r['user-agent'] = $r['headers']['user-agent'];
 			unset( $r['headers']['user-agent'] );
+=======
+		if ( isset($r['headers']['User-Agent']) ) {
+			$r['user-agent'] = $r['headers']['User-Agent'];
+			unset($r['headers']['User-Agent']);
+		} else if ( isset($r['headers']['user-agent']) ) {
+			$r['user-agent'] = $r['headers']['user-agent'];
+			unset($r['headers']['user-agent']);
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 
 		// Construct Cookie: header if any cookies are set.
@@ -1360,12 +1381,21 @@ class WP_Http_Curl {
 
 		$r = wp_parse_args( $args, $defaults );
 
+<<<<<<< HEAD
 		if ( isset( $r['headers']['User-Agent'] ) ) {
 			$r['user-agent'] = $r['headers']['User-Agent'];
 			unset( $r['headers']['User-Agent'] );
 		} elseif ( isset( $r['headers']['user-agent'] ) ) {
 			$r['user-agent'] = $r['headers']['user-agent'];
 			unset( $r['headers']['user-agent'] );
+=======
+		if ( isset($r['headers']['User-Agent']) ) {
+			$r['user-agent'] = $r['headers']['User-Agent'];
+			unset($r['headers']['User-Agent']);
+		} else if ( isset($r['headers']['user-agent']) ) {
+			$r['user-agent'] = $r['headers']['user-agent'];
+			unset($r['headers']['user-agent']);
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 
 		// Construct Cookie: header if any cookies are set.
@@ -1522,6 +1552,7 @@ class WP_Http_Curl {
 
 		// If an error occurred, or, no response.
 		if ( $curl_error || ( 0 == strlen( $theBody ) && empty( $theHeaders['headers'] ) ) ) {
+<<<<<<< HEAD
 			if ( CURLE_WRITE_ERROR /* 23 */ == $curl_error ) {
 				if ( ! $this->max_body_length || $this->max_body_length != $bytes_written_total ) {
 					if ( $r['stream'] ) {
@@ -1532,6 +1563,12 @@ class WP_Http_Curl {
 						curl_close( $handle );
 						return new WP_Error( 'http_request_failed', curl_error( $handle ) );
 					}
+=======
+			if ( CURLE_WRITE_ERROR /* 23 */ == $curl_error && $r['stream'] ) {
+				if ( ! $this->max_body_length || $this->max_body_length != $bytes_written_total ) {
+					fclose( $this->stream_handle );
+					return new WP_Error( 'http_request_failed', __( 'Failed to write request to temporary file.' ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				}
 			} else {
 				if ( $curl_error = curl_error( $handle ) ) {
@@ -1969,7 +2006,11 @@ class WP_Http_Cookie {
 			}
 		} else {
 			if ( !isset( $data['name'] ) )
+<<<<<<< HEAD
 				return;
+=======
+				return false;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			// Set properties based directly on parameters.
 			foreach ( array( 'name', 'value', 'path', 'domain', 'port' ) as $field ) {
@@ -2116,7 +2157,11 @@ class WP_Http_Encoding {
 		if ( false !== ( $decompressed = @gzinflate( $compressed ) ) )
 			return $decompressed;
 
+<<<<<<< HEAD
 		if ( false !== ( $decompressed = self::compatible_gzinflate( $compressed ) ) )
+=======
+		if ( false !== ( $decompressed = WP_Http_Encoding::compatible_gzinflate( $compressed ) ) )
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			return $decompressed;
 
 		if ( false !== ( $decompressed = @gzuncompress( $compressed ) ) )
@@ -2194,7 +2239,11 @@ class WP_Http_Encoding {
 	 */
 	public static function accept_encoding( $url, $args ) {
 		$type = array();
+<<<<<<< HEAD
 		$compression_enabled = self::is_available();
+=======
+		$compression_enabled = WP_Http_Encoding::is_available();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		if ( ! $args['decompress'] ) // Decompression specifically disabled.
 			$compression_enabled = false;
@@ -2252,7 +2301,11 @@ class WP_Http_Encoding {
 		if ( is_array( $headers ) ) {
 			if ( array_key_exists('content-encoding', $headers) && ! empty( $headers['content-encoding'] ) )
 				return true;
+<<<<<<< HEAD
 		} elseif ( is_string( $headers ) ) {
+=======
+		} else if ( is_string( $headers ) ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			return ( stripos($headers, 'content-encoding:') !== false );
 		}
 

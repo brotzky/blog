@@ -340,16 +340,23 @@ h2.ak-header {
 	text-align: center;
 }
 
+<<<<<<< HEAD
 .akismet-settings th:first-child {
+=======
+.akismet-settings th.strictness {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	vertical-align: top;
 	padding-top: 15px;
 }
 
+<<<<<<< HEAD
 .akismet-settings th.akismet-api-key {
 	vertical-align: middle;
 	padding-top: 0;
 }
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .akismet-settings input[type=text] {
 	width: 75%;
 }

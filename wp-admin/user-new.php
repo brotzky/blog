@@ -180,7 +180,11 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
     '<p><strong>' . __('For more information:') . '</strong></p>' .
+<<<<<<< HEAD
     '<p>' . __('<a href="https://codex.wordpress.org/Users_Add_New_Screen" target="_blank">Documentation on Adding New Users</a>') . '</p>' .
+=======
+    '<p>' . __('<a href="http://codex.wordpress.org/Users_Add_New_Screen" target="_blank">Documentation on Adding New Users</a>') . '</p>' .
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
     '<p>' . __('<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>'
 );
 
@@ -253,7 +257,11 @@ if ( current_user_can( 'create_users' ) ) {
 
 if ( ! empty( $messages ) ) {
 	foreach ( $messages as $msg )
+<<<<<<< HEAD
 		echo '<div id="message" class="updated notice is-dismissible"><p>' . $msg . '</p></div>';
+=======
+		echo '<div id="message" class="updated"><p>' . $msg . '</p></div>';
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 } ?>
 
 <?php if ( isset($add_user_errors) && is_wp_error( $add_user_errors ) ) : ?>
@@ -280,7 +288,11 @@ if ( is_multisite() ) {
 		$type  = 'text';
 	}
 ?>
+<<<<<<< HEAD
 <form method="post" name="adduser" id="adduser" class="validate" novalidate="novalidate"<?php
+=======
+<form action="" method="post" name="adduser" id="adduser" class="validate" novalidate="novalidate"<?php
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	/**
 	 * Fires inside the adduser form tag.
 	 *
@@ -324,7 +336,11 @@ if ( is_multisite() ) {
  */
 do_action( 'user_new_form', 'add-existing-user' );
 ?>
+<<<<<<< HEAD
 <?php submit_button( __( 'Add Existing User' ), 'primary', 'adduser', true, array( 'id' => 'addusersub' ) ); ?>
+=======
+<?php submit_button( __( 'Add Existing User '), 'primary', 'adduser', true, array( 'id' => 'addusersub' ) ); ?>
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 </form>
 <?php
 } // is_multisite()
@@ -334,7 +350,11 @@ if ( current_user_can( 'create_users') ) {
 		echo '<h3 id="create-new-user">' . __( 'Add New User' ) . '</h3>';
 ?>
 <p><?php _e('Create a brand new user and add them to this site.'); ?></p>
+<<<<<<< HEAD
 <form method="post" name="createuser" id="createuser" class="validate" novalidate="novalidate"<?php
+=======
+<form action="" method="post" name="createuser" id="createuser" class="validate" novalidate="novalidate"<?php
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	/** This action is documented in wp-admin/user-new.php */
 	do_action( 'user_new_form_tag' );
 ?>>
@@ -402,7 +422,11 @@ if ( apply_filters( 'show_password_fields', true ) ) : ?>
 		</td>
 	</tr>
 	<tr>
+<<<<<<< HEAD
 		<th scope="row"><?php _e('Send Password?') ?></th>
+=======
+		<th scope="row"><label for="send_password"><?php _e('Send Password?') ?></label></th>
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		<td><label for="send_password"><input type="checkbox" name="send_password" id="send_password" value="1" <?php checked( $new_user_send_password ); ?> /> <?php _e('Send this password to the new user by email.'); ?></label></td>
 	</tr>
 <?php endif; ?>
@@ -431,7 +455,11 @@ if ( apply_filters( 'show_password_fields', true ) ) : ?>
 do_action( 'user_new_form', 'add-new-user' );
 ?>
 
+<<<<<<< HEAD
 <?php submit_button( __( 'Add New User' ), 'primary', 'createuser', true, array( 'id' => 'createusersub' ) ); ?>
+=======
+<?php submit_button( __( 'Add New User '), 'primary', 'createuser', true, array( 'id' => 'createusersub' ) ); ?>
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 </form>
 <?php } // current_user_can('create_users') ?>

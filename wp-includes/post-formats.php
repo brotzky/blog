@@ -26,7 +26,11 @@ function get_post_format( $post = null ) {
 	if ( empty( $_format ) )
 		return false;
 
+<<<<<<< HEAD
 	$format = reset( $_format );
+=======
+	$format = array_shift( $_format );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	return str_replace('post-format-', '', $format->slug );
 }
@@ -161,6 +165,10 @@ function _post_format_request( $qvs ) {
 		$qvs['post_type'] = $tax->object_type;
 	return $qvs;
 }
+<<<<<<< HEAD
+=======
+add_filter( 'request', '_post_format_request' );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 /**
  * Filters the post format term link to remove the format prefix.
@@ -179,6 +187,10 @@ function _post_format_link( $link, $term, $taxonomy ) {
 		return add_query_arg( 'post_format', str_replace( 'post-format-', '', $term->slug ), $link );
 	}
 }
+<<<<<<< HEAD
+=======
+add_filter( 'term_link', '_post_format_link', 10, 3 );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 /**
  * Remove the post format prefix from the name property of the term object created by get_term().
@@ -192,6 +204,10 @@ function _post_format_get_term( $term ) {
 	}
 	return $term;
 }
+<<<<<<< HEAD
+=======
+add_filter( 'get_post_format', '_post_format_get_term' );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 /**
  * Remove the post format prefix from the name property of the term objects created by get_terms().
@@ -215,6 +231,10 @@ function _post_format_get_terms( $terms, $taxonomies, $args ) {
 	}
 	return $terms;
 }
+<<<<<<< HEAD
+=======
+add_filter( 'get_terms', '_post_format_get_terms', 10, 3 );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 /**
  * Remove the post format prefix from the name property of the term objects created by wp_get_object_terms().
@@ -230,3 +250,7 @@ function _post_format_wp_get_object_terms( $terms ) {
 	}
 	return $terms;
 }
+<<<<<<< HEAD
+=======
+add_filter( 'wp_get_object_terms', '_post_format_wp_get_object_terms' );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

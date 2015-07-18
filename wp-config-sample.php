@@ -4,7 +4,11 @@
  *
  * This file has the following configurations: MySQL settings, Table Prefix,
  * Secret Keys, and ABSPATH. You can find more information by visiting
+<<<<<<< HEAD
  * {@link https://codex.wordpress.org/Editing_wp-config.php Editing wp-config.php}
+=======
+ * {@link http://codex.wordpress.org/Editing_wp-config.php Editing wp-config.php}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * Codex page. You can get the MySQL settings from your web host.
  *
  * This file is used by the wp-config.php creation script during the
@@ -16,6 +20,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
+<<<<<<< HEAD
 define('DB_NAME', 'database_name_here');
 
 /** MySQL database username */
@@ -23,6 +28,15 @@ define('DB_USER', 'username_here');
 
 /** MySQL database password */
 define('DB_PASSWORD', 'password_here');
+=======
+define('DB_NAME', 'blog');
+
+/** MySQL database username */
+define('DB_USER', 'root');
+
+/** MySQL database password */
+define('DB_PASSWORD', 'root');
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');

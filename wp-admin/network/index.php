@@ -17,7 +17,11 @@ if ( !is_multisite() )
 	wp_die( __( 'Multisite support is not enabled.' ) );
 
 if ( ! current_user_can( 'manage_network' ) )
+<<<<<<< HEAD
 	wp_die( __( 'You do not have permission to access this page.' ), 403 );
+=======
+	wp_die( __( 'You do not have permission to access this page.' ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 $title = __( 'Dashboard' );
 $parent_file = 'index.php';
@@ -50,7 +54,11 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
+<<<<<<< HEAD
 	'<p>' . __('<a href="https://codex.wordpress.org/Network_Admin" target="_blank">Documentation on the Network Admin</a>') . '</p>' .
+=======
+	'<p>' . __('<a href="http://codex.wordpress.org/Network_Admin" target="_blank">Documentation on the Network Admin</a>') . '</p>' .
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	'<p>' . __('<a href="https://wordpress.org/support/forum/multisite/" target="_blank">Support Forums</a>') . '</p>'
 );
 

@@ -15,7 +15,11 @@ if ( !defined('ABSPATH') )
 <div class="clear"></div></div><!-- wpbody -->
 <div class="clear"></div></div><!-- wpcontent -->
 
+<<<<<<< HEAD
 <div id="wpfooter" role="contentinfo">
+=======
+<div id="wpfooter">
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	<?php
 	/**
 	 * Fires after the opening tag for the admin footer.

@@ -2,7 +2,11 @@
 /**
  * Object Cache API
  *
+<<<<<<< HEAD
  * @link https://codex.wordpress.org/Function_Reference/WP_Cache
+=======
+ * @link http://codex.wordpress.org/Function_Reference/WP_Cache
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @package WordPress
  * @subpackage Cache
@@ -103,7 +107,11 @@ function wp_cache_flush() {
  * @param int|string $key What the contents in the cache are called
  * @param string $group Where the cache contents are grouped
  * @param bool $force Whether to force an update of the local cache from the persistent cache (default is false)
+<<<<<<< HEAD
  * @param bool &$found Whether key was found in the cache. Disambiguates a return of false, a storable value.
+=======
+ * @param &bool $found Whether key was found in the cache. Disambiguates a return of false, a storable value.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @return bool|mixed False on failure to retrieve contents or the cache
  *		contents on success
  */
@@ -217,6 +225,10 @@ function wp_cache_add_global_groups( $groups ) {
  */
 function wp_cache_add_non_persistent_groups( $groups ) {
 	// Default cache doesn't persist so nothing to do here.
+<<<<<<< HEAD
+=======
+	return;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
@@ -306,6 +318,7 @@ class WP_Object_Cache {
 	private $blog_prefix;
 
 	/**
+<<<<<<< HEAD
 	 * Holds the value of `is_multisite()`
 	 *
 	 * @var bool
@@ -315,6 +328,8 @@ class WP_Object_Cache {
 	private $multisite;
 
 	/**
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * Make private properties readable for backwards compatibility.
 	 *
 	 * @since 4.0.0
@@ -684,6 +699,10 @@ class WP_Object_Cache {
 	 * Sets up object properties; PHP 5 style constructor
 	 *
 	 * @since 2.0.8
+<<<<<<< HEAD
+=======
+	 * @return null|WP_Object_Cache If cache is disabled, returns null.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 */
 	public function __construct() {
 		global $blog_id;

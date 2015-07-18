@@ -86,11 +86,19 @@ function wptexturize($text, $reset = false) {
 
 		// if a plugin has provided an autocorrect array, use it
 		if ( isset($wp_cockneyreplace) ) {
+<<<<<<< HEAD
 			$cockney = array_keys( $wp_cockneyreplace );
 			$cockneyreplace = array_values( $wp_cockneyreplace );
 		} elseif ( "'" != $apos ) { // Only bother if we're doing a replacement.
 			$cockney = array( "'tain't", "'twere", "'twas", "'tis", "'twill", "'til", "'bout", "'nuff", "'round", "'cause", "'em" );
 			$cockneyreplace = array( $apos . "tain" . $apos . "t", $apos . "twere", $apos . "twas", $apos . "tis", $apos . "twill", $apos . "til", $apos . "bout", $apos . "nuff", $apos . "round", $apos . "cause", $apos . "em" );
+=======
+			$cockney = array_keys($wp_cockneyreplace);
+			$cockneyreplace = array_values($wp_cockneyreplace);
+		} elseif ( "'" != $apos ) { // Only bother if we're doing a replacement.
+			$cockney = array( "'tain't", "'twere", "'twas", "'tis", "'twill", "'til", "'bout", "'nuff", "'round", "'cause" );
+			$cockneyreplace = array( $apos . "tain" . $apos . "t", $apos . "twere", $apos . "twas", $apos . "tis", $apos . "twill", $apos . "til", $apos . "bout", $apos . "nuff", $apos . "round", $apos . "cause" );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		} else {
 			$cockney = $cockneyreplace = array();
 		}
@@ -174,9 +182,15 @@ function wptexturize($text, $reset = false) {
 
 		// Dashes and spaces
 		$dynamic[ '/---/' ] = $em_dash;
+<<<<<<< HEAD
 		$dynamic[ '/(?<=^|' . $spaces . ')--(?=$|' . $spaces . ')/' ] = $em_dash;
 		$dynamic[ '/(?<!xn)--/' ] = $en_dash;
 		$dynamic[ '/(?<=^|' . $spaces . ')-(?=$|' . $spaces . ')/' ] = $en_dash;
+=======
+		$dynamic[ '/(?<=' . $spaces . ')--(?=' . $spaces . ')/' ] = $em_dash;
+		$dynamic[ '/(?<!xn)--/' ] = $en_dash;
+		$dynamic[ '/(?<=' . $spaces . ')-(?=' . $spaces . ')/' ] = $en_dash;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		$dynamic_characters['dash'] = array_keys( $dynamic );
 		$dynamic_replacements['dash'] = array_values( $dynamic );
@@ -235,7 +249,11 @@ function wptexturize($text, $reset = false) {
 		.     '(?(?=!--)'        // Is this a comment?
 		.         $comment_regex // Find end of comment.
 		.     '|'
+<<<<<<< HEAD
 		.         '[^>]*>'       // Find end of element.
+=======
+		.         '[^>]+>'       // Find end of element.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		.     ')'
 		. '|'
 		.     $shortcode_regex   // Find shortcodes.
@@ -360,14 +378,24 @@ function _wptexturize_pushpop_element($text, &$stack, $disabled_elements) {
  * Replaces double line-breaks with paragraph elements.
  *
  * A group of regex replaces used to identify text formatted with newlines and
+<<<<<<< HEAD
  * replace double line-breaks with HTML paragraph tags. The remaining line-breaks
  * after conversion become <<br />> tags, unless $br is set to '0' or 'false'.
+=======
+ * replace double line-breaks with HTML paragraph tags. The remaining
+ * line-breaks after conversion become <<br />> tags, unless $br is set to '0'
+ * or 'false'.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @since 0.71
  *
  * @param string $pee The text which has to be formatted.
+<<<<<<< HEAD
  * @param bool   $br  Optional. If set, this will convert all remaining line-breaks
  *                    after paragraphing. Default true.
+=======
+ * @param bool $br Optional. If set, this will convert all remaining line-breaks after paragraphing. Default true.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @return string Text which has been converted into correct paragraph tags.
  */
 function wpautop($pee, $br = true) {
@@ -376,6 +404,7 @@ function wpautop($pee, $br = true) {
 	if ( trim($pee) === '' )
 		return '';
 
+<<<<<<< HEAD
 	// Just to make things a little easier, pad the end.
 	$pee = $pee . "\n";
 
@@ -383,6 +412,10 @@ function wpautop($pee, $br = true) {
 	 * Pre tags shouldn't be touched by autop.
 	 * Replace pre tags with placeholders and bring them back after autop.
 	 */
+=======
+	$pee = $pee . "\n"; // just to make things a little easier, pad the end
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	if ( strpos($pee, '<pre') !== false ) {
 		$pee_parts = explode( '</pre>', $pee );
 		$last_pee = array_pop($pee_parts);
@@ -407,6 +440,7 @@ function wpautop($pee, $br = true) {
 
 		$pee .= $last_pee;
 	}
+<<<<<<< HEAD
 	// Change multiple <br>s into two line breaks, which will turn into paragraphs.
 	$pee = preg_replace('|<br />\s*<br />|', "\n\n", $pee);
 
@@ -423,30 +457,53 @@ function wpautop($pee, $br = true) {
 
 	// Collapse line breaks before and after <option> elements so they don't get autop'd.
 	if ( strpos( $pee, '<option' ) !== false ) {
+=======
+
+	$pee = preg_replace('|<br />\s*<br />|', "\n\n", $pee);
+	// Space things out a little
+	$allblocks = '(?:table|thead|tfoot|caption|col|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|form|map|area|blockquote|address|math|style|p|h[1-6]|hr|fieldset|legend|section|article|aside|hgroup|header|footer|nav|figure|details|menu|summary)';
+	$pee = preg_replace('!(<' . $allblocks . '[^>]*>)!', "\n$1", $pee);
+	$pee = preg_replace('!(</' . $allblocks . '>)!', "$1\n\n", $pee);
+	$pee = str_replace(array("\r\n", "\r"), "\n", $pee); // cross-platform newlines
+
+	if ( strpos( $pee, '<option' ) !== false ) {
+		// no P/BR around option
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$pee = preg_replace( '|\s*<option|', '<option', $pee );
 		$pee = preg_replace( '|</option>\s*|', '</option>', $pee );
 	}
 
+<<<<<<< HEAD
 	/*
 	 * Collapse line breaks inside <object> elements, before <param> and <embed> elements
 	 * so they don't get autop'd.
 	 */
 	if ( strpos( $pee, '</object>' ) !== false ) {
+=======
+	if ( strpos( $pee, '</object>' ) !== false ) {
+		// no P/BR around param and embed
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$pee = preg_replace( '|(<object[^>]*>)\s*|', '$1', $pee );
 		$pee = preg_replace( '|\s*</object>|', '</object>', $pee );
 		$pee = preg_replace( '%\s*(</?(?:param|embed)[^>]*>)\s*%', '$1', $pee );
 	}
 
+<<<<<<< HEAD
 	/*
 	 * Collapse line breaks inside <audio> and <video> elements,
 	 * before and after <source> and <track> elements.
 	 */
 	if ( strpos( $pee, '<source' ) !== false || strpos( $pee, '<track' ) !== false ) {
+=======
+	if ( strpos( $pee, '<source' ) !== false || strpos( $pee, '<track' ) !== false ) {
+		// no P/BR around source and track
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$pee = preg_replace( '%([<\[](?:audio|video)[^>\]]*[>\]])\s*%', '$1', $pee );
 		$pee = preg_replace( '%\s*([<\[]/(?:audio|video)[>\]])%', '$1', $pee );
 		$pee = preg_replace( '%\s*(<(?:source|track)[^>]*>)\s*%', '$1', $pee );
 	}
 
+<<<<<<< HEAD
 	// Remove more than two contiguous line breaks.
 	$pee = preg_replace("/\n\n+/", "\n\n", $pee);
 
@@ -457,10 +514,18 @@ function wpautop($pee, $br = true) {
 	$pee = '';
 
 	// Rebuild the content as a string, wrapping every bit with a <p>.
+=======
+	$pee = preg_replace("/\n\n+/", "\n\n", $pee); // take care of duplicates
+	// make paragraphs, including one at the end
+	$pees = preg_split('/\n\s*\n/', $pee, -1, PREG_SPLIT_NO_EMPTY);
+	$pee = '';
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	foreach ( $pees as $tinkle ) {
 		$pee .= '<p>' . trim($tinkle, "\n") . "</p>\n";
 	}
 
+<<<<<<< HEAD
 	// Under certain strange conditions it could create a P of entirely whitespace.
 	$pee = preg_replace('|<p>\s*</p>|', '', $pee); 
 
@@ -503,6 +568,27 @@ function wpautop($pee, $br = true) {
 	$pee = preg_replace( "|\n</p>$|", '</p>', $pee );
 
 	// Replace placeholder <pre> tags with their original content.
+=======
+	$pee = preg_replace('|<p>\s*</p>|', '', $pee); // under certain strange conditions it could create a P of entirely whitespace
+	$pee = preg_replace('!<p>([^<]+)</(div|address|form)>!', "<p>$1</p></$2>", $pee);
+	$pee = preg_replace('!<p>\s*(</?' . $allblocks . '[^>]*>)\s*</p>!', "$1", $pee); // don't pee all over a tag
+	$pee = preg_replace("|<p>(<li.+?)</p>|", "$1", $pee); // problem with nested lists
+	$pee = preg_replace('|<p><blockquote([^>]*)>|i', "<blockquote$1><p>", $pee);
+	$pee = str_replace('</blockquote></p>', '</p></blockquote>', $pee);
+	$pee = preg_replace('!<p>\s*(</?' . $allblocks . '[^>]*>)!', "$1", $pee);
+	$pee = preg_replace('!(</?' . $allblocks . '[^>]*>)\s*</p>!', "$1", $pee);
+
+	if ( $br ) {
+		$pee = preg_replace_callback('/<(script|style).*?<\/\\1>/s', '_autop_newline_preservation_helper', $pee);
+		$pee = preg_replace('|(?<!<br />)\s*\n|', "<br />\n", $pee); // optionally make line breaks
+		$pee = str_replace('<WPPreserveNewline />', "\n", $pee);
+	}
+
+	$pee = preg_replace('!(</?' . $allblocks . '[^>]*>)\s*<br />!', "$1", $pee);
+	$pee = preg_replace('!<br />(\s*</?(?:p|li|div|dl|dd|dt|th|pre|td|ul|ol)[^>]*>)!', '$1', $pee);
+	$pee = preg_replace( "|\n</p>$|", '</p>', $pee );
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	if ( !empty($pre_tags) )
 		$pee = str_replace(array_keys($pre_tags), array_values($pre_tags), $pee);
 
@@ -595,6 +681,7 @@ function seems_utf8($str) {
 	reset_mbstring_encoding();
 	for ($i=0; $i < $length; $i++) {
 		$c = ord($str[$i]);
+<<<<<<< HEAD
 		if ($c < 0x80) $n = 0; // 0bbbbbbb
 		elseif (($c & 0xE0) == 0xC0) $n=1; // 110bbbbb
 		elseif (($c & 0xF0) == 0xE0) $n=2; // 1110bbbb
@@ -603,6 +690,16 @@ function seems_utf8($str) {
 		elseif (($c & 0xFE) == 0xFC) $n=5; // 1111110b
 		else return false; // Does not match any model
 		for ($j=0; $j<$n; $j++) { // n bytes matching 10bbbbbb follow ?
+=======
+		if ($c < 0x80) $n = 0; # 0bbbbbbb
+		elseif (($c & 0xE0) == 0xC0) $n=1; # 110bbbbb
+		elseif (($c & 0xF0) == 0xE0) $n=2; # 1110bbbb
+		elseif (($c & 0xF8) == 0xF0) $n=3; # 11110bbb
+		elseif (($c & 0xFC) == 0xF8) $n=4; # 111110bb
+		elseif (($c & 0xFE) == 0xFC) $n=5; # 1111110b
+		else return false; # Does not match any model
+		for ($j=0; $j<$n; $j++) { # n bytes matching 10bbbbbb follow ?
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			if ((++$i == $length) || ((ord($str[$i]) & 0xC0) != 0x80))
 				return false;
 		}
@@ -678,9 +775,15 @@ function _wp_specialchars( $string, $quote_style = ENT_NOQUOTES, $charset = fals
 		// Now re-encode everything except &entity;
 		$string = preg_split( '/(&#?x?[0-9a-z]+;)/i', $string, -1, PREG_SPLIT_DELIM_CAPTURE );
 
+<<<<<<< HEAD
 		for ( $i = 0, $c = count( $string ); $i < $c; $i += 2 ) {
 			$string[$i] = @htmlspecialchars( $string[$i], $quote_style, $charset );
 		}
+=======
+		for ( $i = 0; $i < count( $string ); $i += 2 )
+			$string[$i] = @htmlspecialchars( $string[$i], $quote_style, $charset );
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$string = implode( '', $string );
 	}
 
@@ -830,6 +933,7 @@ function utf8_uri_encode( $utf8_string, $length = 0 ) {
 			$unicode .= chr($value);
 			$unicode_length++;
 		} else {
+<<<<<<< HEAD
 			if ( count( $values ) == 0 ) {
 				if ( $value < 224 ) {
 					$num_octets = 2;
@@ -839,18 +943,32 @@ function utf8_uri_encode( $utf8_string, $length = 0 ) {
 					$num_octets = 4;
 				}
 			}
+=======
+			if ( count( $values ) == 0 ) $num_octets = ( $value < 224 ) ? 2 : 3;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			$values[] = $value;
 
 			if ( $length && ( $unicode_length + ($num_octets * 3) ) > $length )
 				break;
 			if ( count( $values ) == $num_octets ) {
+<<<<<<< HEAD
 				for ( $j = 0; $j < $num_octets; $j++ ) {
 					$unicode .= '%' . dechex( $values[ $j ] );
 				}
 
 				$unicode_length += $num_octets * 3;
 
+=======
+				if ($num_octets == 3) {
+					$unicode .= '%' . dechex($values[0]) . '%' . dechex($values[1]) . '%' . dechex($values[2]);
+					$unicode_length += 9;
+				} else {
+					$unicode .= '%' . dechex($values[0]) . '%' . dechex($values[1]);
+					$unicode_length += 6;
+				}
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				$values = array();
 				$num_octets = 1;
 			}
@@ -1073,7 +1191,10 @@ function remove_accents($string) {
 
 		$string = strtr($string, $chars);
 	} else {
+<<<<<<< HEAD
 		$chars = array();
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		// Assume ISO-8859-1 if not UTF-8
 		$chars['in'] = chr(128).chr(131).chr(138).chr(142).chr(154).chr(158)
 			.chr(159).chr(162).chr(165).chr(181).chr(192).chr(193).chr(194)
@@ -1089,7 +1210,10 @@ function remove_accents($string) {
 		$chars['out'] = "EfSZszYcYuAAAAAACEEEEIIIINOOOOOOUUUUYaaaaaaceeeeiiiinoooooouuuuyy";
 
 		$string = strtr($string, $chars['in'], $chars['out']);
+<<<<<<< HEAD
 		$double_chars = array();
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$double_chars['in'] = array(chr(140), chr(156), chr(198), chr(208), chr(222), chr(223), chr(230), chr(240), chr(254));
 		$double_chars['out'] = array('OE', 'oe', 'AE', 'DH', 'TH', 'ss', 'ae', 'dh', 'th');
 		$string = str_replace($double_chars['in'], $double_chars['out'], $string);
@@ -1362,6 +1486,7 @@ function sanitize_title_with_dashes( $title, $raw_title = '', $context = 'displa
 }
 
 /**
+<<<<<<< HEAD
  * Ensures a string is a valid SQL 'order by' clause.
  *
  * Accepts one or more columns, with or without a sort order (ASC / DESC).
@@ -1379,6 +1504,23 @@ function sanitize_sql_orderby( $orderby ) {
 		return $orderby;
 	}
 	return false;
+=======
+ * Ensures a string is a valid SQL order by clause.
+ *
+ * Accepts one or more columns, with or without ASC/DESC, and also accepts
+ * RAND().
+ *
+ * @since 2.5.1
+ *
+ * @param string $orderby Order by string to be checked.
+ * @return false|string Returns the order by clause if it is a match, false otherwise.
+ */
+function sanitize_sql_orderby( $orderby ){
+	preg_match('/^\s*([a-z0-9_]+(\s+(ASC|DESC))?(\s*,\s*|\s*$))+|^\s*RAND\(\s*\)\s*$/i', $orderby, $obmatches);
+	if ( !$obmatches )
+		return false;
+	return $orderby;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
@@ -1555,7 +1697,11 @@ function force_balance_tags( $text ) {
 				// or close to be safe $tag = '/' . $tag;
 			}
 			// if stacktop value = tag close value then pop
+<<<<<<< HEAD
 			elseif ( $tagstack[$stacksize - 1] == $tag ) { // found closing tag
+=======
+			else if ( $tagstack[$stacksize - 1] == $tag ) { // found closing tag
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				$tag = '</' . $tag . '>'; // Close Tag
 				// Pop
 				array_pop( $tagstack );
@@ -1812,7 +1958,11 @@ function rawurlencode_deep( $value ) {
  */
 function antispambot( $email_address, $hex_encoding = 0 ) {
 	$email_no_spam_address = '';
+<<<<<<< HEAD
 	for ( $i = 0, $len = strlen( $email_address ); $i < $len; $i++ ) {
+=======
+	for ( $i = 0; $i < strlen( $email_address ); $i++ ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$j = rand( 0, 1 + $hex_encoding );
 		if ( $j == 0 ) {
 			$email_no_spam_address .= '&#' . ord( $email_address[$i] ) . ';';
@@ -2091,6 +2241,7 @@ function translate_smiley( $matches ) {
 	$smiley = trim( reset( $matches ) );
 	$img = $wpsmiliestrans[ $smiley ];
 
+<<<<<<< HEAD
 	$matches = array();
 	$ext = preg_match( '/\.([^.]+)$/', $img, $matches ) ? strtolower( $matches[1] ) : false;
 	$image_exts = array( 'jpg', 'jpeg', 'jpe', 'gif', 'png' );
@@ -2100,6 +2251,8 @@ function translate_smiley( $matches ) {
 		return $img;
 	}
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	/**
 	 * Filter the Smiley image URL before it's used in the image element.
 	 *
@@ -2111,7 +2264,11 @@ function translate_smiley( $matches ) {
 	 */
 	$src_url = apply_filters( 'smilies_src', includes_url( "images/smilies/$img" ), $img, site_url() );
 
+<<<<<<< HEAD
 	return sprintf( '<img src="%s" alt="%s" class="wp-smiley" style="height: 1em; max-height: 1em;" />', esc_url( $src_url ), esc_attr( $smiley ) );
+=======
+	return sprintf( '<img src="%s" alt="%s" class="wp-smiley" />', esc_url( $src_url ), esc_attr( $smiley ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
@@ -2399,7 +2556,11 @@ function iso8601_to_datetime($date_string, $timezone = 'user') {
 
 		return gmdate('Y-m-d H:i:s', $timestamp);
 
+<<<<<<< HEAD
 	} elseif ($timezone == 'user') {
+=======
+	} else if ($timezone == 'user') {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		return preg_replace('#([0-9]{4})([0-9]{2})([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})(Z|[\+|\-][0-9]{2,4}){0,1}#', '$1-$2-$3 $4:$5:$6', $date_string);
 	}
 }
@@ -3326,12 +3487,18 @@ function wp_make_link_relative( $link ) {
  * @return string Sanitized value.
  */
 function sanitize_option($option, $value) {
+<<<<<<< HEAD
 	global $wpdb;
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	switch ( $option ) {
 		case 'admin_email' :
 		case 'new_admin_email' :
+<<<<<<< HEAD
 			$value = $wpdb->strip_invalid_text_for_column( $wpdb->options, 'option_value', $value );
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$value = sanitize_email( $value );
 			if ( ! is_email( $value ) ) {
 				$value = get_option( $option ); // Resets option to stored value in the case of failed sanitization
@@ -3380,7 +3547,10 @@ function sanitize_option($option, $value) {
 
 		case 'blogdescription':
 		case 'blogname':
+<<<<<<< HEAD
 			$value = $wpdb->strip_invalid_text_for_column( $wpdb->options, 'option_value', $value );
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$value = wp_kses_post( $value );
 			$value = esc_html( $value );
 			break;
@@ -3403,7 +3573,10 @@ function sanitize_option($option, $value) {
 		case 'mailserver_login':
 		case 'mailserver_pass':
 		case 'upload_path':
+<<<<<<< HEAD
 			$value = $wpdb->strip_invalid_text_for_column( $wpdb->options, 'option_value', $value );
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$value = strip_tags( $value );
 			$value = wp_kses_data( $value );
 			break;
@@ -3420,7 +3593,10 @@ function sanitize_option($option, $value) {
 			break;
 
 		case 'siteurl':
+<<<<<<< HEAD
 			$value = $wpdb->strip_invalid_text_for_column( $wpdb->options, 'option_value', $value );
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			if ( (bool)preg_match( '#http(s?)://(.+)#i', $value) ) {
 				$value = esc_url_raw($value);
 			} else {
@@ -3431,7 +3607,10 @@ function sanitize_option($option, $value) {
 			break;
 
 		case 'home':
+<<<<<<< HEAD
 			$value = $wpdb->strip_invalid_text_for_column( $wpdb->options, 'option_value', $value );
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			if ( (bool)preg_match( '#http(s?)://(.+)#i', $value) ) {
 				$value = esc_url_raw($value);
 			} else {
@@ -3452,7 +3631,10 @@ function sanitize_option($option, $value) {
 			break;
 
 		case 'illegal_names':
+<<<<<<< HEAD
 			$value = $wpdb->strip_invalid_text_for_column( $wpdb->options, 'option_value', $value );
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			if ( ! is_array( $value ) )
 				$value = explode( ' ', $value );
 
@@ -3464,7 +3646,10 @@ function sanitize_option($option, $value) {
 
 		case 'limited_email_domains':
 		case 'banned_email_domains':
+<<<<<<< HEAD
 			$value = $wpdb->strip_invalid_text_for_column( $wpdb->options, 'option_value', $value );
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			if ( ! is_array( $value ) )
 				$value = explode( "\n", $value );
 
@@ -3491,7 +3676,10 @@ function sanitize_option($option, $value) {
 		case 'permalink_structure':
 		case 'category_base':
 		case 'tag_base':
+<<<<<<< HEAD
 			$value = $wpdb->strip_invalid_text_for_column( $wpdb->options, 'option_value', $value );
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$value = esc_url_raw( $value );
 			$value = str_replace( 'http://', '', $value );
 			break;
@@ -3503,7 +3691,10 @@ function sanitize_option($option, $value) {
 
 		case 'moderation_keys':
 		case 'blacklist_keys':
+<<<<<<< HEAD
 			$value = $wpdb->strip_invalid_text_for_column( $wpdb->options, 'option_value', $value );
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$value = explode( "\n", $value );
 			$value = array_filter( array_map( 'trim', $value ) );
 			$value = array_unique( $value );
@@ -3584,7 +3775,11 @@ function wp_pre_kses_less_than_callback( $matches ) {
  * @link http://www.php.net/sprintf
  *
  * @param string $pattern The string which formatted args are inserted.
+<<<<<<< HEAD
  * @param mixed  $args ,... Arguments to be formatted into the $pattern string.
+=======
+ * @param mixed $args,... Arguments to be formatted into the $pattern string.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @return string The formatted string.
  */
 function wp_sprintf( $pattern ) {
@@ -4077,6 +4272,7 @@ function wp_spaces_regexp() {
 
 	return $spaces;
 }
+<<<<<<< HEAD
 
 /**
  * Print the important emoji-related styles.
@@ -4375,3 +4571,5 @@ function wp_staticize_emoji_for_email( $mail ) {
 
 	return $mail;
 }
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

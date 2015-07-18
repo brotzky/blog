@@ -135,7 +135,11 @@ function get_author_template() {
 
 	$templates = array();
 
+<<<<<<< HEAD
 	if ( $author instanceof WP_User ) {
+=======
+	if ( is_a( $author, 'WP_User' ) ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$templates[] = "author-{$author->user_nicename}.php";
 		$templates[] = "author-{$author->ID}.php";
 	}
@@ -467,7 +471,11 @@ function locate_template($template_names, $load = false, $require_once = true ) 
 		if ( file_exists(STYLESHEETPATH . '/' . $template_name)) {
 			$located = STYLESHEETPATH . '/' . $template_name;
 			break;
+<<<<<<< HEAD
 		} elseif ( file_exists(TEMPLATEPATH . '/' . $template_name) ) {
+=======
+		} else if ( file_exists(TEMPLATEPATH . '/' . $template_name) ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$located = TEMPLATEPATH . '/' . $template_name;
 			break;
 		}

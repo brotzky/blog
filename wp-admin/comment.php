@@ -12,7 +12,10 @@ require_once( dirname( __FILE__ ) . '/admin.php' );
 $parent_file = 'edit-comments.php';
 $submenu_file = 'edit-comments.php';
 
+<<<<<<< HEAD
 global $action;
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 wp_reset_vars( array('action') );
 
 if ( isset( $_POST['deletecomment'] ) )
@@ -56,7 +59,11 @@ case 'editcomment' :
 
 	get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
+<<<<<<< HEAD
 	'<p>' . __( '<a href="https://codex.wordpress.org/Administration_Screens#Comments" target="_blank">Documentation on Comments</a>' ) . '</p>' .
+=======
+	'<p>' . __( '<a href="http://codex.wordpress.org/Administration_Screens#Comments" target="_blank">Documentation on Comments</a>' ) . '</p>' .
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	'<p>' . __( '<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>' ) . '</p>'
 	);
 
@@ -114,17 +121,30 @@ case 'spam'    :
 ?>
 <div class="wrap">
 
+<<<<<<< HEAD
+=======
+<div class="narrow">
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <h2><?php echo esc_html( $title ); ?></h2>
 
 <?php
 switch ( $action ) {
 	case 'spam' :
 		$caution_msg = __('You are about to mark the following comment as spam:');
+<<<<<<< HEAD
 		$button      = __('Mark as Spam');
 		break;
 	case 'trash' :
 		$caution_msg = __('You are about to move the following comment to the Trash:');
 		$button      = __('Move to Trash');
+=======
+		$button      = __('Spam Comment');
+		break;
+	case 'trash' :
+		$caution_msg = __('You are about to move the following comment to the Trash:');
+		$button      = __('Trash Comment');
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		break;
 	case 'delete' :
 		$caution_msg = __('You are about to delete the following comment:');
@@ -149,15 +169,24 @@ if ( $comment->comment_approved != '0' ) { // if not unapproved
 			$message  = __('This comment is currently in the Trash.');
 			break;
 	}
+<<<<<<< HEAD
 	if ( $message ) {
 		echo '<div class="notice notice-info"><p>' . $message . '</p></div>';
 	}
+=======
+	if ( $message )
+		echo '<div class="updated"><p>' . $message . '</p></div>';
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 ?>
 <p><strong><?php _e('Caution:'); ?></strong> <?php echo $caution_msg; ?></p>
 
 <table class="form-table comment-ays">
+<<<<<<< HEAD
 <tr>
+=======
+<tr class="alt">
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <th scope="row"><?php _e('Author'); ?></th>
 <td><?php echo $comment->comment_author; ?></td>
 </tr>
@@ -174,6 +203,7 @@ if ( $comment->comment_approved != '0' ) { // if not unapproved
 </tr>
 <?php } ?>
 <tr>
+<<<<<<< HEAD
 	<th scope="row"><?php _e( 'In Response To' ); ?></th>
 	<td>
 	<?php
@@ -210,17 +240,32 @@ if ( $comment->comment_approved != '0' ) { // if not unapproved
 	</td>
 </tr>
 <tr>
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <th scope="row"><?php /* translators: field name in comment form */ _ex('Comment', 'noun'); ?></th>
 <td><?php echo $comment->comment_content; ?></td>
 </tr>
 </table>
 
+<<<<<<< HEAD
 <form action="comment.php" method="get" class="comment-ays-submit">
 
 <p>
 	<?php submit_button( $button, 'primary', 'submit', false ); ?>
 	<a href="<?php echo admin_url('edit-comments.php'); ?>" class="button-cancel"><?php esc_attr_e( 'Cancel' ); ?></a></td>
 </p>
+=======
+<p><?php _e('Are you sure you want to do this?'); ?></p>
+
+<form action="comment.php" method="get">
+
+<table width="100%">
+<tr>
+<td><a class="button" href="<?php echo admin_url('edit-comments.php'); ?>"><?php esc_attr_e('No'); ?></a></td>
+<td class="textright"><?php submit_button( $button, 'button' ); ?></td>
+</tr>
+</table>
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 <?php wp_nonce_field( $nonce_action ); ?>
 <input type="hidden" name="action" value="<?php echo esc_attr($formaction); ?>" />
@@ -229,6 +274,10 @@ if ( $comment->comment_approved != '0' ) { // if not unapproved
 </form>
 
 </div>
+<<<<<<< HEAD
+=======
+</div>
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <?php
 	break;
 

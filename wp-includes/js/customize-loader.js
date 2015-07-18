@@ -114,7 +114,11 @@ window.wp = window.wp || {};
 			// Dirty state of Customizer in iframe
 			this.saved = new api.Value( true );
 
+<<<<<<< HEAD
 			this.iframe = $( '<iframe />', { 'src': src, 'title': Loader.settings.l10n.mainIframeTitle } ).appendTo( this.element );
+=======
+			this.iframe = $( '<iframe />', { src: src }).appendTo( this.element );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			this.iframe.one( 'load', this.loaded );
 
 			// Create a postMessage connection with the iframe.
@@ -155,10 +159,13 @@ window.wp = window.wp || {};
 				Loader.saved( false );
 			} );
 
+<<<<<<< HEAD
 			this.messenger.bind( 'title', function( newTitle ){
 				window.document.title = newTitle;
 			});
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			this.pushState( src );
 
 			this.trigger( 'open' );

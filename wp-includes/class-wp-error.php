@@ -24,16 +24,28 @@ class WP_Error {
 	 *
 	 * @since 2.1.0
 	 * @var array
+<<<<<<< HEAD
 	 */
 	public $errors = array();
+=======
+	 * @access private
+	 */
+	private $errors = array();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * Stores the list of data for error codes.
 	 *
 	 * @since 2.1.0
 	 * @var array
+<<<<<<< HEAD
 	 */
 	public $error_data = array();
+=======
+	 * @access private
+	 */
+	private $error_data = array();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * Initialize the error.
@@ -51,6 +63,10 @@ class WP_Error {
 	 * @param string|int $code Error code
 	 * @param string $message Error message
 	 * @param mixed $data Optional. Error data.
+<<<<<<< HEAD
+=======
+	 * @return WP_Error
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 */
 	public function __construct( $code = '', $message = '', $data = '' ) {
 		if ( empty($code) )
@@ -63,6 +79,61 @@ class WP_Error {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Make private properties readable for backwards compatibility.
+	 *
+	 * @since 4.0.0
+	 * @access public
+	 *
+	 * @param string $name Property to get.
+	 * @return mixed Property.
+	 */
+	public function __get( $name ) {
+		return $this->$name;
+	}
+
+	/**
+	 * Make private properties settable for backwards compatibility.
+	 *
+	 * @since 4.0.0
+	 * @access public
+	 *
+	 * @param string $name  Property to set.
+	 * @param mixed  $value Property value.
+	 * @return mixed Newly-set property.
+	 */
+	public function __set( $name, $value ) {
+		return $this->$name = $value;
+	}
+
+	/**
+	 * Make private properties checkable for backwards compatibility.
+	 *
+	 * @since 4.0.0
+	 * @access public
+	 *
+	 * @param string $name Property to check if set.
+	 * @return bool Whether the property is set.
+	 */
+	public function __isset( $name ) {
+		return isset( $this->$name );
+	}
+
+	/**
+	 * Make private properties un-settable for backwards compatibility.
+	 *
+	 * @since 4.0.0
+	 * @access public
+	 *
+	 * @param string $name Property to unset.
+	 */
+	public function __unset( $name ) {
+		unset( $this->$name );
+	}
+
+	/**
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * Retrieve all error codes.
 	 *
 	 * @since 2.1.0
@@ -214,6 +285,13 @@ class WP_Error {
  * @param mixed $thing Check if unknown variable is a WP_Error object.
  * @return bool True, if WP_Error. False, if not WP_Error.
  */
+<<<<<<< HEAD
 function is_wp_error( $thing ) {
 	return ( $thing instanceof WP_Error );
+=======
+function is_wp_error($thing) {
+	if ( is_object($thing) && is_a($thing, 'WP_Error') )
+		return true;
+	return false;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }

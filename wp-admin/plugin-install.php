@@ -54,8 +54,11 @@ if ( 'plugin-information' != $tab )
 
 $body_id = $tab;
 
+<<<<<<< HEAD
 wp_enqueue_script( 'updates' );
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 /**
  * Fires before each tab on the Install Plugins screen is loaded.
  *
@@ -84,7 +87,11 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
+<<<<<<< HEAD
 	'<p>' . __('<a href="https://codex.wordpress.org/Plugins_Add_New_Screen" target="_blank">Documentation on Installing Plugins</a>') . '</p>' .
+=======
+	'<p>' . __('<a href="http://codex.wordpress.org/Plugins_Add_New_Screen" target="_blank">Documentation on Installing Plugins</a>') . '</p>' .
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	'<p>' . __('<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>'
 );
 
@@ -128,10 +135,14 @@ if ( $tab !== 'upload' ) {
  */
 do_action( "install_plugins_$tab", $paged ); ?>
 </div>
+<<<<<<< HEAD
 
 <?php
 wp_print_request_filesystem_credentials_modal();
 
+=======
+<?php
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 /**
  * WordPress Administration Template Footer.
  */

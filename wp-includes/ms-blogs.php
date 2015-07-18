@@ -33,11 +33,19 @@ function wpmu_update_blogs_date() {
  * @since MU
  *
  * @param int $blog_id Blog ID
+<<<<<<< HEAD
  * @return string Full URL of the blog if found. Empty string if not.
  */
 function get_blogaddress_by_id( $blog_id ) {
 	$bloginfo = get_blog_details( (int) $blog_id, false ); // only get bare details!
 	return ( $bloginfo ) ? esc_url( 'http://' . $bloginfo->domain . $bloginfo->path ) : '';
+=======
+ * @return string
+ */
+function get_blogaddress_by_id( $blog_id ) {
+	$bloginfo = get_blog_details( (int) $blog_id, false ); // only get bare details!
+	return esc_url( 'http://' . $bloginfo->domain . $bloginfo->path );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
@@ -99,7 +107,11 @@ function get_id_from_blogname( $slug ) {
  *
  * @param int|string|array $fields A blog ID, a blog slug, or an array of fields to query against. Optional. If not specified the current blog ID is used.
  * @param bool $get_all Whether to retrieve all details or only the details in the blogs table. Default is true.
+<<<<<<< HEAD
  * @return object|false Blog details on success. False on failure.
+=======
+ * @return object Blog details.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function get_blog_details( $fields = null, $get_all = true ) {
 	global $wpdb;
@@ -296,6 +308,7 @@ function update_blog_details( $blog_id, $details = array() ) {
 
 	$update_details = array();
 	$fields = array( 'site_id', 'domain', 'path', 'registered', 'last_updated', 'public', 'archived', 'mature', 'spam', 'deleted', 'lang_id');
+<<<<<<< HEAD
 	foreach ( array_intersect( array_keys( $details ), $fields ) as $field ) {
 		if ( 'path' === $field ) {
 			$details[ $field ] = trailingslashit( '/' . trim( $details[ $field ], '/' ) );
@@ -303,6 +316,10 @@ function update_blog_details( $blog_id, $details = array() ) {
 
 		$update_details[ $field ] = $details[ $field ];
 	}
+=======
+	foreach ( array_intersect( array_keys( $details ), $fields ) as $field )
+		$update_details[$field] = $details[$field];
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	$result = $wpdb->update( $wpdb->blogs, $update_details, array('blog_id' => $blog_id) );
 
@@ -625,11 +642,18 @@ function switch_to_blog( $new_blog, $deprecated = null ) {
 		wp_cache_init();
 
 		if ( function_exists( 'wp_cache_add_global_groups' ) ) {
+<<<<<<< HEAD
 			if ( is_array( $global_groups ) ) {
 				wp_cache_add_global_groups( $global_groups );
 			} else {
 				wp_cache_add_global_groups( array( 'users', 'userlogins', 'usermeta', 'user_meta', 'useremail', 'userslugs', 'site-transient', 'site-options', 'site-lookup', 'blog-lookup', 'blog-details', 'rss', 'global-posts', 'blog-id-cache' ) );
 			}
+=======
+			if ( is_array( $global_groups ) )
+				wp_cache_add_global_groups( $global_groups );
+			else
+				wp_cache_add_global_groups( array( 'users', 'userlogins', 'usermeta', 'user_meta', 'site-transient', 'site-options', 'site-lookup', 'blog-lookup', 'blog-details', 'rss', 'global-posts', ' blog-id-cache' ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			wp_cache_add_non_persistent_groups( array( 'comment', 'counts', 'plugins' ) );
 		}
 	}
@@ -689,11 +713,18 @@ function restore_current_blog() {
 		wp_cache_init();
 
 		if ( function_exists( 'wp_cache_add_global_groups' ) ) {
+<<<<<<< HEAD
 			if ( is_array( $global_groups ) ) {
 				wp_cache_add_global_groups( $global_groups );
 			} else {
 				wp_cache_add_global_groups( array( 'users', 'userlogins', 'usermeta', 'user_meta', 'useremail', 'userslugs', 'site-transient', 'site-options', 'site-lookup', 'blog-lookup', 'blog-details', 'rss', 'global-posts', 'blog-id-cache' ) );
 			}
+=======
+			if ( is_array( $global_groups ) )
+				wp_cache_add_global_groups( $global_groups );
+			else
+				wp_cache_add_global_groups( array( 'users', 'userlogins', 'usermeta', 'user_meta', 'site-transient', 'site-options', 'site-lookup', 'blog-lookup', 'blog-details', 'rss', 'global-posts', ' blog-id-cache' ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			wp_cache_add_non_persistent_groups( array( 'comment', 'counts', 'plugins' ) );
 		}
 	}

@@ -346,6 +346,7 @@ function wp_login_url($redirect = '', $force_reauth = false) {
 	 * Filter the login URL.
 	 *
 	 * @since 2.8.0
+<<<<<<< HEAD
 	 * @since 4.2.0 The `$force_reauth` parameter was added.
 	 *
 	 * @param string $login_url    The login URL.
@@ -353,6 +354,13 @@ function wp_login_url($redirect = '', $force_reauth = false) {
 	 * @param bool   $force_reauth Whether to force reauthorization, even if a cookie is present.
 	 */
 	return apply_filters( 'login_url', $login_url, $redirect, $force_reauth );
+=======
+	 *
+	 * @param string $login_url The login URL.
+	 * @param string $redirect  The path to redirect to on login, if supplied.
+	 */
+	return apply_filters( 'login_url', $login_url, $redirect );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
@@ -609,6 +617,7 @@ function get_bloginfo( $show = '', $filter = 'raw' ) {
 	switch( $show ) {
 		case 'home' : // DEPRECATED
 		case 'siteurl' : // DEPRECATED
+<<<<<<< HEAD
 			_deprecated_argument( __FUNCTION__, '2.2', sprintf(
 				/* translators: 1: 'siteurl'/'home' argument, 2: bloginfo() function name, 3: 'url' argument */
 				__( 'The %1$s option is deprecated for the family of %2$s functions. Use the %3$s option instead.' ),
@@ -616,6 +625,9 @@ function get_bloginfo( $show = '', $filter = 'raw' ) {
 				'<code>bloginfo()</code>',
 				'<code>url</code>'
 			) );
+=======
+			_deprecated_argument( __FUNCTION__, '2.2', sprintf( __('The <code>%s</code> option is deprecated for the family of <code>bloginfo()</code> functions.' ), $show ) . ' ' . sprintf( __( 'Use the <code>%s</code> option instead.' ), 'url'  ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		case 'url' :
 			$output = home_url();
 			break;
@@ -675,6 +687,7 @@ function get_bloginfo( $show = '', $filter = 'raw' ) {
 			$output = str_replace('_', '-', $output);
 			break;
 		case 'text_direction':
+<<<<<<< HEAD
 			_deprecated_argument( __FUNCTION__, '2.2', sprintf(
 				/* translators: 1: 'text_direction' argument, 2: bloginfo() function name, 3: is_rtl() function name */
 				__( 'The %1$s option is deprecated for the family of %2$s functions. Use the %3$s function instead.' ),
@@ -682,6 +695,9 @@ function get_bloginfo( $show = '', $filter = 'raw' ) {
 				'<code>bloginfo()</code>',
 				'<code>is_rtl()</code>'
 			) );
+=======
+			//_deprecated_argument( __FUNCTION__, '2.2', sprintf( __('The <code>%s</code> option is deprecated for the family of <code>bloginfo()</code> functions.' ), $show ) . ' ' . sprintf( __( 'Use the <code>%s</code> function instead.' ), 'is_rtl()'  ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			if ( function_exists( 'is_rtl' ) ) {
 				$output = is_rtl() ? 'rtl' : 'ltr';
 			} else {
@@ -730,9 +746,15 @@ function get_bloginfo( $show = '', $filter = 'raw' ) {
 /**
  * Display title tag with contents.
  *
+<<<<<<< HEAD
  * @ignore
  * @since 4.1.0
  * @access private
+=======
+ * @since 4.1.0
+ * @access private
+ * @internal
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @see wp_title()
  */
@@ -1326,7 +1348,11 @@ function get_archives_link($url, $text, $format = 'html', $before = '', $after =
  *     @type string     $before          Markup to prepend to the beginning of each link. Default empty.
  *     @type string     $after           Markup to append to the end of each link. Default empty.
  *     @type bool       $show_post_count Whether to display the post count alongside the link. Default false.
+<<<<<<< HEAD
  *     @type bool|int   $echo            Whether to echo or return the links list. Default 1|true to echo.
+=======
+ *     @type bool       $echo            Whether to echo or return the links list. Default 1|true to echo.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *     @type string     $order           Whether to use ascending or descending order. Accepts 'ASC', or 'DESC'.
  *                                       Default 'DESC'.
  * }
@@ -1452,6 +1478,10 @@ function wp_get_archives( $args = '' ) {
 		$key = "wp_get_archives:$key:$last_changed";
 		if ( ! $results = wp_cache_get( $key, 'posts' ) ) {
 			$results = $wpdb->get_results( $query );
+<<<<<<< HEAD
+=======
+			$cache[ $key ] = $results;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			wp_cache_set( $key, $results, 'posts' );
 		}
 		if ( $results ) {
@@ -1495,7 +1525,11 @@ function wp_get_archives( $args = '' ) {
 			}
 		}
 	} elseif ( ( 'postbypost' == $r['type'] ) || ('alpha' == $r['type'] ) ) {
+<<<<<<< HEAD
 		$orderby = ( 'alpha' == $r['type'] ) ? 'post_title ASC ' : 'post_date DESC, ID DESC ';
+=======
+		$orderby = ( 'alpha' == $r['type'] ) ? 'post_title ASC ' : 'post_date DESC ';
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$query = "SELECT * FROM $wpdb->posts $join $where ORDER BY $orderby $limit";
 		$key = md5( $query );
 		$key = "wp_get_archives:$key:$last_changed";
@@ -1670,8 +1704,11 @@ function get_calendar($initial = true, $echo = true) {
 	<tbody>
 	<tr>';
 
+<<<<<<< HEAD
 	$daywithpost = array();
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	// Get days with posts
 	$dayswithposts = $wpdb->get_results("SELECT DISTINCT DAYOFMONTH(post_date)
 		FROM $wpdb->posts WHERE post_date >= '{$thisyear}-{$thismonth}-01 00:00:00'
@@ -1681,6 +1718,11 @@ function get_calendar($initial = true, $echo = true) {
 		foreach ( (array) $dayswithposts as $daywith ) {
 			$daywithpost[] = $daywith[0];
 		}
+<<<<<<< HEAD
+=======
+	} else {
+		$daywithpost = array();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false || stripos($_SERVER['HTTP_USER_AGENT'], 'camino') !== false || stripos($_SERVER['HTTP_USER_AGENT'], 'safari') !== false)
@@ -1770,6 +1812,13 @@ function get_calendar($initial = true, $echo = true) {
 function delete_get_calendar_cache() {
 	wp_cache_delete( 'get_calendar', 'calendar' );
 }
+<<<<<<< HEAD
+=======
+add_action( 'save_post', 'delete_get_calendar_cache' );
+add_action( 'delete_post', 'delete_get_calendar_cache' );
+add_action( 'update_option_start_of_week', 'delete_get_calendar_cache' );
+add_action( 'update_option_gmt_offset', 'delete_get_calendar_cache' );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 /**
  * Display all of the allowed tags in HTML format with attributes.
@@ -2590,6 +2639,7 @@ function language_attributes($doctype = 'html') {
  *
  * @since 2.1.0
  *
+<<<<<<< HEAD
  * @param string|array $args {
  *     Optional. Array or string of arguments for generating paginated links for archives.
  *
@@ -2612,6 +2662,9 @@ function language_attributes($doctype = 'html') {
  *     @type string $before_page_number A string to appear before the page number. Default empty.
  *     @type string $after_page_number  A string to append after the page number. Default empty.
  * }
+=======
+ * @param string|array $args Optional. Override defaults.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @return array|string String of page links or array of page links.
  */
 function paginate_links( $args = '' ) {
@@ -2794,8 +2847,13 @@ function register_admin_color_schemes() {
 
 	wp_admin_css_color( 'fresh', _x( 'Default', 'admin color scheme' ),
 		false,
+<<<<<<< HEAD
 		array( '#222', '#333', '#0073aa', '#00a0d2' ),
 		array( 'base' => '#999', 'focus' => '#00a0d2', 'current' => '#fff' )
+=======
+		array( '#222', '#333', '#0074a2', '#2ea2cc' ),
+		array( 'base' => '#999', 'focus' => '#2ea2cc', 'current' => '#fff' )
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	);
 
 	// Other color schemes are not available when running out of src
@@ -2897,9 +2955,14 @@ function wp_admin_css_uri( $file = 'wp-admin' ) {
  */
 function wp_admin_css( $file = 'wp-admin', $force_echo = false ) {
 	global $wp_styles;
+<<<<<<< HEAD
 	if ( ! ( $wp_styles instanceof WP_Styles ) ) {
 		$wp_styles = new WP_Styles();
 	}
+=======
+	if ( !is_a($wp_styles, 'WP_Styles') )
+		$wp_styles = new WP_Styles();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	// For backward compatibility
 	$handle = 0 === strpos( $file, 'css/' ) ? substr( $file, 4 ) : $file;
@@ -3157,3 +3220,21 @@ function wp_heartbeat_settings( $settings ) {
 
 	return $settings;
 }
+<<<<<<< HEAD
+=======
+
+/**
+ * Temporary function to add a missing style rule to the themes page.
+ * This avoids the need to ship an entirely rebuilt wp-admin.css in partial builds.
+ *
+ * @since 4.1.1
+ * @ignore
+ */
+function _wp_add_themesphp_notice_styling() {
+	global $pagenow;
+	if ( 'themes.php' == $pagenow ) {
+		echo "<style type='text/css'>.themes-php div.notice { margin: 0 0 20px 0; clear: both; }</style>\n";
+	}
+}
+add_action( 'admin_head', '_wp_add_themesphp_notice_styling' );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

@@ -17,8 +17,14 @@ class WP_Locale {
 	 *
 	 * @since 2.1.0
 	 * @var array
+<<<<<<< HEAD
 	 */
 	public $weekday;
+=======
+	 * @access private
+	 */
+	var $weekday;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * Stores the translated strings for the one character weekday names.
@@ -30,32 +36,56 @@ class WP_Locale {
 	 *
 	 * @since 2.1.0
 	 * @var array
+<<<<<<< HEAD
 	 */
 	public $weekday_initial;
+=======
+	 * @access private
+	 */
+	var $weekday_initial;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * Stores the translated strings for the abbreviated weekday names.
 	 *
 	 * @since 2.1.0
 	 * @var array
+<<<<<<< HEAD
 	 */
 	public $weekday_abbrev;
+=======
+	 * @access private
+	 */
+	var $weekday_abbrev;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * Stores the translated strings for the full month names.
 	 *
 	 * @since 2.1.0
 	 * @var array
+<<<<<<< HEAD
 	 */
 	public $month;
+=======
+	 * @access private
+	 */
+	var $month;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * Stores the translated strings for the abbreviated month names.
 	 *
 	 * @since 2.1.0
 	 * @var array
+<<<<<<< HEAD
 	 */
 	public $month_abbrev;
+=======
+	 * @access private
+	 */
+	var $month_abbrev;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * Stores the translated strings for 'am' and 'pm'.
@@ -64,8 +94,14 @@ class WP_Locale {
 	 *
 	 * @since 2.1.0
 	 * @var array
+<<<<<<< HEAD
 	 */
 	public $meridiem;
+=======
+	 * @access private
+	 */
+	var $meridiem;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * The text direction of the locale language.
@@ -74,14 +110,25 @@ class WP_Locale {
 	 *
 	 * @since 2.1.0
 	 * @var string
+<<<<<<< HEAD
 	 */
 	public $text_direction = 'ltr';
+=======
+	 * @access private
+	 */
+	var $text_direction = 'ltr';
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * @var array
 	 */
+<<<<<<< HEAD
 	public $number_format;
 
+=======
+	var $number_format;
+	
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	/**
 	 * Sets up the translated strings and object properties.
 	 *
@@ -318,6 +365,10 @@ class WP_Locale {
 	 * @uses WP_Locale::register_globals()
 	 * @since 2.1.0
 	 *
+<<<<<<< HEAD
+=======
+	 * @return WP_Locale
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 */
 	function __construct() {
 		$this->init();

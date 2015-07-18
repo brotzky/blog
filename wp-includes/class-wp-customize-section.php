@@ -1,11 +1,18 @@
 <?php
 /**
+<<<<<<< HEAD
  * WordPress Customize Section classes
+=======
+ * Customize Section Class.
+ *
+ * A UI container for controls, managed by the WP_Customize_Manager.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @package WordPress
  * @subpackage Customize
  * @since 3.4.0
  */
+<<<<<<< HEAD
 
 /**
  * Customize Section class.
@@ -16,6 +23,8 @@
  *
  * @see WP_Customize_Manager
  */
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 class WP_Customize_Section {
 
 	/**
@@ -171,6 +180,11 @@ class WP_Customize_Section {
 		$this->instance_number = self::$instance_count;
 
 		$this->controls = array(); // Users cannot customize the $controls array.
+<<<<<<< HEAD
+=======
+
+		return $this;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -181,7 +195,11 @@ class WP_Customize_Section {
 	 *
 	 * @return bool Whether the section is active to the current preview.
 	 */
+<<<<<<< HEAD
 	final public function active() {
+=======
+	public final function active() {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$section = $this;
 		$active = call_user_func( $this->active_callback, $this );
 
@@ -236,7 +254,11 @@ class WP_Customize_Section {
 	 *
 	 * @return bool False if theme doesn't support the section or user doesn't have the capability.
 	 */
+<<<<<<< HEAD
 	final public function check_capabilities() {
+=======
+	public final function check_capabilities() {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		if ( $this->capability && ! call_user_func_array( 'current_user_can', (array) $this->capability ) ) {
 			return false;
 		}
@@ -255,7 +277,11 @@ class WP_Customize_Section {
 	 *
 	 * @return string Contents of the section.
 	 */
+<<<<<<< HEAD
 	final public function get_content() {
+=======
+	public final function get_content() {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		ob_start();
 		$this->maybe_render();
 		$template = trim( ob_get_contents() );
@@ -268,7 +294,11 @@ class WP_Customize_Section {
 	 *
 	 * @since 3.4.0
 	 */
+<<<<<<< HEAD
 	final public function maybe_render() {
+=======
+	public final function maybe_render() {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		if ( ! $this->check_capabilities() ) {
 			return;
 		}
@@ -320,6 +350,7 @@ class WP_Customize_Section {
 }
 
 /**
+<<<<<<< HEAD
  * Customize Themes Section class.
  *
  * A UI container for theme controls, which behaves like a backwards Panel.
@@ -402,6 +433,13 @@ class WP_Customize_Themes_Section extends WP_Customize_Section {
 /**
  * Customizer section representing widget area (sidebar).
  *
+=======
+ * Customizer section representing widget area (sidebar).
+ *
+ * @package WordPress
+ * @subpackage Customize
+ *
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @since 4.1.0
  *
  * @see WP_Customize_Section

@@ -94,7 +94,11 @@ foreach ( $menu as $id => $data ) {
 	if ( empty($submenu[$data[2]]) )
 		continue;
 	$subs = $submenu[$data[2]];
+<<<<<<< HEAD
 	$first_sub = reset( $subs );
+=======
+	$first_sub = array_shift($subs);
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$old_parent = $data[2];
 	$new_parent = $first_sub[2];
 	/*
@@ -163,7 +167,11 @@ foreach ( $menu as $id => $data ) {
 	 */
 	if ( ! empty( $submenu[$data[2]] ) && 1 == count ( $submenu[$data[2]] ) ) {
 		$subs = $submenu[$data[2]];
+<<<<<<< HEAD
 		$first_sub = reset( $subs );
+=======
+		$first_sub = array_shift($subs);
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		if ( $data[2] == $first_sub[2] )
 			unset( $submenu[$data[2]] );
 	}
@@ -316,7 +324,11 @@ if ( !user_can_access_admin_page() ) {
 	 */
 	do_action( 'admin_page_access_denied' );
 
+<<<<<<< HEAD
 	wp_die( __( 'You do not have sufficient permissions to access this page.' ), 403 );
+=======
+	wp_die( __('You do not have sufficient permissions to access this page.') );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 $menu = add_menu_classes($menu);

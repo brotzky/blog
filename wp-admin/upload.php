@@ -24,6 +24,7 @@ if ( 'grid' === $mode ) {
 	wp_enqueue_media();
 	wp_enqueue_script( 'media-grid' );
 	wp_enqueue_script( 'media' );
+<<<<<<< HEAD
 
 	$q = $_GET;
 	// let JS handle this
@@ -39,6 +40,10 @@ if ( 'grid' === $mode ) {
 	wp_localize_script( 'media-grid', '_wpMediaGridSettings', array(
 		'adminUrl' => parse_url( self_admin_url(), PHP_URL_PATH ),
 		'queryVars' => (object) $vars
+=======
+	wp_localize_script( 'media-grid', '_wpMediaGridSettings', array(
+		'adminUrl' => parse_url( self_admin_url(), PHP_URL_PATH ),
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	) );
 
 	get_current_screen()->add_help_tab( array(
@@ -61,7 +66,11 @@ if ( 'grid' === $mode ) {
 
 	get_current_screen()->set_help_sidebar(
 		'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
+<<<<<<< HEAD
 		'<p>' . __( '<a href="https://codex.wordpress.org/Media_Library_Screen" target="_blank">Documentation on Media Library</a>' ) . '</p>' .
+=======
+		'<p>' . __( '<a href="http://codex.wordpress.org/Media_Library_Screen" target="_blank">Documentation on Media Library</a>' ) . '</p>' .
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		'<p>' . __( '<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>' ) . '</p>'
 	);
 
@@ -70,7 +79,11 @@ if ( 'grid' === $mode ) {
 
 	require_once( ABSPATH . 'wp-admin/admin-header.php' );
 	?>
+<<<<<<< HEAD
 	<div class="wrap" id="wp-media-grid" data-search="<?php _admin_search_query() ?>">
+=======
+	<div class="wrap" id="wp-media-grid">
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		<h2>
 		<?php
 		echo esc_html( $title );
@@ -113,6 +126,7 @@ if ( $doaction ) {
 	}
 
 	switch ( $doaction ) {
+<<<<<<< HEAD
 		case 'detach':
 			wp_media_attach_action( $_REQUEST['parent_post_id'], 'detach' );
 			break;
@@ -121,6 +135,47 @@ if ( $doaction ) {
 			wp_media_attach_action( $_REQUEST['found_post_id'] );
 			break;
 
+=======
+		case 'attach':
+			$parent_id = (int) $_REQUEST['found_post_id'];
+			if ( !$parent_id )
+				return;
+
+			$parent = get_post( $parent_id );
+			if ( !current_user_can( 'edit_post', $parent_id ) )
+				wp_die( __( 'You are not allowed to edit this post.' ) );
+
+			$attach = array();
+			foreach ( (array) $_REQUEST['media'] as $att_id ) {
+				$att_id = (int) $att_id;
+
+				if ( !current_user_can( 'edit_post', $att_id ) )
+					continue;
+
+				$attach[] = $att_id;
+			}
+
+			if ( ! empty( $attach ) ) {
+				$attach_string = implode( ',', $attach );
+				$attached = $wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET post_parent = %d WHERE post_type = 'attachment' AND ID IN ( $attach_string )", $parent_id ) );
+				foreach ( $attach as $att_id ) {
+					clean_attachment_cache( $att_id );
+				}
+			}
+
+			if ( isset( $attached ) ) {
+				$location = 'upload.php';
+				if ( $referer = wp_get_referer() ) {
+					if ( false !== strpos( $referer, 'upload.php' ) )
+						$location = $referer;
+				}
+
+				$location = add_query_arg( array( 'attached' => $attached ) , $location );
+				wp_redirect( $location );
+				exit;
+			}
+			break;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		case 'trash':
 			if ( !isset( $post_ids ) )
 				break;
@@ -173,7 +228,11 @@ $parent_file = 'upload.php';
 
 wp_enqueue_script( 'media' );
 
+<<<<<<< HEAD
 add_screen_option( 'per_page' );
+=======
+add_screen_option( 'per_page', array('label' => _x( 'Media items', 'items per page (screen options)' )) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 get_current_screen()->add_help_tab( array(
 'id'		=> 'overview',
@@ -198,7 +257,11 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
+<<<<<<< HEAD
 	'<p>' . __( '<a href="https://codex.wordpress.org/Media_Library_Screen" target="_blank">Documentation on Media Library</a>' ) . '</p>' .
+=======
+	'<p>' . __( '<a href="http://codex.wordpress.org/Media_Library_Screen" target="_blank">Documentation on Media Library</a>' ) . '</p>' .
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	'<p>' . __( '<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>' ) . '</p>'
 );
 
@@ -219,11 +282,16 @@ if ( ! empty( $_REQUEST['s'] ) )
 <?php
 $message = '';
 if ( ! empty( $_GET['posted'] ) ) {
+<<<<<<< HEAD
 	$message = __( 'Media attachment updated.' );
+=======
+	$message = __('Media attachment updated.');
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$_SERVER['REQUEST_URI'] = remove_query_arg(array('posted'), $_SERVER['REQUEST_URI']);
 }
 
 if ( ! empty( $_GET['attached'] ) && $attached = absint( $_GET['attached'] ) ) {
+<<<<<<< HEAD
 	$message = sprintf( _n( 'Reattached %d attachment.', 'Reattached %d attachments.', $attached ), $attached );
 	$_SERVER['REQUEST_URI'] = remove_query_arg( array( 'detach', 'attached' ), $_SERVER['REQUEST_URI'] );
 }
@@ -240,27 +308,43 @@ if ( ! empty( $_GET['deleted'] ) && $deleted = absint( $_GET['deleted'] ) ) {
 		$message = _n( '%d media attachment permanently deleted.', '%d media attachments permanently deleted.', $deleted );
 	}
 	$message = sprintf( $message, number_format_i18n( $deleted ) );
+=======
+	$message = sprintf( _n('Reattached %d attachment.', 'Reattached %d attachments.', $attached), $attached );
+	$_SERVER['REQUEST_URI'] = remove_query_arg(array('attached'), $_SERVER['REQUEST_URI']);
+}
+
+if ( ! empty( $_GET['deleted'] ) && $deleted = absint( $_GET['deleted'] ) ) {
+	$message = sprintf( _n( 'Media attachment permanently deleted.', '%d media attachments permanently deleted.', $deleted ), number_format_i18n( $_GET['deleted'] ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$_SERVER['REQUEST_URI'] = remove_query_arg(array('deleted'), $_SERVER['REQUEST_URI']);
 }
 
 if ( ! empty( $_GET['trashed'] ) && $trashed = absint( $_GET['trashed'] ) ) {
+<<<<<<< HEAD
 	if ( 1 == $trashed ) {
 		$message = __( 'Media attachment moved to the trash.' );
 	} else {
 		$message = _n( '%d media attachment moved to the trash.', '%d media attachments moved to the trash.', $trashed );
 	}
 	$message = sprintf( $message, number_format_i18n( $trashed ) );
+=======
+	$message = sprintf( _n( 'Media attachment moved to the trash.', '%d media attachments moved to the trash.', $trashed ), number_format_i18n( $_GET['trashed'] ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$message .= ' <a href="' . esc_url( wp_nonce_url( 'upload.php?doaction=undo&action=untrash&ids='.(isset($_GET['ids']) ? $_GET['ids'] : ''), "bulk-media" ) ) . '">' . __('Undo') . '</a>';
 	$_SERVER['REQUEST_URI'] = remove_query_arg(array('trashed'), $_SERVER['REQUEST_URI']);
 }
 
 if ( ! empty( $_GET['untrashed'] ) && $untrashed = absint( $_GET['untrashed'] ) ) {
+<<<<<<< HEAD
 	if ( 1 == $untrashed ) {
 		$message = __( 'Media attachment restored from the trash.' );
 	} else {
 		$message = _n( '%d media attachment restored from the trash.', '%d media attachments restored from the trash.', $untrashed );
 	}
 	$message = sprintf( $message, number_format_i18n( $untrashed ) );
+=======
+	$message = sprintf( _n( 'Media attachment restored from the trash.', '%d media attachments restored from the trash.', $untrashed ), number_format_i18n( $_GET['untrashed'] ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$_SERVER['REQUEST_URI'] = remove_query_arg(array('untrashed'), $_SERVER['REQUEST_URI']);
 }
 
@@ -276,10 +360,17 @@ if ( ! empty( $_GET['message'] ) && isset( $messages[ $_GET['message'] ] ) ) {
 }
 
 if ( !empty($message) ) { ?>
+<<<<<<< HEAD
 <div id="message" class="updated notice is-dismissible"><p><?php echo $message; ?></p></div>
 <?php } ?>
 
 <form id="posts-filter" method="get">
+=======
+<div id="message" class="updated"><p><?php echo $message; ?></p></div>
+<?php } ?>
+
+<form id="posts-filter" action="" method="get">
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 <?php $wp_list_table->views(); ?>
 

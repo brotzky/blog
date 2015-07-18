@@ -154,7 +154,11 @@ function wp_plugin_directory_constants() {
 /**
  * Defines cookie related WordPress constants
  *
+<<<<<<< HEAD
  * Defines constants after multisite is loaded.
+=======
+ * Defines constants after multisite is loaded. Cookie-related constants may be overridden in ms_network_cookies().
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @since 3.0.0
  */
 function wp_cookie_constants() {

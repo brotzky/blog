@@ -6,8 +6,13 @@
  * This functionality was found in a plugin before WordPress 2.2 release which
  * included it in the core from that point on.
  *
+<<<<<<< HEAD
  * @link https://codex.wordpress.org/Plugins/WordPress_Widgets WordPress Widgets
  * @link https://codex.wordpress.org/Plugins/WordPress_Widgets_Api Widgets API
+=======
+ * @link http://codex.wordpress.org/Plugins/WordPress_Widgets WordPress Widgets
+ * @link http://codex.wordpress.org/Plugins/WordPress_Widgets_Api Widgets API
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @package WordPress
  * @subpackage Widgets
@@ -166,7 +171,11 @@ class WP_Widget {
 
 	/**
 	 * PHP4 constructor
+<<<<<<< HEAD
 	 *
+=======
+	 * 
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * @param string $id_base
 	 * @param string $name
 	 * @param array  $widget_options
@@ -803,8 +812,11 @@ function register_sidebar($args = array()) {
 
 	$i = count($wp_registered_sidebars) + 1;
 
+<<<<<<< HEAD
 	$id_is_empty = empty( $args['id'] );
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$defaults = array(
 		'name' => sprintf(__('Sidebar %d'), $i ),
 		'id' => "sidebar-$i",
@@ -818,11 +830,14 @@ function register_sidebar($args = array()) {
 
 	$sidebar = wp_parse_args( $args, $defaults );
 
+<<<<<<< HEAD
 	if ( $id_is_empty ) {
 		/* translators: 1: the id argument, 2: sidebar name, 3: recommended id value */
 		_doing_it_wrong( __FUNCTION__, sprintf( __( 'No %1$s was set in the arguments array for the "%2$s" sidebar. Defaulting to "%3$s". Manually set the %1$s to "%3$s" to silence this notice and keep existing sidebar content.' ), '<code>id</code>', $sidebar['name'], $sidebar['id'] ), '4.2.0' );
 	}
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$wp_registered_sidebars[$sidebar['id']] = $sidebar;
 
 	add_theme_support('widgets');
@@ -1559,9 +1574,14 @@ function the_widget( $widget, $instance = array(), $args = array() ) {
 	global $wp_widget_factory;
 
 	$widget_obj = $wp_widget_factory->widgets[$widget];
+<<<<<<< HEAD
 	if ( ! ( $widget_obj instanceof WP_Widget ) ) {
 		return;
 	}
+=======
+	if ( !is_a($widget_obj, 'WP_Widget') )
+		return;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	$before_widget = sprintf('<div class="widget %s">', $widget_obj->widget_options['classname'] );
 	$default_args = array( 'before_widget' => $before_widget, 'after_widget' => "</div>", 'before_title' => '<h2 class="widgettitle">', 'after_title' => '</h2>' );

@@ -24,17 +24,29 @@ class WP_List_Table {
 	 *
 	 * @since 3.1.0
 	 * @var array
+<<<<<<< HEAD
 	 * @access protected
 	 */
 	protected $_args;
+=======
+	 * @access private
+	 */
+	private $_args;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * Various information needed for displaying the pagination
 	 *
 	 * @since 3.1.0
 	 * @var array
+<<<<<<< HEAD
 	 */
 	protected $_pagination_args = array();
+=======
+	 * @access private
+	 */
+	private $_pagination_args = array();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * The current screen
@@ -73,6 +85,7 @@ class WP_List_Table {
 	protected $modes = array();
 
 	/**
+<<<<<<< HEAD
 	 * Stores the value returned by ->get_column_info()
 	 *
 	 * @var array
@@ -87,6 +100,8 @@ class WP_List_Table {
 		'single_row_columns' );
 
 	/**
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * Constructor.
 	 *
 	 * The child class should call this constructor from its own constructor to override
@@ -155,9 +170,13 @@ class WP_List_Table {
 	 * @return mixed Property.
 	 */
 	public function __get( $name ) {
+<<<<<<< HEAD
 		if ( in_array( $name, $this->compat_fields ) ) {
 			return $this->$name;
 		}
+=======
+		return $this->$name;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -166,14 +185,22 @@ class WP_List_Table {
 	 * @since 4.0.0
 	 * @access public
 	 *
+<<<<<<< HEAD
 	 * @param string $name  Property to check if set.
+=======
+	 * @param string $name  Property to set.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * @param mixed  $value Property value.
 	 * @return mixed Newly-set property.
 	 */
 	public function __set( $name, $value ) {
+<<<<<<< HEAD
 		if ( in_array( $name, $this->compat_fields ) ) {
 			return $this->$name = $value;
 		}
+=======
+		return $this->$name = $value;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -186,9 +213,13 @@ class WP_List_Table {
 	 * @return bool Whether the property is set.
 	 */
 	public function __isset( $name ) {
+<<<<<<< HEAD
 		if ( in_array( $name, $this->compat_fields ) ) {
 			return isset( $this->$name );
 		}
+=======
+		return isset( $this->$name );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -200,9 +231,13 @@ class WP_List_Table {
 	 * @param string $name Property to unset.
 	 */
 	public function __unset( $name ) {
+<<<<<<< HEAD
 		if ( in_array( $name, $this->compat_fields ) ) {
 			unset( $this->$name );
 		}
+=======
+		unset( $this->$name );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -216,10 +251,14 @@ class WP_List_Table {
 	 * @return mixed|bool Return value of the callback, false otherwise.
 	 */
 	public function __call( $name, $arguments ) {
+<<<<<<< HEAD
 		if ( in_array( $name, $this->compat_methods ) ) {
 			return call_user_func_array( array( $this, $name ), $arguments );
 		}
 		return false;
+=======
+		return call_user_func_array( array( $this, $name ), $arguments );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -337,7 +376,11 @@ class WP_List_Table {
 <p class="search-box">
 	<label class="screen-reader-text" for="<?php echo $input_id ?>"><?php echo $text; ?>:</label>
 	<input type="search" id="<?php echo $input_id ?>" name="s" value="<?php _admin_search_query(); ?>" />
+<<<<<<< HEAD
 	<?php submit_button( $text, 'button', '', false, array('id' => 'search-submit') ); ?>
+=======
+	<?php submit_button( $text, 'button', false, false, array('id' => 'search-submit') ); ?>
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 </p>
 <?php
 	}
@@ -445,7 +488,11 @@ class WP_List_Table {
 
 		echo "</select>\n";
 
+<<<<<<< HEAD
 		submit_button( __( 'Apply' ), 'action', '', false, array( 'id' => "doaction$two" ) );
+=======
+		submit_button( __( 'Apply' ), 'action', false, false, array( 'id' => "doaction$two" ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		echo "\n";
 	}
 
@@ -509,6 +556,7 @@ class WP_List_Table {
 	protected function months_dropdown( $post_type ) {
 		global $wpdb, $wp_locale;
 
+<<<<<<< HEAD
 		/**
 		 * Filter whether to remove the 'Months' drop-down from the post list table.
 		 *
@@ -521,6 +569,8 @@ class WP_List_Table {
 			return;
 		}
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$months = $wpdb->get_results( $wpdb->prepare( "
 			SELECT DISTINCT YEAR( post_date ) AS year, MONTH( post_date ) AS month
 			FROM $wpdb->posts
@@ -939,6 +989,7 @@ class WP_List_Table {
 	</tr>
 	</thead>
 
+<<<<<<< HEAD
 	<tbody id="the-list"<?php
 		if ( $singular ) {
 			echo " data-wp-lists='list:$singular'";
@@ -946,12 +997,23 @@ class WP_List_Table {
 		<?php $this->display_rows_or_placeholder(); ?>
 	</tbody>
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	<tfoot>
 	<tr>
 		<?php $this->print_column_headers( false ); ?>
 	</tr>
 	</tfoot>
 
+<<<<<<< HEAD
+=======
+	<tbody id="the-list"<?php
+		if ( $singular ) {
+			echo " data-wp-lists='list:$singular'";
+		} ?>>
+		<?php $this->display_rows_or_placeholder(); ?>
+	</tbody>
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 </table>
 <?php
 		$this->display_tablenav( 'bottom' );
@@ -966,7 +1028,11 @@ class WP_List_Table {
 	 * @return array List of CSS classes for the table tag.
 	 */
 	protected function get_table_classes() {
+<<<<<<< HEAD
 		return array( 'widefat', 'fixed', 'striped', $this->_args['plural'] );
+=======
+		return array( 'widefat', 'fixed', $this->_args['plural'] );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -1041,15 +1107,25 @@ class WP_List_Table {
 	 * @param object $item The current item
 	 */
 	public function single_row( $item ) {
+<<<<<<< HEAD
 		echo '<tr>';
+=======
+		static $row_class = '';
+		$row_class = ( $row_class == '' ? ' class="alternate"' : '' );
+
+		echo '<tr' . $row_class . '>';
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$this->single_row_columns( $item );
 		echo '</tr>';
 	}
 
+<<<<<<< HEAD
 	protected function column_default( $item, $column_name ) {}
 
 	protected function column_cb( $item ) {}
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	/**
 	 * Generates the columns for a single row of the table
 	 *

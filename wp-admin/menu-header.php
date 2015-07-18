@@ -60,7 +60,11 @@ function _wp_menu_output( $menu, $submenu, $submenu_as_parent = true ) {
 			$first = false;
 		}
 
+<<<<<<< HEAD
 		$submenu_items = array();
+=======
+		$submenu_items = false;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		if ( ! empty( $submenu[$item[2]] ) ) {
 			$class[] = 'wp-has-submenu';
 			$submenu_items = $submenu[$item[2]];
@@ -174,7 +178,11 @@ function _wp_menu_output( $menu, $submenu, $submenu_as_parent = true ) {
 						$class[] = 'current';
 				// If plugin_page is set the parent must either match the current page or not physically exist.
 				// This allows plugin pages with the same hook to exist under different parents.
+<<<<<<< HEAD
 				} elseif (
+=======
+				} else if (
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 					( ! isset( $plugin_page ) && $self == $sub_item[2] ) ||
 					( isset( $plugin_page ) && $plugin_page == $sub_item[2] && ( $item[2] == $self_type || $item[2] == $self || file_exists($menu_file) === false ) )
 				) {
@@ -219,12 +227,18 @@ function _wp_menu_output( $menu, $submenu, $submenu_as_parent = true ) {
 
 ?>
 
+<<<<<<< HEAD
 <div id="adminmenumain" role="navigation" aria-label="<?php esc_attr_e( 'Main menu' ); ?>">
 <a href="#wpbody-content" class="screen-reader-shortcut"><?php _e( 'Skip to main content' ); ?></a>
 <a href="#wp-toolbar" class="screen-reader-shortcut"><?php _e( 'Skip to toolbar' ); ?></a>
 <div id="adminmenuback"></div>
 <div id="adminmenuwrap">
 <ul id="adminmenu">
+=======
+<div id="adminmenuback"></div>
+<div id="adminmenuwrap">
+<ul id="adminmenu" role="navigation">
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 <?php
 
@@ -239,4 +253,7 @@ do_action( 'adminmenu' );
 ?>
 </ul>
 </div>
+<<<<<<< HEAD
 </div>
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

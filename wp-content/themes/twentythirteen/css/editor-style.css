@@ -18,7 +18,10 @@ Description: Used to style the TinyMCE editor.
  * 9.0 - Audio/Video
  * 10.0 - Post Formats
  * 11.0 - RTL
+<<<<<<< HEAD
  * 12.0 - Media Queries
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * ----------------------------------------------------------------------------
  */
 
@@ -770,6 +773,7 @@ html .mceContentBody.rtl {
 	background: none;
 	content: none;
 }
+<<<<<<< HEAD
 
 
 /**
@@ -785,3 +789,5 @@ html .mceContentBody.rtl {
 		width: auto !important;
 	}
 }
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

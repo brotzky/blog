@@ -22,7 +22,11 @@
 		foreach ( (array) $featured_posts as $order => $post ) :
 			setup_postdata( $post );
 
+<<<<<<< HEAD
 			// Include the featured content template.
+=======
+			 // Include the featured content template.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			get_template_part( 'content', 'featured-post' );
 		endforeach;
 

@@ -267,7 +267,11 @@
 			$saveMessage = $('#wp-fullscreen-save .wp-fullscreen-saved-message'),
 			$errorMessage = $('#wp-fullscreen-save .wp-fullscreen-error-message');
 
+<<<<<<< HEAD
 		$spinner.addClass( 'is-active' );
+=======
+		$spinner.show();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$errorMessage.hide();
 		$saveMessage.hide();
 		$hidden.val('wp-fullscreen-save-post');
@@ -282,7 +286,11 @@
 			data: $('form#post').serialize(),
 			dataType: 'json'
 		}).done( function( response ) {
+<<<<<<< HEAD
 			$spinner.removeClass( 'is-active' );
+=======
+			$spinner.hide();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			if ( response && response.success ) {
 				$saveMessage.show();
@@ -298,7 +306,11 @@
 				$errorMessage.show();
 			}
 		}).fail( function() {
+<<<<<<< HEAD
 			$spinner.removeClass( 'is-active' );
+=======
+			$spinner.hide();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$errorMessage.show();
 		});
 

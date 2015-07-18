@@ -4,8 +4,12 @@
  * WordPress View plugin.
  */
 tinymce.PluginManager.add( 'wpview', function( editor ) {
+<<<<<<< HEAD
 	var $ = editor.$,
 		selected,
+=======
+	var selected,
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		Env = tinymce.Env,
 		VK = tinymce.util.VK,
 		TreeWalker = tinymce.dom.TreeWalker,
@@ -13,6 +17,7 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 		firstFocus = true,
 		_noop = function() { return false; },
 		isios = /iPad|iPod|iPhone/.test( navigator.userAgent ),
+<<<<<<< HEAD
 		cursorInterval,
 		lastKeyDownNode,
 		setViewCursorTries,
@@ -20,6 +25,9 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 		execCommandView,
 		execCommandBefore,
 		toolbar;
+=======
+		cursorInterval, lastKeyDownNode, setViewCursorTries, focus, execCommandView, execCommandBefore;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	function getView( node ) {
 		return getParent( node, 'wpview-wrap' );
@@ -41,6 +49,40 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 		return false;
 	}
 
+<<<<<<< HEAD
+=======
+	/**
+	 * Get the text/shortcode string for a view.
+	 *
+	 * @param view The view wrapper's node
+	 * @returns string The text/shoercode string of the view
+	 */
+	function getViewText( view ) {
+		if ( view = getView( view ) ) {
+			return window.decodeURIComponent( editor.dom.getAttrib( view, 'data-wpview-text' ) || '' );
+		}
+
+		return '';
+	}
+
+	/**
+	 * Set the view's original text/shortcode string
+	 *
+	 * @param view The view wrapper's HTML id or node
+	 * @param text The text string to be set
+	 */
+	function setViewText( view, text ) {
+		view = getView( view );
+
+		if ( view ) {
+			editor.dom.setAttrib( view, 'data-wpview-text', window.encodeURIComponent( text || '' ) );
+			return true;
+		}
+
+		return false;
+	}
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	function _stop( event ) {
 		event.stopPropagation();
 	}
@@ -79,9 +121,17 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 	}
 
 	function removeView( view ) {
+<<<<<<< HEAD
 		editor.undoManager.transact( function() {
 			handleEnter( view );
 			wp.mce.views.remove( editor, view );
+=======
+		// TODO: trigger an event to run a clean up function.
+		// Maybe `jQuery( view ).trigger( 'remove' );`?
+		editor.undoManager.transact( function() {
+			handleEnter( view );
+			editor.dom.remove( view );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		});
 	}
 
@@ -93,6 +143,7 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 			return;
 		}
 
+<<<<<<< HEAD
 		if ( viewNode !== selected ) {
 			// Make sure that the editor is focused.
 			// It is possible that the editor is not focused when the mouse event fires
@@ -120,12 +171,67 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 			} else {
 				editor.selection.select( clipboard, true );
 			}
+=======
+		// Adjust the toolbar position and bail if node is already selected.
+		if ( viewNode === selected ) {
+			adjustToolbarPosition( viewNode );
+			return;
+		}
+
+		// Make sure that the editor is focused.
+		// It is possible that the editor is not focused when the mouse event fires
+		// without focus, the selection will not work properly.
+		editor.getBody().focus();
+
+		deselect();
+		selected = viewNode;
+		dom.setAttrib( viewNode, 'data-mce-selected', 1 );
+		adjustToolbarPosition( viewNode );
+
+		clipboard = dom.create( 'div', {
+			'class': 'wpview-clipboard',
+			'contenteditable': 'true'
+		}, getViewText( viewNode ) );
+
+		editor.dom.select( '.wpview-body', viewNode )[0].appendChild( clipboard );
+
+		// Both of the following are necessary to prevent manipulating the selection/focus
+		dom.bind( clipboard, 'beforedeactivate focusin focusout', _stop );
+		dom.bind( selected, 'beforedeactivate focusin focusout', _stop );
+
+		// select the hidden div
+		if ( isios ) {
+			editor.selection.select( clipboard );
+		} else {
+			editor.selection.select( clipboard, true );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 
 		editor.nodeChanged();
 		editor.fire( 'wpview-selected', viewNode );
 	}
 
+<<<<<<< HEAD
+=======
+	function adjustToolbarPosition( viewNode ) {
+		var delta = 0,
+			toolbar = editor.$( viewNode ).find( '.toolbar' ),
+			editorToolbar = tinymce.$( editor.editorContainer ).find( '.mce-toolbar-grp' )[0],
+			editorToolbarBottom = ( editorToolbar && editorToolbar.getBoundingClientRect().bottom ) || 0;
+		
+		if ( toolbar.length && editor.iframeElement ) {
+			// 48 = 43 for the toolbar + 5 buffer
+			delta = viewNode.getBoundingClientRect().top + editor.iframeElement.getBoundingClientRect().top - editorToolbarBottom - 48;
+		}
+
+		if ( delta < 0 ) {
+			toolbar.removeClass( 'mce-arrow-down' ).css({ top: ( -43 + delta * -1 ) });
+		} else if ( delta > 0 && ! toolbar.hasClass( 'mce-arrow-down' ) ) {
+			toolbar.addClass( 'mce-arrow-down' ).css({ top: '' });
+		}
+	}
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	/**
 	 * Deselect a selected view and remove clipboard
 	 */
@@ -148,23 +254,37 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 	// Check if the `wp.mce` API exists.
 	if ( typeof wp === 'undefined' || ! wp.mce ) {
 		return {
+<<<<<<< HEAD
+=======
+			getViewText: _noop,
+			setViewText: _noop,
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			getView: _noop
 		};
 	}
 
 	// Remove the content of view wrappers from HTML string
 	function emptyViews( content ) {
+<<<<<<< HEAD
 		content = content.replace( /<div[^>]+data-wpview-text="([^"]+)"[^>]*>[\s\S]+?wpview-selection-after[^>]+>[^<>]*<\/p>\s*<\/div>/g, function( all, match ) {
 			return '<p>' + window.decodeURIComponent( match ) + '</p>';
 		});
 
 		return content.replace( / data-wpview-marker="[^"]+"/g, '' );
+=======
+		return content.replace(/<div[^>]+data-wpview-text=\"([^"]+)"[^>]*>[\s\S]+?wpview-selection-after[^>]+>(?:&nbsp;|\u00a0)*<\/p><\/div>/g, '$1' );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	// Prevent adding undo levels on changes inside a view wrapper
 	editor.on( 'BeforeAddUndo', function( event ) {
+<<<<<<< HEAD
 		if ( event.level.content ) {
 			event.level.content = emptyViews( event.level.content );
+=======
+		if ( event.lastLevel && emptyViews( event.level.content ) === emptyViews( event.lastLevel.content ) ) {
+			event.preventDefault();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 	});
 
@@ -174,14 +294,18 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 	editor.on( 'BeforeSetContent', function( event ) {
 		var node;
 
+<<<<<<< HEAD
 		if ( ! event.selection ) {
 			wp.mce.views.unbind();
 		}
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		if ( ! event.content ) {
 			return;
 		}
 
+<<<<<<< HEAD
 		if ( ! event.load ) {
 			if ( selected ) {
 				removeView( selected );
@@ -217,6 +341,21 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 				event.content = pastedStr;
 			}
 		}
+=======
+		if ( selected ) {
+			removeView( selected );
+		}
+
+		node = editor.selection.getNode();
+
+		// When a url is pasted, only try to embed it when pasted in an empty paragrapgh.
+		if ( event.content.match( /^\s*(https?:\/\/[^\s"]+)\s*$/i ) &&
+			( node.nodeName !== 'P' || node.parentNode !== editor.getBody() || ! editor.dom.isEmpty( node ) ) ) {
+			return;
+		}
+
+		event.content = wp.mce.views.toViews( event.content );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	});
 
 	// When the editor's content has been updated and the DOM has been
@@ -232,6 +371,7 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 			body = editor.getBody(),
 			bodyRect = body.getBoundingClientRect(),
 			first = body.firstChild,
+<<<<<<< HEAD
 			last = body.lastChild,
 			firstRect, lastRect, view;
 
@@ -241,6 +381,12 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 
 		firstRect = first.getBoundingClientRect();
 		lastRect = last.getBoundingClientRect();
+=======
+			firstRect = first.getBoundingClientRect(),
+			last = body.lastChild,
+			lastRect = last.getBoundingClientRect(),
+			view;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		if ( y < firstRect.top && ( view = getView( first ) ) ) {
 			setViewCursor( true, view );
@@ -248,6 +394,7 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 		} else if ( y > lastRect.bottom && ( view = getView( last ) ) ) {
 			setViewCursor( false, view );
 			event.preventDefault();
+<<<<<<< HEAD
 		} else if ( x < bodyRect.left || x > bodyRect.right ) {
 			tinymce.each( editor.dom.select( '.wpview-wrap' ), function( view ) {
 				var rect = view.getBoundingClientRect();
@@ -256,6 +403,12 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 					return false;
 				}
 
+=======
+		} else {
+			tinymce.each( editor.dom.select( '.wpview-wrap' ), function( view ) {
+				var rect = view.getBoundingClientRect();
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				if ( y >= rect.top && y <= rect.bottom ) {
 					if ( x < bodyRect.left ) {
 						setViewCursor( true, view );
@@ -264,8 +417,12 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 						setViewCursor( false, view );
 						event.preventDefault();
 					}
+<<<<<<< HEAD
 
 					return false;
+=======
+					return;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				}
 			});
 		}
@@ -317,6 +474,20 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 				event.stopImmediatePropagation();
 				event.preventDefault();
 
+<<<<<<< HEAD
+=======
+				if ( ( event.type === 'touchend' || event.type === 'mousedown' ) && ! event.metaKey && ! event.ctrlKey ) {
+					if ( editor.dom.hasClass( event.target, 'edit' ) ) {
+						wp.mce.views.edit( view );
+						editor.focus();
+						return false;
+					} else if ( editor.dom.hasClass( event.target, 'remove' ) ) {
+						removeView( view );
+						return false;
+					}
+				}
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				if ( event.type === 'touchend' && scrolled ) {
 					scrolled = false;
 				} else {
@@ -348,6 +519,7 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 		}
 	});
 
+<<<<<<< HEAD
 	function resetViews( rootNode ) {
 		// Replace view nodes
 		$( 'div[data-wpview-text]', rootNode ).each( function( i, node ) {
@@ -373,6 +545,24 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 		wp.mce.views.unbind();
 		deselect();
 		resetViews( editor.getBody() );
+=======
+	editor.on( 'PreProcess', function( event ) {
+		// Empty the wpview wrap nodes
+		tinymce.each( editor.dom.select( 'div[data-wpview-text]', event.node ), function( node ) {
+			node.textContent = node.innerText = '\u00a0';
+		});
+    });
+
+    editor.on( 'PostProcess', function( event ) {
+		if ( event.content ) {
+			event.content = event.content.replace( /<div [^>]*?data-wpview-text="([^"]*)"[^>]*>[\s\S]*?<\/div>/g, function( match, shortcode ) {
+				if ( shortcode ) {
+					return '<p>' + window.decodeURIComponent( shortcode ) + '</p>';
+				}
+				return ''; // If error, remove the view wrapper
+			});
+		}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	});
 
 	// Excludes arrow keys, delete, backspace, enter, space bar.
@@ -697,6 +887,7 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 		}
 	});
 
+<<<<<<< HEAD
 	editor.addButton( 'wp_view_edit', {
 		tooltip: 'Edit ', // trailing space is needed, used for context
 		icon: 'dashicon dashicons-edit',
@@ -733,6 +924,11 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 
 	// Keep for back-compat.
 	return {
+=======
+	return {
+		getViewText: getViewText,
+		setViewText: setViewText,
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		getView: getView
 	};
 });

@@ -434,6 +434,7 @@ function is_email_address_unsafe( $user_email ) {
 }
 
 /**
+<<<<<<< HEAD
  * Sanitize and validate data required for a user sign-up.
  *
  * Verifies the validity and uniqueness of user names and user email addresses,
@@ -448,6 +449,25 @@ function is_email_address_unsafe( $user_email ) {
  * @since MU
  *
  * @param string $user_name  The login name provided by the user.
+=======
+ * Processes new user registrations.
+ *
+ * Checks the data provided by the user during signup. Verifies
+ * the validity and uniqueness of user names and user email addresses,
+ * and checks email addresses against admin-provided domain
+ * whitelists and blacklists.
+ *
+ * The hook 'wpmu_validate_user_signup' provides an easy way
+ * to modify the signup process. The value $result, which is passed
+ * to the hook, contains both the user-provided info and the error
+ * messages created by the function. 'wpmu_validate_user_signup' allows
+ * you to process the data in any way you'd like, and unset the
+ * relevant errors if necessary.
+ *
+ * @since MU
+ *
+ * @param string $user_name The login name provided by the user.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @param string $user_email The email provided by the user.
  * @return array Contains username, email, and error messages.
  */
@@ -1434,7 +1454,11 @@ function wpmu_welcome_notification( $blog_id, $user_id, $password, $title, $meta
 
 	$welcome_email = get_site_option( 'welcome_email' );
 	if ( $welcome_email == false )
+<<<<<<< HEAD
 		$welcome_email = __( 'Howdy USERNAME,
+=======
+		$welcome_email = __( 'Dear User,
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 Your new SITE_NAME site has been successfully set up at:
 BLOG_URL
@@ -1801,6 +1825,7 @@ function global_terms( $term_id, $deprecated = '' ) {
 			$global_id = $wpdb->insert_id;
 		}
 	} elseif ( $global_id != $term_id ) {
+<<<<<<< HEAD
 		$local_id = $wpdb->get_var( $wpdb->prepare( "SELECT term_id FROM $wpdb->terms WHERE term_id = %d", $global_id ) );
 		if ( null != $local_id ) {
 			global_terms( $local_id );
@@ -1808,6 +1833,13 @@ function global_terms( $term_id, $deprecated = '' ) {
 				$global_id = $term_id;
 			}
 		}
+=======
+		$local_id = $wpdb->get_row( $wpdb->prepare( "SELECT term_id FROM $wpdb->terms WHERE term_id = %d", $global_id ) );
+		if ( null != $local_id )
+			$local_id = global_terms( $local_id );
+			if ( 10 < $global_terms_recurse )
+				$global_id = $term_id;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	if ( $global_id != $term_id ) {
@@ -1934,7 +1966,11 @@ function maybe_add_existing_user_to_blog() {
 	if ( empty( $details ) || is_wp_error( add_existing_user_to_blog( $details ) ) )
 		wp_die( sprintf(__('An error occurred adding you to this site. Back to the <a href="%s">homepage</a>.'), home_url() ) );
 
+<<<<<<< HEAD
 	wp_die( sprintf( __( 'You have been added to this site. Please visit the <a href="%s">homepage</a> or <a href="%s">log in</a> using your username and password.' ), home_url(), admin_url() ), __( 'WordPress &rsaquo; Success' ), array( 'response' => 200 ) );
+=======
+	wp_die( sprintf( __( 'You have been added to this site. Please visit the <a href="%s">homepage</a> or <a href="%s">log in</a> using your username and password.' ), home_url(), admin_url() ), __( 'WordPress &rsaquo; Success' ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
@@ -2004,12 +2040,20 @@ function fix_phpmailer_messageid( $phpmailer ) {
  * @return bool
  */
 function is_user_spammy( $user = null ) {
+<<<<<<< HEAD
     if ( ! ( $user instanceof WP_User ) ) {
 		if ( $user ) {
 			$user = get_user_by( 'login', $user );
 		} else {
 			$user = wp_get_current_user();
 		}
+=======
+    if ( ! is_a( $user, 'WP_User' ) ) {
+		if ( $user )
+			$user = get_user_by( 'login', $user );
+		else
+			$user = wp_get_current_user();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	return $user && isset( $user->spam ) && 1 == $user->spam;
@@ -2028,6 +2072,10 @@ function is_user_spammy( $user = null ) {
 function update_blog_public( $old_value, $value ) {
 	update_blog_status( get_current_blog_id(), 'public', (int) $value );
 }
+<<<<<<< HEAD
+=======
+add_action('update_option_blog_public', 'update_blog_public', 10, 2);
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 /**
  * Check whether a usermeta key has to do with the current blog.
@@ -2068,6 +2116,10 @@ function users_can_register_signup_filter() {
 
 	return false;
 }
+<<<<<<< HEAD
+=======
+add_filter('option_users_can_register', 'users_can_register_signup_filter');
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 /**
  * Ensure that the welcome message is not empty. Currently unused.
@@ -2080,7 +2132,11 @@ function users_can_register_signup_filter() {
 function welcome_user_msg_filter( $text ) {
 	if ( !$text ) {
 		remove_filter( 'site_option_welcome_user_email', 'welcome_user_msg_filter' );
+<<<<<<< HEAD
 		$text = __( 'Howdy USERNAME,
+=======
+		$text = __( 'Dear User,
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 Your new account is set up.
 
@@ -2096,6 +2152,10 @@ Thanks!
 	}
 	return $text;
 }
+<<<<<<< HEAD
+=======
+add_filter( 'site_option_welcome_user_email', 'welcome_user_msg_filter' );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 /**
  * Whether to force SSL on content.

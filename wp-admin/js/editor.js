@@ -211,7 +211,11 @@ window.switchEditors = {
 			preserve_br = false,
 			blocklist = 'table|thead|tfoot|caption|col|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre' +
 				'|form|map|area|blockquote|address|math|style|p|h[1-6]|hr|fieldset|legend|section' +
+<<<<<<< HEAD
 				'|article|aside|hgroup|header|footer|nav|figure|figcaption|details|menu|summary';
+=======
+				'|article|aside|hgroup|header|footer|nav|figure|details|menu|summary';
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		if ( pee.indexOf( '<object' ) !== -1 ) {
 			pee = pee.replace( /<object[\s\S]+?<\/object>/g, function( a ) {

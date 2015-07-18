@@ -28,12 +28,17 @@
 	width: 380px;
 	margin: 0 0 0 -190px;
 	padding: 30px 0 0;
+<<<<<<< HEAD
 	background-color: #f1f1f1;
+=======
+	background-color: #eee;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	z-index: 1000011; /* needs to appear above #wp-auth-check-bg */
 	-webkit-box-shadow: 0 3px 6px rgba( 0, 0, 0, 0.3 );
 	box-shadow: 0 3px 6px rgba( 0, 0, 0, 0.3 );
 }
 
+<<<<<<< HEAD
 @media screen and ( max-width: 380px ) {
 	#wp-auth-check-wrap #wp-auth-check {
 		left: 0;
@@ -42,12 +47,15 @@
 	}
 }
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 #wp-auth-check-wrap.fallback #wp-auth-check {
 	max-height: 180px;
 	overflow: auto;
 }
 
 #wp-auth-check-wrap #wp-auth-check-form {
+<<<<<<< HEAD
 	background: url(../images/spinner-2x.gif) no-repeat center center;
 	-webkit-background-size: 16px 16px;
 	background-size: 16px 16px;
@@ -59,6 +67,18 @@
 #wp-auth-check-wrap #wp-auth-check-form iframe {
 	height: 98%; /* Scrollbar fix */
 	width: 100%;
+=======
+	background: url(../images/wpspin-2x.gif) no-repeat center center;
+	-webkit-background-size: 16px 16px;
+	background-size: 16px 16px;
+	height: 100%;
+}
+
+#wp-auth-check-wrap #wp-auth-check-form iframe {
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 #wp-auth-check-wrap .wp-auth-check-close {
@@ -85,11 +105,19 @@
 }
 
 #wp-auth-check-wrap .wp-auth-check-close:hover:before {
+<<<<<<< HEAD
 	color: #0073aa;
 }
 
 #wp-auth-check-wrap .wp-auth-check-close:focus {
 	outline: 1px dotted #82878c;
+=======
+	color: #0074a2;
+}
+
+#wp-auth-check-wrap .wp-auth-check-close:focus {
+	outline: 1px dotted #888;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 #wp-auth-check-wrap .wp-auth-fallback-expired {

@@ -538,10 +538,15 @@ window.wp = window.wp || {};
 
 			this.add( 'channel', params.channel );
 			this.add( 'url', params.url || '' );
+<<<<<<< HEAD
+=======
+			this.add( 'targetWindow', params.targetWindow || defaultTarget );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			this.add( 'origin', this.url() ).link( this.url ).setter( function( to ) {
 				return to.replace( /([^:]+:\/\/[^\/]+).*/, '$1' );
 			});
 
+<<<<<<< HEAD
 			// first add with no value
 			this.add( 'targetWindow', null );
 			// This avoids SecurityErrors when setting a window object in x-origin iframe'd scenarios.
@@ -566,6 +571,8 @@ window.wp = window.wp || {};
 			this.targetWindow( params.targetWindow || defaultTarget );
 
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			// Since we want jQuery to treat the receive function as unique
 			// to this instance, we give the function a new guid.
 			//

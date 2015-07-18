@@ -23,7 +23,11 @@ elseif ( isset( $_POST['post_ID'] ) )
 else
  	$post_id = $post_ID = 0;
 
+<<<<<<< HEAD
 global $post_type, $post_type_object, $post;
+=======
+$post = $post_type = $post_type_object = null;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 if ( $post_id )
 	$post = get_post( $post_id );
@@ -95,9 +99,13 @@ if ( ! $sendback ||
 		$sendback = admin_url( 'upload.php' );
 	} else {
 		$sendback = admin_url( 'edit.php' );
+<<<<<<< HEAD
 		if ( ! empty( $post_type ) ) {
 			$sendback = add_query_arg( 'post_type', $post_type, $sendback );
 		}
+=======
+		$sendback .= ( ! empty( $post_type ) ) ? '?post_type=' . $post_type : '';
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 } else {
 	$sendback = remove_query_arg( array('trashed', 'untrashed', 'deleted', 'ids'), $sendback );

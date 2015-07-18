@@ -211,7 +211,11 @@
 }
 
 .welcome-panel .welcome-icon:before {
+<<<<<<< HEAD
 	color: #82878c;
+=======
+	color: #888;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	font: normal 20px/1 'dashicons';
 	speak: none;
 	display: inline-block;
@@ -352,10 +356,17 @@ body #dashboard-widgets .postbox form .submit {
 }
 
 #dashboard_right_now #wp-version-message .button {
+<<<<<<< HEAD
 	float: right;
 	position: relative;
 	top: -5px;
 	margin-left: 5px;
+=======
+	clear: right;
+	float: right;
+	position: relative;
+	top: -5px;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .mu-storage {
@@ -370,7 +381,11 @@ body #dashboard-widgets .postbox form .submit {
 
 #dashboard_right_now li a:before,
 #dashboard_right_now li span:before {
+<<<<<<< HEAD
 	color: #82878c;
+=======
+	color: #888;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 #dashboard_right_now .sub {
@@ -694,13 +709,25 @@ form.initial-form.quickpress-open input#title {
 	margin-left: 12px;
 }
 
+<<<<<<< HEAD
+=======
+#activity-widget #the-comment-list .alternate,
+#activity-widget #the-comment-list .alt {
+	background: none;
+}
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 #activity-widget #the-comment-list .comment-item {
 	background: #fafafa;
 	padding: 12px;
 	position: relative;
 }
 
+<<<<<<< HEAD
 #activity-widget #the-comment-list .avatar {
+=======
+#activity-widget #the-comment-list img {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	position: absolute;
 	top: 13px;
 }
@@ -800,7 +827,11 @@ h3:hover .edit-box {
 }
 
 #dashboard-widgets h4 {
+<<<<<<< HEAD
 	color: #23282d;
+=======
+	color: #222;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	font-weight: normal;
 	font-size: 14px;
 	margin: 0 0 .2em;

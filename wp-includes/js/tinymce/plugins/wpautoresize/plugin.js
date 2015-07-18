@@ -25,14 +25,24 @@ tinymce.PluginManager.add( 'wpautoresize', function( editor ) {
 		oldSize = 300,
 		isActive = false;
 
+<<<<<<< HEAD
 	if ( editor.settings.inline || tinymce.Env.iOS ) {
 		return;
 	}
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	function isFullscreen() {
 		return editor.plugins.fullscreen && editor.plugins.fullscreen.isFullscreen();
 	}
 
+<<<<<<< HEAD
+=======
+	if ( editor.settings.inline ) {
+		return;
+	}
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	function getInt( n ) {
 		return parseInt( n, 10 ) || 0;
 	}

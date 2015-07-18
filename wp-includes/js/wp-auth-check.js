@@ -49,7 +49,10 @@
 			$('#wp-auth-check-form').append( frame );
 		}
 
+<<<<<<< HEAD
 		$( 'body' ).addClass( 'modal-open' );
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		wrap.removeClass('hidden');
 
 		if ( frame ) {
@@ -81,7 +84,10 @@
 		wrap.fadeOut( 200, function() {
 			wrap.addClass('hidden').css('display', '');
 			$('#wp-auth-check-frame').remove();
+<<<<<<< HEAD
 			$( 'body' ).removeClass( 'modal-open' );
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		});
 	}
 

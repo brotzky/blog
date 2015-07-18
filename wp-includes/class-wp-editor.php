@@ -117,6 +117,15 @@ final class _WP_Editors {
 			// A cookie (set when a user resizes the editor) overrides the height.
 			$cookie = (int) get_user_setting( 'ed_size' );
 
+<<<<<<< HEAD
+=======
+			// Upgrade an old TinyMCE cookie if it is still around, and the new one isn't.
+			if ( ! $cookie && isset( $_COOKIE['TinyMCE_content_size'] ) ) {
+				parse_str( $_COOKIE['TinyMCE_content_size'], $cookie );
+ 				$cookie = $cookie['ch'];
+			}
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			if ( $cookie )
 				$set['editor_height'] = $cookie;
 		}
@@ -354,7 +363,10 @@ final class _WP_Editors {
 						'wordpress',
 						'wpautoresize',
 						'wpeditimage',
+<<<<<<< HEAD
 						'wpemoji',
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 						'wpgallery',
 						'wplink',
 						'wpdialogs',
@@ -485,6 +497,18 @@ final class _WP_Editors {
 						],
 						strikethrough: {inline: 'del'}
 					}",
+<<<<<<< HEAD
+=======
+					'block_formats' =>
+						'Paragraph=p;' .
+						'Pre=pre;' .
+						'Heading 1=h1;' .
+						'Heading 2=h2;' .
+						'Heading 3=h3;' .
+						'Heading 4=h4;' .
+						'Heading 5=h5;' .
+						'Heading 6=h6',
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 					'relative_urls' => false,
 					'remove_script_host' => false,
 					'convert_urls' => false,
@@ -498,7 +522,10 @@ final class _WP_Editors {
 					// Limit the preview styles in the menu/toolbar
 					'preview_styles' => 'font-family font-size font-weight font-style text-decoration text-transform',
 
+<<<<<<< HEAD
 					'end_container_on_empty_block' => true,
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 					'wpeditimage_disable_captions' => $no_captions,
 					'wpeditimage_html5_captions' => current_theme_supports( 'html5', 'caption' ),
 					'plugins' => implode( ',', $plugins ),
@@ -571,12 +598,15 @@ final class _WP_Editors {
 				 */
 				$mce_buttons = apply_filters( 'mce_buttons', $mce_buttons, $editor_id );
 
+<<<<<<< HEAD
 				$mce_buttons_2 = array( 'formatselect', 'underline', 'alignjustify', 'forecolor', 'pastetext', 'removeformat', 'charmap', 'outdent', 'indent', 'undo', 'redo' );
 
 				if ( ! wp_is_mobile() ) {
 					$mce_buttons_2[] = 'wp_help';
 				}
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				/**
 				 * Filter the second-row list of TinyMCE buttons (Visual tab).
 				 *
@@ -585,7 +615,11 @@ final class _WP_Editors {
 				 * @param array  $buttons   Second-row list of buttons.
 				 * @param string $editor_id Unique editor identifier, e.g. 'content'.
 				 */
+<<<<<<< HEAD
 				$mce_buttons_2 = apply_filters( 'mce_buttons_2', $mce_buttons_2, $editor_id );
+=======
+				$mce_buttons_2 = apply_filters( 'mce_buttons_2', array( 'formatselect', 'underline', 'alignjustify', 'forecolor', 'pastetext', 'removeformat', 'charmap', 'outdent', 'indent', 'undo', 'redo', 'wp_help' ), $editor_id );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 				/**
 				 * Filter the third-row list of TinyMCE buttons (Visual tab).
@@ -1244,7 +1278,11 @@ final class _WP_Editors {
 		$width = isset( $content_width ) && 800 > $content_width ? $content_width : 800;
 		$width = $width + 22; // compensate for the padding and border
 		$dfw_width = get_user_setting( 'dfw_width', $width );
+<<<<<<< HEAD
 		$save = $post && $post->post_status == 'publish' ? __('Update') : __('Save');
+=======
+		$save = isset( $post->post_status ) && $post->post_status == 'publish' ? __('Update') : __('Save');
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		?>
 		<div id="wp-fullscreen-body" class="wp-core-ui<?php if ( is_rtl() ) echo ' rtl'; ?>" data-theme-width="<?php echo (int) $width; ?>" data-dfw-width="<?php echo (int) $dfw_width; ?>">
@@ -1309,7 +1347,11 @@ final class _WP_Editors {
 
 		<div id="wp-fullscreen-save">
 			<input type="button" class="button button-primary right" value="<?php echo $save; ?>" onclick="wp.editor.fullscreen.save();" />
+<<<<<<< HEAD
 			<span class="wp-fullscreen-saved-message"><?php if ( $post && $post->post_status == 'publish' ) _e('Updated.'); else _e('Saved.'); ?></span>
+=======
+			<span class="wp-fullscreen-saved-message"><?php if ( $post->post_status == 'publish' ) _e('Updated.'); else _e('Saved.'); ?></span>
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			<span class="wp-fullscreen-error-message"><?php _e('Save failed.'); ?></span>
 			<span class="spinner"></span>
 		</div>
@@ -1441,6 +1483,7 @@ final class _WP_Editors {
 			<div id="link-options">
 				<p class="howto"><?php _e( 'Enter the destination URL' ); ?></p>
 				<div>
+<<<<<<< HEAD
 					<label><span><?php _e( 'URL' ); ?></span><input id="wp-link-url" type="text" /></label>
 				</div>
 				<div class="wp-link-text-field">
@@ -1448,6 +1491,15 @@ final class _WP_Editors {
 				</div>
 				<div class="link-target">
 					<label><span>&nbsp;</span><input type="checkbox" id="wp-link-target" /> <?php _e( 'Open link in a new window/tab' ); ?></label>
+=======
+					<label><span><?php _e( 'URL' ); ?></span><input id="url-field" type="text" name="href" /></label>
+				</div>
+				<div>
+					<label><span><?php _e( 'Title' ); ?></span><input id="link-title-field" type="text" name="linktitle" /></label>
+				</div>
+				<div class="link-target">
+					<label><span>&nbsp;</span><input type="checkbox" id="link-target-checkbox" /> <?php _e( 'Open link in a new window/tab' ); ?></label>
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				</div>
 			</div>
 			<p class="howto"><a href="#" id="wp-link-search-toggle"><?php _e( 'Or link to existing content' ); ?></a></p>
@@ -1455,7 +1507,11 @@ final class _WP_Editors {
 				<div class="link-search-wrapper">
 					<label>
 						<span class="search-label"><?php _e( 'Search' ); ?></span>
+<<<<<<< HEAD
 						<input type="search" id="wp-link-search" class="link-search-field" autocomplete="off" />
+=======
+						<input type="search" id="search-field" class="link-search-field" autocomplete="off" />
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 						<span class="spinner"></span>
 					</label>
 				</div>

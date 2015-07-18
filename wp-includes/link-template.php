@@ -157,7 +157,11 @@ function get_permalink( $id = 0, $leavename = false ) {
 	 */
 	$permalink = apply_filters( 'pre_post_link', $permalink, $post, $leavename );
 
+<<<<<<< HEAD
 	if ( '' != $permalink && !in_array( $post->post_status, array( 'draft', 'pending', 'auto-draft', 'future' ) ) ) {
+=======
+	if ( '' != $permalink && !in_array($post->post_status, array('draft', 'pending', 'auto-draft')) ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$unixtime = strtotime($post->post_date);
 
 		$category = '';
@@ -253,7 +257,11 @@ function get_post_permalink( $id = 0, $leavename = false, $sample = false ) {
 
 	$slug = $post->post_name;
 
+<<<<<<< HEAD
 	$draft_or_pending = isset( $post->post_status ) && in_array( $post->post_status, array( 'draft', 'pending', 'auto-draft', 'future' ) );
+=======
+	$draft_or_pending = isset($post->post_status) && in_array( $post->post_status, array( 'draft', 'pending', 'auto-draft' ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	$post_type = get_post_type_object($post->post_type);
 
@@ -888,10 +896,16 @@ function edit_tag_link( $link = '', $before = '', $after = '', $tag = null ) {
  *
  * @since 3.1.0
  *
+<<<<<<< HEAD
  * @param int    $term_id     Term ID.
  * @param string $taxonomy    Taxonomy.
  * @param string $object_type The object type. Used to highlight the proper post type menu on the linked page.
  *                            Defaults to the first object_type associated with the taxonomy.
+=======
+ * @param int $term_id Term ID
+ * @param string $taxonomy Taxonomy
+ * @param string $object_type The object type
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @return string The edit term link URL for the given term.
  */
 function get_edit_term_link( $term_id, $taxonomy, $object_type = '' ) {
@@ -907,11 +921,16 @@ function get_edit_term_link( $term_id, $taxonomy, $object_type = '' ) {
 		'tag_ID' => $term->term_id,
 	);
 
+<<<<<<< HEAD
 	if ( $object_type ) {
 		$args['post_type'] = $object_type;
 	} else if ( ! empty( $tax->object_type ) ) {
 		$args['post_type'] = reset( $tax->object_type );
 	}
+=======
+	if ( $object_type )
+		$args['post_type'] = $object_type;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	$location = add_query_arg( $args, admin_url( 'edit-tags.php' ) );
 
@@ -1341,7 +1360,11 @@ function edit_comment_link( $text = null, $before = '', $after = '' ) {
  *
  * @since 2.7.0
  *
+<<<<<<< HEAD
  * @param int|stdClass $link Optional. Bookmark ID.
+=======
+ * @param int $link Optional. Bookmark ID.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @return string The edit bookmark link URL.
  */
 function get_edit_bookmark_link( $link = 0 ) {
@@ -1521,6 +1544,7 @@ function get_adjacent_post( $in_same_term = false, $excluded_terms = '', $previo
 		}
 	}
 
+<<<<<<< HEAD
 	// 'post_status' clause depends on the current user.
 	if ( is_user_logged_in() ) {
 		$user_id = get_current_user_id();
@@ -1551,6 +1575,8 @@ function get_adjacent_post( $in_same_term = false, $excluded_terms = '', $previo
 		$where .= " AND p.post_status = 'publish'";
 	}
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$adjacent = $previous ? 'previous' : 'next';
 	$op = $previous ? '<' : '>';
 	$order = $previous ? 'DESC' : 'ASC';
@@ -1581,7 +1607,11 @@ function get_adjacent_post( $in_same_term = false, $excluded_terms = '', $previo
 	 * @param bool   $in_same_term   Whether post should be in a same taxonomy term.
 	 * @param array  $excluded_terms Array of excluded term IDs.
 	 */
+<<<<<<< HEAD
 	$where = apply_filters( "get_{$adjacent}_post_where", $wpdb->prepare( "WHERE p.post_date $op %s AND p.post_type = %s $where", $current_post_date, $post->post_type ), $in_same_term, $excluded_terms );
+=======
+	$where = apply_filters( "get_{$adjacent}_post_where", $wpdb->prepare( "WHERE p.post_date $op %s AND p.post_type = %s AND p.post_status = 'publish' $where", $current_post_date, $post->post_type ), $in_same_term, $excluded_terms );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * Filter the ORDER BY clause in the SQL for an adjacent post query.
@@ -1899,6 +1929,7 @@ function get_adjacent_post_link( $format, $link, $in_same_term = false, $exclude
 	 * of adjacency, 'next' or 'previous'.
 	 *
 	 * @since 2.6.0
+<<<<<<< HEAD
 	 * @since 4.2.0 Added the `$adjacent` parameter.
 	 *
 	 * @param string  $output   The adjacent post link.
@@ -1908,6 +1939,15 @@ function get_adjacent_post_link( $format, $link, $in_same_term = false, $exclude
 	 * @param string  $adjacent Whether the post is previous or next.
 	 */
 	return apply_filters( "{$adjacent}_post_link", $output, $format, $link, $post, $adjacent );
+=======
+	 *
+	 * @param string  $output The adjacent post link.
+	 * @param string  $format Link anchor format.
+	 * @param string  $link   Link permalink format.
+	 * @param WP_Post $post   The adjacent post.
+	 */
+	return apply_filters( "{$adjacent}_post_link", $output, $format, $link, $post );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
@@ -2424,13 +2464,21 @@ function get_comments_pagenum_link( $pagenum = 1, $max_page = 0 ) {
 	if ( 'newest' == get_option('default_comments_page') ) {
 		if ( $pagenum != $max_page ) {
 			if ( $wp_rewrite->using_permalinks() )
+<<<<<<< HEAD
 				$result = user_trailingslashit( trailingslashit($result) . $wp_rewrite->comments_pagination_base . '-' . $pagenum, 'commentpaged');
+=======
+				$result = user_trailingslashit( trailingslashit($result) . 'comment-page-' . $pagenum, 'commentpaged');
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			else
 				$result = add_query_arg( 'cpage', $pagenum, $result );
 		}
 	} elseif ( $pagenum > 1 ) {
 		if ( $wp_rewrite->using_permalinks() )
+<<<<<<< HEAD
 			$result = user_trailingslashit( trailingslashit($result) . $wp_rewrite->comments_pagination_base . '-' . $pagenum, 'commentpaged');
+=======
+			$result = user_trailingslashit( trailingslashit($result) . 'comment-page-' . $pagenum, 'commentpaged');
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		else
 			$result = add_query_arg( 'cpage', $pagenum, $result );
 	}
@@ -2466,10 +2514,13 @@ function get_next_comments_link( $label = '', $max_page = 0 ) {
 
 	$page = get_query_var('cpage');
 
+<<<<<<< HEAD
 	if ( ! $page ) {
 		$page = 1;
 	}
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$nextpage = intval($page) + 1;
 
 	if ( empty($max_page) )
@@ -2577,7 +2628,11 @@ function paginate_comments_links($args = array()) {
 		'add_fragment' => '#comments'
 	);
 	if ( $wp_rewrite->using_permalinks() )
+<<<<<<< HEAD
 		$defaults['base'] = user_trailingslashit(trailingslashit(get_permalink()) . $wp_rewrite->comments_pagination_base . '-%#%', 'commentpaged');
+=======
+		$defaults['base'] = user_trailingslashit(trailingslashit(get_permalink()) . 'comment-page-%#%', 'commentpaged');
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	$args = wp_parse_args( $args, $defaults );
 	$page_links = paginate_links( $args );
@@ -2598,6 +2653,7 @@ function paginate_comments_links($args = array()) {
  * @return string The Press This bookmarklet link URL.
  */
 function get_shortcut_link() {
+<<<<<<< HEAD
 	global $is_IE, $wp_version;
 
 	include_once( ABSPATH . 'wp-admin/includes/class-wp-press-this.php' );
@@ -2635,6 +2691,25 @@ function get_shortcut_link() {
 	}
 
 	$link = str_replace( array( "\r", "\n", "\t" ),  '', $link );
+=======
+	// In case of breaking changes, version this. #WP20071
+	$link = "javascript:
+			var d=document,
+			w=window,
+			e=w.getSelection,
+			k=d.getSelection,
+			x=d.selection,
+			s=(e?e():(k)?k():(x?x.createRange().text:0)),
+			f='" . admin_url('press-this.php') . "',
+			l=d.location,
+			e=encodeURIComponent,
+			u=f+'?u='+e(l.href)+'&t='+e(d.title)+'&s='+e(s)+'&v=4';
+			a=function(){if(!w.open(u,'t','toolbar=0,resizable=1,scrollbars=1,status=1,width=720,height=570'))l.href=u;};
+			if (/Firefox/.test(navigator.userAgent)) setTimeout(a, 0); else a();
+			void(0)";
+
+	$link = str_replace(array("\r", "\n", "\t"),  '', $link);
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * Filter the Press This bookmarklet link.
@@ -3382,6 +3457,7 @@ function the_shortlink( $text = '', $title = '', $before = '', $after = '' ) {
 		echo $before, $link, $after;
 	}
 }
+<<<<<<< HEAD
 
 
 /**
@@ -3629,3 +3705,5 @@ function get_avatar_data( $id_or_email, $args = null ) {
 	 */
 	return apply_filters( 'get_avatar_data', $args, $id_or_email );
 }
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

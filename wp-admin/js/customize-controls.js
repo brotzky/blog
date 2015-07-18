@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* globals _wpCustomizeHeader, _wpCustomizeBackground, _wpMediaViewsL10n, MediaElementPlayer */
+=======
+/* globals _wpCustomizeHeader, _wpCustomizeBackground, _wpMediaViewsL10n */
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 (function( exports, $ ){
 	var Container, focus, api = wp.customize;
 
@@ -17,7 +21,10 @@
 
 			this.id = id;
 			this.transport = this.transport || 'refresh';
+<<<<<<< HEAD
 			this._dirty = options.dirty || false;
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			this.bind( this.preview );
 		},
@@ -67,6 +74,7 @@
 		construct = this;
 		params = params || {};
 		focus = function () {
+<<<<<<< HEAD
 			var focusContainer;
 			if ( construct.extended( api.Panel ) && construct.expanded() ) {
 				focusContainer = construct.container.find( '.control-panel-content:first' );
@@ -75,6 +83,10 @@
 			}
 			focusContainer.find( ':focusable:first' ).focus();
 			focusContainer[0].scrollIntoView( true );
+=======
+			construct.container.find( ':focusable:first' ).focus();
+			construct.container[0].scrollIntoView( true );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		};
 		if ( params.completeCallback ) {
 			completeCallback = params.completeCallback;
@@ -323,6 +335,7 @@
 		_toggleExpanded: function ( expanded, params ) {
 			var self = this;
 			params = params || {};
+<<<<<<< HEAD
 			var section = this, previousCompleteCallback = params.completeCallback;
 			params.completeCallback = function () {
 				if ( previousCompleteCallback ) {
@@ -334,6 +347,8 @@
 					section.container.trigger( 'collapsed' );
 				}
 			};
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			if ( ( expanded && this.expanded.get() ) || ( ! expanded && ! this.expanded.get() ) ) {
 				params.unchanged = true;
 				self.onChangeExpanded( self.expanded.get(), params );
@@ -539,6 +554,7 @@
 	});
 
 	/**
+<<<<<<< HEAD
 	 * wp.customize.ThemesSection
 	 *
 	 * Custom section for themes that functions similarly to a backwards panel,
@@ -958,6 +974,8 @@
 	});
 
 	/**
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * @since 4.1.0
 	 *
 	 * @class
@@ -1091,7 +1109,11 @@
 				panel = this,
 				section = panel.container.closest( '.accordion-section' ),
 				overlay = section.closest( '.wp-full-overlay' ),
+<<<<<<< HEAD
 				container = section.closest( '.wp-full-overlay-sidebar-content' ),
+=======
+				container = section.closest( '.accordion-container' ),
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				siblings = container.find( '.open' ),
 				topPanel = overlay.find( '#customize-theme-controls > ul > .accordion-section > .accordion-section-title' ).add( '#customize-info > .accordion-section-title' ),
 				backBtn = overlay.find( '.control-panel-back' ),
@@ -1113,10 +1135,16 @@
 				});
 
 				content.show( 0, function() {
+<<<<<<< HEAD
 					content.parent().show();
 					position = content.offset().top;
 					scroll = container.scrollTop();
 					content.css( 'margin-top', ( $( '#customize-header-actions' ).height() - position - scroll ) );
+=======
+					position = content.offset().top;
+					scroll = container.scrollTop();
+					content.css( 'margin-top', ( 45 - position - scroll ) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 					section.addClass( 'current-panel' );
 					overlay.addClass( 'in-sub-panel' );
 					container.scrollTop( 0 );
@@ -1449,13 +1477,21 @@
 	});
 
 	/**
+<<<<<<< HEAD
 	 * A control that implements the media modal.
+=======
+	 * An upload control, which utilizes the media modal.
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 *
 	 * @class
 	 * @augments wp.customize.Control
 	 * @augments wp.customize.Class
 	 */
+<<<<<<< HEAD
 	api.MediaControl = api.Control.extend({
+=======
+	api.UploadControl = api.Control.extend({
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		/**
 		 * When the control's DOM structure is ready,
@@ -1464,6 +1500,7 @@
 		ready: function() {
 			var control = this;
 			// Shortcut so that we don't have to use _.bind every time we add a callback.
+<<<<<<< HEAD
 			_.bindAll( control, 'restoreDefault', 'removeFile', 'openFrame', 'select', 'pausePlayer' );
 
 			// Bind events, with delegation to facilitate re-rendering.
@@ -1485,11 +1522,21 @@
 				.on( 'collapsed', function() {
 					control.pausePlayer();
 				});
+=======
+			_.bindAll( control, 'restoreDefault', 'removeFile', 'openFrame', 'select' );
+
+			// Bind events, with delegation to facilitate re-rendering.
+			control.container.on( 'click keydown', '.upload-button', control.openFrame );
+			control.container.on( 'click keydown', '.thumbnail-image img', control.openFrame );
+			control.container.on( 'click keydown', '.default-button', control.restoreDefault );
+			control.container.on( 'click keydown', '.remove-button', control.removeFile );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			// Re-render whenever the control's setting changes.
 			control.setting.bind( function () { control.renderContent(); } );
 		},
 
+<<<<<<< HEAD
 		pausePlayer: function () {
 			this.player && this.player.pause();
 		},
@@ -1498,6 +1545,8 @@
 			this.player && wp.media.mixin.removePlayer( this.player );
 		},
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		/**
 		 * Open the media modal.
 		 */
@@ -1543,13 +1592,18 @@
 		 */
 		select: function() {
 			// Get the attachment from the modal frame.
+<<<<<<< HEAD
 			var node,
 				attachment = this.frame.state().get( 'selection' ).first().toJSON(),
 				mejsSettings = window._wpmejsSettings || {};
+=======
+			var attachment = this.frame.state().get( 'selection' ).first().toJSON();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			this.params.attachment = attachment;
 
 			// Set the Customizer setting; the callback takes care of rendering.
+<<<<<<< HEAD
 			this.setting( attachment.id );
 			node = this.container.find( 'audio, video' ).get(0);
 
@@ -1559,6 +1613,9 @@
 			} else {
 				this.cleanupPlayer();
 			}
+=======
+			this.setting( attachment.url );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		},
 
 		/**
@@ -1572,7 +1629,11 @@
 
 			this.params.attachment = this.params.defaultAttachment;
 			this.setting( this.params.defaultAttachment.url );
+<<<<<<< HEAD
 		},
+=======
+ 		},
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		/**
 		 * Called when the "Remove" link is clicked. Empties the setting.
@@ -1588,6 +1649,7 @@
 			this.params.attachment = {};
 			this.setting( '' );
 			this.renderContent(); // Not bound to setting change when emptying.
+<<<<<<< HEAD
 		}
 	});
 
@@ -1623,6 +1685,8 @@
 			} else {
 				this.cleanupPlayer();
 			}
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		},
 
 		// @deprecated
@@ -1640,7 +1704,10 @@
 	 *
 	 * @class
 	 * @augments wp.customize.UploadControl
+<<<<<<< HEAD
 	 * @augments wp.customize.MediaControl
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * @augments wp.customize.Control
 	 * @augments wp.customize.Class
 	 */
@@ -1654,7 +1721,10 @@
 	 *
 	 * @class
 	 * @augments wp.customize.UploadControl
+<<<<<<< HEAD
 	 * @augments wp.customize.MediaControl
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * @augments wp.customize.Control
 	 * @augments wp.customize.Class
 	 */
@@ -1691,15 +1761,24 @@
 	 */
 	api.HeaderControl = api.Control.extend({
 		ready: function() {
+<<<<<<< HEAD
 			this.btnRemove = $('#customize-control-header_image .actions .remove');
 			this.btnNew    = $('#customize-control-header_image .actions .new');
+=======
+			this.btnRemove        = $('#customize-control-header_image .actions .remove');
+			this.btnNew           = $('#customize-control-header_image .actions .new');
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			_.bindAll(this, 'openMedia', 'removeImage');
 
 			this.btnNew.on( 'click', this.openMedia );
 			this.btnRemove.on( 'click', this.removeImage );
 
+<<<<<<< HEAD
 			api.HeaderTool.currentHeader = this.getInitialHeaderImage();
+=======
+			api.HeaderTool.currentHeader = new api.HeaderTool.ImageModel();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			new api.HeaderTool.CurrentView({
 				model: api.HeaderTool.currentHeader,
@@ -1723,6 +1802,7 @@
 		},
 
 		/**
+<<<<<<< HEAD
 		 * Returns a new instance of api.HeaderTool.ImageModel based on the currently
 		 * saved header image (if any).
 		 *
@@ -1755,6 +1835,8 @@
 		},
 
 		/**
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		 * Returns a set of options, computed from the attached image data and
 		 * theme-specific data, to be fed to the imgAreaSelect plugin in
 		 * wp.media.view.Cropper.
@@ -1948,6 +2030,7 @@
 
 	});
 
+<<<<<<< HEAD
 	/**
 	 * wp.customize.ThemeControl
 	 *
@@ -2057,6 +2140,8 @@
 		}
 	});
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	// Change objects contained within the main customize object to Settings.
 	api.defaultConstructor = api.Setting;
 
@@ -2114,9 +2199,12 @@
 			this.bind( 'ready', this._ready );
 
 			this.bind( 'ready', function ( data ) {
+<<<<<<< HEAD
 
 				this.container.addClass( 'iframe-ready' );
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				if ( ! data ) {
 					return;
 				}
@@ -2186,7 +2274,11 @@
 				response = response.slice( 0, index ) + response.slice( index + signature.length );
 
 				// Create the iframe and inject the html content.
+<<<<<<< HEAD
 				self.iframe = $( '<iframe />', { 'title': api.l10n.previewIframeTitle } ).appendTo( self.container );
+=======
+				self.iframe = $('<iframe />').appendTo( self.container );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 				// Bind load event after the iframe has been added to the page;
 				// otherwise it will fire when injected into the DOM.
@@ -2218,9 +2310,14 @@
 				deferred.rejectWith( self, [ 'logged out' ] );
 			};
 
+<<<<<<< HEAD
 			if ( this.triedLogin ) {
 				return reject();
 			}
+=======
+			if ( this.triedLogin )
+				return reject();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			// Check if we have an admin cookie.
 			$.get( api.settings.url.ajax, {
@@ -2228,11 +2325,18 @@
 			}).fail( reject ).done( function( response ) {
 				var iframe;
 
+<<<<<<< HEAD
 				if ( '1' !== response ) {
 					reject();
 				}
 
 				iframe = $( '<iframe />', { 'src': self.previewUrl(), 'title': api.l10n.previewIframeTitle } ).hide();
+=======
+				if ( '1' !== response )
+					reject();
+
+				iframe = $('<iframe src="' + self.previewUrl() + '" />').hide();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				iframe.appendTo( self.container );
 				iframe.load( function() {
 					self.triedLogin = true;
@@ -2280,7 +2384,13 @@
 		tmpl = api.settings.documentTitleTmpl;
 		title = tmpl.replace( '%s', documentTitle );
 		document.title = title;
+<<<<<<< HEAD
 		api.trigger( 'title', title );
+=======
+		if ( window !== window.parent ) {
+			window.parent.document.title = document.title;
+		}
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	};
 
 	/**
@@ -2420,9 +2530,12 @@
 		refresh: function() {
 			var self = this;
 
+<<<<<<< HEAD
 			// Display loading indicator
 			this.send( 'loading-initiated' );
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			this.abort();
 
 			this.loading = new api.PreviewFrame({
@@ -2455,10 +2568,15 @@
 			});
 
 			this.loading.fail( function( reason, location ) {
+<<<<<<< HEAD
 				self.send( 'loading-failed' );
 				if ( 'redirect' === reason && location ) {
 					self.previewUrl( location );
 				}
+=======
+				if ( 'redirect' === reason && location )
+					self.previewUrl( location );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 				if ( 'logged out' === reason ) {
 					if ( self.preview ) {
@@ -2469,9 +2587,14 @@
 					self.login().done( self.refresh );
 				}
 
+<<<<<<< HEAD
 				if ( 'cheatin' === reason ) {
 					self.cheatin();
 				}
+=======
+				if ( 'cheatin' === reason )
+					self.cheatin();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			});
 		},
 
@@ -2490,6 +2613,7 @@
 				url:     api.settings.url.login
 			});
 
+<<<<<<< HEAD
 			iframe = $( '<iframe />', { 'src': api.settings.url.login, 'title': api.l10n.loginIframeTitle } ).appendTo( this.container );
 
 			messenger.targetWindow( iframe[0].contentWindow );
@@ -2511,6 +2635,17 @@
 					previewer.cheatin();
 					deferred.reject();
 				});
+=======
+			iframe = $('<iframe src="' + api.settings.url.login + '" />').appendTo( this.container );
+
+			messenger.targetWindow( iframe[0].contentWindow );
+
+			messenger.bind( 'login', function() {
+				iframe.remove();
+				messenger.destroy();
+				delete previewer._login;
+				deferred.resolve();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			});
 
 			return this._login;
@@ -2518,6 +2653,7 @@
 
 		cheatin: function() {
 			$( document.body ).empty().addClass('cheatin').append( '<p>' + api.l10n.cheatin + '</p>' );
+<<<<<<< HEAD
 		},
 
 		refreshNonces: function() {
@@ -2540,10 +2676,13 @@
 			});
 
 			return deferred;
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 	});
 
 	api.controlConstructor = {
+<<<<<<< HEAD
 		color:      api.ColorControl,
 		media:      api.MediaControl,
 		upload:     api.UploadControl,
@@ -2556,6 +2695,16 @@
 	api.sectionConstructor = {
 		themes: api.ThemesSection
 	};
+=======
+		color:  api.ColorControl,
+		upload: api.UploadControl,
+		image:  api.ImageControl,
+		header: api.HeaderControl,
+		background: api.BackgroundControl
+	};
+	api.panelConstructor = {};
+	api.sectionConstructor = {};
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	$( function() {
 		api.settings = window._wpCustomizeSettings;
@@ -2638,7 +2787,15 @@
 			},
 
 			save: function() {
+<<<<<<< HEAD
 				var self = this,
+=======
+				var self  = this,
+					query = $.extend( this.query(), {
+						action: 'customize_save',
+						nonce:  this.nonce.save
+					} ),
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 					processing = api.state( 'processing' ),
 					submitWhenDoneProcessing,
 					submit;
@@ -2646,11 +2803,15 @@
 				body.addClass( 'saving' );
 
 				submit = function () {
+<<<<<<< HEAD
 					var request, query;
 					query = $.extend( self.query(), {
 						nonce:  self.nonce.save
 					} );
 					request = wp.ajax.post( 'customize_save', query );
+=======
+					var request = $.post( api.settings.url.ajax, query );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 					api.trigger( 'save', request );
 
@@ -2658,6 +2819,7 @@
 						body.removeClass( 'saving' );
 					} );
 
+<<<<<<< HEAD
 					request.fail( function ( response ) {
 						if ( '0' === response ) {
 							response = 'not_logged_in';
@@ -2669,22 +2831,43 @@
 						if ( 'invalid_nonce' === response ) {
 							self.cheatin();
 						} else if ( 'not_logged_in' === response ) {
+=======
+					request.done( function( response ) {
+						// Check if the user is logged out.
+						if ( '0' === response ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 							self.preview.iframe.hide();
 							self.login().done( function() {
 								self.save();
 								self.preview.iframe.show();
 							} );
+<<<<<<< HEAD
 						}
 						api.trigger( 'error', response );
 					} );
 
 					request.done( function( response ) {
+=======
+							return;
+						}
+
+						// Check for cheaters.
+						if ( '-1' === response ) {
+							self.cheatin();
+							return;
+						}
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 						// Clear setting dirty states
 						api.each( function ( value ) {
 							value._dirty = false;
 						} );
+<<<<<<< HEAD
 
 						api.trigger( 'saved', response );
+=======
+						api.trigger( 'saved' );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 					} );
 				};
 
@@ -2708,18 +2891,25 @@
 			$.extend( this.nonce, nonce );
 		});
 
+<<<<<<< HEAD
 		// Refresh the nonces if login sends updated nonces over.
 		api.bind( 'nonce-refresh', function( nonce ) {
 			$.extend( api.settings.nonce, nonce );
 			$.extend( api.previewer.nonce, nonce );
 		});
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		// Create Settings
 		$.each( api.settings.settings, function( id, data ) {
 			api.create( id, id, data.value, {
 				transport: data.transport,
+<<<<<<< HEAD
 				previewer: api.previewer,
 				dirty: !! data.dirty
+=======
+				previewer: api.previewer
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			} );
 		});
 
@@ -2942,6 +3132,7 @@
 			event.preventDefault();
 		});
 
+<<<<<<< HEAD
 		$( '.customize-controls-preview-toggle' ).on( 'click keydown', function( event ) {
 			if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
 				return;
@@ -2951,6 +3142,8 @@
 			event.preventDefault();
 		});
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		// Bind site title display to the corresponding field.
 		if ( title.length ) {
 			$( '#customize-control-blogname input' ).on( 'input', function() {
@@ -2976,9 +3169,12 @@
 		// Prompt user with AYS dialog if leaving the Customizer with unsaved changes
 		$( window ).on( 'beforeunload', function () {
 			if ( ! api.state( 'saved' )() ) {
+<<<<<<< HEAD
 				setTimeout( function() {
 					overlay.removeClass( 'customize-loading' );
 				}, 1 );
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				return api.l10n.saveAlert;
 			}
 		} );
@@ -2999,11 +3195,14 @@
 				window.location = api.settings.url.activated;
 		});
 
+<<<<<<< HEAD
 		// Pass titles to the parent
 		api.bind( 'title', function( newTitle ) {
 			parent.send( 'title', newTitle );
 		});
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		// Initialize the connection with the parent frame.
 		parent.send( 'ready' );
 

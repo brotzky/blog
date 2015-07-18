@@ -172,7 +172,11 @@ function wp_ajax_wp_compression_test() {
 		header( 'Last-Modified: ' . gmdate( 'D, d M Y H:i:s' ) . ' GMT' );
 		header( 'Cache-Control: no-cache, must-revalidate, max-age=0' );
 		header( 'Pragma: no-cache' );
+<<<<<<< HEAD
 		header('Content-Type: application/javascript; charset=UTF-8');
+=======
+		header('Content-Type: application/x-javascript; charset=UTF-8');
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$force_gzip = ( defined('ENFORCE_GZIP') && ENFORCE_GZIP );
 		$test_str = '"wpCompressionTest Lorem ipsum dolor sit amet consectetuer mollis sapien urna ut a. Eu nonummy condimentum fringilla tempor pretium platea vel nibh netus Maecenas. Hac molestie amet justo quis pellentesque est ultrices interdum nibh Morbi. Cras mattis pretium Phasellus ante ipsum ipsum ut sociis Suspendisse Lorem. Ante et non molestie. Porta urna Vestibulum egestas id congue nibh eu risus gravida sit. Ac augue auctor Ut et non a elit massa id sodales. Elit eu Nulla at nibh adipiscing mattis lacus mauris at tempus. Netus nibh quis suscipit nec feugiat eget sed lorem et urna. Pellentesque lacus at ut massa consectetuer ligula ut auctor semper Pellentesque. Ut metus massa nibh quam Curabitur molestie nec mauris congue. Volutpat molestie elit justo facilisis neque ac risus Ut nascetur tristique. Vitae sit lorem tellus et quis Phasellus lacus tincidunt nunc Fusce. Pharetra wisi Suspendisse mus sagittis libero lacinia Integer consequat ac Phasellus. Et urna ac cursus tortor aliquam Aliquam amet tellus volutpat Vestibulum. Justo interdum condimentum In augue congue tellus sollicitudin Quisque quis nibh."';
 
@@ -379,7 +383,11 @@ function _wp_ajax_delete_comment_response( $comment_id, $delta = -1 ) {
 		// Here for completeness - not used.
 		'id' => $comment_id,
 		'supplemental' => array(
+<<<<<<< HEAD
 			'total_items_i18n' => sprintf( _n( '%s item', '%s items', $total ), number_format_i18n( $total ) ),
+=======
+			'total_items_i18n' => sprintf( _n( '1 item', '%s items', $total ), number_format_i18n( $total ) ),
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			'total_pages' => ceil( $total / $per_page ),
 			'total_pages_i18n' => number_format_i18n( ceil( $total / $per_page ) ),
 			'total' => $total,
@@ -422,11 +430,18 @@ function _wp_ajax_add_hierarchical_term() {
 			continue;
 		if ( !$cat_id = term_exists( $cat_name, $taxonomy->name, $parent ) )
 			$cat_id = wp_insert_term( $cat_name, $taxonomy->name, array( 'parent' => $parent ) );
+<<<<<<< HEAD
 		if ( is_wp_error( $cat_id ) ) {
 			continue;
 		} elseif ( is_array( $cat_id ) ) {
 			$cat_id = $cat_id['term_id'];
 		}
+=======
+		if ( is_wp_error( $cat_id ) )
+			continue;
+		else if ( is_array( $cat_id ) )
+			$cat_id = $cat_id['term_id'];
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$checked_categories[] = $cat_id;
 		if ( $parent ) // Do these all at once in a second
 			continue;
@@ -742,11 +757,18 @@ function wp_ajax_add_link_category( $action ) {
 			continue;
 		if ( !$cat_id = term_exists( $cat_name, 'link_category' ) )
 			$cat_id = wp_insert_term( $cat_name, 'link_category' );
+<<<<<<< HEAD
 		if ( is_wp_error( $cat_id ) ) {
 			continue;
 		} elseif ( is_array( $cat_id ) ) {
 			$cat_id = $cat_id['term_id'];
 		}
+=======
+		if ( is_wp_error( $cat_id ) )
+			continue;
+		else if ( is_array( $cat_id ) )
+			$cat_id = $cat_id['term_id'];
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$cat_name = esc_html( $cat_name );
 		$x->add( array(
 			'what' => 'link-category',
@@ -830,7 +852,11 @@ function wp_ajax_get_tagcloud() {
 	if ( ! $tax ) {
 		wp_die( 0 );
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	if ( ! current_user_can( $tax->cap->assign_terms ) ) {
 		wp_die( -1 );
 	}
@@ -1091,7 +1117,11 @@ function wp_ajax_add_menu_item() {
 			}
 
 			$_menu_items = array_map( 'wp_setup_nav_menu_item', array( $_object ) );
+<<<<<<< HEAD
 			$_menu_item = reset( $_menu_items );
+=======
+			$_menu_item = array_shift( $_menu_items );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			// Restore the missing menu item properties
 			$menu_item_data['menu-item-description'] = $_menu_item->description;
@@ -1176,7 +1206,11 @@ function wp_ajax_add_meta() {
 			} else {
 				wp_die( 0 );
 			}
+<<<<<<< HEAD
 		} elseif ( ! $mid = add_meta( $pid ) ) {
+=======
+		} else if ( !$mid = add_meta( $pid ) ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			wp_die( __( 'Please provide a custom field value.' ) );
 		}
 
@@ -1550,6 +1584,7 @@ function wp_ajax_inline_save() {
 	if ( empty($data['ping_status']) )
 		$data['ping_status'] = 'closed';
 
+<<<<<<< HEAD
 	// Exclude terms from taxonomies that are not supposed to appear in Quick Edit.
 	if ( ! empty( $data['tax_input'] ) ) {
 		foreach ( $data['tax_input'] as $taxonomy => $terms ) {
@@ -1561,6 +1596,8 @@ function wp_ajax_inline_save() {
 		}
 	}
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	// Hack: wp_unique_post_slug() doesn't work for drafts, so we will fake that our post is published.
 	if ( ! empty( $data['post_name'] ) && in_array( $post['post_status'], array( 'draft', 'pending' ) ) ) {
 		$post['post_status'] = 'publish';
@@ -1793,7 +1830,11 @@ function wp_ajax_save_widget() {
 		if ( !$multi_number )
 			wp_die( $error );
 
+<<<<<<< HEAD
 		$_POST[ 'widget-' . $id_base ] = array( $multi_number => reset( $settings ) );
+=======
+		$_POST['widget-' . $id_base] = array( $multi_number => array_shift($settings) );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$widget_id = $id_base . '-' . $multi_number;
 		$sidebar[] = $widget_id;
 	}
@@ -1884,7 +1925,11 @@ function wp_ajax_upload_attachment() {
 
 	// If the context is custom header or background, make sure the uploaded file is an image.
 	if ( isset( $post_data['context'] ) && in_array( $post_data['context'], array( 'custom-header', 'custom-background' ) ) ) {
+<<<<<<< HEAD
 		$wp_filetype = wp_check_filetype_and_ext( $_FILES['async-upload']['tmp_name'], $_FILES['async-upload']['name'] );
+=======
+		$wp_filetype = wp_check_filetype_and_ext( $_FILES['async-upload']['tmp_name'], $_FILES['async-upload']['name'], false );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		if ( ! wp_match_mime_types( 'image', $wp_filetype['type'] ) ) {
 			echo wp_json_encode( array(
 				'success' => false,
@@ -2202,6 +2247,7 @@ function wp_ajax_query_attachments() {
 		wp_send_json_error();
 
 	$query = isset( $_REQUEST['query'] ) ? (array) $_REQUEST['query'] : array();
+<<<<<<< HEAD
 	$keys = array(
 		's', 'order', 'orderby', 'posts_per_page', 'paged', 'post_mime_type',
 		'post_parent', 'post__in', 'post__not_in', 'year', 'monthnum'
@@ -2213,6 +2259,13 @@ function wp_ajax_query_attachments() {
 	}
 
 	$query = array_intersect_key( $query, array_flip( $keys ) );
+=======
+	$query = array_intersect_key( $query, array_flip( array(
+		's', 'order', 'orderby', 'posts_per_page', 'paged', 'post_mime_type',
+		'post_parent', 'post__in', 'post__not_in', 'year', 'monthnum'
+	) ) );
+
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$query['post_type'] = 'attachment';
 	if ( MEDIA_TRASH
 		&& ! empty( $_REQUEST['query']['post_status'] )
@@ -2267,9 +2320,12 @@ function wp_ajax_save_attachment() {
 	if ( 'attachment' != $post['post_type'] )
 		wp_send_json_error();
 
+<<<<<<< HEAD
 	if ( isset( $changes['parent'] ) )
 		$post['post_parent'] = $changes['parent'];
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	if ( isset( $changes['title'] ) )
 		$post['post_title'] = $changes['title'];
 
@@ -2290,7 +2346,11 @@ function wp_ajax_save_attachment() {
 		}
 	}
 
+<<<<<<< HEAD
 	if ( wp_attachment_is( 'audio', $post['ID'] ) ) {
+=======
+	if ( 0 === strpos( $post['post_mime_type'], 'audio/' ) ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$changed = false;
 		$id3data = wp_get_attachment_metadata( $post['ID'] );
 		if ( ! is_array( $id3data ) ) {
@@ -2445,6 +2505,7 @@ function wp_ajax_send_attachment_to_editor() {
 		$align = isset( $attachment['align'] ) ? $attachment['align'] : 'none';
 		$size = isset( $attachment['image-size'] ) ? $attachment['image-size'] : 'medium';
 		$alt = isset( $attachment['image_alt'] ) ? $attachment['image_alt'] : '';
+<<<<<<< HEAD
 
 		// No whitespace-only captions.
 		$caption = isset( $attachment['post_excerpt'] ) ? $attachment['post_excerpt'] : '';
@@ -2455,6 +2516,12 @@ function wp_ajax_send_attachment_to_editor() {
 		$title = ''; // We no longer insert title tags into <img> tags, as they are redundant.
 		$html = get_image_send_to_editor( $id, $caption, $title, $align, $url, (bool) $rel, $size, $alt );
 	} elseif ( wp_attachment_is( 'video', $post ) || wp_attachment_is( 'audio', $post )  ) {
+=======
+		$caption = isset( $attachment['post_excerpt'] ) ? $attachment['post_excerpt'] : '';
+		$title = ''; // We no longer insert title tags into <img> tags, as they are redundant.
+		$html = get_image_send_to_editor( $id, $caption, $title, $align, $url, (bool) $rel, $size, $alt );
+	} elseif ( 'video' === substr( $post->post_mime_type, 0, 5 ) || 'audio' === substr( $post->post_mime_type, 0, 5 )  ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$html = stripslashes_deep( $_POST['html'] );
 	}
 
@@ -2490,8 +2557,13 @@ function wp_ajax_send_link_to_editor() {
 	if ( ! $src = esc_url_raw( $src ) )
 		wp_send_json_error();
 
+<<<<<<< HEAD
 	if ( ! $link_text = trim( wp_unslash( $_POST['link_text'] ) ) )
 		$link_text = wp_basename( $src );
+=======
+	if ( ! $title = trim( wp_unslash( $_POST['title'] ) ) )
+		$title = wp_basename( $src );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	$post = get_post( isset( $_POST['post_id'] ) ? $_POST['post_id'] : 0 );
 
@@ -2504,8 +2576,13 @@ function wp_ajax_send_link_to_editor() {
 	if ( $check_embed !== $fallback ) {
 		// TinyMCE view for [embed] will parse this
 		$html = '[embed]' . $src . '[/embed]';
+<<<<<<< HEAD
 	} elseif ( $link_text ) {
 		$html = '<a href="' . esc_url( $src ) . '">' . $link_text . '</a>';
+=======
+	} elseif ( $title ) {
+		$html = '<a href="' . esc_url( $src ) . '">' . $title . '</a>';
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	} else {
 		$html = '';
 	}
@@ -2517,7 +2594,11 @@ function wp_ajax_send_link_to_editor() {
 			$type = $ext_type;
 
 	/** This filter is documented in wp-admin/includes/media.php */
+<<<<<<< HEAD
 	$html = apply_filters( $type . '_send_to_editor_url', $html, $src, $link_text );
+=======
+	$html = apply_filters( $type . '_send_to_editor_url', $html, $src, $title );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	wp_send_json_success( $html );
 }
@@ -2639,6 +2720,7 @@ function wp_ajax_save_user_color_scheme() {
 		wp_send_json_error();
 	}
 
+<<<<<<< HEAD
 	$previous_color_scheme = get_user_meta( get_current_user_id(), 'admin_color', true );
 	update_user_meta( get_current_user_id(), 'admin_color', $color_scheme );
 
@@ -2646,6 +2728,10 @@ function wp_ajax_save_user_color_scheme() {
 		'previousScheme' => 'admin-color-' . $previous_color_scheme,
 		'currentScheme'  => 'admin-color-' . $color_scheme
 	) );
+=======
+	update_user_meta( get_current_user_id(), 'admin_color', $color_scheme );
+	wp_send_json_success();
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
@@ -2715,7 +2801,10 @@ function wp_ajax_parse_embed() {
 
 	$shortcode = wp_unslash( $_POST['shortcode'] );
 	$url = str_replace( '[embed]', '', str_replace( '[/embed]', '', $shortcode ) );
+<<<<<<< HEAD
 
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$parsed = false;
 	setup_postdata( $post );
 
@@ -2781,6 +2870,7 @@ function wp_ajax_parse_embed() {
 function wp_ajax_parse_media_shortcode() {
 	global $post, $wp_scripts;
 
+<<<<<<< HEAD
 	if ( empty( $_POST['shortcode'] ) ) {
 		wp_send_json_error();
 	}
@@ -2803,6 +2893,20 @@ function wp_ajax_parse_media_shortcode() {
 	$parsed = do_shortcode( $shortcode  );
 
 	if ( empty( $parsed ) ) {
+=======
+	if ( ! $post = get_post( (int) $_POST['post_ID'] ) ) {
+		wp_send_json_error();
+	}
+
+	if ( empty( $_POST['shortcode'] ) || ! current_user_can( 'edit_post', $post->ID ) ) {
+		wp_send_json_error();
+	}
+
+	setup_postdata( $post );
+	$shortcode = do_shortcode( wp_unslash( $_POST['shortcode'] ) );
+
+	if ( empty( $shortcode ) ) {
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		wp_send_json_error( array(
 			'type' => 'no-items',
 			'message' => __( 'No items found.' ),
@@ -2822,14 +2926,22 @@ function wp_ajax_parse_media_shortcode() {
 
 	ob_start();
 
+<<<<<<< HEAD
 	echo $parsed;
+=======
+	echo $shortcode;
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	if ( 'playlist' === $_REQUEST['type'] ) {
 		wp_underscore_playlist_templates();
 
 		wp_print_scripts( 'wp-playlist' );
 	} else {
+<<<<<<< HEAD
 		wp_print_scripts( array( 'froogaloop', 'wp-mediaelement' ) );
+=======
+		wp_print_scripts( 'wp-mediaelement' );
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	wp_send_json_success( array(
@@ -2867,12 +2979,17 @@ function wp_ajax_destroy_sessions() {
 		$message = __( 'You are now logged out everywhere else.' );
 	} else {
 		$sessions->destroy_all();
+<<<<<<< HEAD
 		/* translators: 1: User's display name. */
+=======
+		/* translators: 1: User's display name. */ 
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$message = sprintf( __( '%s has been logged out.' ), $user->display_name );
 	}
 
 	wp_send_json_success( array( 'message' => $message ) );
 }
+<<<<<<< HEAD
 
 
 /**
@@ -2971,3 +3088,5 @@ function wp_ajax_press_this_add_category() {
 
 	$GLOBALS['wp_press_this']->add_category();
 }
+=======
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

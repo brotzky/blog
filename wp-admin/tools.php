@@ -25,7 +25,11 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
+<<<<<<< HEAD
 	'<p>' . __('<a href="https://codex.wordpress.org/Tools_Screen" target="_blank">Documentation on Tools</a>') . '</p>' .
+=======
+	'<p>' . __('<a href="http://codex.wordpress.org/Tools_Screen" target="_blank">Documentation on Tools</a>') . '</p>' .
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	'<p>' . __('<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>'
 );
 
@@ -36,6 +40,7 @@ require_once( ABSPATH . 'wp-admin/admin-header.php' );
 <h2><?php echo esc_html( $title ); ?></h2>
 
 <?php if ( current_user_can('edit_posts') ) : ?>
+<<<<<<< HEAD
 <div class="card pressthis">
 	<h3><?php _e('Press This') ?></h3>
 	<p><?php _e( 'Press This is a little tool that lets you grab bits of the web and create new posts with ease.' );?></p>
@@ -91,6 +96,19 @@ require_once( ABSPATH . 'wp-admin/admin-header.php' );
 			});
 		</script>
 	</form>
+=======
+<div class="tool-box">
+	<h3 class="title"><?php _e('Press This') ?></h3>
+	<p><?php _e('Press This is a bookmarklet: a little app that runs in your browser and lets you grab bits of the web.');?></p>
+
+	<p><?php _e('Use Press This to clip text, images and videos from any web page. Then edit and add more straight from Press This before you save or publish it in a post on your site.'); ?></p>
+	<p class="description"><?php _e('Drag-and-drop the following link to your bookmarks bar or right click it and add it to your favorites for a posting shortcut.') ?></p>
+	<p class="pressthis"><a onclick="return false;" oncontextmenu="if(window.navigator.userAgent.indexOf('WebKit')!=-1||window.navigator.userAgent.indexOf('MSIE')!=-1){jQuery('.pressthis-code').show().find('textarea').focus().select();return false;}" href="<?php echo htmlspecialchars( get_shortcut_link() ); ?>"><span><?php _e('Press This') ?></span></a></p>
+	<div class="pressthis-code" style="display:none;">
+	<p class="description"><?php _e('If your bookmarks toolbar is hidden: copy the code below, open your Bookmarks manager, create new bookmark, type Press This into the name field and paste the code into the URL field.') ?></p>
+	<p><textarea rows="5" cols="120" readonly="readonly"><?php echo htmlspecialchars( get_shortcut_link() ); ?></textarea></p>
+	</div>
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 </div>
 <?php
 endif;
@@ -99,7 +117,11 @@ if ( current_user_can( 'import' ) ) :
 $cats = get_taxonomy('category');
 $tags = get_taxonomy('post_tag');
 if ( current_user_can($cats->cap->manage_terms) || current_user_can($tags->cap->manage_terms) ) : ?>
+<<<<<<< HEAD
 <div class="card">
+=======
+<div class="tool-box">
+>>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
     <h3 class="title"><?php _e( 'Categories and Tags Converter' ) ?></h3>
     <p><?php printf( __('If you want to convert your categories to tags (or vice versa), use the <a href="%s">Categories and Tags Converter</a> available from the Import screen.'), 'import.php' ); ?></p>
 </div>
