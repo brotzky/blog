@@ -23,11 +23,7 @@
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-current {
-<<<<<<< HEAD
 	background: #0073aa;
-=======
-	background: #0074a2;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-total,
@@ -130,12 +126,8 @@
 	height: auto;
 }
 
-<<<<<<< HEAD
 .wp_attachment_holder .wp-video,
 .wp_attachment_holder .wp-audio-shortcode {
-=======
-.wp_attachment_holder .wp-video {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	margin-top: 18px;
 }
 

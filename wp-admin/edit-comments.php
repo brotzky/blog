@@ -109,11 +109,7 @@ if ( $post_id )
 else
 	$title = __('Comments');
 
-<<<<<<< HEAD
 add_screen_option( 'per_page' );
-=======
-add_screen_option( 'per_page', array('label' => _x( 'Comments', 'comments per page (screen options)' )) );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 get_current_screen()->add_help_tab( array(
 'id'		=> 'overview',
@@ -134,15 +130,9 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-<<<<<<< HEAD
 	'<p>' . __( '<a href="https://codex.wordpress.org/Administration_Screens#Comments" target="_blank">Documentation on Comments</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://codex.wordpress.org/Comment_Spam" target="_blank">Documentation on Comment Spam</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://codex.wordpress.org/Keyboard_Shortcuts" target="_blank">Documentation on Keyboard Shortcuts</a>' ) . '</p>' .
-=======
-	'<p>' . __( '<a href="http://codex.wordpress.org/Administration_Screens#Comments" target="_blank">Documentation on Comments</a>' ) . '</p>' .
-	'<p>' . __( '<a href="http://codex.wordpress.org/Comment_Spam" target="_blank">Documentation on Comment Spam</a>' ) . '</p>' .
-	'<p>' . __( '<a href="http://codex.wordpress.org/Keyboard_Shortcuts" target="_blank">Documentation on Keyboard Shortcuts</a>' ) . '</p>' .
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	'<p>' . __( '<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>' ) . '</p>'
 );
 
@@ -227,22 +217,14 @@ if ( isset($_REQUEST['approved']) || isset($_REQUEST['deleted']) || isset($_REQU
 			}
 		}
 
-<<<<<<< HEAD
 		echo '<div id="moderated" class="updated notice is-dismissible"><p>' . implode( "<br/>\n", $messages ) . '</p></div>';
-=======
-		echo '<div id="moderated" class="updated"><p>' . implode( "<br/>\n", $messages ) . '</p></div>';
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 }
 ?>
 
 <?php $wp_list_table->views(); ?>
 
-<<<<<<< HEAD
 <form id="comments-form" method="get">
-=======
-<form id="comments-form" action="" method="get">
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 <?php $wp_list_table->search_box( __( 'Search Comments' ), 'comment' ); ?>
 

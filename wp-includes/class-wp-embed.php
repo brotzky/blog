@@ -57,7 +57,7 @@ class WP_Embed {
 		add_shortcode( 'embed', array( $this, 'shortcode' ) );
 
 		// Do the shortcode (only the [embed] one is registered)
-		$content = do_shortcode( $content );
+		$content = do_shortcode( $content, true );
 
 		// Put the original shortcodes back
 		$shortcode_tags = $orig_shortcode_tags;
@@ -77,17 +77,9 @@ class WP_Embed {
 
 ?>
 <script type="text/javascript">
-<<<<<<< HEAD
 	jQuery(document).ready(function($){
 		$.get("<?php echo admin_url( 'admin-ajax.php?action=oembed-cache&post=' . $post->ID, 'relative' ); ?>");
 	});
-=======
-/* <![CDATA[ */
-	jQuery(document).ready(function($){
-		$.get("<?php echo admin_url( 'admin-ajax.php?action=oembed-cache&post=' . $post->ID, 'relative' ); ?>");
-	});
-/* ]]> */
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 </script>
 <?php
 	}
@@ -132,12 +124,8 @@ class WP_Embed {
 	 *     @type int $height Height of the embed in pixels.
 	 * }
 	 * @param string $url The URL attempting to be embedded.
-<<<<<<< HEAD
 	 * @return string|false The embed HTML on success, otherwise the original URL.
 	 *                      `->maybe_make_link()` can return false on failure.
-=======
-	 * @return string The embed HTML on success, otherwise the original URL.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 */
 	public function shortcode( $attr, $url = '' ) {
 		$post = get_post();
@@ -146,10 +134,7 @@ class WP_Embed {
 			$url = $attr['src'];
 		}
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		if ( empty( $url ) )
 			return '';
 
@@ -327,11 +312,11 @@ class WP_Embed {
 	 * @return string Potentially modified $content.
 	 */
 	public function autoembed( $content ) {
-<<<<<<< HEAD
+		// Strip newlines from all elements.
+		$content = wp_replace_in_html_tags( $content, array( "\n" => " " ) );
+
+		// Find URLs that are on their own line.
 		return preg_replace_callback( '|^(\s*)(https?://[^\s"]+)(\s*)$|im', array( $this, 'autoembed_callback' ), $content );
-=======
-		return preg_replace_callback( '|^\s*(https?://[^\s"]+)\s*$|im', array( $this, 'autoembed_callback' ), $content );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -343,17 +328,10 @@ class WP_Embed {
 	public function autoembed_callback( $match ) {
 		$oldval = $this->linkifunknown;
 		$this->linkifunknown = false;
-<<<<<<< HEAD
 		$return = $this->shortcode( array(), $match[2] );
 		$this->linkifunknown = $oldval;
 
 		return $match[1] . $return . $match[3];
-=======
-		$return = $this->shortcode( array(), $match[1] );
-		$this->linkifunknown = $oldval;
-
-		return "\n$return\n";
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**

@@ -201,11 +201,7 @@ if ( isset($_GET['action']) ) {
 		if ( ! current_user_can('install_themes') )
 			wp_die( __( 'You do not have sufficient permissions to install themes on this site.' ) );
 
-<<<<<<< HEAD
 		include_once( ABSPATH . 'wp-admin/includes/class-wp-upgrader.php' ); //for themes_api..
-=======
-		include_once( ABSPATH . 'wp-admin/includes/theme-install.php' ); //for themes_api..
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		check_admin_referer( 'install-theme_' . $theme );
 		$api = themes_api('theme_information', array('slug' => $theme, 'fields' => array('sections' => false, 'tags' => false) ) ); //Save on a bit of bandwidth.

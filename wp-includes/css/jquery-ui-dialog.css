@@ -1,15 +1,8 @@
 /*!
-<<<<<<< HEAD
  * jQuery UI CSS Framework 1.11.4
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
-=======
- * jQuery UI CSS Framework 1.11.2
- * http://jqueryui.com
- *
- * Copyright 2014 jQuery Foundation and other contributors
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * Released under the MIT license.
  * http://jquery.org/license
  *
@@ -100,17 +93,10 @@
 }
 
 /*!
-<<<<<<< HEAD
  * jQuery UI Resizable 1.11.4
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
-=======
- * jQuery UI Resizable 1.11.2
- * http://jqueryui.com
- *
- * Copyright 2014 jQuery Foundation and other contributors
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * Released under the MIT license.
  * http://jquery.org/license
  */
@@ -142,11 +128,7 @@
 	bottom: -5px;
 	left: 0;
 }
-<<<<<<< HEAD
 /* rtl:ignore */
-=======
-/* @noflip */
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .ui-resizable-e {
 	cursor: e-resize;
 	width: 7px;
@@ -154,11 +136,7 @@
 	top: 0;
 	height: 100%;
 }
-<<<<<<< HEAD
 /* rtl:ignore */
-=======
-/* @noflip */
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .ui-resizable-w {
 	cursor: w-resize;
 	width: 7px;
@@ -166,11 +144,7 @@
 	top: 0;
 	height: 100%;
 }
-<<<<<<< HEAD
 /* rtl:ignore */
-=======
-/* @noflip */
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .ui-resizable-se {
 	cursor: se-resize;
 	width: 12px;
@@ -178,11 +152,7 @@
 	right: 1px;
 	bottom: 1px;
 }
-<<<<<<< HEAD
 /* rtl:ignore */
-=======
-/* @noflip */
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .ui-resizable-sw {
 	cursor: sw-resize;
 	width: 9px;
@@ -190,11 +160,7 @@
 	left: -5px;
 	bottom: -5px;
 }
-<<<<<<< HEAD
 /* rtl:ignore */
-=======
-/* @noflip */
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .ui-resizable-nw {
 	cursor: nw-resize;
 	width: 9px;
@@ -202,11 +168,7 @@
 	left: -5px;
 	top: -5px;
 }
-<<<<<<< HEAD
 /* rtl:ignore */
-=======
-/* @noflip */
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .ui-resizable-ne {
 	cursor: ne-resize;
 	width: 9px;
@@ -260,11 +222,7 @@
 .ui-button:focus {
 	background: #fafafa;
 	border-color: #999;
-<<<<<<< HEAD
 	color: #23282d;
-=======
-	color: #222;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .ui-button:focus {
@@ -279,22 +237,14 @@
 .ui-button:active {
 	background: #eee;
 	border-color: #999;
-<<<<<<< HEAD
 	color: #32373c;
-=======
-	color: #333;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-box-shadow: inset 0 2px 5px -3px rgba( 0, 0, 0, 0.5 );
 	box-shadow: inset 0 2px 5px -3px rgba( 0, 0, 0, 0.5 );
 }
 
 .ui-button[disabled],
 .ui-button:disabled {
-<<<<<<< HEAD
 	color: #a0a5aa !important;
-=======
-	color: #aaa !important;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	border-color: #ddd !important;
 	background: #f7f7f7 !important;
 	-webkit-box-shadow: none !important;
@@ -368,11 +318,7 @@
 }
 
 .ui-button.ui-dialog-titlebar-close:hover {
-<<<<<<< HEAD
 	color: #00a0d2;
-=======
-	color: #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .ui-dialog-titlebar-close .ui-button-text {

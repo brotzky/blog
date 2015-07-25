@@ -4,11 +4,7 @@
  *
  * These functions must be used within the WordPress Loop.
  *
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Author_Templates
-=======
- * @link http://codex.wordpress.org/Author_Templates
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @package WordPress
  * @subpackage Template
@@ -53,11 +49,7 @@ function get_the_author($deprecated = '') {
  *
  * @since 0.71
  * @see get_the_author()
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Template_Tags/the_author
-=======
- * @link http://codex.wordpress.org/Template_Tags/the_author
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @param string $deprecated Deprecated.
  * @param string $deprecated_echo Deprecated. Use get_the_author(). Echo the string or return it.
@@ -109,11 +101,7 @@ function the_modified_author() {
 
 /**
  * Retrieve the requested data of the author of the current post.
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Template_Tags/the_author_meta
-=======
- * @link http://codex.wordpress.org/Template_Tags/the_author_meta
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @since 2.8.0
  * @param string $field selects the field of the users record.
  * @param int $user_id Optional. User ID.
@@ -147,11 +135,7 @@ function get_the_author_meta( $field = '', $user_id = false ) {
 
 /**
  * Retrieve the requested data of the author of the current post.
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Template_Tags/the_author_meta
-=======
- * @link http://codex.wordpress.org/Template_Tags/the_author_meta
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @since 2.8.0
  * @param string $field selects the field of the users record.
  * @param int $user_id Optional. User ID.
@@ -193,11 +177,7 @@ function get_the_author_link() {
  * If the author has a home page set, echo an HTML link, otherwise just echo the
  * author's name.
  *
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Template_Tags/the_author_link
-=======
- * @link http://codex.wordpress.org/Template_Tags/the_author_link
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @since 2.1.0
  */
@@ -217,21 +197,13 @@ function get_the_author_posts() {
 	if ( ! $post ) {
 		return 0;
 	}
-<<<<<<< HEAD
 	return count_user_posts( $post->post_author, $post->post_type );
-=======
-	return count_user_posts( $post->post_author );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
  * Display the number of posts by the author of the current post.
  *
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Template_Tags/the_author_posts
-=======
- * @link http://codex.wordpress.org/Template_Tags/the_author_posts
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @since 0.71
  */
 function the_author_posts() {
@@ -245,11 +217,7 @@ function the_author_posts() {
  * reason for this, is that another function is used to help in printing the
  * link to the author's posts.
  *
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Template_Tags/the_author_posts_link
-=======
- * @link http://codex.wordpress.org/Template_Tags/the_author_posts_link
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @since 1.2.0
  * @param string $deprecated Deprecated.
  */
@@ -319,11 +287,7 @@ function get_author_posts_url($author_id, $author_nicename = '') {
 /**
  * List all the authors of the blog, with several options available.
  *
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Template_Tags/wp_list_authors
-=======
- * @link http://codex.wordpress.org/Template_Tags/wp_list_authors
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @since 1.2.0
  *
@@ -373,11 +337,7 @@ function wp_list_authors( $args = '' ) {
 	$authors = get_users( $query_args );
 
 	$author_count = array();
-<<<<<<< HEAD
 	foreach ( (array) $wpdb->get_results( "SELECT DISTINCT post_author, COUNT(ID) AS count FROM $wpdb->posts WHERE " . get_private_posts_cap_sql( 'post' ) . " GROUP BY post_author" ) as $row ) {
-=======
-	foreach ( (array) $wpdb->get_results( "SELECT DISTINCT post_author, COUNT(ID) AS count FROM $wpdb->posts WHERE post_type = 'post' AND " . get_private_posts_cap_sql( 'post' ) . " GROUP BY post_author" ) as $row ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$author_count[$row->post_author] = $row->count;
 	}
 	foreach ( $authors as $author_id ) {
@@ -491,7 +451,3 @@ function is_multi_author() {
 function __clear_multi_author_cache() {
 	delete_transient( 'is_multi_author' );
 }
-<<<<<<< HEAD
-=======
-add_action('transition_post_status', '__clear_multi_author_cache');
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

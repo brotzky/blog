@@ -257,11 +257,7 @@ function get_users_drafts( $user_id ) {
 /**
  * Remove user and optionally reassign posts and links to another user.
  *
-<<<<<<< HEAD
  * If the $reassign parameter is not assigned to a User ID, then all posts will
-=======
- * If the $reassign parameter is not assigned to an User ID, then all posts will
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * be deleted of that user. The action 'delete_user' that is passed the User ID
  * being deleted will be run after the posts are either reassigned or deleted.
  * The user meta will also be deleted that are for that User ID.

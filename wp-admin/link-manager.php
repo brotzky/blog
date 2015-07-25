@@ -57,11 +57,7 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-<<<<<<< HEAD
 	'<p>' . __('<a href="https://codex.wordpress.org/Links_Screen" target="_blank">Documentation on Managing Links</a>') . '</p>' .
-=======
-	'<p>' . __('<a href="http://codex.wordpress.org/Links_Screen" target="_blank">Documentation on Managing Links</a>') . '</p>' .
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	'<p>' . __('<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>'
 );
 
@@ -80,11 +76,7 @@ if ( !empty($_REQUEST['s']) )
 
 <?php
 if ( isset($_REQUEST['deleted']) ) {
-<<<<<<< HEAD
 	echo '<div id="message" class="updated notice is-dismissible"><p>';
-=======
-	echo '<div id="message" class="updated"><p>';
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$deleted = (int) $_REQUEST['deleted'];
 	printf(_n('%s link deleted.', '%s links deleted', $deleted), $deleted);
 	echo '</p></div>';
@@ -92,11 +84,7 @@ if ( isset($_REQUEST['deleted']) ) {
 }
 ?>
 
-<<<<<<< HEAD
 <form id="posts-filter" method="get">
-=======
-<form id="posts-filter" action="" method="get">
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 <?php $wp_list_table->search_box( __( 'Search Links' ), 'link' ); ?>
 

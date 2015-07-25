@@ -22,11 +22,7 @@
 	width: 0;
 	height: 0;
 	margin-right: 8px;
-<<<<<<< HEAD
 	border-top: 5px solid #b4b9be;
-=======
-	border-top: 5px solid #bbb;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	border-left: 5px solid transparent;
 }
 
@@ -40,11 +36,7 @@
 	display: inline-block;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-<<<<<<< HEAD
 	background-color: #b4b9be;
-=======
-	background-color: #bbb;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	color: #fff;
 }
 
@@ -53,19 +45,11 @@
 }
 
 .post-com-count:hover span {
-<<<<<<< HEAD
 	background-color: #00a0d2;
 }
 
 .post-com-count:hover:after {
 	border-top: 5px solid #00a0d2;
-=======
-	background-color: #2ea2cc;
-}
-
-.post-com-count:hover:after {
-	border-top: 5px solid #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 strong .post-com-count {
@@ -73,19 +57,11 @@ strong .post-com-count {
 }
 
 strong .post-com-count span {
-<<<<<<< HEAD
 	background-color: #0073aa;
 }
 
 strong .post-com-count:after {
 	border-top: 5px solid #0073aa;
-=======
-	background-color: #0074a2;
-}
-
-strong .post-com-count:after {
-	border-top: 5px solid #0074a2;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .column-response .post-com-count {
@@ -132,15 +108,6 @@ strong .post-com-count:after {
 	text-align: center;
 }
 
-<<<<<<< HEAD
-=======
-#replysubmit .spinner {
-	padding: 2px 0 0;
-	vertical-align: top;
-	float: left;
-}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 #replysubmit .button {
 	margin-left: 5px;
 }
@@ -390,13 +357,6 @@ table.fixed {
 	border-bottom: 0 none;
 }
 
-<<<<<<< HEAD
-=======
-#commentsdiv .spinner {
-	padding-right: 5px;
-}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .sorting-indicator {
 	display: none;
 	width: 10px;
@@ -446,11 +406,7 @@ tr.wp-locked .locked-indicator {
 }
 
 tr.wp-locked .locked-indicator:before {
-<<<<<<< HEAD
 	color: #82878c;
-=======
-	color: #888;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	content: '\f160';
 	display: inline-block;
 	float: right;
@@ -509,20 +465,6 @@ th.sorted a {
 	padding: 7px 10px 8px 7px;
 }
 
-<<<<<<< HEAD
-=======
-th.manage-column a,
-th.sortable a:hover,
-th.sortable a:active,
-th.sortable a:focus {
-	color: #333;
-}
-
-th.sortable a:focus {
-	background: #e1e1e1;
-}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .fixed .column-comments.sortable a,
 .fixed .column-comments.sorted a {
 	padding: 8px 0;
@@ -537,11 +479,7 @@ th.sorted a span {
 th.sorted.asc .sorting-indicator,
 th.desc:hover span.sorting-indicator {
 	display: block;
-<<<<<<< HEAD
 	background-position: 100% 0;
-=======
-	background-position: 0 0;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 th.sorted.desc .sorting-indicator,
@@ -612,22 +550,14 @@ th.asc:hover span.sorting-indicator {
 .tablenav .tablenav-pages a:hover,
 .tablenav .tablenav-pages a:focus {
 	color: #fff;
-<<<<<<< HEAD
 	background: #00a0d2;
-=======
-	background: #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .tablenav .tablenav-pages a.disabled,
 .tablenav .tablenav-pages a.disabled:hover,
 .tablenav .tablenav-pages a.disabled:focus,
 .tablenav .tablenav-pages a.disabled:active {
-<<<<<<< HEAD
 	color: #a0a5aa;
-=======
-	color: #aaa;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	background: #eee;
 	background: rgba( 0, 0, 0, 0.05 );
 }
@@ -662,21 +592,13 @@ classes exist in paginate_links() but not seen in list table output. */
 .tablenav .next,
 .tablenav .prev {
 	border-color: transparent;
-<<<<<<< HEAD
 	color: #0073aa;
-=======
-	color: #0074a2;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .tablenav .next:hover,
 .tablenav .prev:hover {
 	border-color: transparent;
-<<<<<<< HEAD
 	color: #00a0d2;
-=======
-	color: #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .tablenav .view-switch {
@@ -702,11 +624,7 @@ classes exist in paginate_links() but not seen in list table output. */
 }
 
 .view-switch > a:before {
-<<<<<<< HEAD
 	color: #b4b9be;
-=======
-	color: #bbb;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	display: inline-block;
 	float: right;
 	font: normal 20px/1 'dashicons';
@@ -726,11 +644,7 @@ classes exist in paginate_links() but not seen in list table output. */
 }
 
 .view-switch a.current:before {
-<<<<<<< HEAD
 	color: #0073aa;
-=======
-	color: #0074a2;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .view-switch > a + a {
@@ -846,11 +760,7 @@ tr.inline-edit-row td,
 
 #wpbody-content .quick-edit-row-page fieldset.inline-edit-col-right .inline-edit-col {
 	border-width: 0 1px 0 0;
-<<<<<<< HEAD
 	border-style: none solid none none;
-=======
-	border-style: none none none solid;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 #wpbody-content .quick-edit-row-post .inline-edit-col-left {
@@ -893,10 +803,7 @@ tr.inline-edit-row td,
 
 .inline-edit-row fieldset .inline-edit-group {
 	clear: both;
-<<<<<<< HEAD
 	line-height: 2.5;
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .inline-edit-row fieldset .inline-edit-group:after {
@@ -923,30 +830,19 @@ tr.inline-edit-row td,
 .inline-edit-row h4 {
 	margin: .2em 0;
 	padding: 0;
-<<<<<<< HEAD
 	line-height: 2.5;
-=======
-	line-height: 23px;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 .inline-edit-row fieldset span.title,
 .inline-edit-row fieldset span.checkbox-title {
 	margin: 0;
 	padding: 0;
-<<<<<<< HEAD
-=======
-	line-height: 27px;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .inline-edit-row fieldset label,
 .inline-edit-row fieldset span.inline-edit-categories-label {
 	display: block;
 	margin: .2em 0;
-<<<<<<< HEAD
 	line-height: 2.5;
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .inline-edit-row fieldset label.inline-edit-tags {
@@ -962,10 +858,7 @@ tr.inline-edit-row td,
 	display: block;
 	float: right;
 	width: 5em;
-<<<<<<< HEAD
 	line-height: 2.5;
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .inline-edit-row fieldset label span.input-text-wrap {
@@ -978,33 +871,23 @@ tr.inline-edit-row td,
 	padding-left: 0.5em;
 }
 
-<<<<<<< HEAD
 .inline-edit-row .inline-edit-or {
 	margin: .2em 0 .2em 6px;
 	line-height: 2.5;
 }
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .inline-edit-row .input-text-wrap input[type=text] {
 	width: 100%;
 }
 
 .inline-edit-row fieldset label input[type=checkbox] {
-<<<<<<< HEAD
 	vertical-align: middle;
-=======
-	vertical-align: text-bottom;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .inline-edit-row fieldset label textarea {
 	width: 100%;
 	height: 4em;
-<<<<<<< HEAD
 	vertical-align: top;
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 #wpbody-content .bulk-edit-row fieldset .inline-edit-group label {
@@ -1019,15 +902,6 @@ tr.inline-edit-row td,
 	width: 6em;
 }
 
-<<<<<<< HEAD
-=======
-.inline-edit-save .spinner {
-	padding: 4px 10px 0;
-	vertical-align: top;
-	float: left;
-}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 /*	Styling */
 .inline-edit-row h4 {
 	text-transform: uppercase;
@@ -1036,10 +910,6 @@ tr.inline-edit-row td,
 .inline-edit-row fieldset span.title,
 .inline-edit-row fieldset span.checkbox-title {
 	font-style: italic;
-<<<<<<< HEAD
-=======
-	line-height: 1.8em;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /*	Specific Elements */
@@ -1051,11 +921,7 @@ tr.inline-edit-row td,
 .inline-edit-row fieldset input[name=hh],
 .inline-edit-row fieldset input[name=mn] {
 	font-size: 12px;
-<<<<<<< HEAD
 	width: 2.3em;
-=======
-	width: 2.1em;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .inline-edit-row fieldset input[name=aa] {
@@ -1257,15 +1123,11 @@ ul.cat-checklist {
 .upgrade .plugins tr:last-of-type td,
 .upgrade .plugins tr:last-of-type th,
 .plugins tr.active + tr.inactive.update th,
-<<<<<<< HEAD
 .plugins tr.active + tr.inactive.update td,
 .plugins .updated td,
 .plugins .updated th,
 .plugins tr.active + tr.inactive.updated th,
 .plugins tr.active + tr.inactive.updated td {
-=======
-.plugins tr.active + tr.inactive.update td {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
@@ -1276,14 +1138,9 @@ tr.active.update + tr.plugin-update-tr .plugin-update {
 	background-color: #fef7f1;
 }
 
-<<<<<<< HEAD
 .plugins .active th.check-column,
 .plugin-update-tr.active td {
 	border-right: 4px solid #00a0d2;
-=======
-.plugins .active th.check-column {
-	border-right: 4px solid #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .plugins .active.update th.check-column,
@@ -1307,13 +1164,9 @@ tr.active.update + tr.plugin-update-tr .plugin-update {
 }
 
 .plugins .update .second,
-<<<<<<< HEAD
 .plugins .update .row-actions,
 .plugins .updated .second,
 .plugins .updated .row-actions {
-=======
-.plugins .update .row-actions {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	padding-bottom: 0;
 }
 
@@ -1333,7 +1186,6 @@ tr.active.update + tr.plugin-update-tr .plugin-update {
 	background-color: rgba(0,0,0,0.03);
 }
 
-<<<<<<< HEAD
 .plugin-update-tr .update-message:before,
 .plugin-card .update-now:before,
 .plugin-card .install-now:before {
@@ -1341,21 +1193,11 @@ tr.active.update + tr.plugin-update-tr .plugin-update {
 	display: inline-block;
 	font: normal 20px/1 'dashicons';
 	speak: none;
-=======
-.plugin-update-tr .update-message:before {
-	color: #d54e21;
-	content: '\f463';
-	display: inline-block;
-	font: normal 20px/1 'dashicons';
-	speak: none;
-	margin: 0 -2px 0 8px;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	vertical-align: top;
 }
 
-<<<<<<< HEAD
 .plugin-update-tr .update-message:before,
 .plugin-card .update-now:before {
 	content: '\f463';
@@ -1406,9 +1248,6 @@ tr.active.update + tr.plugin-update-tr .plugin-update {
 }
 
 .plugins .plugin-update-tr .plugin-update {
-=======
-.plugins .plugin-update {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	padding: 0;
 	border: none;
 	-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1);
@@ -1420,11 +1259,7 @@ tr.active + tr.plugin-update-tr .plugin-update {
 	background-color: #f7fcfe;
 }
 
-<<<<<<< HEAD
 tr.active + tr.plugin-update-tr:not(.updated) .plugin-update .update-message {
-=======
-tr.active + tr.plugin-update-tr .plugin-update .update-message {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	background-color: #fcf3ef;
 }
 
@@ -1634,7 +1469,6 @@ div.action-links,
 
 /* ms */
 /* Background Color for Site Status */
-<<<<<<< HEAD
 .wp-list-table tr.site-deleted {
 	background: #ff8573;
 }
@@ -1645,18 +1479,6 @@ div.action-links,
 	background: #ffebe8;
 }
 .wp-list-table tr.site-mature {
-=======
-.wp-list-table .site-deleted {
-	background: #ff8573;
-}
-.wp-list-table .site-spammed {
-	background: #faafaa;
-}
-.wp-list-table .site-archived {
-	background: #ffebe8;
-}
-.wp-list-table .site-mature {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	background: #fecac2;
 }
 
@@ -1876,13 +1698,10 @@ div.action-links,
 		width: 4.5em;
 	}
 
-<<<<<<< HEAD
 	.inline-edit-row .inline-edit-or {
 		margin: 0 0 0 6px;
 	}
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	#bulk-titles div {
 		margin: 0.8em 0.3em;
 	}
@@ -2094,7 +1913,6 @@ div.action-links,
 		box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1);
 	}
 }
-<<<<<<< HEAD
 
 /* Smartphone */
 @media screen and (max-width: 600px) {
@@ -2105,5 +1923,3 @@ div.action-links,
 		display: none;
 	}
 }
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

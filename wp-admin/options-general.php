@@ -18,11 +18,7 @@ if ( ! current_user_can( 'manage_options' ) )
 $title = __('General Settings');
 $parent_file = 'options-general.php';
 /* translators: date and time format for exact current time, mainly about timezones, see http://php.net/date */
-<<<<<<< HEAD
 $timezone_format = _x('Y-m-d H:i:s', 'timezone date format');
-=======
-$timezone_format = _x('Y-m-d G:i:s', 'timezone date format');
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 /**
  * Display JavaScript on the page.
@@ -32,10 +28,6 @@ $timezone_format = _x('Y-m-d G:i:s', 'timezone date format');
 function options_general_add_js() {
 ?>
 <script type="text/javascript">
-<<<<<<< HEAD
-=======
-//<![CDATA[
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	jQuery(document).ready(function($){
 		var $siteName = $( '#wp-admin-bar-site-name' ).children( 'a' ).first(),
 			homeURL = ( <?php echo wp_json_encode( get_home_url() ); ?> || '' ).replace( /^(https?:\/\/)?(www\.)?/, '' );
@@ -53,11 +45,7 @@ function options_general_add_js() {
 
 		$("input[name='date_format']").click(function(){
 			if ( "date_format_custom_radio" != $(this).attr("id") )
-<<<<<<< HEAD
 				$( "input[name='date_format_custom']" ).val( $( this ).val() ).siblings( '.example' ).text( $( this ).parent( 'label' ).text() );
-=======
-				$("input[name='date_format_custom']").val( $(this).val() ).siblings('.example').text( $(this).siblings('span').text() );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		});
 		$("input[name='date_format_custom']").focus(function(){
 			$( '#date_format_custom_radio' ).prop( 'checked', true );
@@ -65,30 +53,18 @@ function options_general_add_js() {
 
 		$("input[name='time_format']").click(function(){
 			if ( "time_format_custom_radio" != $(this).attr("id") )
-<<<<<<< HEAD
 				$( "input[name='time_format_custom']" ).val( $( this ).val() ).siblings( '.example' ).text( $( this ).parent( 'label' ).text() );
-=======
-				$("input[name='time_format_custom']").val( $(this).val() ).siblings('.example').text( $(this).siblings('span').text() );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		});
 		$("input[name='time_format_custom']").focus(function(){
 			$( '#time_format_custom_radio' ).prop( 'checked', true );
 		});
 		$("input[name='date_format_custom'], input[name='time_format_custom']").change( function() {
 			var format = $(this);
-<<<<<<< HEAD
 			format.siblings( '.spinner' ).addClass( 'is-active' );
 			$.post(ajaxurl, {
 					action: 'date_format_custom' == format.attr('name') ? 'date_format' : 'time_format',
 					date : format.val()
 				}, function(d) { format.siblings( '.spinner' ).removeClass( 'is-active' ); format.siblings('.example').text(d); } );
-=======
-			format.siblings('.spinner').css('display', 'inline-block'); // show(); can't be used here
-			$.post(ajaxurl, {
-					action: 'date_format_custom' == format.attr('name') ? 'date_format' : 'time_format',
-					date : format.val()
-				}, function(d) { format.siblings('.spinner').hide(); format.siblings('.example').text(d); } );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		});
 
 		var languageSelect = $( '#WPLANG' );
@@ -100,10 +76,6 @@ function options_general_add_js() {
 			}
 		});
 	});
-<<<<<<< HEAD
-=======
-//]]>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 </script>
 <?php
 }
@@ -129,11 +101,7 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-<<<<<<< HEAD
 	'<p>' . __('<a href="https://codex.wordpress.org/Settings_General_Screen" target="_blank">Documentation on General Settings</a>') . '</p>' .
-=======
-	'<p>' . __('<a href="http://codex.wordpress.org/Settings_General_Screen" target="_blank">Documentation on General Settings</a>') . '</p>' .
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	'<p>' . __('<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>'
 );
 
@@ -153,13 +121,8 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 </tr>
 <tr>
 <th scope="row"><label for="blogdescription"><?php _e('Tagline') ?></label></th>
-<<<<<<< HEAD
 <td><input name="blogdescription" type="text" id="blogdescription" aria-describedby="tagline-description" value="<?php form_option('blogdescription'); ?>" class="regular-text" />
 <p class="description" id="tagline-description"><?php _e( 'In a few words, explain what this site is about.' ) ?></p></td>
-=======
-<td><input name="blogdescription" type="text" id="blogdescription" value="<?php form_option('blogdescription'); ?>" class="regular-text" />
-<p class="description"><?php _e('In a few words, explain what this site is about.') ?></p></td>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 </tr>
 <?php if ( !is_multisite() ) { ?>
 <tr>
@@ -168,7 +131,6 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 </tr>
 <tr>
 <th scope="row"><label for="home"><?php _e('Site Address (URL)') ?></label></th>
-<<<<<<< HEAD
 <td><input name="home" type="url" id="home" aria-describedby="home-description" value="<?php form_option( 'home' ); ?>"<?php disabled( defined( 'WP_HOME' ) ); ?> class="regular-text code<?php if ( defined( 'WP_HOME' ) ) echo ' disabled' ?>" />
 <p class="description" id="home-description"><?php _e( 'Enter the address here if you <a href="https://codex.wordpress.org/Giving_WordPress_Its_Own_Directory">want your site home page to be different from your WordPress installation directory.</a>' ); ?></p></td>
 </tr>
@@ -176,15 +138,6 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 <th scope="row"><label for="admin_email"><?php _e('E-mail Address') ?> </label></th>
 <td><input name="admin_email" type="email" id="admin_email" aria-describedby="admin-email-description" value="<?php form_option( 'admin_email' ); ?>" class="regular-text ltr" />
 <p class="description" id="admin-email-description"><?php _e( 'This address is used for admin purposes, like new user notification.' ) ?></p></td>
-=======
-<td><input name="home" type="url" id="home" value="<?php form_option( 'home' ); ?>"<?php disabled( defined( 'WP_HOME' ) ); ?> class="regular-text code<?php if ( defined( 'WP_HOME' ) ) echo ' disabled' ?>" />
-<p class="description"><?php _e('Enter the address here if you want your site homepage <a href="http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory">to be different from the directory</a> you installed WordPress.'); ?></p></td>
-</tr>
-<tr>
-<th scope="row"><label for="admin_email"><?php _e('E-mail Address') ?> </label></th>
-<td><input name="admin_email" type="email" id="admin_email" value="<?php form_option( 'admin_email' ); ?>" class="regular-text ltr" />
-<p class="description"><?php _e('This address is used for admin purposes, like new user notification.') ?></p></td>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 </tr>
 <tr>
 <th scope="row"><?php _e('Membership') ?></th>
@@ -202,13 +155,8 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 <?php } else { ?>
 <tr>
 <th scope="row"><label for="new_admin_email"><?php _e('E-mail Address') ?> </label></th>
-<<<<<<< HEAD
 <td><input name="new_admin_email" type="email" id="new_admin_email" aria-describedby="new-admin-email-description" value="<?php form_option( 'admin_email' ); ?>" class="regular-text ltr" />
 <p class="description" id="new-admin-email-description"><?php _e( 'This address is used for admin purposes. If you change this we will send you an e-mail at your new address to confirm it. <strong>The new address will not become active until confirmed.</strong>' ) ?></p>
-=======
-<td><input name="new_admin_email" type="email" id="new_admin_email" value="<?php form_option( 'admin_email' ); ?>" class="regular-text ltr" />
-<p class="description"><?php _e('This address is used for admin purposes. If you change this we will send you an e-mail at your new address to confirm it. <strong>The new address will not become active until confirmed.</strong>') ?></p>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <?php
 $new_admin_email = get_option( 'new_admin_email' );
 if ( $new_admin_email && $new_admin_email != get_option('admin_email') ) : ?>
@@ -244,11 +192,7 @@ if ( empty($tzstring) ) { // Create a UTC+- zone if no timezone string exists
 <th scope="row"><label for="timezone_string"><?php _e('Timezone') ?></label></th>
 <td>
 
-<<<<<<< HEAD
 <select id="timezone_string" name="timezone_string" aria-describedby="timezone-description">
-=======
-<select id="timezone_string" name="timezone_string">
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <?php echo wp_timezone_choice($tzstring); ?>
 </select>
 
@@ -256,11 +200,7 @@ if ( empty($tzstring) ) { // Create a UTC+- zone if no timezone string exists
 <?php if ( get_option('timezone_string') || !empty($current_offset) ) : ?>
 	<span id="local-time"><?php printf(__('Local time is <code>%1$s</code>'), date_i18n($timezone_format)); ?></span>
 <?php endif; ?>
-<<<<<<< HEAD
 <p class="description" id="timezone-description"><?php _e( 'Choose a city in the same timezone as you.' ); ?></p>
-=======
-<p class="description"><?php _e('Choose a city in the same timezone as you.'); ?></p>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <?php if ($check_zone_info && $tzstring) : ?>
 <br />
 <span>
@@ -331,21 +271,13 @@ if ( empty($tzstring) ) { // Create a UTC+- zone if no timezone string exists
 			echo " checked='checked'";
 			$custom = false;
 		}
-<<<<<<< HEAD
 		echo ' /> ' . date_i18n( $format ) . "</label><br />\n";
-=======
-		echo ' /> <span>' . date_i18n( $format ) . "</span></label><br />\n";
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	echo '	<label><input type="radio" name="date_format" id="date_format_custom_radio" value="\c\u\s\t\o\m"';
 	checked( $custom );
-<<<<<<< HEAD
 	echo '/> ' . __( 'Custom:' ) . '<span class="screen-reader-text"> ' . __( 'enter a custom date format in the following field' ) . "</span></label>\n";
 	echo '<label for="date_format_custom" class="screen-reader-text">' . __( 'Custom date format:' ) . '</label><input type="text" name="date_format_custom" id="date_format_custom" value="' . esc_attr( get_option('date_format') ) . '" class="small-text" /> <span class="screen-reader-text">' . __( 'example:' ) . ' </span><span class="example"> ' . date_i18n( get_option('date_format') ) . "</span> <span class='spinner'></span>\n";
-=======
-	echo '/> ' . __('Custom:') . ' </label><input type="text" name="date_format_custom" value="' . esc_attr( get_option('date_format') ) . '" class="small-text" /> <span class="example"> ' . date_i18n( get_option('date_format') ) . "</span> <span class='spinner'></span>\n";
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 ?>
 	</fieldset>
 </td>
@@ -372,25 +304,15 @@ if ( empty($tzstring) ) { // Create a UTC+- zone if no timezone string exists
 			echo " checked='checked'";
 			$custom = false;
 		}
-<<<<<<< HEAD
 		echo ' /> ' . date_i18n( $format ) . "</label><br />\n";
-=======
-		echo ' /> <span>' . date_i18n( $format ) . "</span></label><br />\n";
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	echo '	<label><input type="radio" name="time_format" id="time_format_custom_radio" value="\c\u\s\t\o\m"';
 	checked( $custom );
-<<<<<<< HEAD
 	echo '/> ' . __( 'Custom:' ) . '<span class="screen-reader-text"> ' . __( 'enter a custom time format in the following field' ) . "</span></label>\n";
 	echo '<label for="time_format_custom" class="screen-reader-text">' . __( 'Custom time format:' ) . '</label><input type="text" name="time_format_custom" id="time_format_custom" value="' . esc_attr( get_option('time_format') ) . '" class="small-text" /> <span class="screen-reader-text">' . __( 'example:' ) . ' </span><span class="example"> ' . date_i18n( get_option('time_format') ) . "</span> <span class='spinner'></span>\n";
 
 	echo "\t<p>" . __('<a href="https://codex.wordpress.org/Formatting_Date_and_Time">Documentation on date and time formatting</a>.') . "</p>\n";
-=======
-	echo '/> ' . __('Custom:') . ' </label><input type="text" name="time_format_custom" value="' . esc_attr( get_option('time_format') ) . '" class="small-text" /> <span class="example"> ' . date_i18n( get_option('time_format') ) . "</span> <span class='spinner'></span>\n";
-
-	echo "\t<p>" . __('<a href="http://codex.wordpress.org/Formatting_Date_and_Time">Documentation on date and time formatting</a>.') . "</p>\n";
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 ?>
 	</fieldset>
 </td>
@@ -399,11 +321,8 @@ if ( empty($tzstring) ) { // Create a UTC+- zone if no timezone string exists
 <th scope="row"><label for="start_of_week"><?php _e('Week Starts On') ?></label></th>
 <td><select name="start_of_week" id="start_of_week">
 <?php
-<<<<<<< HEAD
 global $wp_locale;
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 for ($day_index = 0; $day_index <= 6; $day_index++) :
 	$selected = (get_option('start_of_week') == $day_index) ? 'selected="selected"' : '';
 	echo "\n\t<option value='" . esc_attr($day_index) . "' $selected>" . $wp_locale->get_weekday($day_index) . '</option>';

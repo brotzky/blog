@@ -1,9 +1,6 @@
 body {
 	overflow: hidden;
-<<<<<<< HEAD
 	-webkit-text-size-adjust: 100%;
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 #customize-controls a {
@@ -32,33 +29,22 @@ body {
 }
 
 #customize-header-actions .spinner {
-<<<<<<< HEAD
 	margin-top: 13px;
-=======
-	margin-top: 16px;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	margin-right: 4px;
 }
 
 .saving #customize-header-actions .spinner {
-<<<<<<< HEAD
 	visibility: visible;
-=======
-	display: block;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 #customize-header-actions {
 	border-bottom: 1px solid #ddd;
 }
 
-<<<<<<< HEAD
 #customize-header-actions .secondary-actions {
 	display: none;
 }
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 #customize-controls .wp-full-overlay-sidebar-content {
 	overflow-y: auto;
 	overflow-x: hidden;
@@ -127,11 +113,7 @@ body {
 #customize-theme-controls .control-section .accordion-section-title:hover,
 #customize-theme-controls .control-section.open .accordion-section-title,
 #customize-theme-controls .control-section .accordion-section-title:focus {
-<<<<<<< HEAD
 	color: #23282d;
-=======
-	color: #222;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	background: #f5f5f5;
 }
 
@@ -185,13 +167,6 @@ body {
 	z-index: 0;
 }
 
-<<<<<<< HEAD
-=======
-.rtl .control-section.control-panel > .accordion-section-title:after {
-	content: "\f341";
-}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 #customize-theme-controls .control-section.control-panel > h3.accordion-section-title:focus:after,
 #customize-theme-controls .control-section.control-panel > h3.accordion-section-title:hover:after {
 	background: #ddd;
@@ -222,10 +197,7 @@ body {
 	width: 100%;
 }
 
-<<<<<<< HEAD
 .customize-overlay-close,
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .customize-controls-close {
 	display: block;
 	position: absolute;
@@ -233,7 +205,6 @@ body {
 	left: 0;
 	width: 45px;
 	height: 45px;
-<<<<<<< HEAD
 	padding: 0 2px 0 0;
 	background: #eee;
 	border: none;
@@ -253,15 +224,6 @@ body {
 	right: 0;
 	border-right: 0;
 	border-left: 1px solid #ddd;
-=======
-	padding-right: 2px;
-	background: #eee;
-	border-right: 1px solid #ddd;
-	color: #444;
-	cursor: pointer;
-	-webkit-transition: color .1s ease-in-out, background .1s ease-in-out;
-	transition: color .1s ease-in-out, background .1s ease-in-out;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .control-panel-back {
@@ -280,19 +242,15 @@ body {
 	transition: left .18s ease-in-out, color .1s ease-in-out, background .1s ease-in-out;
 }
 
-<<<<<<< HEAD
 .ios .control-panel-back {
 	-webkit-transition: left 0s;
 	transition: left 0s;
 }
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .collapsed .control-panel-back {
 	display: none;
 }
 
-<<<<<<< HEAD
 .customize-overlay-close:focus,
 .customize-overlay-close:hover,
 .customize-controls-close:focus,
@@ -301,12 +259,6 @@ body {
 .control-panel-back:hover,
 .customize-controls-preview-toggle:focus,
 .customize-controls-preview-toggle:hover {
-=======
-.customize-controls-close:focus,
-.customize-controls-close:hover,
-.control-panel-back:focus,
-.control-panel-back:hover {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	background: #ddd;
 	border-color: #ccc;
 	color: #000;
@@ -315,25 +267,16 @@ body {
 	box-shadow: none;
 }
 
-<<<<<<< HEAD
 .customize-overlay-close:before,
 .customize-controls-close:before {
 	font: normal 22px/45px dashicons;
 	content: "\f335";
 	position: relative;
 	top: 1px;
-=======
-.customize-controls-close:before {
-	font: normal 22px/1 dashicons;
-	content: "\f335";
-	position: relative;
-	top: 7px;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	left: 13px;
 }
 
 .control-panel-back:before {
-<<<<<<< HEAD
 	font: normal 20px/45px dashicons;
 	content: "\f341";
 	position: relative;
@@ -341,19 +284,6 @@ body {
 	left: 13px;
 }
 
-=======
-	font: normal 20px/1 dashicons;
-	content: "\f341";
-	position: relative;
-	top: 7px;
-	left: 13px;
-}
-
-.rtl .control-panel-back:before {
-	content: "\f345";
-}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .in-sub-panel .control-panel-back {
 	left: 0;
 }
@@ -379,15 +309,12 @@ body {
 	transition: left ease-in-out .18s;
 }
 
-<<<<<<< HEAD
 .ios #customize-info,
 .ios #customize-theme-controls > ul > .accordion-section {
 	-webkit-transition: left 0s;
 	transition: left 0s;
 }
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .in-sub-panel #customize-info,
 .in-sub-panel #customize-theme-controls > ul > .accordion-section {
 	left: -300px;
@@ -408,23 +335,16 @@ body {
 }
 
 #customize-theme-controls .control-section.current-panel > h3.accordion-section-title {
-<<<<<<< HEAD
 	left: -354px;
-=======
-	left: -300px;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-transition: left ease-in-out .18s;
 	transition: left ease-in-out .18s;
 }
 
-<<<<<<< HEAD
 .ios #customize-theme-controls .control-section.current-panel > h3.accordion-section-title {
 	-webkit-transition: left 0s;
 	transition: left 0s;
 }
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .control-section.control-panel .accordion-section-title .panel-title {
 	font-size: 20px;
 	font-weight: 200;
@@ -467,13 +387,10 @@ p.customize-section-description {
 	margin: 0;
 }
 
-<<<<<<< HEAD
 .customize-control-hidden {
 	margin: 0;
 }
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .customize-control-textarea textarea {
 	width: 100%;
 	resize: vertical;
@@ -553,11 +470,7 @@ p.customize-section-description {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	margin: 0;
-<<<<<<< HEAD
 	padding: 0 10px;
-=======
-	padding: 5px 10px 0;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .customize-control .attachment-meta-title {
@@ -572,7 +485,6 @@ p.customize-section-description {
 	cursor: pointer;
 }
 
-<<<<<<< HEAD
 #customize-controls .thumbnail-audio .thumbnail {
 	max-width: 64px;
 	max-height: 64px;
@@ -580,8 +492,6 @@ p.customize-section-description {
 	float: left;
 }
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 #customize-preview iframe {
 	width: 100%;
 	height: 100%;
@@ -609,11 +519,7 @@ p.customize-section-description {
 }
 
 .collapsed .collapse-sidebar-arrow:before {
-<<<<<<< HEAD
 	color: #82878c;
-=======
-	color: #888;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /* Style for custom settings */
@@ -664,19 +570,11 @@ p.customize-section-description {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-decoration: none !important;
-<<<<<<< HEAD
 	color: #32373c;
 }
 
 .customize-control .dropdown-status {
 	color: #32373c;
-=======
-	color: #333;
-}
-
-.customize-control .dropdown-status {
-	color: #333;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	background: #eeeeee;
 	display: none;
 	max-width: 112px;
@@ -721,14 +619,9 @@ p.customize-section-description {
 	-webkit-overflow-scrolling: touch;
 }
 
-<<<<<<< HEAD
 /** Media controls **/
 
 .customize-control-media .current,
-=======
-/** Header control **/
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .customize-control-upload .current,
 .customize-control-image .current,
 .customize-control-background .current,
@@ -755,12 +648,9 @@ p.customize-section-description {
 	display: block;
 }
 
-<<<<<<< HEAD
 .customize-control-media .remove-button,
 .customize-control-media .default-button,
 .customize-control-media .upload-button,
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .customize-control-upload .remove-button,
 .customize-control-upload .default-button,
 .customize-control-upload .upload-button,
@@ -777,10 +667,7 @@ p.customize-section-description {
 	height: auto;
 }
 
-<<<<<<< HEAD
 .customize-control-media .current .container,
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .customize-control-upload .current .container,
 .customize-control-image .current .container,
 .customize-control-background .current .container,
@@ -792,20 +679,14 @@ p.customize-section-description {
 	border-radius: 2px;
 }
 
-<<<<<<< HEAD
 .customize-control-media .current .container,
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .customize-control-upload .current .container,
 .customize-control-background .current .container,
 .customize-control-image .current .container {
 	min-height: 40px;
 }
 
-<<<<<<< HEAD
 .customize-control-media .placeholder,
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .customize-control-upload .placeholder,
 .customize-control-image .placeholder,
 .customize-control-background .placeholder,
@@ -816,10 +697,7 @@ p.customize-section-description {
 	cursor: default;
 }
 
-<<<<<<< HEAD
 .customize-control-media .inner,
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .customize-control-upload .inner,
 .customize-control-image .inner,
 .customize-control-background .inner,
@@ -833,10 +711,7 @@ p.customize-section-description {
 	overflow: hidden;
 }
 
-<<<<<<< HEAD
 .customize-control-media .inner,
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .customize-control-upload .inner,
 .customize-control-background .inner,
 .customize-control-image .inner {
@@ -844,10 +719,7 @@ p.customize-section-description {
 	min-height: 40px;
 }
 
-<<<<<<< HEAD
 .customize-control-media .inner,
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .customize-control-upload .inner,
 .customize-control-image .inner,
 .customize-control-background .inner,
@@ -881,11 +753,7 @@ p.customize-section-description {
 	position: absolute;
 	height: auto;
 	top: 0; left: 0; bottom: 0; right: 0;
-<<<<<<< HEAD
 	border: 4px solid #00a0d2;
-=======
-	border: 4px solid #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
 }
@@ -944,10 +812,6 @@ p.customize-section-description {
 .customize-control-header .placeholder:hover .dice,
 .customize-control-header .header-view:hover > button.random .dice {
 	-webkit-animation: dice-color-change 3s infinite;
-<<<<<<< HEAD
-=======
-	-ms-animation: dice-color-change 3s infinite;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	animation: dice-color-change 3s infinite;
 }
 
@@ -958,16 +822,6 @@ p.customize-section-description {
 	100% { color: #d4b146; }
 }
 
-<<<<<<< HEAD
-=======
-@-ms-keyframes dice-color-change {
-	0% { color: #d4b146; }
-	50% { color: #ef54b0; }
-	75% { color: #7190d3; }
-	100% { color: #d4b146; }
-}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 @keyframes dice-color-change {
 	0% { color: #d4b146; }
 	50% { color: #ef54b0; }
@@ -975,10 +829,7 @@ p.customize-section-description {
 	100% { color: #d4b146; }
 }
 
-<<<<<<< HEAD
 .customize-control-media .actions,
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .customize-control-upload .actions,
 .customize-control-image .actions,
 .customize-control-background .actions,
@@ -996,10 +847,7 @@ p.customize-section-description {
 	margin-bottom: 0;
 }
 
-<<<<<<< HEAD
 .customize-control-media img,
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .customize-control-upload img,
 .customize-control-image img,
 .customize-control-background img,
@@ -1009,11 +857,8 @@ p.customize-section-description {
 	border-radius: 2px;
 }
 
-<<<<<<< HEAD
 .customize-control-media .remove-button,
 .customize-control-media .default-button,
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .customize-control-upload .remove-button,
 .customize-control-upload .default-button,
 .customize-control-image .remove-button,
@@ -1025,10 +870,7 @@ p.customize-section-description {
 	margin-right: 3px;
 }
 
-<<<<<<< HEAD
 .customize-control-media .upload-button,
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .customize-control-upload .upload-button,
 .customize-control-image .upload-button,
 .customize-control-background .upload-button,
@@ -1036,7 +878,6 @@ p.customize-section-description {
 	float: right;
 }
 
-<<<<<<< HEAD
 /**
  * Themes
  */
@@ -1226,10 +1067,6 @@ p.customize-section-description {
 }
 
 /* Handle cheaters. */
-=======
-
-/** Handle cheaters. */
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 body.cheatin {
 	font-size: medium;
 	height: auto;
@@ -1247,7 +1084,6 @@ body.cheatin p {
 	line-height: 1.5;
 	margin: 25px 0 20px;
 }
-<<<<<<< HEAD
 
 /* Responsive */
 .customize-controls-preview-toggle {
@@ -1353,5 +1189,3 @@ body.cheatin p {
 		margin-top: 6px;
 	}
 }
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

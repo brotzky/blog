@@ -70,20 +70,12 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-<<<<<<< HEAD
 	'<p>' . __('<a href="https://codex.wordpress.org/Appearance_Widgets_Screen" target="_blank">Documentation on Widgets</a>') . '</p>' .
-=======
-	'<p>' . __('<a href="http://codex.wordpress.org/Appearance_Widgets_Screen" target="_blank">Documentation on Widgets</a>') . '</p>' .
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	'<p>' . __('<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>'
 );
 
 if ( ! current_theme_supports( 'widgets' ) ) {
-<<<<<<< HEAD
 	wp_die( __( 'The theme you are currently using isn&#8217;t widget-aware, meaning that it has no sidebars that you are able to change. For information on making your theme widget-aware, please <a href="https://codex.wordpress.org/Widgetizing_Themes">follow these instructions</a>.' ) );
-=======
-	wp_die( __( 'The theme you are currently using isn&#8217;t widget-aware, meaning that it has no sidebars that you are able to change. For information on making your theme widget-aware, please <a href="http://codex.wordpress.org/Widgetizing_Themes">follow these instructions</a>.' ) );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 // These are the widgets grouped by sidebar
@@ -197,11 +189,7 @@ if ( isset($_GET['editwidget']) && $_GET['editwidget'] ) {
 	if ( isset($_GET['addnew']) ) {
 		// Default to the first sidebar
 		$keys = array_keys( $wp_registered_sidebars );
-<<<<<<< HEAD
 		$sidebar = reset( $keys );
-=======
-		$sidebar = array_shift( $keys );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		if ( isset($_GET['base']) && isset($_GET['num']) ) { // multi-widget
 			// Copy minimal info from an existing instance of this widget to a new instance
@@ -328,7 +316,6 @@ require_once( ABSPATH . 'wp-admin/admin-header.php' ); ?>
 	if ( current_user_can( 'customize' ) ) {
 		printf(
 			' <a class="add-new-h2 hide-if-no-customize" href="%1$s">%2$s</a>',
-<<<<<<< HEAD
 			esc_url( add_query_arg(
 				array(
 					array( 'autofocus' => array( 'panel' => 'widgets' ) ),
@@ -336,9 +323,6 @@ require_once( ABSPATH . 'wp-admin/admin-header.php' ); ?>
 				),
 				admin_url( 'customize.php' )
 			) ),
-=======
-			admin_url( 'customize.php?autofocus[panel]=widgets' ),
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			__( 'Manage in Customizer' )
 		);
 	}
@@ -346,11 +330,7 @@ require_once( ABSPATH . 'wp-admin/admin-header.php' ); ?>
 </h2>
 
 <?php if ( isset($_GET['message']) && isset($messages[$_GET['message']]) ) { ?>
-<<<<<<< HEAD
 <div id="message" class="updated notice is-dismissible"><p><?php echo $messages[$_GET['message']]; ?></p></div>
-=======
-<div id="message" class="updated"><p><?php echo $messages[$_GET['message']]; ?></p></div>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <?php } ?>
 <?php if ( isset($_GET['error']) && isset($errors[$_GET['error']]) ) { ?>
 <div id="message" class="error"><p><?php echo $errors[$_GET['error']]; ?></p></div>
@@ -454,11 +434,7 @@ foreach ( $theme_sidebars as $sidebar => $registered_sidebar ) {
 </div>
 </div>
 </div>
-<<<<<<< HEAD
 <form method="post">
-=======
-<form action="" method="post">
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <?php wp_nonce_field( 'save-sidebar-widgets', '_wpnonce_widgets', false ); ?>
 </form>
 <br class="clear" />

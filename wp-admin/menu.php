@@ -147,7 +147,6 @@ $menu[59] = array( '', 'read', 'separator2', '', 'wp-menu-separator' );
 
 $appearance_cap = current_user_can( 'switch_themes') ? 'switch_themes' : 'edit_theme_options';
 
-<<<<<<< HEAD
 $menu[60] = array( __( 'Appearance' ), $appearance_cap, 'themes.php', '', 'menu-top menu-icon-appearance', 'menu-appearance', 'dashicons-admin-appearance' );
 	$submenu['themes.php'][5] = array( __( 'Themes' ), $appearance_cap, 'themes.php' );
 
@@ -166,26 +165,6 @@ $menu[60] = array( __( 'Appearance' ), $appearance_cap, 'themes.php', '', 'menu-
 	if ( current_theme_supports( 'custom-background' ) && current_user_can( 'customize') ) {
 		$customize_background_url = add_query_arg( array( 'autofocus' => array( 'control' => 'background_image' ) ), $customize_url );
 		$submenu['themes.php'][20] = array( __( 'Background' ), $appearance_cap, esc_url( $customize_background_url ), '', 'hide-if-no-customize' );
-=======
-$menu[60] = array( __('Appearance'), $appearance_cap, 'themes.php', '', 'menu-top menu-icon-appearance', 'menu-appearance', 'dashicons-admin-appearance' );
-	$submenu['themes.php'][5] = array( __( 'Themes' ), $appearance_cap, 'themes.php' );
-
-	$customize_url = add_query_arg( 'return', urlencode( wp_unslash( $_SERVER['REQUEST_URI'] ) ), 'customize.php' );
-	$submenu['themes.php'][6] = array( __( 'Customize' ), 'customize', $customize_url, '', 'hide-if-no-customize' );
-
-	if ( current_theme_supports( 'menus' ) || current_theme_supports( 'widgets' ) ) {
-		$submenu['themes.php'][10] = array(__( 'Menus' ), 'edit_theme_options', 'nav-menus.php');
-	}
-
-	if ( current_theme_supports( 'custom-header' ) && current_user_can( 'customize') ) {
-		$customize_header_url = add_query_arg( 'autofocus[control]', 'header_image', $customize_url );
-		$submenu['themes.php'][15] = array( __( 'Header' ), $appearance_cap, $customize_header_url, '', 'hide-if-no-customize' );
-	}
-
-	if ( current_theme_supports( 'custom-background' ) && current_user_can( 'customize') ) {
-		$customize_background_url = add_query_arg( 'autofocus[control]', 'background_image', $customize_url );
-		$submenu['themes.php'][20] = array( __( 'Background' ), $appearance_cap, $customize_background_url, '', 'hide-if-no-customize' );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	unset( $customize_url );
@@ -249,11 +228,7 @@ $menu[75] = array( __('Tools'), 'edit_posts', 'tools.php', '', 'menu-top menu-ic
 	$submenu['tools.php'][10] = array( __('Import'), 'import', 'import.php' );
 	$submenu['tools.php'][15] = array( __('Export'), 'export', 'export.php' );
 	if ( is_multisite() && !is_main_site() )
-<<<<<<< HEAD
 		$submenu['tools.php'][25] = array( __('Delete Site'), 'delete_site', 'ms-delete-site.php' );
-=======
-		$submenu['tools.php'][25] = array( __('Delete Site'), 'manage_options', 'ms-delete-site.php' );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	if ( ! is_multisite() && defined('WP_ALLOW_MULTISITE') && WP_ALLOW_MULTISITE )
 		$submenu['tools.php'][50] = array(__('Network Setup'), 'manage_options', 'network.php');
 

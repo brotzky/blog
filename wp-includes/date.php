@@ -10,11 +10,7 @@
  * return no results. In these cases, a _doing_it_wrong() error notice is also thrown.
  * See {@link WP_Date_Query::validate_date_values()}.
  *
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Function_Reference/WP_Query Codex page.
-=======
- * @link http://codex.wordpress.org/Function_Reference/WP_Query Codex page.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @since 3.7.0
  */
@@ -69,14 +65,11 @@ class WP_Date_Query {
 	/**
 	 * Constructor.
 	 *
-<<<<<<< HEAD
 	 * Time-related parameters that normally require integer values ('year', 'month', 'week', 'dayofyear', 'day',
 	 * 'dayofweek', 'dayofweek_iso', 'hour', 'minute', 'second') accept arrays of integers for some values of
 	 * 'compare'. When 'compare' is 'IN' or 'NOT IN', arrays are accepted; when 'compare' is 'BETWEEN' or 'NOT
 	 * BETWEEN', arrays of two valid values are required. See individual argument descriptions for accepted values.
 	 *
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * @since 3.7.0
 	 * @since 4.0.0 The $inclusive logic was updated to include all times within the date range.
 	 * @since 4.1.0 Introduced 'dayofweek_iso' time type parameter.
@@ -87,7 +80,6 @@ class WP_Date_Query {
 	 *
 	 *     @type array {
 	 *         @type string $column   Optional. The column to query against. If undefined, inherits the value of
-<<<<<<< HEAD
 	 *                                the `$default_column` parameter. Accepts 'post_date', 'post_date_gmt',
 	 *                                'post_modified','post_modified_gmt', 'comment_date', 'comment_date_gmt'.
 	 *                                Default 'post_date'.
@@ -101,21 +93,6 @@ class WP_Date_Query {
 	 *             @type string|array $before {
 	 *                 Optional. Date to retrieve posts before. Accepts `strtotime()`-compatible string,
 	 *                 or array of 'year', 'month', 'day' values.
-=======
-	 *                                the $default_column parameter. Default 'post_date'. Accepts 'post_date',
-	 *                                'post_date_gmt', 'post_modified','post_modified_gmt', 'comment_date',
-	 *                                'comment_date_gmt'.
-	 *         @type string $compare  Optional. The comparison operator.
-	 *                                Accepts '=', '!=', '>', '>=', '<', '<=', 'IN', 'NOT IN'. Default '='.
-	 *                                'BETWEEN', 'NOT BETWEEN'.
-	 *         @type string $relation Optional. The boolean relationship between the date queries.
-	 *                                Accepts 'OR', 'AND'. Default 'OR'.
-	 *         @type array {
-	 *             Optional. An array of first-order clause parameters, or another fully-formed date query.
-	 *
-	 *             @type string|array $before Optional. Date to retrieve posts before. Accepts strtotime()-compatible
-	 *                                        string, or array of 'year', 'month', 'day' values. {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 *
 	 *                 @type string $year  The four-digit year. Default empty. Accepts any four-digit year.
 	 *                 @type string $month Optional when passing array.The month of the year.
@@ -123,7 +100,6 @@ class WP_Date_Query {
 	 *                 @type string $day   Optional when passing array.The day of the month.
 	 *                                     Default (string:empty)|(array:1). Accepts numbers 1-31.
 	 *             }
-<<<<<<< HEAD
 	 *             @type string|array $after {
 	 *                 Optional. Date to retrieve posts after. Accepts `strtotime()`-compatible string,
 	 *                 or array of 'year', 'month', 'day' values.
@@ -167,45 +143,6 @@ class WP_Date_Query {
 	 *                                               of valid numbers if `$compare` supports it. Default empty.
 	 *             @type int|array    $second        Optional. The second of the minute. Accepts numbers 0-60 or an
 	 *                                               array of valid numbers if `$compare` supports it. Default empty.
-=======
-	 *             @type string|array $after Optional. Date to retrieve posts after. Accepts strtotime()-compatible
-	 *                                       string, or array of 'year', 'month', 'day' values. {
-	 *
-	 *                 @type string $year  The four-digit year. Default empty. Accepts any four-digit year.
-	 *                 @type string $month Optional when passing array.The month of the year.
-	 *                                     Default (string:empty)|(array:12). Accepts numbers 1-12.
-	 *                 @type string $day   Optional when passing array.The day of the month.
-	 *                                     Default (string:empty)|(array:last day of month). Accepts numbers 1-31.
-	 *             }
-	 *             @type string       $column    Optional. Used to add a clause comparing a column other than the column
-	 *                                           specified in the top-level $column parameter.  Default is the value
-	 *                                           of top-level $column. Accepts 'post_date', 'post_date_gmt',
-	 *                                           'post_modified', 'post_modified_gmt', 'comment_date', 'comment_date_gmt'.
-	 *             @type string       $compare       Optional. The comparison operator. Default '='.
-	 *                                               Accepts '=', '!=', '>', '>=', '<', '<=', 'IN', 'NOT IN',
-	 *                                               'BETWEEN', 'NOT BETWEEN'.
-	 *             @type bool         $inclusive     Optional. Include results from dates specified in 'before' or
-	 *                                               'after'. Default false.
-	 *             @type int          $year          Optional. The four-digit year number. Default empty. Accepts
-	 *                                               any four-digit year.
-	 *             @type int          $month         Optional. The two-digit month number. Default empty.
-	 *                                               Accepts numbers 1-12.
-	 *             @type int          $week          Optional. The week number of the year. Default empty.
-	 *                                               Accepts numbers 0-53.
-	 *             @type int          $dayofyear     Optional. The day number of the year. Default empty.
-	 *                                               Accepts numbers 1-366.
-	 *             @type int          $day           Optional. The day of the month. Default empty.
-	 *                                               Accepts numbers 1-31.
-	 *             @type int          $dayofweek     Optional. The day number of the week. Default empty.
-	 *                                               Accepts numbers 1-7 (1 is Sunday).
-	 *             @type int          $dayofweek_iso Optional. The day number of the week (ISO). Accepts numbers 1-7
-	 *                                               (1 is Monday). Default empty.
-	 *             @type int          $hour          Optional. The hour of the day. Default empty. Accepts numbers 0-23.
-	 *             @type int          $minute        Optional. The minute of the hour. Default empty. Accepts
-	 *                                               numbers 0-60.
-	 *             @type int          $second        Optional. The second of the minute. Default empty.
-	 *                                               Accepts numbers 0-60.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 *         }
 	 *     }
 	 * }
@@ -245,11 +182,6 @@ class WP_Date_Query {
 		$this->compare = $this->get_compare( $date_query );
 
 		$this->queries = $this->sanitize_query( $date_query );
-<<<<<<< HEAD
-=======
-
-		return;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -469,10 +401,6 @@ class WP_Date_Query {
 			}
 
 			// Throw a notice for each failing value.
-<<<<<<< HEAD
-=======
-			$is_between = true;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			foreach ( (array) $date_query[ $key ] as $_value ) {
 				$is_between = $_value >= $check['min'] && $_value <= $check['max'];
 
@@ -518,11 +446,7 @@ class WP_Date_Query {
 				$valid = false;
 			}
 
-<<<<<<< HEAD
 		} elseif ( $day_exists && $month_exists ) {
-=======
-		} else if ( $day_exists && $month_exists ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			/*
 			 * 2. checking day, month combination
 			 * We use 2012 because, as a leap year, it's the most permissive.
@@ -704,11 +628,7 @@ class WP_Date_Query {
 		foreach ( $query as $key => $clause ) {
 			if ( 'relation' === $key ) {
 				$relation = $query['relation'];
-<<<<<<< HEAD
 			} elseif ( is_array( $clause ) ) {
-=======
-			} else if ( is_array( $clause ) ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 				// This is a first-order clause.
 				if ( $this->is_first_order_clause( $clause ) ) {
@@ -717,11 +637,7 @@ class WP_Date_Query {
 					$where_count = count( $clause_sql['where'] );
 					if ( ! $where_count ) {
 						$sql_chunks['where'][] = '';
-<<<<<<< HEAD
 					} elseif ( 1 === $where_count ) {
-=======
-					} else if ( 1 === $where_count ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 						$sql_chunks['where'][] = $clause_sql['where'][0];
 					} else {
 						$sql_chunks['where'][] = '( ' . implode( ' AND ', $clause_sql['where'] ) . ' )';
@@ -830,7 +746,6 @@ class WP_Date_Query {
 		if ( isset( $query['year'] ) && $value = $this->build_value( $compare, $query['year'] ) )
 			$where_parts[] = "YEAR( $column ) $compare $value";
 
-<<<<<<< HEAD
 		if ( isset( $query['month'] ) && $value = $this->build_value( $compare, $query['month'] ) ) {
 			$where_parts[] = "MONTH( $column ) $compare $value";
 		} elseif ( isset( $query['monthnum'] ) && $value = $this->build_value( $compare, $query['monthnum'] ) ) {
@@ -841,18 +756,6 @@ class WP_Date_Query {
 		} elseif ( isset( $query['w'] ) && false !== ( $value = $this->build_value( $compare, $query['w'] ) ) ) {
 			$where_parts[] = _wp_mysql_week( $column ) . " $compare $value";
 		}
-=======
-		if ( isset( $query['month'] ) && $value = $this->build_value( $compare, $query['month'] ) )
-			$where_parts[] = "MONTH( $column ) $compare $value";
-		else if ( isset( $query['monthnum'] ) && $value = $this->build_value( $compare, $query['monthnum'] ) )
-			$where_parts[] = "MONTH( $column ) $compare $value";
-
-		if ( isset( $query['week'] ) && false !== ( $value = $this->build_value( $compare, $query['week'] ) ) )
-			$where_parts[] = _wp_mysql_week( $column ) . " $compare $value";
-		else if ( isset( $query['w'] ) && false !== ( $value = $this->build_value( $compare, $query['w'] ) ) )
-			$where_parts[] = _wp_mysql_week( $column ) . " $compare $value";
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		if ( isset( $query['dayofyear'] ) && $value = $this->build_value( $compare, $query['dayofyear'] ) )
 			$where_parts[] = "DAYOFYEAR( $column ) $compare $value";
 
@@ -976,22 +879,14 @@ class WP_Date_Query {
 					'year' => intval( $matches[1] ),
 				);
 
-<<<<<<< HEAD
 			} elseif ( preg_match( '/^(\d{4})\-(\d{2})$/', $datetime, $matches ) ) {
-=======
-			} else if ( preg_match( '/^(\d{4})\-(\d{2})$/', $datetime, $matches ) ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				// Y-m
 				$datetime = array(
 					'year'  => intval( $matches[1] ),
 					'month' => intval( $matches[2] ),
 				);
 
-<<<<<<< HEAD
 			} elseif ( preg_match( '/^(\d{4})\-(\d{2})\-(\d{2})$/', $datetime, $matches ) ) {
-=======
-			} else if ( preg_match( '/^(\d{4})\-(\d{2})\-(\d{2})$/', $datetime, $matches ) ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				// Y-m-d
 				$datetime = array(
 					'year'  => intval( $matches[1] ),
@@ -999,11 +894,7 @@ class WP_Date_Query {
 					'day'   => intval( $matches[3] ),
 				);
 
-<<<<<<< HEAD
 			} elseif ( preg_match( '/^(\d{4})\-(\d{2})\-(\d{2}) (\d{2}):(\d{2})$/', $datetime, $matches ) ) {
-=======
-			} else if ( preg_match( '/^(\d{4})\-(\d{2})\-(\d{2}) (\d{2}):(\d{2})$/', $datetime, $matches ) ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				// Y-m-d H:i
 				$datetime = array(
 					'year'   => intval( $matches[1] ),

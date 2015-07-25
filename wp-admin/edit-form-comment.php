@@ -16,10 +16,6 @@ if ( !defined('ABSPATH') )
 <h2><?php _e('Edit Comment'); ?></h2>
 
 <div id="poststuff">
-<<<<<<< HEAD
-=======
-<input type="hidden" name="user_ID" value="<?php echo (int) $user_ID; ?>" />
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <input type="hidden" name="action" value="editedcomment" />
 <input type="hidden" name="comment_ID" value="<?php echo esc_attr( $comment->comment_ID ); ?>" />
 <input type="hidden" name="comment_post_ID" value="<?php echo esc_attr( $comment->comment_post_ID ); ?>" />
@@ -51,14 +47,9 @@ if ( !defined('ABSPATH') )
 	<?php
 		if ( ! empty( $comment->comment_author_url ) && 'http://' != $comment->comment_author_url ) {
 			$link = '<a href="' . $comment->comment_author_url . '" rel="external nofollow" target="_blank">' . __('visit site') . '</a>';
-<<<<<<< HEAD
 			$author = get_comment_author( $comment->comment_ID );
 			/** This filter is documented in wp-includes/comment-template.php */
 			printf( __( 'URL (%s):' ), apply_filters( 'get_comment_author_link', $link, $author, $comment->comment_ID ) );
-=======
-			/** This filter is documented in wp-includes/comment-template.php */
-			printf( __( 'URL (%s):' ), apply_filters( 'get_comment_author_link', $link ) );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		} else {
 			_e( 'URL:' );
 		} ?></td>
@@ -109,18 +100,13 @@ if ( !defined('ABSPATH') )
 <div class="misc-pub-section curtime misc-pub-curtime">
 <?php
 /* translators: Publish box date format, see http://php.net/date */
-<<<<<<< HEAD
 $datef = __( 'M j, Y @ H:i' );
-=======
-$datef = __( 'M j, Y @ G:i' );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 $stamp = __('Submitted on: <b>%1$s</b>');
 $date = date_i18n( $datef, strtotime( $comment->comment_date ) );
 ?>
 <span id="timestamp"><?php printf($stamp, $date); ?></span>&nbsp;<a href="#edit_timestamp" class="edit-timestamp hide-if-no-js"><?php _e('Edit') ?></a>
 <div id='timestampdiv' class='hide-if-js'><?php touch_time(('editcomment' == $action), 0); ?></div>
 </div>
-<<<<<<< HEAD
 
 <?php
 $post_id = $comment->comment_post_ID;
@@ -147,8 +133,6 @@ if ( $comment->comment_parent ) :
 </div>
 <?php endif; ?>
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 </div> <!-- misc actions -->
 <div class="clear"></div>
 </div>
@@ -183,20 +167,13 @@ do_action( 'add_meta_boxes_comment', $comment );
 
 do_meta_boxes(null, 'normal', $comment);
 
-<<<<<<< HEAD
 $referer = wp_get_referer();
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 ?>
 </div>
 
 <input type="hidden" name="c" value="<?php echo esc_attr($comment->comment_ID) ?>" />
 <input type="hidden" name="p" value="<?php echo esc_attr($comment->comment_post_ID) ?>" />
-<<<<<<< HEAD
 <input name="referredby" type="hidden" id="referredby" value="<?php echo $referer ? esc_url( $referer ) : ''; ?>" />
-=======
-<input name="referredby" type="hidden" id="referredby" value="<?php echo esc_url( wp_get_referer() ); ?>" />
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <?php wp_original_referer_field(true, 'previous'); ?>
 <input type="hidden" name="noredir" value="1" />
 

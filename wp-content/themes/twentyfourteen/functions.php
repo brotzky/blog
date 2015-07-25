@@ -11,23 +11,14 @@
  * functions.php file. The child theme's functions.php file is included before
  * the parent theme's file, so the child theme functions would be used.
  *
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Theme_Development
  * @link https://codex.wordpress.org/Child_Themes
-=======
- * @link http://codex.wordpress.org/Theme_Development
- * @link http://codex.wordpress.org/Child_Themes
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * Functions that are not pluggable (not wrapped in function_exists()) are
  * instead attached to a filter or action hook.
  *
  * For more information on hooks, actions, and filters,
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Plugin_API
-=======
- * @link http://codex.wordpress.org/Plugin_API
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @package WordPress
  * @subpackage Twenty_Fourteen
@@ -103,11 +94,7 @@ function twentyfourteen_setup() {
 
 	/*
 	 * Enable support for Post Formats.
-<<<<<<< HEAD
 	 * See https://codex.wordpress.org/Post_Formats
-=======
-	 * See http://codex.wordpress.org/Post_Formats
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
@@ -273,11 +260,7 @@ function twentyfourteen_scripts() {
 		) );
 	}
 
-<<<<<<< HEAD
 	wp_enqueue_script( 'twentyfourteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150315', true );
-=======
-	wp_enqueue_script( 'twentyfourteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20140616', true );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 add_action( 'wp_enqueue_scripts', 'twentyfourteen_scripts' );
 
@@ -347,11 +330,7 @@ function twentyfourteen_the_attached_image() {
 
 		// or get the URL of the first image attachment.
 		else {
-<<<<<<< HEAD
 			$next_attachment_url = get_attachment_link( reset( $attachment_ids ) );
-=======
-			$next_attachment_url = get_attachment_link( array_shift( $attachment_ids ) );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 	}
 

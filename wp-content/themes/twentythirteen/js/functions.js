@@ -6,16 +6,12 @@
 
 ( function( $ ) {
 	var body    = $( 'body' ),
-<<<<<<< HEAD
 	    _window = $( window ),
 		nav, button, menu;
 
 	nav = $( '#site-navigation' );
 	button = nav.find( '.menu-toggle' );
 	menu = nav.find( '.nav-menu' );
-=======
-	    _window = $( window );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * Adds a top margin to the footer if the sidebar widget area is higher
@@ -38,25 +34,11 @@
 	 * Enables menu toggle for small screens.
 	 */
 	( function() {
-<<<<<<< HEAD
 		if ( ! nav || ! button ) {
-=======
-		var nav = $( '#site-navigation' ), button, menu;
-		if ( ! nav ) {
-			return;
-		}
-
-		button = nav.find( '.menu-toggle' );
-		if ( ! button ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			return;
 		}
 
 		// Hide button if menu is missing or empty.
-<<<<<<< HEAD
-=======
-		menu = nav.find( '.nav-menu' );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		if ( ! menu || ! menu.children().length ) {
 			button.hide();
 			return;
@@ -64,7 +46,6 @@
 
 		button.on( 'click.twentythirteen', function() {
 			nav.toggleClass( 'toggled-on' );
-<<<<<<< HEAD
 			if ( nav.hasClass( 'toggled-on' ) ) {
 				$( this ).attr( 'aria-expanded', 'true' );
 				menu.attr( 'aria-expanded', 'true' );
@@ -72,17 +53,11 @@
 				$( this ).attr( 'aria-expanded', 'false' );
 				menu.attr( 'aria-expanded', 'false' );
 			}
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		} );
 
 		// Fix sub-menus for touch devices.
 		if ( 'ontouchstart' in window ) {
-<<<<<<< HEAD
 			menu.find( '.menu-item-has-children > a, .page_item_has_children > a' ).on( 'touchstart.twentythirteen', function( e ) {
-=======
-			menu.find( '.menu-item-has-children > a' ).on( 'touchstart.twentythirteen', function( e ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				var el = $( this ).parent( 'li' );
 
 				if ( ! el.hasClass( 'focus' ) ) {
@@ -100,7 +75,6 @@
 	} )();
 
 	/**
-<<<<<<< HEAD
 	 * @summary Add or remove ARIA attributes.
 	 * Uses jQuery's width() function to determine the size of the window and add
 	 * the default ARIA attributes for the menu toggle if it's visible.
@@ -125,8 +99,6 @@
 	} );
 
 	/**
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * Makes "skip to content" link work correctly in IE9 and Chrome for better
 	 * accessibility.
 	 *

@@ -2,11 +2,7 @@
 /**
  * Implement a custom header for Twenty Thirteen
  *
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Custom_Headers
-=======
- * @link http://codex.wordpress.org/Custom_Headers
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @package WordPress
  * @subpackage Twenty_Thirteen
@@ -220,7 +216,6 @@ function twentythirteen_admin_header_style() {
  * @since Twenty Thirteen 1.0
  */
 function twentythirteen_admin_header_image() {
-<<<<<<< HEAD
 	$style = 'color: #' . get_header_textcolor() . ';';
 	if ( ! display_header_text() ) {
 		$style = 'display: none;';
@@ -230,14 +225,6 @@ function twentythirteen_admin_header_image() {
 		<div class="home-link">
 			<h1 class="displaying-header-text"><a id="name" style="<?php echo esc_attr( $style ); ?>" onclick="return false;" href="#" tabindex="-1"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 id="desc" class="displaying-header-text" style="<?php echo esc_attr( $style ); ?>"><?php bloginfo( 'description' ); ?></h2>
-=======
-	?>
-	<div id="headimg" style="background: url(<?php header_image(); ?>) no-repeat scroll top; background-size: 1600px auto;">
-		<?php $style = ' style="color:#' . get_header_textcolor() . ';"'; ?>
-		<div class="home-link">
-			<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="#" tabindex="-1"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 id="desc" class="displaying-header-text"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></h2>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		</div>
 	</div>
 <?php }

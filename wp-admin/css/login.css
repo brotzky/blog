@@ -22,11 +22,7 @@ body {
 }
 
 a {
-<<<<<<< HEAD
 	color: #0073aa;
-=======
-	color: #0074a2;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-transition-property: border, background, color;
 	transition-property: border, background, color;
 	-webkit-transition-duration: .05s;
@@ -41,11 +37,7 @@ a {
 
 a:hover,
 a:active {
-<<<<<<< HEAD
 	color: #00a0d2;
-=======
-	color: #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 a:focus {
@@ -62,11 +54,7 @@ p {
 }
 
 .login .message {
-<<<<<<< HEAD
 	border-left: 4px solid #00a0d2;
-=======
-	border-left: 4px solid #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	padding: 1px 12px;
 	background-color: #fff;
 	-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
@@ -192,11 +180,7 @@ p {
 .login #nav a:hover,
 .login #backtoblog a:hover,
 .login h1 a:hover {
-<<<<<<< HEAD
 	color: #00a0d2;
-=======
-	color: #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .login form .input,
@@ -241,13 +225,6 @@ p {
 	margin-left: 8px;
 }
 
-<<<<<<< HEAD
-=======
-.mobile #login h1 a {
-	width: auto;
-}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 body.interim-login {
 	height: auto;
 }

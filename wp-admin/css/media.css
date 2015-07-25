@@ -177,11 +177,7 @@
 	margin-top: -22px;
 	-webkit-border-radius: 22px;
 	border-radius: 22px;
-<<<<<<< HEAD
 	background-color: #0073aa;
-=======
-	background-color: #0074a2;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
 	box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
 }
@@ -278,14 +274,8 @@
 
 .find-box-search .spinner {
 	float: none;
-<<<<<<< HEAD
 	left: 105px;
 	position: absolute;
-=======
-	left: 110px;
-	position: absolute;
-	top: 2px;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .find-box-search,
@@ -321,11 +311,7 @@
 }
 
 #find-posts-close:hover {
-<<<<<<< HEAD
 	color: #00a0d2;
-=======
-	color: #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 #find-posts-close:before {
@@ -403,11 +389,7 @@ form.upgrade .hint {
 }
 
 .drag-drop #drag-drop-area {
-<<<<<<< HEAD
 	border: 4px dashed #b4b9be;
-=======
-	border: 4px dashed #bbb;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	height: 200px;
 }
 
@@ -417,11 +399,7 @@ form.upgrade .hint {
 }
 
 .drag-drop-inside p {
-<<<<<<< HEAD
 	color: #a0a5aa;
-=======
-	color: #aaa;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	font-size: 14px;
 	margin: 5px 0;
 	display: none;
@@ -516,11 +494,7 @@ border color while dragging a file over the uploader drop area */
 
 .upload-php .mode-grid .media-sidebar .media-uploader-status .upload-dismiss-errors:focus:before,
 .upload-php .mode-grid .media-sidebar .media-uploader-status .upload-dismiss-errors:hover:before {
-<<<<<<< HEAD
 	color: #00a0d2;
-=======
-	color: #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .upload-php .mode-grid .media-sidebar .media-uploader-status.errors h3 {
@@ -535,11 +509,7 @@ border color while dragging a file over the uploader drop area */
 	bottom: auto;
 	padding-top: 0;
 	margin-top: 0;
-<<<<<<< HEAD
 	border: 4px dashed #b4b9be;
-=======
-	border: 4px dashed #bbb;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .media-frame.mode-select .attachments-browser.fixed .attachments {
@@ -940,11 +910,6 @@ border color while dragging a file over the uploader drop area */
 .wp_attachment_image .spinner,
 .A1B1 .spinner {
 	float: left;
-<<<<<<< HEAD
-=======
-	padding: 0 0 4px 0;
-	vertical-align: bottom;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .imgedit-menu {
@@ -976,11 +941,7 @@ border color while dragging a file over the uploader drop area */
 .imgedit-menu div:hover {
 	border-color: #c1c1c1;
 	background-color: #eaeaea;
-<<<<<<< HEAD
 	color: #32373c;
-=======
-	color: #333;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .imgedit-menu div.disabled {
@@ -1128,10 +1089,6 @@ audio, video {
  * HiDPI Displays
  */
 @media print,
-<<<<<<< HEAD
-=======
-  (-o-min-device-pixel-ratio: 5/4),
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
   (-webkit-min-device-pixel-ratio: 1.25),
   (min-resolution: 120dpi) {
 	.imgedit-wait {

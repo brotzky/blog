@@ -2,11 +2,7 @@
 /**
  * The template for displaying Category pages
  *
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Template_Hierarchy
-=======
- * @link http://codex.wordpress.org/Template_Hierarchy
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @package WordPress
  * @subpackage Twenty_Thirteen
@@ -42,8 +38,4 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
-<<<<<<< HEAD
 <?php get_footer(); ?>
-=======
-<?php get_footer(); ?>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

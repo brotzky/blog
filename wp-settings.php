@@ -192,11 +192,7 @@ do_action( 'muplugins_loaded' );
 if ( is_multisite() )
 	ms_cookie_constants(  );
 
-<<<<<<< HEAD
 // Define constants after multisite is loaded.
-=======
-// Define constants after multisite is loaded. Cookie-related constants may be overridden in ms_network_cookies().
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 wp_cookie_constants();
 
 // Define and enforce our SSL constants
@@ -371,11 +367,7 @@ if ( is_multisite() ) {
  * AJAX requests should use wp-admin/admin-ajax.php. admin-ajax.php can handle requests for
  * users not logged in.
  *
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/AJAX_in_Plugins
-=======
- * @link http://codex.wordpress.org/AJAX_in_Plugins
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @since 3.0.0
  */

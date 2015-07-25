@@ -120,11 +120,7 @@ class WP_Users_List_Table extends WP_List_Table {
 	 * @access public
 	 */
 	public function no_items() {
-<<<<<<< HEAD
 		_e( 'No users found.' );
-=======
-		_e( 'No matching users were found.' );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -310,10 +306,6 @@ class WP_Users_List_Table extends WP_List_Table {
 
 		$editable_roles = array_keys( get_editable_roles() );
 
-<<<<<<< HEAD
-=======
-		$style = '';
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		foreach ( $this->items as $userid => $user_object ) {
 			if ( count( $user_object->roles ) <= 1 ) {
 				$role = reset( $user_object->roles );
@@ -326,12 +318,7 @@ class WP_Users_List_Table extends WP_List_Table {
 			if ( is_multisite() && empty( $user_object->allcaps ) )
 				continue;
 
-<<<<<<< HEAD
 			echo "\n\t" . $this->single_row( $user_object, $style = '', $role, isset( $post_counts ) ? $post_counts[ $userid ] : 0 );
-=======
-			$style = ( ' class="alternate"' == $style ) ? '' : ' class="alternate"';
-			echo "\n\t" . $this->single_row( $user_object, $style, $role, isset( $post_counts ) ? $post_counts[ $userid ] : 0 );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 	}
 
@@ -339,7 +326,6 @@ class WP_Users_List_Table extends WP_List_Table {
 	 * Generate HTML for a single row on the users.php admin panel.
 	 *
 	 * @since 3.1.0
-<<<<<<< HEAD
 	 * @since 4.2.0 The `$style` argument was deprecated.
 	 * @access public
 	 *
@@ -347,13 +333,6 @@ class WP_Users_List_Table extends WP_List_Table {
 	 *
 	 * @param object $user_object The current user object.
 	 * @param string $style       Deprecated. Not used.
-=======
-	 * @access public
-	 *
-	 * @param object $user_object The current user object.
-	 * @param string $style       Optional. Style attributes added to the `<tr>` element.
-	 *                            Must be sanitized. Default empty.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * @param string $role        Optional. Key for the $wp_roles array. Default empty.
 	 * @param int    $numposts    Optional. Post count to display for this user. Defaults
 	 *                            to zero, as in, a new user has made zero posts.
@@ -362,14 +341,9 @@ class WP_Users_List_Table extends WP_List_Table {
 	public function single_row( $user_object, $style = '', $role = '', $numposts = 0 ) {
 		global $wp_roles;
 
-<<<<<<< HEAD
 		if ( ! ( $user_object instanceof WP_User ) ) {
 			$user_object = get_userdata( (int) $user_object );
 		}
-=======
-		if ( !( is_object( $user_object ) && is_a( $user_object, 'WP_User' ) ) )
-			$user_object = get_userdata( (int) $user_object );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$user_object->filter = 'display';
 		$email = $user_object->user_email;
 
@@ -413,11 +387,7 @@ class WP_Users_List_Table extends WP_List_Table {
 			$edit .= $this->row_actions( $actions );
 
 			// Set up the checkbox ( because the user is editable, otherwise it's empty )
-<<<<<<< HEAD
 			$checkbox = '<label class="screen-reader-text" for="user_' . $user_object->ID . '">' . sprintf( __( 'Select %s' ), $user_object->user_login ) . '</label>'
-=======
-			$checkbox = '<label class="screen-reader-text" for="cb-select-' . $user_object->ID . '">' . sprintf( __( 'Select %s' ), $user_object->user_login ) . '</label>'
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 						. "<input type='checkbox' name='users[]' id='user_{$user_object->ID}' class='$role' value='{$user_object->ID}' />";
 
 		} else {
@@ -426,11 +396,7 @@ class WP_Users_List_Table extends WP_List_Table {
 		$role_name = isset( $wp_roles->role_names[$role] ) ? translate_user_role( $wp_roles->role_names[$role] ) : __( 'None' );
 		$avatar = get_avatar( $user_object->ID, 32 );
 
-<<<<<<< HEAD
 		$r = "<tr id='user-$user_object->ID'>";
-=======
-		$r = "<tr id='user-$user_object->ID'$style>";
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		list( $columns, $hidden ) = $this->get_column_info();
 

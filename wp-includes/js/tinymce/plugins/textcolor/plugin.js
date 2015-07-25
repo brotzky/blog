@@ -159,7 +159,6 @@ tinymce.PluginManager.add('textcolor', function(editor) {
 	}
 
 	function applyFormat(format, value) {
-<<<<<<< HEAD
 		editor.undoManager.transact(function() {
 			editor.focus();
 			editor.formatter.apply(format, {value: value});
@@ -173,17 +172,6 @@ tinymce.PluginManager.add('textcolor', function(editor) {
 			editor.formatter.remove(format, {value: null}, null, true);
 			editor.nodeChanged();
 		});
-=======
-		editor.focus();
-		editor.formatter.apply(format, {value: value});
-		editor.nodeChanged();
-	}
-
-	function removeFormat(format) {
-		editor.focus();
-		editor.formatter.remove(format, {value: null}, null, true);
-		editor.nodeChanged();
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	function onPanelClick(e) {
@@ -195,15 +183,12 @@ tinymce.PluginManager.add('textcolor', function(editor) {
 			applyFormat(buttonCtrl.settings.format, value);
 		}
 
-<<<<<<< HEAD
 		function resetColor() {
 			buttonCtrl.hidePanel();
 			buttonCtrl.resetColor();
 			removeFormat(buttonCtrl.settings.format);
 		}
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		function setDivColor(div, value) {
 			div.style.background = value;
 			div.setAttribute('data-mce-color', value);
@@ -250,19 +235,10 @@ tinymce.PluginManager.add('textcolor', function(editor) {
 			this.lastId = e.target.id;
 
 			if (value == 'transparent') {
-<<<<<<< HEAD
 				resetColor();
 			} else {
 				selectColor(value);
 			}
-=======
-				removeFormat(buttonCtrl.settings.format);
-				buttonCtrl.hidePanel();
-				return;
-			}
-
-			selectColor(value);
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		} else if (value !== null) {
 			buttonCtrl.hidePanel();
 		}
@@ -273,11 +249,8 @@ tinymce.PluginManager.add('textcolor', function(editor) {
 
 		if (self._color) {
 			applyFormat(self.settings.format, self._color);
-<<<<<<< HEAD
 		} else {
 			removeFormat(self.settings.format);
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 	}
 

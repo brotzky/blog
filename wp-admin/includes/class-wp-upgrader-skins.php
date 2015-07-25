@@ -137,12 +137,9 @@ class WP_Upgrader_Skin {
 				</script>';
 		}
 	}
-<<<<<<< HEAD
 
 	public function bulk_header() {}
 	public function bulk_footer() {}
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
@@ -208,12 +205,9 @@ class Plugin_Upgrader_Skin extends WP_Upgrader_Skin {
  */
 class Bulk_Upgrader_Skin extends WP_Upgrader_Skin {
 	public $in_loop = false;
-<<<<<<< HEAD
 	/**
 	 * @var string|false
 	 */
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	public $error = false;
 
 	public function __construct($args = array()) {
@@ -227,11 +221,7 @@ class Bulk_Upgrader_Skin extends WP_Upgrader_Skin {
 		$this->upgrader->strings['skin_upgrade_start'] = __('The update process is starting. This process may take a while on some hosts, so please be patient.');
 		$this->upgrader->strings['skin_update_failed_error'] = __('An error occurred while updating %1$s: <strong>%2$s</strong>');
 		$this->upgrader->strings['skin_update_failed'] = __('The update of %1$s failed.');
-<<<<<<< HEAD
 		$this->upgrader->strings['skin_update_successful'] = __( '%1$s updated successfully.' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details' ) . '</span><span class="hidden">' . __( 'Hide Details' ) . '</span></a>';
-=======
-		$this->upgrader->strings['skin_update_successful'] = __('%1$s updated successfully.').' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>'.__('Show Details').'</span><span class="hidden">'.__('Hide Details').'</span>.</a>';
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$this->upgrader->strings['skin_upgrade_end'] = __('All updates have been completed.');
 	}
 
@@ -333,13 +323,6 @@ class Bulk_Upgrader_Skin extends WP_Upgrader_Skin {
 class Bulk_Plugin_Upgrader_Skin extends Bulk_Upgrader_Skin {
 	public $plugin_info = array(); // Plugin_Upgrader::bulk() will fill this in.
 
-<<<<<<< HEAD
-=======
-	public function __construct($args = array()) {
-		parent::__construct($args);
-	}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	public function add_strings() {
 		parent::add_strings();
 		$this->upgrader->strings['skin_before_update_header'] = __('Updating Plugin %1$s (%2$d/%3$d)');
@@ -380,13 +363,6 @@ class Bulk_Plugin_Upgrader_Skin extends Bulk_Upgrader_Skin {
 class Bulk_Theme_Upgrader_Skin extends Bulk_Upgrader_Skin {
 	public $theme_info = array(); // Theme_Upgrader::bulk() will fill this in.
 
-<<<<<<< HEAD
-=======
-	public function __construct($args = array()) {
-		parent::__construct($args);
-	}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	public function add_strings() {
 		parent::add_strings();
 		$this->upgrader->strings['skin_before_update_header'] = __('Updating Theme %1$s (%2$d/%3$d)');
@@ -469,7 +445,6 @@ class Plugin_Installer_Skin extends WP_Upgrader_Skin {
 			unset( $install_actions['activate_plugin'] );
 		}
 
-<<<<<<< HEAD
 		if ( 'import' == $from ) {
 			$install_actions['importers_page'] = '<a href="' . admin_url('import.php') . '" title="' . esc_attr__('Return to Importers') . '" target="_parent">' . __('Return to Importers') . '</a>';
 		} elseif ( $this->type == 'web' ) {
@@ -477,14 +452,6 @@ class Plugin_Installer_Skin extends WP_Upgrader_Skin {
 		} else {
 			$install_actions['plugins_page'] = '<a href="' . self_admin_url('plugins.php') . '" title="' . esc_attr__('Return to Plugins page') . '" target="_parent">' . __('Return to Plugins page') . '</a>';
 		}
-=======
-		if ( 'import' == $from )
-			$install_actions['importers_page'] = '<a href="' . admin_url('import.php') . '" title="' . esc_attr__('Return to Importers') . '" target="_parent">' . __('Return to Importers') . '</a>';
-		else if ( $this->type == 'web' )
-			$install_actions['plugins_page'] = '<a href="' . self_admin_url('plugin-install.php') . '" title="' . esc_attr__('Return to Plugin Installer') . '" target="_parent">' . __('Return to Plugin Installer') . '</a>';
-		else
-			$install_actions['plugins_page'] = '<a href="' . self_admin_url('plugins.php') . '" title="' . esc_attr__('Return to Plugins page') . '" target="_parent">' . __('Return to Plugins page') . '</a>';
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		if ( ! $this->result || is_wp_error($this->result) ) {
 			unset( $install_actions['activate_plugin'], $install_actions['network_activate'] );
@@ -763,7 +730,6 @@ class Automatic_Upgrader_Skin extends WP_Upgrader_Skin {
 	 * @param string|array|WP_Error $data
 	 */
 	public function feedback( $data ) {
-<<<<<<< HEAD
 		if ( is_wp_error( $data ) ) {
 			$string = $data->get_error_message();
 		} elseif ( is_array( $data ) ) {
@@ -771,15 +737,6 @@ class Automatic_Upgrader_Skin extends WP_Upgrader_Skin {
 		} else {
 			$string = $data;
 		}
-=======
-		if ( is_wp_error( $data ) )
-			$string = $data->get_error_message();
-		else if ( is_array( $data ) )
-			return;
-		else
-			$string = $data;
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		if ( ! empty( $this->upgrader->strings[ $string ] ) )
 			$string = $this->upgrader->strings[ $string ];
 

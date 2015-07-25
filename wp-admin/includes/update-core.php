@@ -694,11 +694,7 @@ $_old_files = array(
 'wp-includes/js/jquery/ui/jquery.ui.tabs.min.js',
 'wp-includes/js/jquery/ui/jquery.ui.tooltip.min.js',
 'wp-includes/js/jquery/ui/jquery.ui.widget.min.js',
-<<<<<<< HEAD
 'wp-includes/js/tinymce/skins/wordpress/images/dashicon-no-alt.png'
-=======
-'wp-includes/js/tinymce/skins/wordpress/images/dashicon-no-alt.png',
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 );
 
 /**
@@ -816,11 +812,8 @@ function update_core($from, $to) {
 
 	// Import $wp_version, $required_php_version, and $required_mysql_version from the new version
 	// $wp_filesystem->wp_content_dir() returned unslashed pre-2.8
-<<<<<<< HEAD
 	global $wp_version, $required_php_version, $required_mysql_version;
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$versions_file = trailingslashit( $wp_filesystem->wp_content_dir() ) . 'upgrade/version-current.php';
 	if ( ! $wp_filesystem->copy( $from . $distro . 'wp-includes/version.php', $versions_file ) ) {
 		$wp_filesystem->delete( $from, true );
@@ -833,11 +826,7 @@ function update_core($from, $to) {
 
 	$php_version    = phpversion();
 	$mysql_version  = $wpdb->db_version();
-<<<<<<< HEAD
 	$old_wp_version = $wp_version; // The version of WordPress we're updating from
-=======
-	$old_wp_version = $GLOBALS['wp_version']; // The version of WordPress we're updating from
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$development_build = ( false !== strpos( $old_wp_version . $wp_version, '-' )  ); // a dash in the version indicates a Development release
 	$php_compat     = version_compare( $php_version, $required_php_version, '>=' );
 	if ( file_exists( WP_CONTENT_DIR . '/db.php' ) && empty( $wpdb->is_mysql ) )
@@ -1061,12 +1050,9 @@ function update_core($from, $to) {
 		$wp_filesystem->delete($old_file, true);
 	}
 
-<<<<<<< HEAD
 	// Remove any Genericons example.html's from the filesystem
 	_upgrade_422_remove_genericons();
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	// Upgrade DB with separate request
 	/** This filter is documented in wp-admin/includes/update-core.php */
 	apply_filters( 'update_feedback', __( 'Upgrading database&#8230;' ) );
@@ -1205,7 +1191,6 @@ window.location = 'about.php?updated';
 	exit();
 }
 add_action( '_core_updated_successfully', '_redirect_to_about_wordpress' );
-<<<<<<< HEAD
 
 /**
  * Cleans up Genericons example files.
@@ -1270,5 +1255,3 @@ function _upgrade_422_find_genericons_files_in_folder( $directory ) {
 
 	return $files;
 }
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

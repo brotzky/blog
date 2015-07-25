@@ -274,11 +274,7 @@ final class WP_Theme implements ArrayAccess {
 		// Set the parent, if we're a child theme.
 		if ( $this->template != $this->stylesheet ) {
 			// If we are a parent, then there is a problem. Only two generations allowed! Cancel things out.
-<<<<<<< HEAD
 			if ( $_child instanceof WP_Theme && $_child->template == $this->stylesheet ) {
-=======
-			if ( is_a( $_child, 'WP_Theme' ) && $_child->template == $this->stylesheet ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				$_child->parent = null;
 				$_child->errors = new WP_Error( 'theme_parent_invalid', sprintf( __( 'The "%s" theme is not a valid parent theme.' ), $_child->template ) );
 				$_child->cache_add( 'theme', array( 'headers' => $_child->headers, 'errors' => $_child->errors, 'stylesheet' => $_child->stylesheet, 'template' => $_child->template ) );
@@ -640,12 +636,9 @@ final class WP_Theme implements ArrayAccess {
 			case 'Tags' :
 				$value = array_filter( array_map( 'trim', explode( ',', strip_tags( $value ) ) ) );
 				break;
-<<<<<<< HEAD
 			case 'Version' :
 				$value = strip_tags( $value );
 				break;
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 
 		return $value;
@@ -1043,13 +1036,8 @@ final class WP_Theme implements ArrayAccess {
 	 * @since 3.4.0
 	 * @access public
 	 *
-<<<<<<< HEAD
 	 * @return bool True if the textdomain was successfully loaded or has already been loaded.
 	 * 	False if no textdomain was specified in the file headers, or if the domain could not be loaded.
-=======
-	 * @return bool If the textdomain was successfully loaded or has already been loaded. False if
-	 * 	no textdomain was specified in the file headers, or if the domain could not be loaded.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 */
 	public function load_textdomain() {
 		if ( isset( $this->textdomain_loaded ) )

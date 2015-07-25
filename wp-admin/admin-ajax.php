@@ -5,11 +5,7 @@
  * @package WordPress
  * @subpackage Administration
  *
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/AJAX_in_Plugins
-=======
- * @link http://codex.wordpress.org/AJAX_in_Plugins
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 
 /**
@@ -65,12 +61,8 @@ $core_actions_post = array(
 	'query-attachments', 'save-attachment', 'save-attachment-compat', 'send-link-to-editor',
 	'send-attachment-to-editor', 'save-attachment-order', 'heartbeat', 'get-revision-diffs',
 	'save-user-color-scheme', 'update-widget', 'query-themes', 'parse-embed', 'set-attachment-thumbnail',
-<<<<<<< HEAD
 	'parse-media-shortcode', 'destroy-sessions', 'install-plugin', 'update-plugin', 'press-this-save-post',
 	'press-this-add-category',
-=======
-	'parse-media-shortcode', 'destroy-sessions'
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 );
 
 // Register core Ajax calls.

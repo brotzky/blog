@@ -190,10 +190,6 @@ if ( current_user_can( 'customize' ) ) {
 ?>
 
 <div id="wpwrap">
-<<<<<<< HEAD
-=======
-<a tabindex="1" href="#wpbody-content" class="screen-reader-shortcut"><?php _e('Skip to main content'); ?></a>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <?php require(ABSPATH . 'wp-admin/menu-header.php'); ?>
 <div id="wpcontent">
 
@@ -206,11 +202,7 @@ if ( current_user_can( 'customize' ) ) {
 do_action( 'in_admin_header' );
 ?>
 
-<<<<<<< HEAD
 <div id="wpbody" role="main">
-=======
-<div id="wpbody">
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <?php
 unset($title_class, $blog_name, $total_update_count, $update_title);
 

@@ -662,11 +662,7 @@ function wp_color_scheme_settings() {
 		$icon_colors = $_wp_admin_css_colors['fresh']->icon_colors;
 	} else {
 		// Fall back to the default set of icon colors if the default scheme is missing.
-<<<<<<< HEAD
 		$icon_colors = array( 'base' => '#999', 'focus' => '#00a0d2', 'current' => '#fff' );
-=======
-		$icon_colors = array( 'base' => '#999', 'focus' => '#2ea2cc', 'current' => '#fff' );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	echo '<script type="text/javascript">var _wpColorScheme = ' . wp_json_encode( array( 'icons' => $icon_colors ) ) . ";</script>\n";
@@ -845,7 +841,6 @@ function post_form_autocomplete_off() {
 		echo ' autocomplete="off"';
 	}
 }
-<<<<<<< HEAD
 add_action( 'post_edit_form_tag', 'post_form_autocomplete_off' );
 
 /**
@@ -892,7 +887,3 @@ function wp_admin_canonical_url() {
 <?php
 }
 add_action( 'admin_head', 'wp_admin_canonical_url' );
-=======
-
-add_action( 'post_edit_form_tag', 'post_form_autocomplete_off' );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

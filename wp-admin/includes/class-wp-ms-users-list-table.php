@@ -149,34 +149,19 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 	public function display_rows() {
 		global $mode;
 
-<<<<<<< HEAD
 		$super_admins = get_super_admins();
 		foreach ( $this->items as $user ) {
 			$class = '';
-=======
-		$alt = '';
-		$super_admins = get_super_admins();
-		foreach ( $this->items as $user ) {
-			$alt = ( 'alternate' == $alt ) ? '' : 'alternate';
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			$status_list = array( 'spam' => 'site-spammed', 'deleted' => 'site-deleted' );
 
 			foreach ( $status_list as $status => $col ) {
 				if ( $user->$status )
-<<<<<<< HEAD
 					$class .= " $col";
 			}
 
 			?>
 			<tr class="<?php echo trim( $class ); ?>">
-=======
-					$alt .= " $col";
-			}
-
-			?>
-			<tr class="<?php echo $alt; ?>">
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			<?php
 
 			list( $columns, $hidden ) = $this->get_column_info();
@@ -244,15 +229,9 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 
 					case 'registered':
 						if ( 'list' == $mode )
-<<<<<<< HEAD
 							$date = __( 'Y/m/d' );
 						else
 							$date = __( 'Y/m/d g:i:s a' );
-=======
-							$date = 'Y/m/d';
-						else
-							$date = 'Y/m/d \<\b\r \/\> g:i:s a';
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 						echo "<td $attributes>" . mysql2date( $date, $user->user_registered ) . "</td>";
 					break;

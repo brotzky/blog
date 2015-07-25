@@ -54,11 +54,7 @@ function get_postdata($postid) {
  *
  * @since 1.0.1
  * @deprecated 1.5.0
-<<<<<<< HEAD
  * @deprecated Use The Loop - {@link https://codex.wordpress.org/The_Loop Use new WordPress Loop}
-=======
- * @deprecated Use The Loop - {@link http://codex.wordpress.org/The_Loop Use new WordPress Loop}
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function start_wp() {
 	global $wp_query;
@@ -1314,11 +1310,7 @@ function get_category_children( $id, $before = '/', $after = '', $visited = arra
  * @since 2.0.0
  * @deprecated 4.0.0 Use get_terms() instead.
  * @see get_terms()
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Function_Reference/get_all_category_ids
-=======
- * @link http://codex.wordpress.org/Function_Reference/get_all_category_ids
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @return object List of all of the category IDs.
  */
@@ -1764,11 +1756,7 @@ function make_url_footnote( $content ) {
 	_deprecated_function( __FUNCTION__, '2.9', '' );
 	preg_match_all( '/<a(.+?)href=\"(.+?)\"(.*?)>(.+?)<\/a>/', $content, $matches );
 	$links_summary = "\n";
-<<<<<<< HEAD
 	for ( $i = 0, $c = count( $matches[0] ); $i < $c; $i++ ) {
-=======
-	for ( $i=0; $i<count($matches[0]); $i++ ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$link_match = $matches[0][$i];
 		$link_number = '['.($i+1).']';
 		$link_url = $matches[2][$i];
@@ -2173,11 +2161,7 @@ function attribute_escape( $text ) {
  * @param string|int $name Widget ID.
  * @param callback $output_callback Run when widget is called.
  * @param string $classname Classname widget option.
-<<<<<<< HEAD
  * @param mixed $params ,... Widget parameters.
-=======
- * @param mixed $params,... Widget parameters.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function register_sidebar_widget($name, $output_callback, $classname = '') {
 	_deprecated_function( __FUNCTION__, '2.8', 'wp_register_sidebar_widget()' );
@@ -2412,11 +2396,7 @@ function update_usermeta( $user_id, $meta_key, $meta_value ) {
 
 	if ( !$cur )
 		$wpdb->insert($wpdb->usermeta, compact('user_id', 'meta_key', 'meta_value') );
-<<<<<<< HEAD
 	elseif ( $cur->meta_value != $meta_value )
-=======
-	else if ( $cur->meta_value != $meta_value )
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$wpdb->update($wpdb->usermeta, compact('meta_value'), compact('user_id', 'meta_key') );
 	else
 		return false;
@@ -2652,10 +2632,6 @@ function the_editor($content, $id = 'content', $prev_id = 'title', $media_button
 	_deprecated_function( __FUNCTION__, '3.3', 'wp_editor()' );
 
 	wp_editor( $content, $id, array( 'media_buttons' => $media_buttons ) );
-<<<<<<< HEAD
-=======
-	return;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
@@ -2707,11 +2683,7 @@ function sanitize_user_object($user, $context = 'display') {
 	if ( is_object($user) ) {
 		if ( !isset($user->ID) )
 			$user->ID = 0;
-<<<<<<< HEAD
 		if ( ! ( $user instanceof WP_User ) ) {
-=======
-		if ( !is_a( $user, 'WP_User' ) ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$vars = get_object_vars($user);
 			foreach ( array_keys($vars) as $field ) {
 				if ( is_string($user->$field) || is_numeric($user->$field) )

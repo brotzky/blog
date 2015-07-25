@@ -39,12 +39,8 @@
 
 /* Position admin messages */
 .themes-php div.updated,
-<<<<<<< HEAD
 .themes-php div.error,
 .themes-php div.notice {
-=======
-.themes-php div.error {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	margin: 0 0 20px 0;
 	clear: both;
 }
@@ -157,12 +153,7 @@
 	right: 0;
 	top: 0;
 	width: 100%;
-<<<<<<< HEAD
 	-webkit-transition: opacity 0.2s ease-in-out;
-=======
-	-webkit-transform: translateZ( 0 ); /* Prevents rendering bugs in Chrome */
-	-webkit-transition: opacity 0.2s ease-in-out; /* Prevents rendering bugs in Chrome */
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	transition: opacity 0.2s ease-in-out;
 }
 
@@ -183,11 +174,7 @@
 	top: 35%;
 	left: 25%;
 	right: 25%;
-<<<<<<< HEAD
 	background: #23282d;
-=======
-	background: #222;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	background: rgba(0,0,0,0.7);
 	color: #fff;
 	font-size: 15px;
@@ -272,13 +259,10 @@
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.5);
 }
 
-<<<<<<< HEAD
 .theme-browser .customize-control .theme.active .theme-name {
 	padding-left: 15px;
 }
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .theme-browser .theme.active .theme-name span {
 	font-weight: 600;
 }
@@ -294,11 +278,7 @@
 }
 
 .theme-browser .theme .theme-author {
-<<<<<<< HEAD
 	background: #23282d;
-=======
-	background: #222;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	color: #eee;
 	display: none;
 	font-size: 14px;
@@ -334,17 +314,9 @@
 	z-index: 1;
 }
 
-<<<<<<< HEAD
 .theme-browser .theme.add-new-theme a:after {
 	display: block;
 	content: '';
-=======
-.theme-browser .theme.add-new-theme:after {
-	display: block;
-	content: '';
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-	opacity: 1;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	background: transparent;
 	background: rgba(0, 0, 0, 0);
 	position: absolute;
@@ -352,19 +324,10 @@
 	right: 0;
 	left: 0;
 	bottom: 0;
-<<<<<<< HEAD
 	padding: 0;
 	text-shadow: none;
 	border: 5px dashed #d5d2ca;
 	border: 5px dashed rgba(0, 0, 0, 0.1);
-=======
-	padding: 10% 0 0 0;
-	text-shadow: none;
-	border: 5px dashed #d5d2ca;
-	border: 5px dashed rgba(0, 0, 0, 0.1);
-	-webkit-transition: opacity 0.2s ease-in-out;
-	transition: opacity 0.2s ease-in-out;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -398,7 +361,6 @@
 	text-indent: 4px;
 }
 
-<<<<<<< HEAD
 .theme-browser .theme.add-new-theme a:hover .theme-screenshot,
 .theme-browser .theme.add-new-theme a:focus .theme-screenshot {
 	background: none;
@@ -415,24 +377,6 @@
 	border-color: transparent;
 	color: #fff;
 	background: #0073aa;
-=======
-.theme-browser .theme.add-new-theme:hover .theme-screenshot,
-.theme-browser .theme.add-new-theme:focus .theme-screenshot {
-	background: none;
-}
-
-.theme-browser .theme.add-new-theme:hover span:after,
-.theme-browser .theme.add-new-theme:focus span:after {
-	background: #fff;
-	color: #0074a2;
-}
-
-.theme-browser .theme.add-new-theme:hover:after,
-.theme-browser .theme.add-new-theme:focus:after {
-	border-color: transparent;
-	color: #fff;
-	background: #0074a2;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	content: '';
 }
 
@@ -444,7 +388,6 @@
 	font-weight: 400;
 	position: relative;
 	top: 0;
-<<<<<<< HEAD
 	margin-top: -18px;
 	padding-top: 0;
 	padding-bottom: 48px;
@@ -452,14 +395,6 @@
 
 .theme-browser .theme.add-new-theme a:hover .theme-name,
 .theme-browser .theme.add-new-theme a:focus .theme-name {
-=======
-	margin-top: -10%;
-	margin-bottom: 10%;
-}
-
-.theme-browser .theme.add-new-theme:hover .theme-name,
-.theme-browser .theme.add-new-theme:focus .theme-name {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	color: #fff;
 	z-index: 2;
 }
@@ -488,13 +423,10 @@
 	border-bottom: 1px solid #ddd;
 }
 
-<<<<<<< HEAD
 .theme-overlay .theme-header button {
 	padding: 0;
 }
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .theme-overlay .theme-header .close {
 	cursor: pointer;
 	height: 48px;
@@ -572,23 +504,12 @@
 	font-weight: 300;
 }
 
-<<<<<<< HEAD
 .theme-overlay .theme-header .left:before {
 	content: "\f345";
 }
 
 .theme-overlay .theme-header .right:before {
 	content: "\f341";
-=======
-.theme-overlay .theme-header .left:before,
-.rtl .theme-overlay .theme-header .right:before {
-	content: '\f341';
-}
-
-.theme-overlay .theme-header .right:before,
-.rtl .theme-overlay .theme-header .left:before {
-	content: '\f345';
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 
@@ -607,10 +528,7 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-<<<<<<< HEAD
 	-webkit-overflow-scrolling: touch;
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .theme-overlay .theme-wrap:after {
@@ -783,11 +701,7 @@ body.folded .theme-overlay .theme-wrap {
 
 .theme-overlay .screenshot.selected {
 	background: transparent;
-<<<<<<< HEAD
 	border: 2px solid #00a0d2;
-=======
-	border: 2px solid #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .theme-overlay .screenshot.selected img {
@@ -809,11 +723,7 @@ body.folded .theme-overlay .theme-wrap {
 }
 
 .theme-overlay .current-label {
-<<<<<<< HEAD
 	background: #32373c;
-=======
-	background: #333;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	color: #fff;
 	font-size: 11px;
 	display: inline-block;
@@ -828,11 +738,7 @@ body.folded .theme-overlay .theme-wrap {
 }
 
 .theme-overlay .theme-name {
-<<<<<<< HEAD
 	color: #23282d;
-=======
-	color: #222;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	font-size: 32px;
 	font-weight: 100;
 	margin: 10px 0 0;
@@ -846,13 +752,6 @@ body.folded .theme-overlay .theme-wrap {
 	float: none;
 	display: inline-block;
 	margin-right: 10px;
-<<<<<<< HEAD
-=======
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .theme-overlay .theme-author {
@@ -876,11 +775,7 @@ body.folded .theme-overlay .theme-wrap {
 
 .theme-overlay .theme-tags {
 	border-top: 3px solid #eee;
-<<<<<<< HEAD
 	color: #82878c;
-=======
-	color: #888;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	font-size: 13px;
 	font-weight: 400;
 	margin: 30px 0 0 0;
@@ -904,11 +799,7 @@ body.folded .theme-overlay .theme-wrap {
 }
 
 .theme-overlay .theme-update {
-<<<<<<< HEAD
 	color: #23282d;
-=======
-	color: #222;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	font-size: 18px;
 	display: inline-block;
 	line-height: 40px;
@@ -918,11 +809,7 @@ body.folded .theme-overlay .theme-wrap {
 .theme-overlay .parent-theme {
 	background: #f7fcfe;
 	border: 1px solid #eee;
-<<<<<<< HEAD
 	border-right: 4px solid #00a0d2;
-=======
-	border-right: 4px solid #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	font-size: 14px;
 	font-weight: normal;
 	margin-top: 30px;
@@ -1041,11 +928,7 @@ body.folded .theme-overlay .theme-wrap {
 		right: 0;
 		padding: 70px 20px 20px;
 		border: none;
-<<<<<<< HEAD
 		z-index: 100000; /* should overlap #wpadminbar. */
-=======
-		z-index: 500; /* should overlap #wpadminbar, which is 500 on mobile. */
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		position: fixed;
 	}
 
@@ -1198,11 +1081,7 @@ body.folded .theme-overlay .theme-wrap {
 
 /* Already installed theme */
 .theme-browser .theme .theme-installed {
-<<<<<<< HEAD
 	background: #0073aa;
-=======
-	background: #0074a2;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 .theme-browser .theme .theme-installed:before {
 	content: '\f147';
@@ -1262,12 +1141,8 @@ body.show-upload-theme .upload-theme + .wp-filter + .theme-browser {
 }
 
 p.no-themes {
-<<<<<<< HEAD
 	clear: both;
 	color: #666;
-=======
-	color: #999;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	font-size: 18px;
 	font-style: normal;
 	margin: 0;
@@ -1483,7 +1358,6 @@ body.full-overlay-active {
 	height: 100%;
 }
 
-<<<<<<< HEAD
 #customize-preview.wp-full-overlay-main {
 	background: url(../images/spinner.gif) no-repeat center center;
 	-webkit-background-size: 20px 20px;
@@ -1494,8 +1368,6 @@ body.full-overlay-active {
 	background: none;
 }
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .wp-full-overlay-sidebar .wp-full-overlay-header {
 	position: absolute;
 	right: 0;
@@ -1578,11 +1450,7 @@ body.full-overlay-active {
 
 .theme-install-overlay .previous-theme:before {
 	font: normal 20px/1 dashicons;
-<<<<<<< HEAD
 	content: "\f345";
-=======
-	content: "\f341";
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	position: relative;
 	top: 6px;
 	right: 14px;
@@ -1590,11 +1458,7 @@ body.full-overlay-active {
 
 .theme-install-overlay .next-theme:before {
 	font: normal 20px/1 dashicons;
-<<<<<<< HEAD
 	content: "\f341";
-=======
-	content: "\f345";
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	position: relative;
 	top: 6px;
 	right: 13px;
@@ -1606,27 +1470,12 @@ body.full-overlay-active {
 .theme-install-overlay .previous-theme.disabled:focus,
 .theme-install-overlay .next-theme.disabled:hover,
 .theme-install-overlay .next-theme.disabled:focus {
-<<<<<<< HEAD
 	color: #b4b9be;
-=======
-	color: #bbb;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	background: #eee;
 	cursor: default;
 	pointer-events: none;
 }
 
-<<<<<<< HEAD
-=======
-.rtl .theme-install-overlay .previous-theme:before {
-	content: "\f345";
-}
-
-.rtl .theme-install-overlay .next-theme:before {
-	content: "\f341";
-}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 /* Collapse Button */
 .wp-full-overlay a.collapse-sidebar {
 	position: absolute;
@@ -1645,11 +1494,7 @@ body.full-overlay-active {
 }
 
 .wp-full-overlay a.collapse-sidebar:hover {
-<<<<<<< HEAD
 	color: #0073aa;
-=======
-	color: #0074a2;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .wp-full-overlay.collapsed .collapse-sidebar {
@@ -1685,10 +1530,7 @@ body.full-overlay-active {
 	text-decoration: none !important;
 }
 
-<<<<<<< HEAD
 /* rtl:ignore */
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .wp-full-overlay.collapsed .collapse-sidebar-arrow:before,
 .rtl .wp-full-overlay .collapse-sidebar-arrow:before {
 	-webkit-transform: rotate(180deg);
@@ -1876,10 +1718,6 @@ body.full-overlay-active {
  * HiDPI Displays
  */
 @media print,
-<<<<<<< HEAD
-=======
-  (-o-min-device-pixel-ratio: 5/4),
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
   (-webkit-min-device-pixel-ratio: 1.25),
   (min-resolution: 120dpi) {
 	.wp-full-overlay .collapse-sidebar-arrow {
@@ -1888,10 +1726,7 @@ body.full-overlay-active {
 		background-size: 15px 123px;
 	}
 
-<<<<<<< HEAD
 	#customize-preview.wp-full-overlay-main,
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	.customize-loading #customize-container,
 	.theme-install-overlay .wp-full-overlay-main {
 		background-image: url(../images/spinner-2x.gif);

@@ -53,10 +53,6 @@ function activate_sitewide_plugin() {
  */
 function deactivate_sitewide_plugin( $plugin = false ) {
 	_deprecated_function(__FUNCTION__, '3.0', 'deactivate_plugin()' );
-<<<<<<< HEAD
-=======
-	return;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**

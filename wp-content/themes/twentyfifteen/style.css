@@ -1,18 +1,10 @@
 /*
 Theme Name: Twenty Fifteen
-<<<<<<< HEAD
 Theme URI: https://wordpress.org/themes/twentyfifteen/
 Author: the WordPress team
 Author URI: https://wordpress.org/
 Description: Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
 Version: 1.2
-=======
-Theme URI: https://wordpress.org/themes/twentyfifteen
-Author: the WordPress team
-Author URI: https://wordpress.org/
-Description: Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
-Version: 1.0
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, gray, pink, purple, white, yellow, dark, light, two-columns, left-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
@@ -47,7 +39,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * 14.0 - Media
  *    14.1 - Captions
  *    14.2 - Galleries
-<<<<<<< HEAD
  * 15.0 - Multisite
  * 16.0 - Media Queries
  *    16.1 - Mobile Large
@@ -58,31 +49,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *    16.6 - Desktop Large
  *    16.7 - Desktop X-Large
  * 17.0 - Print
-=======
- * 15.0 - Media Queries
- *    15.1 - Mobile Large
- *    15.2 - Tablet Small
- *    15.3 - Tablet Large
- *    15.4 - Desktop Small
- *    15.5 - Desktop Medium
- *    15.6 - Desktop Large
- *    15.7 - Desktop X-Large
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 
 
 /**
  * 1.0 - Reset
  *
-<<<<<<< HEAD
  * Resetting and rebuilding styles have been helped along thanks to the fine
  * work of Eric Meyer, Nicolas Gallagher, Jonathan Neal, and Blueprint.
-=======
- * Resetting and rebuilding styles have been helped along thanks to the fine work of
- * Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
- * along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
- * and Blueprint http://www.blueprintcss.org/
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
@@ -706,14 +680,8 @@ a:focus {
 	position: relative;
 }
 
-<<<<<<< HEAD
 .main-navigation .current-menu-item > a,
 .main-navigation .current-menu-ancestor > a {
-=======
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	font-weight: 700;
 }
 
@@ -722,10 +690,6 @@ a:focus {
 	border-top: 0;
 }
 
-<<<<<<< HEAD
-=======
-.main-navigation .page_item_has_children > a,
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .main-navigation .menu-item-has-children > a {
 	padding-right: 48px;
 }
@@ -815,13 +779,6 @@ a:focus {
 	left: 0;
 }
 
-<<<<<<< HEAD
-=======
-.social-navigation a[href$="/feed/"]:before {
-	content: "\f413";
-}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .social-navigation a[href*="codepen.io"]:before {
 	content: "\f216";
 }
@@ -919,13 +876,10 @@ a:focus {
 	content: "\f516";
 }
 
-<<<<<<< HEAD
 .social-navigation a[href$="/feed/"]:before {
 	content: "\f413";
 }
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .secondary-toggle {
 	background-color: transparent;
 	border: 1px solid #eaeaea;
@@ -2606,7 +2560,6 @@ p > video {
 
 
 /**
-<<<<<<< HEAD
  * 15.0 Multisite
  */
 
@@ -2701,9 +2654,6 @@ p > video {
 
 /**
  * 16.0 Media Queries
-=======
- * 15.0 Media Queries
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 
 /*
@@ -2721,11 +2671,7 @@ p > video {
 }
 
 /**
-<<<<<<< HEAD
  * 16.1 Mobile Large 620px
-=======
- * 15.1 Mobile Large 620px
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 
 @media screen and (min-width: 38.75em) {
@@ -2764,10 +2710,7 @@ p > video {
 	}
 
 	.secondary {
-<<<<<<< HEAD
 		box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		margin: 7.6923% 7.6923% 0;
 		padding: 7.6923% 7.6923% 0;
 	}
@@ -2913,23 +2856,16 @@ p > video {
 	.comment-content blockquote > ol {
 		margin-left: 1.3333em;
 	}
-<<<<<<< HEAD
 
 	.widecolumn {
 		box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
 		margin: 7.6923%;
 	}
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 
 /**
-<<<<<<< HEAD
  * 16.2 Tablet Small 740px
-=======
- * 15.2 Tablet Small 740px
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 
 @media screen and (min-width: 46.25em) {
@@ -2988,13 +2924,9 @@ p > video {
 	input[type="button"],
 	input[type="reset"],
 	input[type="submit"],
-<<<<<<< HEAD
 	.post-password-form input[type="submit"],
 	.widecolumn #submit,
 	.widecolumn .mu_register input[type="submit"] {
-=======
-	.post-password-form input[type="submit"] {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		font-size: 14px;
 		font-size: 1.4rem;
 		padding: 0.8214em 1.6429em;
@@ -3023,14 +2955,6 @@ p > video {
 		margin-left: 1em;
 	}
 
-<<<<<<< HEAD
-=======
-	.main-navigation .page_item_has_children > a,
-	.main-navigation .main-navigation .menu-item-has-children > a {
-		padding-right: 54px;
-	}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	.main-navigation .menu-item-description {
 		font-size: 14px;
 		font-size: 1.4rem;
@@ -3076,13 +3000,9 @@ p > video {
 	.site-info,
 	.wp-caption-text,
 	.gallery-caption,
-<<<<<<< HEAD
 	.entry-caption,
 	.widecolumn label,
 	.widecolumn .mu_register label {
-=======
-	.entry-caption {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		font-size: 14px;
 		font-size: 1.4rem;
 	}
@@ -3309,12 +3229,8 @@ p > video {
 		margin-bottom: 3em;
 	}
 
-<<<<<<< HEAD
 	.entry-title,
 	.widecolumn h2 {
-=======
-	.entry-title {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		font-size: 35px;
 		font-size: 3.5rem;
 		line-height: 1.2;
@@ -3542,7 +3458,6 @@ p > video {
 	.gallery {
 		margin-bottom: 1.6471em;
 	}
-<<<<<<< HEAD
 
 	.widecolumn .mu_alert {
 		margin-bottom: 1.6471em;
@@ -3571,17 +3486,11 @@ p > video {
 	.widecolumn .mu_register #user_name {
 		margin: 0 0 0.4117em;
 	}
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 
 /**
-<<<<<<< HEAD
  * 16.3 Tablet Large 880px
-=======
- * 15.3 Tablet Large 880px
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 
 @media screen and (min-width: 55em) {
@@ -3640,13 +3549,9 @@ p > video {
 	input[type="button"],
 	input[type="reset"],
 	input[type="submit"],
-<<<<<<< HEAD
 	.post-password-form input[type="submit"],
 	.widecolumn #submit,
 	.widecolumn .mu_register input[type="submit"] {
-=======
-	.post-password-form input[type="submit"] {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		font-size: 16px;
 		font-size: 1.6rem;
 		padding: 0.8125em 1.625em;
@@ -3671,14 +3576,6 @@ p > video {
 		padding: 0.75em 0;
 	}
 
-<<<<<<< HEAD
-=======
-	.main-navigation .page_item_has_children > a,
-	.main-navigation .main-navigation .menu-item-has-children > a {
-		padding-right: 53px;
-	}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	.main-navigation .menu-item-description {
 		font-size: 16px;
 		font-size: 1.6rem;
@@ -3724,13 +3621,9 @@ p > video {
 	.site-info,
 	.wp-caption-text,
 	.gallery-caption,
-<<<<<<< HEAD
 	.entry-caption,
 	.widecolumn label,
 	.widecolumn .mu_register label {
-=======
-	.entry-caption {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		font-size: 16px;
 		font-size: 1.6rem;
 	}
@@ -3900,12 +3793,8 @@ p > video {
 		margin-bottom: 2.9474em;
 	}
 
-<<<<<<< HEAD
 	.entry-title,
 	.widecolumn h2 {
-=======
-	.entry-title {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		font-size: 39px;
 		font-size: 3.9rem;
 		line-height: 1.2308;
@@ -4118,7 +4007,6 @@ p > video {
 	.gallery {
 		margin-bottom: 1.6842em;
 	}
-<<<<<<< HEAD
 
 	.widecolumn .mu_alert {
 		margin-bottom: 1.6842em;
@@ -4146,17 +4034,11 @@ p > video {
 	.widecolumn .mu_register #user_name {
 		margin: 0 0 0.421em;
 	}
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 
 /**
-<<<<<<< HEAD
  * 16.4 Desktop Small 955px
-=======
- * 15.4 Desktop Small 955px
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 
 @media screen and (min-width: 59.6875em) {
@@ -4189,10 +4071,7 @@ p > video {
 
 	.secondary {
 		background-color: transparent;
-<<<<<<< HEAD
 		box-shadow: none;
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		display: block;
 		margin: 0;
 		padding: 0;
@@ -4265,13 +4144,9 @@ p > video {
 	input[type="button"],
 	input[type="reset"],
 	input[type="submit"],
-<<<<<<< HEAD
 	.post-password-form input[type="submit"],
 	.widecolumn #submit,
 	.widecolumn .mu_register input[type="submit"] {
-=======
-	.post-password-form input[type="submit"] {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		font-size: 12px;
 		font-size: 1.2rem;
 		padding: 0.7917em 1.5833em;
@@ -4296,14 +4171,8 @@ p > video {
 		padding: 0.5em 0;
 	}
 
-<<<<<<< HEAD
 	.main-navigation .menu-item-has-children > a {
 		padding-right: 30px;
-=======
-	.main-navigation .page_item_has_children > a,
-	.main-navigation .menu-item-has-children > a {
-		padding-right: 35px;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	.main-navigation .menu-item-description {
@@ -4363,13 +4232,9 @@ p > video {
 	.site-info,
 	.wp-caption-text,
 	.gallery-caption,
-<<<<<<< HEAD
 	.entry-caption,
 	.widecolumn label,
 	.widecolumn .mu_register label {
-=======
-	.entry-caption {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		font-size: 12px;
 		font-size: 1.2rem;
 	}
@@ -4586,12 +4451,8 @@ p > video {
 		padding: 0 10%;
 	}
 
-<<<<<<< HEAD
 	.entry-title,
 	.widecolumn h2 {
-=======
-	.entry-title {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		font-size: 31px;
 		font-size: 3.1rem;
 		line-height: 1.1613;
@@ -4848,7 +4709,6 @@ p > video {
 	.gallery {
 		margin-bottom: 1.6em;
 	}
-<<<<<<< HEAD
 
 	.widecolumn {
 		margin: 8.3333%;
@@ -4881,17 +4741,11 @@ p > video {
 	.widecolumn .mu_register #user_name {
 		margin: 0 0 0.375em;
 	}
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 
 /**
-<<<<<<< HEAD
  * 16.5 Desktop Medium 1100px
-=======
- * 15.5 Desktop Medium 1100px
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 
 @media screen and (min-width: 68.75em) {
@@ -4950,13 +4804,9 @@ p > video {
 	input[type="button"],
 	input[type="reset"],
 	input[type="submit"],
-<<<<<<< HEAD
 	.post-password-form input[type="submit"],
 	.widecolumn #submit,
 	.widecolumn .mu_register input[type="submit"] {
-=======
-	.post-password-form input[type="submit"] {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		font-size: 14px;
 		font-size: 1.4rem;
 		padding: 0.8214em 1.5714em;
@@ -4980,14 +4830,8 @@ p > video {
 		padding: 0.4643em 0;
 	}
 
-<<<<<<< HEAD
 	.main-navigation .menu-item-has-children > a {
 		padding-right: 34px;
-=======
-	.main-navigation .page_item_has_children > a,
-	.main-navigation .menu-item-has-children > a {
-		padding-right: 33px;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	.main-navigation .menu-item-description {
@@ -5037,13 +4881,9 @@ p > video {
 	.site-info,
 	.wp-caption-text,
 	.gallery-caption,
-<<<<<<< HEAD
 	.entry-caption,
 	.widecolumn label,
 	.widecolumn .mu_register label {
-=======
-	.entry-caption {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		font-size: 14px;
 		font-size: 1.4rem;
 	}
@@ -5193,12 +5033,8 @@ p > video {
 		margin-bottom: 2.4706em;
 	}
 
-<<<<<<< HEAD
 	.entry-title,
 	.widecolumn h2 {
-=======
-	.entry-title {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		font-size: 35px;
 		font-size: 3.5rem;
 		line-height: 1.2;
@@ -5416,7 +5252,6 @@ p > video {
 	.gallery {
 		margin-bottom: 1.6471em;
 	}
-<<<<<<< HEAD
 
 	.widecolumn .mu_alert {
 		margin-bottom: 1.6471em;
@@ -5444,17 +5279,11 @@ p > video {
 	.widecolumn .mu_register #user_name {
 		margin: 0 0 0.4117em;
 	}
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 
 /**
-<<<<<<< HEAD
  * 16.6 Desktop Large 1240px
-=======
- * 15.6 Desktop Large 1240px
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 
 @media screen and (min-width: 77.5em) {
@@ -5513,13 +5342,9 @@ p > video {
 	input[type="button"],
 	input[type="reset"],
 	input[type="submit"],
-<<<<<<< HEAD
 	.post-password-form input[type="submit"],
 	.widecolumn #submit,
 	.widecolumn .mu_register input[type="submit"] {
-=======
-	.post-password-form input[type="submit"] {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		font-size: 16px;
 		font-size: 1.6rem;
 		padding: 0.8125em 1.625em;
@@ -5543,14 +5368,8 @@ p > video {
 		padding: 0.5em 0;
 	}
 
-<<<<<<< HEAD
 	.main-navigation .menu-item-has-children > a {
 		padding-right: 38px;
-=======
-	.main-navigation .page_item_has_children > a,
-	.main-navigation .menu-item-has-children > a {
-		padding-right: 32px;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	.main-navigation .menu-item-description {
@@ -5599,13 +5418,9 @@ p > video {
 	.site-info,
 	.wp-caption-text,
 	.gallery-caption,
-<<<<<<< HEAD
 	.entry-caption,
 	.widecolumn label,
 	.widecolumn .mu_register label {
-=======
-	.entry-caption {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		font-size: 16px;
 		font-size: 1.6rem;
 	}
@@ -5767,12 +5582,8 @@ p > video {
 		margin-bottom: 2.9474em;
 	}
 
-<<<<<<< HEAD
 	.entry-title,
 	.widecolumn h2 {
-=======
-	.entry-title {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		font-size: 39px;
 		font-size: 3.9rem;
 		line-height: 1.2308;
@@ -5981,7 +5792,6 @@ p > video {
 	.gallery {
 		margin-bottom: 1.6842em;
 	}
-<<<<<<< HEAD
 
 	.widecolumn .mu_alert {
 		margin-bottom: 1.6842em;
@@ -6009,17 +5819,11 @@ p > video {
 	.widecolumn .mu_register #user_name {
 		margin: 0 0 0.421em;
 	}
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 
 /**
-<<<<<<< HEAD
  * 16.7 Desktop X-Large 1403px
-=======
- * 15.7 Desktop X-Large 1403px
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 
 @media screen and (min-width: 87.6875em) {
@@ -6031,11 +5835,7 @@ p > video {
 
 
 /**
-<<<<<<< HEAD
  * 17.0 Print
-=======
- * 16.0 Print
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 
 @media print {
@@ -6055,13 +5855,9 @@ p > video {
 	button,
 	input,
 	textarea,
-<<<<<<< HEAD
 	select,
 	.widecolumn form,
 	.widecolumn .mu_register form {
-=======
-	select {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		display: none;
 	}
 
@@ -6071,12 +5867,8 @@ p > video {
 	.entry-footer,
 	.page-header,
 	.page-content,
-<<<<<<< HEAD
 	.comments-area,
 	.widecolumn {
-=======
-	.comments-area {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		background: none !important; /* Make sure color schemes dont't affect to print */
 	}
 
@@ -6130,13 +5922,10 @@ p > video {
 		margin: 0 7.6923%;
 	}
 
-<<<<<<< HEAD
 	.sidebar {
 		position: relative !important; /* Make sure sticky sidebar doesn't affect to print */
 	}
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	.site-branding {
 		padding: 0;
 	}
@@ -6197,12 +5986,9 @@ p > video {
 		margin-top: 7.6923%;
 		padding: 3.84615% 0;
 	}
-<<<<<<< HEAD
 
 	.widecolumn {
 		margin: 7.6923% 0 0;
 		padding: 0;
 	}
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }

@@ -9,13 +9,10 @@
  */
 class WP_Media_List_Table extends WP_List_Table {
 
-<<<<<<< HEAD
 	private $detached;
 
 	private $is_trash;
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	/**
 	 * Constructor.
 	 *
@@ -82,11 +79,7 @@ class WP_Media_List_Table extends WP_List_Table {
 			if ( !empty( $_GET['attachment-filter'] ) && strpos( $_GET['attachment-filter'], 'post_mime_type:' ) === 0 && wp_match_mime_types( $mime_type, str_replace( 'post_mime_type:', '', $_GET['attachment-filter'] ) ) )
 				$selected = ' selected="selected"';
 			if ( !empty( $num_posts[$mime_type] ) )
-<<<<<<< HEAD
 				$type_links[$mime_type] = '<option value="post_mime_type:' . esc_attr( $mime_type ) . '"' . $selected . '>' . sprintf( translate_nooped_plural( $label[2], $num_posts[$mime_type] ), number_format_i18n( $num_posts[$mime_type] )) . '</option>';
-=======
-				$type_links[$mime_type] = '<option value="post_mime_type:' . sanitize_mime_type( $mime_type ) . '"' . $selected . '>' . sprintf( translate_nooped_plural( $label[2], $num_posts[$mime_type] ), number_format_i18n( $num_posts[$mime_type] )) . '</option>';
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 		$type_links['detached'] = '<option value="detached"' . ( $this->detached ? ' selected="selected"' : '' ) . '>' . sprintf( _nx( 'Unattached (%s)', 'Unattached (%s)', $total_orphans, 'detached files' ), number_format_i18n( $total_orphans ) ) . '</option>';
 
@@ -146,12 +139,9 @@ class WP_Media_List_Table extends WP_List_Table {
 		if ( isset( $_REQUEST['found_post_id'] ) && isset( $_REQUEST['media'] ) )
 			return 'attach';
 
-<<<<<<< HEAD
 		if ( isset( $_REQUEST['parent_post_id'] ) && isset( $_REQUEST['media'] ) )
 			return 'detach';
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		if ( isset( $_REQUEST['delete_all'] ) || isset( $_REQUEST['delete_all2'] ) )
 			return 'delete_all';
 
@@ -167,16 +157,6 @@ class WP_Media_List_Table extends WP_List_Table {
 	}
 
 	/**
-<<<<<<< HEAD
-=======
-	 * @param string $which
-	 */
-	protected function pagination( $which ) {
-		parent::pagination( $which );
-	}
-
-	/**
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * Override parent views so we can use the filter bar display.
 	 */
 	public function views() {
@@ -188,12 +168,8 @@ class WP_Media_List_Table extends WP_List_Table {
 	<div class="filter-items">
 		<?php $this->view_switcher( $mode ); ?>
 
-<<<<<<< HEAD
 		<label for="attachment-filter" class="screen-reader-text"><?php _e( 'Filter by type' ); ?></label>
 		<select class="attachment-filters" name="attachment-filter" id="attachment-filter">
-=======
-		<select class="attachment-filters" name="attachment-filter">
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			<?php
 			if ( ! empty( $views ) ) {
 				foreach ( $views as $class => $view ) {
@@ -296,10 +272,6 @@ class WP_Media_List_Table extends WP_List_Table {
 		global $post;
 
 		add_filter( 'the_title','esc_html' );
-<<<<<<< HEAD
-=======
-		$alt = '';
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		while ( have_posts() ) : the_post();
 			$user_can_edit = current_user_can( 'edit_post', $post->ID );
@@ -308,18 +280,10 @@ class WP_Media_List_Table extends WP_List_Table {
 			||  !$this->is_trash && $post->post_status == 'trash' )
 				continue;
 
-<<<<<<< HEAD
 			$post_owner = ( get_current_user_id() == $post->post_author ) ? 'self' : 'other';
 			$att_title = _draft_or_post_title();
 ?>
 	<tr id="post-<?php echo $post->ID; ?>" class="<?php echo trim( ' author-' . $post_owner . ' status-' . $post->post_status ); ?>">
-=======
-			$alt = ( 'alternate' == $alt ) ? '' : 'alternate';
-			$post_owner = ( get_current_user_id() == $post->post_author ) ? 'self' : 'other';
-			$att_title = _draft_or_post_title();
-?>
-	<tr id="post-<?php echo $post->ID; ?>" class="<?php echo trim( $alt . ' author-' . $post_owner . ' status-' . $post->post_status ); ?>">
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <?php
 
 list( $columns, $hidden ) = $this->get_column_info();
@@ -355,11 +319,7 @@ foreach ( $columns as $column_name => $column_display_name ) {
 					echo $thumb;
 				} else {
 ?>
-<<<<<<< HEAD
 				<a href="<?php echo get_edit_post_link( $post->ID ); ?>" title="<?php echo esc_attr( sprintf( __( 'Edit &#8220;%s&#8221;' ), $att_title ) ); ?>">
-=======
-				<a href="<?php echo get_edit_post_link( $post->ID, true ); ?>" title="<?php echo esc_attr( sprintf( __( 'Edit &#8220;%s&#8221;' ), $att_title ) ); ?>">
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 					<?php echo $thumb; ?>
 				</a>
 
@@ -376,27 +336,12 @@ foreach ( $columns as $column_name => $column_display_name ) {
 			<?php if ( $this->is_trash || ! $user_can_edit ) {
 				echo $att_title;
 			} else { ?>
-<<<<<<< HEAD
 			<a href="<?php echo get_edit_post_link( $post->ID ); ?>"
-=======
-			<a href="<?php echo get_edit_post_link( $post->ID, true ); ?>"
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				title="<?php echo esc_attr( sprintf( __( 'Edit &#8220;%s&#8221;' ), $att_title ) ); ?>">
 				<?php echo $att_title; ?></a>
 			<?php };
 			_media_states( $post ); ?></strong>
-<<<<<<< HEAD
 			<p class="filename"><?php echo wp_basename( $post->guid ); ?></p>
-=======
-			<p>
-<?php
-			if ( preg_match( '/^.*?\.(\w+)$/', get_attached_file( $post->ID ), $matches ) )
-				echo esc_html( strtoupper( $matches[1] ) );
-			else
-				echo strtoupper( str_replace( 'image/', '', get_post_mime_type() ) );
-?>
-			</p>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <?php
 		echo $this->row_actions( $this->_get_row_actions( $post, $att_title ) );
 ?>
@@ -458,7 +403,6 @@ foreach ( $columns as $column_name => $column_display_name ) {
 				} else {
 					echo $title;
 				} ?></strong>,
-<<<<<<< HEAD
 				<?php echo get_the_time( __( 'Y/m/d' ) ); ?><br />
 				<?php
 				if ( $user_can_edit ):
@@ -469,9 +413,6 @@ foreach ( $columns as $column_name => $column_display_name ) {
 					), 'upload.php' ); ?>
 				<a class="hide-if-no-js detach-from-parent" href="<?php echo $detach_url ?>"><?php _e( 'Detach' ); ?></a>
 				<?php endif; ?>
-=======
-				<?php echo get_the_time( __( 'Y/m/d' ) ); ?>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			</td>
 <?php
 		} else {
@@ -566,11 +507,7 @@ foreach ( $columns as $column_name => $column_display_name ) {
 
 		if ( $this->detached ) {
 			if ( current_user_can( 'edit_post', $post->ID ) )
-<<<<<<< HEAD
 				$actions['edit'] = '<a href="' . get_edit_post_link( $post->ID ) . '">' . __( 'Edit' ) . '</a>';
-=======
-				$actions['edit'] = '<a href="' . get_edit_post_link( $post->ID, true ) . '">' . __( 'Edit' ) . '</a>';
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			if ( current_user_can( 'delete_post', $post->ID ) )
 				if ( EMPTY_TRASH_DAYS && MEDIA_TRASH ) {
 					$actions['trash'] = "<a class='submitdelete' href='" . wp_nonce_url( "post.php?action=trash&amp;post=$post->ID", 'trash-post_' . $post->ID ) . "'>" . __( 'Trash' ) . "</a>";
@@ -584,11 +521,7 @@ foreach ( $columns as $column_name => $column_display_name ) {
 		}
 		else {
 			if ( current_user_can( 'edit_post', $post->ID ) && !$this->is_trash )
-<<<<<<< HEAD
 				$actions['edit'] = '<a href="' . get_edit_post_link( $post->ID ) . '">' . __( 'Edit' ) . '</a>';
-=======
-				$actions['edit'] = '<a href="' . get_edit_post_link( $post->ID, true ) . '">' . __( 'Edit' ) . '</a>';
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			if ( current_user_can( 'delete_post', $post->ID ) ) {
 				if ( $this->is_trash )
 					$actions['untrash'] = "<a class='submitdelete' href='" . wp_nonce_url( "post.php?action=untrash&amp;post=$post->ID", 'untrash-post_' . $post->ID ) . "'>" . __( 'Restore' ) . "</a>";

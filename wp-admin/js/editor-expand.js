@@ -15,11 +15,7 @@
 			$visualEditor = $(),
 			$textTop = $( '#ed_toolbar' ),
 			$textEditor = $( '#content' ),
-<<<<<<< HEAD
 			$textEditorClone = $( '<div id="content-textarea-clone" class="wp-exclude-emoji"></div>' ),
-=======
-			$textEditorClone = $( '<div id="content-textarea-clone"></div>' ),
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$bottom = $( '#post-status-info' ),
 			$menuBar = $(),
 			$statusBar = $(),
@@ -181,11 +177,7 @@
 				var node = editor.selection.getNode(),
 					range, view, offset;
 
-<<<<<<< HEAD
 				if ( editor.wp && editor.wp.getView && ( view = editor.wp.getView( node ) ) ) {
-=======
-				if ( editor.plugins.wpview && ( view = editor.plugins.wpview.getView( node ) ) ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 					offset = view.getBoundingClientRect();
 				} else {
 					range = editor.selection.getRng();
@@ -331,11 +323,7 @@
 			var windowPos = $window.scrollTop(),
 				type = event && event.type,
 				resize = type !== 'scroll',
-<<<<<<< HEAD
 				visual = mceEditor && ! mceEditor.isHidden(),
-=======
-				visual = ( mceEditor && ! mceEditor.isHidden() ),
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				buffer = autoresizeMinHeight,
 				postBodyTop = $postBody.offset().top,
 				borderWidth = 1,
@@ -362,14 +350,11 @@
 				topHeight = heights.textTopHeight;
 			}
 
-<<<<<<< HEAD
 			// TinyMCE still intializing.
 			if ( ! visual && ! $top.length ) {
 				return;
 			}
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			topPos = $top.parent().offset().top;
 			editorPos = $editor.offset().top;
 			editorHeight = $editor.outerHeight();
@@ -400,12 +385,8 @@
 						width: contentWrapWidth - ( borderWidth * 2 ) - ( visual ? 0 : ( $top.outerWidth() - $top.width() ) )
 					} );
 
-<<<<<<< HEAD
 					$statusBar.attr( 'style', advanced ? '' : 'visibility: hidden;' );
 					$bottom.attr( 'style', '' );
-=======
-					$statusBar.add( $bottom ).attr( 'style', '' );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				}
 			} else {
 				// Maybe pin the top.
@@ -514,16 +495,8 @@
 						( windowPos + heights.windowHeight ) > ( editorPos + editorHeight + heights.bottomHeight + heights.statusBarHeight - borderWidth ) ) ) {
 					fixedBottom = false;
 
-<<<<<<< HEAD
 					$statusBar.attr( 'style', advanced ? '' : 'visibility: hidden;' );
 					$bottom.attr( 'style', '' );
-=======
-					$statusBar.add( $bottom ).attr( 'style', '' );
-
-					if ( ! advanced ) {
-						$statusBar.css( 'visibility', 'hidden' );
-					}
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				}
 			}
 
@@ -712,7 +685,6 @@
 		}
 
 		function off() {
-<<<<<<< HEAD
 			var height = parseInt( window.getUserSetting( 'ed_size', 300 ), 10 );
 
 			if ( height < 50 ) {
@@ -720,9 +692,6 @@
 			} else if ( height > 5000 ) {
 				height = 5000;
 			}
-=======
-			var height = window.getUserSetting('ed_size');
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			// Scroll to the top when triggering this from JS.
 			// Ensures toolbars are reset properly.

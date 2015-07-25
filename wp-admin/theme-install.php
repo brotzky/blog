@@ -44,7 +44,6 @@ wp_localize_script( 'theme', '_wpThemeSettings', array(
 	),
 	'l10n' => array(
 		'addNew' => __( 'Add New Theme' ),
-<<<<<<< HEAD
 		'search' => __( 'Search Themes' ),
 		'searchPlaceholder' => __( 'Search themes...' ), // placeholder (no ellipsis)
 		'upload' => __( 'Upload Theme' ),
@@ -52,13 +51,6 @@ wp_localize_script( 'theme', '_wpThemeSettings', array(
 		'error'  => __( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/">support forums</a>.' ),
 		'themesFound'   => __( 'Number of Themes found: %d' ),
 		'noThemesFound' => __( 'No themes found. Try a different search.' ),
-=======
-		'search'  => __( 'Search Themes' ),
-		'searchPlaceholder' => __( 'Search themes...' ), // placeholder (no ellipsis)
-		'upload' => __( 'Upload Theme' ),
-		'back'   => __( 'Back' ),
-		'error'  => __( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/">support forums</a>.' )
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	),
 	'installedThemes' => array_keys( $installed_themes ),
 ) );
@@ -80,12 +72,8 @@ if ( $tab ) {
 
 $help_overview =
 	'<p>' . sprintf(__('You can find additional themes for your site by using the Theme Browser/Installer on this screen, which will display themes from the <a href="%s" target="_blank">WordPress.org Theme Directory</a>. These themes are designed and developed by third parties, are available free of charge, and are compatible with the license WordPress uses.'), 'https://wordpress.org/themes/') . '</p>' .
-<<<<<<< HEAD
 	'<p>' . __( 'You can Search for themes by keyword, author, or tag, or can get more specific and search by criteria listed in the feature filter.' ) . ' <span id="live-search-desc">' . __( 'The search results will be updated as you type.' ) . '</span></p>' .
 	'<p>' . __( 'Alternately, you can browse the themes that are Featured, Popular, or Latest. When you find a theme you like, you can preview it or install it.' ) . '</p>' .
-=======
-	'<p>' . __('You can Search for themes by keyword, author, or tag, or can get more specific and search by criteria listed in the feature filter. Alternately, you can browse the themes that are Featured, Popular, or Latest. When you find a theme you like, you can preview it or install it.') . '</p>' .
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	'<p>' . __('You can Upload a theme manually if you have already downloaded its ZIP archive onto your computer (make sure it is from a trusted and original source). You can also do it the old-fashioned way and copy a downloaded theme&#8217;s folder via FTP into your <code>/wp-content/themes</code> directory.') . '</p>';
 
 get_current_screen()->add_help_tab( array(
@@ -106,11 +94,7 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-<<<<<<< HEAD
 	'<p>' . __('<a href="https://codex.wordpress.org/Using_Themes#Adding_New_Themes" target="_blank">Documentation on Adding New Themes</a>') . '</p>' .
-=======
-	'<p>' . __('<a href="http://codex.wordpress.org/Using_Themes#Adding_New_Themes" target="_blank">Documentation on Adding New Themes</a>') . '</p>' .
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	'<p>' . __('<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>'
 );
 
@@ -252,7 +236,6 @@ if ( $tab ) {
 				<img class="theme-screenshot" src="{{ data.screenshot_url }}" alt="" />
 
 				<div class="theme-details">
-<<<<<<< HEAD
 					<# if ( data.rating ) { #>
 						<div class="rating rating-{{ Math.round( data.rating / 10 ) * 10 }}">
 							<span class="one"></span>
@@ -267,20 +250,6 @@ if ( $tab ) {
 							<small class="ratings"><?php _e( 'This theme has not been rated yet.' ); ?></small>
 						</div>
 					<# } #>
-=======
-					<div class="rating rating-{{ Math.round( data.rating / 10 ) * 10 }}">
-						<span class="one"></span>
-						<span class="two"></span>
-						<span class="three"></span>
-						<span class="four"></span>
-						<span class="five"></span>
-					<# if ( data.num_ratings ) { #>
-						<small class="ratings">{{ data.num_ratings }}</small>
-					<# } else { #>
-						<small class="ratings"><?php _e( 'No ratings.' ); ?></small>
-					<# } #>
-					</div>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 					<div class="theme-version"><?php printf( __( 'Version: %s' ), '{{ data.version }}' ); ?></div>
 					<div class="theme-description">{{{ data.description }}}</div>
 				</div>
@@ -294,11 +263,7 @@ if ( $tab ) {
 		</div>
 	</div>
 	<div class="wp-full-overlay-main">
-<<<<<<< HEAD
 		<iframe src="{{ data.preview_url }}" title="<?php esc_attr_e( 'Preview' ); ?>" />
-=======
-		<iframe src="{{ data.preview_url }}" />
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	</div>
 </script>
 

@@ -90,14 +90,10 @@ class WP_Roles {
 	 * @return mixed|bool Return value of the callback, false otherwise.
 	 */
 	public function __call( $name, $arguments ) {
-<<<<<<< HEAD
 		if ( '_init' === $name ) {
 			return call_user_func_array( array( $this, $name ), $arguments );
 		}
 		return false;
-=======
-		return call_user_func_array( array( $this, $name ), $arguments );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -422,7 +418,6 @@ class WP_Role {
  * @since 2.0.0
  * @package WordPress
  * @subpackage User
-<<<<<<< HEAD
  *
  * @property string $nickname
  * @property string $user_description
@@ -439,24 +434,15 @@ class WP_Role {
  * @property string $display_name
  * @property string $spam
  * @property string $deleted
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 class WP_User {
 	/**
 	 * User data container.
 	 *
 	 * @since 2.0.0
-<<<<<<< HEAD
 	 * @var object
 	 */
 	public $data;
-=======
-	 * @access private
-	 * @var array
-	 */
-	var $data;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * The user's ID.
@@ -525,10 +511,6 @@ class WP_User {
 	 * @param int|string|stdClass|WP_User $id User's ID, a WP_User object, or a user object from the DB.
 	 * @param string $name Optional. User's username
 	 * @param int $blog_id Optional Blog ID, defaults to current blog.
-<<<<<<< HEAD
-=======
-	 * @return WP_User
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 */
 	public function __construct( $id = 0, $name = '', $blog_id = '' ) {
 		if ( ! isset( self::$back_compat_keys ) ) {
@@ -543,11 +525,7 @@ class WP_User {
 			);
 		}
 
-<<<<<<< HEAD
 		if ( $id instanceof WP_User ) {
-=======
-		if ( is_a( $id, 'WP_User' ) ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$this->init( $id->data, $blog_id );
 			return;
 		} elseif ( is_object( $id ) ) {
@@ -560,7 +538,6 @@ class WP_User {
 			$id = 0;
 		}
 
-<<<<<<< HEAD
 		if ( $id ) {
 			$data = self::get_data_by( 'id', $id );
 		} else {
@@ -572,15 +549,6 @@ class WP_User {
 		} else {
 			$this->data = new stdClass;
 		}
-=======
-		if ( $id )
-			$data = self::get_data_by( 'id', $id );
-		else
-			$data = self::get_data_by( 'login', $name );
-
-		if ( $data )
-			$this->init( $data, $blog_id );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -603,11 +571,7 @@ class WP_User {
 	 *
 	 * @param string $field The field to query against: 'id', 'slug', 'email' or 'login'
 	 * @param string|int $value The field value
-<<<<<<< HEAD
 	 * @return object|false Raw user object
-=======
-	 * @return object Raw user object
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 */
 	public static function get_data_by( $field, $value ) {
 		global $wpdb;
@@ -975,11 +939,8 @@ class WP_User {
 	public function add_cap( $cap, $grant = true ) {
 		$this->caps[$cap] = $grant;
 		update_user_meta( $this->ID, $this->cap_key, $this->caps );
-<<<<<<< HEAD
 		$this->get_role_caps();
 		$this->update_user_level_from_caps();
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -991,7 +952,6 @@ class WP_User {
 	 * @param string $cap Capability name.
 	 */
 	public function remove_cap( $cap ) {
-<<<<<<< HEAD
 		if ( ! isset( $this->caps[ $cap ] ) ) {
 			return;
 		}
@@ -999,12 +959,6 @@ class WP_User {
 		update_user_meta( $this->ID, $this->cap_key, $this->caps );
 		$this->get_role_caps();
 		$this->update_user_level_from_caps();
-=======
-		if ( ! isset( $this->caps[$cap] ) )
-			return;
-		unset( $this->caps[$cap] );
-		update_user_meta( $this->ID, $this->cap_key, $this->caps );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -1057,11 +1011,7 @@ class WP_User {
 		 * @since 2.0.0
 		 * @since 3.7.0 Added the user object.
 		 *
-<<<<<<< HEAD
 		 * @param array   $allcaps An array of all the user's capabilities.
-=======
-		 * @param array   $allcaps An array of all the role's capabilities.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		 * @param array   $caps    Actual capabilities for meta capability.
 		 * @param array   $args    Optional parameters passed to has_cap(), typically object ID.
 		 * @param WP_User $user    The user object.
@@ -1193,8 +1143,10 @@ function map_meta_cap( $cap, $user_id ) {
 	case 'edit_post':
 	case 'edit_page':
 		$post = get_post( $args[0] );
-		if ( empty( $post ) )
+		if ( empty( $post ) ) {
+			$caps[] = 'do_not_allow';
 			break;
+		}
 
 		if ( 'revision' == $post->post_type ) {
 			$post = get_post( $post->post_parent );
@@ -1395,12 +1347,9 @@ function map_meta_cap( $cap, $user_id ) {
 	case 'customize' :
 		$caps[] = 'edit_theme_options';
 		break;
-<<<<<<< HEAD
 	case 'delete_site':
 		$caps[] = 'manage_options';
 		break;
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	default:
 		// Handle meta capabilities for custom post types.
 		$post_type_meta_caps = _post_type_meta_capabilities();
@@ -1456,7 +1405,6 @@ function current_user_can( $capability ) {
  * @return bool
  */
 function current_user_can_for_blog( $blog_id, $capability ) {
-<<<<<<< HEAD
 	$switched = is_multisite() ? switch_to_blog( $blog_id ) : false;
 
 	$current_user = wp_get_current_user();
@@ -1467,29 +1415,15 @@ function current_user_can_for_blog( $blog_id, $capability ) {
 		}
 		return false;
 	}
-=======
-	if ( is_multisite() )
-		switch_to_blog( $blog_id );
-
-	$current_user = wp_get_current_user();
-
-	if ( empty( $current_user ) )
-		return false;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	$args = array_slice( func_get_args(), 2 );
 	$args = array_merge( array( $capability ), $args );
 
 	$can = call_user_func_array( array( $current_user, 'has_cap' ), $args );
 
-<<<<<<< HEAD
 	if ( $switched ) {
 		restore_current_blog();
 	}
-=======
-	if ( is_multisite() )
-		restore_current_blog();
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	return $can;
 }

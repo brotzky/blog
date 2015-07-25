@@ -10,11 +10,7 @@
  * already has tag.php for Tag archives, category.php for Category archives,
  * and author.php for Author archives.
  *
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Template_Hierarchy
-=======
- * @link http://codex.wordpress.org/Template_Hierarchy
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @package WordPress
  * @subpackage Twenty_Fourteen

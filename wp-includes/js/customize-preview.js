@@ -115,7 +115,6 @@
 			activeControls: api.settings.activeControls
 		} );
 
-<<<<<<< HEAD
 		// Display a loading indicator when preview is reloading, and remove on failure.
 		api.preview.bind( 'loading-initiated', function () {
 			$( 'body' ).addClass( 'wp-customizer-unloading' );
@@ -126,8 +125,6 @@
 			$( 'html' ).prop( 'title', '' );
 		});
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		/* Custom Backgrounds */
 		bg = $.map(['color', 'image', 'position_x', 'repeat', 'attachment'], function( prop ) {
 			return 'background_' + prop;

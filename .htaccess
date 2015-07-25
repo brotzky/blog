@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^/]+)/$ $1.html
@@ -93,8 +92,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /blog/index.php [L]
 </IfModule>
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
@@ -104,6 +101,18 @@ RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /blog/index.php [L]
+</IfModule>
+
+# END WordPress
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /wordpress-blog/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /wordpress-blog/index.php [L]
 </IfModule>
 
 # END WordPress

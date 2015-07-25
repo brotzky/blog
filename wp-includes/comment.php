@@ -218,13 +218,7 @@ function get_comment(&$comment, $output = OBJECT) {
  *
  * @since 2.7.0
  *
-<<<<<<< HEAD
  * @param string|array $args Optional. Array or string of arguments. See {@see WP_Comment_Query::parse_query()}
-=======
- * @global wpdb $wpdb WordPress database abstraction object.
- *
- * @param string|array $args Optional. Array or string of arguments. See {@see WP_Comment_Query::query()}
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *                           for information on accepted arguments. Default empty.
  * @return int|array List of comments or number of found comments if `$count` argument is true.
  */
@@ -236,11 +230,7 @@ function get_comments( $args = '' ) {
 /**
  * WordPress Comment Query class.
  *
-<<<<<<< HEAD
  * See WP_Comment_Query::__construct() for accepted arguments.
-=======
- * See {@see WP_Comment_Query::query()} for accepted arguments.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @since 3.1.0
  */
@@ -273,19 +263,15 @@ class WP_Comment_Query {
 	public $date_query = false;
 
 	/**
-<<<<<<< HEAD
 	 * Query vars set by the user.
 	 *
 	 * @since 3.1.0
 	 * @access public
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * @var array
 	 */
 	public $query_vars;
 
 	/**
-<<<<<<< HEAD
 	 * Default values for query vars.
 	 *
 	 * @since 4.2.0
@@ -299,8 +285,6 @@ class WP_Comment_Query {
 	 *
 	 * @since 4.0.0
 	 * @access public
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * @var array
 	 */
 	public $comments;
@@ -316,7 +300,6 @@ class WP_Comment_Query {
 	 * @return mixed|bool Return value of the callback, false otherwise.
 	 */
 	public function __call( $name, $arguments ) {
-<<<<<<< HEAD
 		if ( 'get_search_sql' === $name ) {
 			return call_user_func_array( array( $this, $name ), $arguments );
 		}
@@ -333,22 +316,6 @@ class WP_Comment_Query {
 	 *
 	 * @param string|array $query {
 	 *     Optional. Array or query string of comment query parameters. Default empty.
-=======
-		return call_user_func_array( array( $this, $name ), $arguments );
-	}
-
-	/**
-	 * Execute the query
-	 *
-	 * @since 3.1.0
-	 * @since 4.1.0 Introduced 'comment__in', 'comment__not_in', 'post_author__in',
-	 *              'post_author__not_in', 'author__in', 'author__not_in', 'post__in',
-	 *              'post__not_in', 'include_unapproved', 'type__in', and 'type__not_in'
-	 *              arguments to $query_vars.
-	 *
-	 * @param string|array $query_vars {
-	 *     Optional. Array or query string of comment query parameters.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 *
 	 *     @type string       $author_email        Comment author email address. Default empty.
 	 *     @type array        $author__in          Array of author IDs to include comments for. Default empty.
@@ -357,11 +324,7 @@ class WP_Comment_Query {
 	 *     @type array        $comment__not_in     Array of comment IDs to exclude. Default empty.
 	 *     @type bool         $count               Whether to return a comment count (true) or array of comment
 	 *                                             objects (false). Default false.
-<<<<<<< HEAD
 	 *     @type array        $date_query          Date query clauses to limit comments by. See WP_Date_Query.
-=======
-	 *     @type array        $date_query          Date query clauses to limit comments by. See {@see WP_Date_Query}.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 *                                             Default null.
 	 *     @type string       $fields              Comment fields to return. Accepts 'ids' for comment IDs only or
 	 *                                             empty for all fields. Default empty.
@@ -373,7 +336,6 @@ class WP_Comment_Query {
 	 *     @type string       $meta_value          Include comments with a matching comment meta value. Requires
 	 *                                             `$meta_key` to be set. Default empty.
 	 *     @type array        $meta_query          Meta query clauses to limit retrieved comments by.
-<<<<<<< HEAD
 	 *                                             See WP_Meta_Query. Default empty.
 	 *     @type int          $number              Maximum number of comments to retrieve. Default null (no limit).
 	 *     @type int          $offset              Number of comments to offset the query. Used to build LIMIT clause.
@@ -390,20 +352,6 @@ class WP_Comment_Query {
 	 *                                             array keys of `$meta_query`. Also accepts false, an empty array,
 	 *                                             or 'none' to disable `ORDER BY` clause.
 	 *                                             Default: 'comment_date_gmt'.
-=======
-	 *                                             See {@see WP_Meta_Query}. Default empty.
-	 *     @type int          $number              Maximum number of comments to retrieve. Default null (no limit).
-	 *     @type int          $offset              Number of comments to offset the query. Used to build LIMIT clause.
-	 *                                             Default 0.
-	 *     @type string|array $orderby             Comment status or array of statuses. Accepts 'comment_agent',
-	 *                                             'comment_approved', 'comment_author', 'comment_author_email',
-	 *                                             'comment_author_IP', 'comment_author_url', 'comment_content',
-	 *                                             'comment_date', 'comment_date_gmt', 'comment_ID', 'comment_karma',
-	 *                                             'comment_parent', 'comment_post_ID', 'comment_type', 'user_id',
-	 *                                             'meta_value', 'meta_value_num', or value of $meta_key.
-	 *                                              Also accepts false, empty array, or 'none' to disable `ORDER BY`
-	 *                                             clause. Default: 'comment_date_gmt'.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 *     @type string       $order               How to order retrieved comments. Accepts 'ASC', 'DESC'.
 	 *                                             Default: 'DESC'.
 	 *     @type int          $parent              Parent ID of comment to retrieve children of. Default empty.
@@ -429,19 +377,10 @@ class WP_Comment_Query {
 	 *     @type array        $type__not_in        Exclude comments from a given array of comment types. Default empty.
 	 *     @type int          $user_id             Include comments for a specific user ID. Default empty.
 	 * }
-<<<<<<< HEAD
 	 * @return WP_Comment_Query WP_Comment_Query instance.
 	 */
 	public function __construct( $query = '' ) {
 		$this->query_var_defaults = array(
-=======
-	 * @return int|array Array of comments or number of found comments if `$count` is set to true.
-	 */
-	public function query( $query_vars ) {
-		global $wpdb;
-
-		$defaults = array(
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			'author_email' => '',
 			'author__in' => '',
 			'author__not_in' => '',
@@ -480,7 +419,6 @@ class WP_Comment_Query {
 			'date_query' => null, // See WP_Date_Query
 		);
 
-<<<<<<< HEAD
 		if ( ! empty( $query ) ) {
 			$this->query( $query );
 		}
@@ -539,23 +477,15 @@ class WP_Comment_Query {
 		$groupby = '';
 
 		$this->parse_query();
-=======
-		$groupby = '';
-
-		$this->query_vars = wp_parse_args( $query_vars, $defaults );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		// Parse meta query
 		$this->meta_query = new WP_Meta_Query();
 		$this->meta_query->parse_query_vars( $this->query_vars );
 
-<<<<<<< HEAD
 		if ( ! empty( $this->meta_query->queries ) ) {
 			$meta_query_clauses = $this->meta_query->get_sql( 'comment', $wpdb->comments, 'comment_ID', $this );
 		}
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		/**
 		 * Fires before comments are retrieved.
 		 *
@@ -565,13 +495,8 @@ class WP_Comment_Query {
 		 */
 		do_action_ref_array( 'pre_get_comments', array( &$this ) );
 
-<<<<<<< HEAD
 		// $args can include anything. Only use the args defined in the query_var_defaults to compute the key.
 		$key = md5( serialize( wp_array_slice_assoc( $this->query_vars, array_keys( $this->query_var_defaults ) ) ) );
-=======
-		// $args can be whatever, only use the args defined in defaults to compute the key
-		$key = md5( serialize( wp_array_slice_assoc( $this->query_vars, array_keys( $defaults ) ) )  );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$last_changed = wp_cache_get( 'last_changed', 'comment' );
 		if ( ! $last_changed ) {
 			$last_changed = microtime();
@@ -580,12 +505,8 @@ class WP_Comment_Query {
 		$cache_key = "get_comments:$key:$last_changed";
 
 		if ( $cache = wp_cache_get( $cache_key, 'comment' ) ) {
-<<<<<<< HEAD
 			$this->comments = $cache;
 			return $this->comments;
-=======
-			return $cache;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 
 		$where = array();
@@ -664,16 +585,11 @@ class WP_Comment_Query {
 		// Disable ORDER BY with 'none', an empty array, or boolean false.
 		if ( in_array( $this->query_vars['orderby'], array( 'none', array(), false ), true ) ) {
 			$orderby = '';
-<<<<<<< HEAD
 		} elseif ( ! empty( $this->query_vars['orderby'] ) ) {
-=======
-		} else if ( ! empty( $this->query_vars['orderby'] ) ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$ordersby = is_array( $this->query_vars['orderby'] ) ?
 				$this->query_vars['orderby'] :
 				preg_split( '/[,\s]/', $this->query_vars['orderby'] );
 
-<<<<<<< HEAD
 			$orderby_array = array();
 			$found_orderby_comment_ID = false;
 			foreach ( $ordersby as $_key => $_value ) {
@@ -743,41 +659,6 @@ class WP_Comment_Query {
 			$orderby = implode( ', ', $orderby_array );
 		} else {
 			$orderby = "$wpdb->comments.comment_date_gmt $order";
-=======
-			$allowed_keys = array(
-				'comment_agent',
-				'comment_approved',
-				'comment_author',
-				'comment_author_email',
-				'comment_author_IP',
-				'comment_author_url',
-				'comment_content',
-				'comment_date',
-				'comment_date_gmt',
-				'comment_ID',
-				'comment_karma',
-				'comment_parent',
-				'comment_post_ID',
-				'comment_type',
-				'user_id',
-			);
-			if ( ! empty( $this->query_vars['meta_key'] ) ) {
-				$allowed_keys[] = $this->query_vars['meta_key'];
-				$allowed_keys[] = 'meta_value';
-				$allowed_keys[] = 'meta_value_num';
-			}
-			$ordersby = array_intersect( $ordersby, $allowed_keys );
-			foreach ( $ordersby as $key => $value ) {
-				if ( $value == $this->query_vars['meta_key'] || $value == 'meta_value' ) {
-					$ordersby[ $key ] = "$wpdb->commentmeta.meta_value";
-				} elseif ( $value == 'meta_value_num' ) {
-					$ordersby[ $key ] = "$wpdb->commentmeta.meta_value+0";
-				}
-			}
-			$orderby = empty( $ordersby ) ? 'comment_date_gmt' : implode(', ', $ordersby);
-		} else {
-			$orderby = 'comment_date_gmt';
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 
 		$number = absint( $this->query_vars['number'] );
@@ -908,13 +789,9 @@ class WP_Comment_Query {
 		if ( ! empty( $post_fields ) ) {
 			$join_posts_table = true;
 			foreach ( $post_fields as $field_name => $field_value ) {
-<<<<<<< HEAD
 				// $field_value may be an array.
 				$esses = array_fill( 0, count( (array) $field_value ), '%s' );
 				$where[] = $wpdb->prepare( " {$wpdb->posts}.{$field_name} IN (" . implode( ',', $esses ) . ')', $field_value );
-=======
-				$where[] = $wpdb->prepare( " {$wpdb->posts}.{$field_name} = %s", $field_value );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			}
 		}
 
@@ -944,20 +821,11 @@ class WP_Comment_Query {
 			$join = "JOIN $wpdb->posts ON $wpdb->posts.ID = $wpdb->comments.comment_post_ID";
 		}
 
-<<<<<<< HEAD
 		if ( ! empty( $meta_query_clauses ) ) {
 			$join .= $meta_query_clauses['join'];
 
 			// Strip leading 'AND'.
 			$where[] = preg_replace( '/^\s*AND\s*/', '', $meta_query_clauses['where'] );
-=======
-		if ( ! empty( $this->meta_query->queries ) ) {
-			$clauses = $this->meta_query->get_sql( 'comment', $wpdb->comments, 'comment_ID', $this );
-			$join .= $clauses['join'];
-
-			// Strip leading 'AND'.
-			$where[] = preg_replace( '/^\s*AND\s*/', '', $clauses['where'] );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			if ( ! $this->query_vars['count'] ) {
 				$groupby = "{$wpdb->comments}.comment_ID";
@@ -972,11 +840,7 @@ class WP_Comment_Query {
 
 		$where = implode( ' AND ', $where );
 
-<<<<<<< HEAD
 		$pieces = array( 'fields', 'join', 'where', 'orderby', 'limits', 'groupby' );
-=======
-		$pieces = array( 'fields', 'join', 'where', 'orderby', 'order', 'limits', 'groupby' );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		/**
 		 * Filter the comment query clauses.
 		 *
@@ -991,10 +855,6 @@ class WP_Comment_Query {
 		$join = isset( $clauses[ 'join' ] ) ? $clauses[ 'join' ] : '';
 		$where = isset( $clauses[ 'where' ] ) ? $clauses[ 'where' ] : '';
 		$orderby = isset( $clauses[ 'orderby' ] ) ? $clauses[ 'orderby' ] : '';
-<<<<<<< HEAD
-=======
-		$order = isset( $clauses[ 'order' ] ) ? $clauses[ 'order' ] : '';
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$limits = isset( $clauses[ 'limits' ] ) ? $clauses[ 'limits' ] : '';
 		$groupby = isset( $clauses[ 'groupby' ] ) ? $clauses[ 'groupby' ] : '';
 
@@ -1007,11 +867,7 @@ class WP_Comment_Query {
 		}
 
 		if ( $orderby ) {
-<<<<<<< HEAD
 			$orderby = "ORDER BY $orderby";
-=======
-			$orderby = "ORDER BY $orderby $order";
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		}
 
 		$this->request = "SELECT $fields FROM $wpdb->comments $join $where $groupby $orderby $limits";
@@ -1038,12 +894,8 @@ class WP_Comment_Query {
 
 		wp_cache_add( $cache_key, $comments, 'comment' );
 
-<<<<<<< HEAD
 		$this->comments = $comments;
 		return $this->comments;
-=======
-		return $comments;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -1068,7 +920,6 @@ class WP_Comment_Query {
 
 		return ' AND (' . implode(' OR ', $searches) . ')';
 	}
-<<<<<<< HEAD
 
 	/**
 	 * Parse and sanitize 'orderby' keys passed to the comment query.
@@ -1151,8 +1002,6 @@ class WP_Comment_Query {
 			return 'DESC';
 		}
 	}
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
@@ -1282,11 +1131,7 @@ function get_comment_count( $post_id = 0 ) {
  * Add meta data field to a comment.
  *
  * @since 2.9.0
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Function_Reference/add_comment_meta
-=======
- * @link http://codex.wordpress.org/Function_Reference/add_comment_meta
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @param int $comment_id Comment ID.
  * @param string $meta_key Metadata name.
@@ -1306,11 +1151,7 @@ function add_comment_meta($comment_id, $meta_key, $meta_value, $unique = false) 
  * allows removing all metadata matching key, if needed.
  *
  * @since 2.9.0
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Function_Reference/delete_comment_meta
-=======
- * @link http://codex.wordpress.org/Function_Reference/delete_comment_meta
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @param int $comment_id comment ID
  * @param string $meta_key Metadata name.
@@ -1325,11 +1166,7 @@ function delete_comment_meta($comment_id, $meta_key, $meta_value = '') {
  * Retrieve comment meta field for a comment.
  *
  * @since 2.9.0
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Function_Reference/get_comment_meta
-=======
- * @link http://codex.wordpress.org/Function_Reference/get_comment_meta
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @param int $comment_id Comment ID.
  * @param string $key Optional. The meta key to retrieve. By default, returns data for all keys.
@@ -1350,11 +1187,7 @@ function get_comment_meta($comment_id, $key = '', $single = false) {
  * If the meta field for the comment does not exist, it will be added.
  *
  * @since 2.9.0
-<<<<<<< HEAD
  * @link https://codex.wordpress.org/Function_Reference/update_comment_meta
-=======
- * @link http://codex.wordpress.org/Function_Reference/update_comment_meta
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @param int $comment_id Comment ID.
  * @param string $meta_key Metadata key.
@@ -2409,11 +2242,8 @@ function wp_throttle_comment_flood($block, $time_lastcomment, $time_newcomment) 
  * @return int|bool The ID of the comment on success, false on failure.
  */
 function wp_new_comment( $commentdata ) {
-<<<<<<< HEAD
 	global $wpdb;
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	if ( isset( $commentdata['user_ID'] ) ) {
 		$commentdata['user_id'] = $commentdata['user_ID'] = (int) $commentdata['user_ID'];
 	}
@@ -2443,7 +2273,6 @@ function wp_new_comment( $commentdata ) {
 	$commentdata['comment_author_IP'] = preg_replace( '/[^0-9a-fA-F:., ]/', '',$_SERVER['REMOTE_ADDR'] );
 	$commentdata['comment_agent']     = isset( $_SERVER['HTTP_USER_AGENT'] ) ? substr( $_SERVER['HTTP_USER_AGENT'], 0, 254 ) : '';
 
-<<<<<<< HEAD
 	if ( empty( $commentdata['comment_date'] ) ) {
 		$commentdata['comment_date'] = current_time('mysql');
 	}
@@ -2451,10 +2280,6 @@ function wp_new_comment( $commentdata ) {
 	if ( empty( $commentdata['comment_date_gmt'] ) ) {
 		$commentdata['comment_date_gmt'] = current_time( 'mysql', 1 );
 	}
-=======
-	$commentdata['comment_date']     = current_time('mysql');
-	$commentdata['comment_date_gmt'] = current_time('mysql', 1);
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	$commentdata = wp_filter_comment($commentdata);
 
@@ -2462,7 +2287,6 @@ function wp_new_comment( $commentdata ) {
 
 	$comment_ID = wp_insert_comment($commentdata);
 	if ( ! $comment_ID ) {
-<<<<<<< HEAD
 		$fields = array( 'comment_author', 'comment_author_email', 'comment_author_url', 'comment_content' );
 
 		foreach( $fields as $field ) {
@@ -2479,9 +2303,6 @@ function wp_new_comment( $commentdata ) {
 		if ( ! $comment_ID ) {
 			return false;
 		}
-=======
-		return false;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -2599,15 +2420,12 @@ function wp_update_comment($commentarr) {
 	if ( empty( $comment ) ) {
 		return 0;
 	}
-<<<<<<< HEAD
 
 	// Make sure that the comment post ID is valid (if specified).
 	if ( isset( $commentarr['comment_post_ID'] ) && ! get_post( $commentarr['comment_post_ID'] ) ) {
 		return 0;
 	}
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	// Escape data pulled from DB.
 	$comment = wp_slash($comment);
 
@@ -2634,25 +2452,15 @@ function wp_update_comment($commentarr) {
 
 	if ( ! isset( $data['comment_approved'] ) ) {
 		$data['comment_approved'] = 1;
-<<<<<<< HEAD
 	} elseif ( 'hold' == $data['comment_approved'] ) {
 		$data['comment_approved'] = 0;
 	} elseif ( 'approve' == $data['comment_approved'] ) {
-=======
-	} else if ( 'hold' == $data['comment_approved'] ) {
-		$data['comment_approved'] = 0;
-	} else if ( 'approve' == $data['comment_approved'] ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$data['comment_approved'] = 1;
 	}
 
 	$comment_ID = $data['comment_ID'];
 	$comment_post_ID = $data['comment_post_ID'];
-<<<<<<< HEAD
 	$keys = array( 'comment_post_ID', 'comment_content', 'comment_author', 'comment_author_email', 'comment_approved', 'comment_karma', 'comment_author_url', 'comment_date', 'comment_date_gmt', 'comment_type', 'comment_parent', 'user_id' );
-=======
-	$keys = array( 'comment_content', 'comment_author', 'comment_author_email', 'comment_approved', 'comment_karma', 'comment_author_url', 'comment_date', 'comment_date_gmt', 'comment_parent' );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	$data = wp_array_slice_assoc( $data, $keys );
 	$rval = $wpdb->update( $wpdb->comments, $data, compact( 'comment_ID' ) );
 

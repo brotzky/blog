@@ -13,18 +13,12 @@
 }
 
 /* TinyMCE windows */
-<<<<<<< HEAD
 #mce-modal-block,
 #mce-modal-block.mce-fade {
 	opacity: 0.7;
 	filter: alpha(opacity=70);
 	-webkit-transition: none;
 	transition: none;
-=======
-#mce-modal-block.mce-in {
-	opacity: 0.7;
-	filter: alpha(opacity=70);
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .mce-window {
@@ -33,11 +27,8 @@
 	-webkit-box-shadow: 0 3px 6px rgba( 0, 0, 0, 0.3 );
 	box-shadow: 0 3px 6px rgba( 0, 0, 0, 0.3 );
 	-webkit-font-smoothing: subpixel-antialiased;
-<<<<<<< HEAD
 	-webkit-transition: none;
 	transition: none;
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .mce-window .mce-container-body.mce-abs-layout {
@@ -80,11 +71,7 @@
 }
 
 .mce-window .mce-window-head .mce-close:hover:before {
-<<<<<<< HEAD
 	color: #00a0d2;
-=======
-	color: #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .mce-window .mce-window-head .mce-dragh {
@@ -173,11 +160,7 @@ div.mce-toolbar-grp {
 }
 
 div.mce-inline-toolbar-grp {
-<<<<<<< HEAD
 	border: 1px solid #a0a5aa;
-=======
-	border: 1px solid #aaa;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
 	-webkit-box-shadow: 0 1px 3px rgba( 0, 0, 0, 0.15 );
@@ -187,10 +170,6 @@ div.mce-inline-toolbar-grp {
 	box-sizing: border-box;
 	margin-bottom: 8px;
 	position: absolute;
-<<<<<<< HEAD
-=======
-	visibility: hidden;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
@@ -198,11 +177,7 @@ div.mce-inline-toolbar-grp {
 	z-index: 100100; /* Same as the other TinyMCE "panels" */
 }
 
-<<<<<<< HEAD
 div.mce-inline-toolbar-grp > div.mce-stack-layout {
-=======
-div.mce-wp-image-toolbar > div.mce-stack-layout {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	padding: 1px;
 }
 
@@ -225,22 +200,14 @@ div.mce-inline-toolbar-grp:after {
 
 div.mce-inline-toolbar-grp.mce-arrow-up:before {
 	top: -18px;
-<<<<<<< HEAD
 	border-bottom-color: #a0a5aa;
-=======
-	border-bottom-color: #aaa;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	border-width: 9px;
 	margin-right: -9px;
 }
 
 div.mce-inline-toolbar-grp.mce-arrow-down:before {
 	bottom: -18px;
-<<<<<<< HEAD
 	border-top-color: #a0a5aa;
-=======
-	border-top-color: #aaa;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	border-width: 9px;
 	margin-right: -9px;
 }
@@ -294,13 +261,6 @@ div.mce-inline-toolbar-grp.mce-arrow-full > div {
 	overflow-x: auto;
 }
 
-<<<<<<< HEAD
-=======
-div.mce-inline-toolbar-grp-active {
-	visibility: visible;
-}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 div.mce-toolbar-grp > div {
 	padding: 3px;
 }
@@ -359,11 +319,7 @@ div.mce-path {
 .qt-dfw:focus {
 	background: #fafafa;
 	border-color: #999;
-<<<<<<< HEAD
 	color: #23282d;
-=======
-	color: #222;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 0 rgba( 0, 0, 0, 0.08 );
 	box-shadow: inset 0 1px 0 #fff, 0 1px 0 rgba( 0, 0, 0, 0.08 );
 	outline: none;
@@ -392,11 +348,7 @@ div.mce-path {
 #wp-fullscreen-buttons .mce-btn.mce-disabled:hover,
 .mce-toolbar .mce-btn-group .mce-btn.mce-disabled:focus,
 #wp-fullscreen-buttons .mce-btn.mce-disabled:focus {
-<<<<<<< HEAD
 	color: #a0a5aa;
-=======
-	color: #aaa;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	background: none;
 	border-color: #ddd;
 	text-shadow: 0 1px 0 #fff;
@@ -450,11 +402,7 @@ div.mce-path {
 
 .mce-toolbar .mce-btn-group .mce-btn.mce-listbox:hover {
     background-image: none;
-<<<<<<< HEAD
     border-color: #b4b9be;
-=======
-    border-color: #bbb;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .mce-toolbar .mce-btn-group .mce-btn.mce-listbox span {
@@ -478,20 +426,12 @@ div.mce-path {
 }
 
 .mce-panel .mce-btn:hover i.mce-caret {
-<<<<<<< HEAD
 	border-top-color: #32373c;
-=======
-	border-top-color: #333;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .mce-panel .mce-active i.mce-caret {
 	border-top: 0;
-<<<<<<< HEAD
 	border-bottom: 6px solid #32373c;
-=======
-	border-bottom: 6px solid #333;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	margin-top: 7px;
 }
 
@@ -518,11 +458,7 @@ div.mce-path {
 .mce-menu .mce-menu-item.mce-selected,
 .mce-menu .mce-menu-item:focus {
 	color: #000;
-<<<<<<< HEAD
 	background-color: #b4b9be;
-=======
-	background-color: #bbb;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	background-image: none;
 	-webkit-filter: none;
 	filter: none;
@@ -604,11 +540,7 @@ div.mce-menu .mce-menu-item-sep,
 .mce-window .mce-btn:focus {
 	background: #fafafa;
 	border-color: #999;
-<<<<<<< HEAD
 	color: #23282d;
-=======
-	color: #222;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .mce-window .mce-btn:focus {
@@ -623,21 +555,13 @@ div.mce-menu .mce-menu-item-sep,
 .mce-window .mce-btn:active {
 	background: #eee;
 	border-color: #999;
-<<<<<<< HEAD
 	color: #32373c;
-=======
-	color: #333;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-box-shadow: inset 0 2px 5px -3px rgba( 0, 0, 0, 0.5 );
 	box-shadow: inset 0 2px 5px -3px rgba( 0, 0, 0, 0.5 );
 }
 
 .mce-window .mce-btn.mce-disabled {
-<<<<<<< HEAD
 	color: #a0a5aa;
-=======
-	color: #aaa;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	border-color: #ddd;
 	background: #f7f7f7;
 	-webkit-box-shadow: none;
@@ -647,13 +571,8 @@ div.mce-menu .mce-menu-item-sep,
 }
 
 .mce-window .mce-btn.mce-primary {
-<<<<<<< HEAD
 	background: #00a0d2;
 	border-color: #0073aa;
-=======
-	background: #2ea2cc;
-	border-color: #0074a2;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-box-shadow: inset 0 1px 0 rgba( 120, 200, 230, 0.5), 0 1px 0 rgba( 0, 0, 0, 0.15 );
 	box-shadow: inset 0 1px 0 rgba( 120, 200, 230, 0.5 ), 0 1px 0 rgba( 0, 0, 0, 0.15 );
 	color: #fff;
@@ -663,11 +582,7 @@ div.mce-menu .mce-menu-item-sep,
 .mce-window .mce-btn.mce-primary:hover,
 .mce-window .mce-btn.mce-primary:focus {
 	background: #1e8cbe;
-<<<<<<< HEAD
 	border-color: #0073aa;
-=======
-	border-color: #0074a2;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	-webkit-box-shadow: inset 0 1px 0 rgba( 120, 200, 230, 0.6 );
 	box-shadow: inset 0 1px 0 rgba( 120, 200, 230, 0.6 );
 	color: #fff;
@@ -816,10 +731,7 @@ i.mce-i-wp-media-library,
 i.mce-i-ltr,
 i.mce-i-wp_page,
 i.mce-i-hr,
-<<<<<<< HEAD
 i.mce-i-wp_code,
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 i.mce-i-dashicon,
 .mce-close {
 	font: normal 20px/1 'dashicons';
@@ -969,7 +881,6 @@ i.mce-i-hr:before {
 	content: '\f158';
 }
 
-<<<<<<< HEAD
 i.mce-i-wp_code:before {
 	content: '\f475';
 }
@@ -983,12 +894,6 @@ i.mce-i-wp_code:before {
 	content: '\f221';
 }
 
-=======
-.mce-i-wp_code:before {
-	content: '\f475';
-}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 /* Editors */
 .wp-editor-wrap {
 	position: relative;
@@ -1068,11 +973,7 @@ i.mce-i-wp_code:before {
 		0 0 0 1px #5b9dd9,
 		0 0 2px 1px rgba(30, 140, 190, .8);
 	outline: none;
-<<<<<<< HEAD
 	color: #23282d;
-=======
-	color: #222;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .wp-switch-editor:active,
@@ -1288,10 +1189,6 @@ i.mce-i-wp_code:before {
 	-webkit-box-shadow: 0 3px 6px rgba( 0, 0, 0, 0.3 );
 	box-shadow: 0 3px 6px rgba( 0, 0, 0, 0.3 );
 	width: 500px;
-<<<<<<< HEAD
-=======
-	height: 250px;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	overflow: hidden;
 	margin-right: -250px;
 	margin-top: -125px;
@@ -1327,7 +1224,6 @@ i.mce-i-wp_code:before {
 	margin-top: -250px;
 }
 
-<<<<<<< HEAD
 #wp-link-wrap .wp-link-text-field {
 	display: none;
 }
@@ -1336,8 +1232,6 @@ i.mce-i-wp_code:before {
 	display: block;
 }
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 #link-modal-title {
 	background: #fcfcfc;
 	border-bottom: 1px solid #dfdfdf;
@@ -1378,11 +1272,7 @@ i.mce-i-wp_code:before {
 
 #wp-link-close:hover,
 #wp-link-close:focus {
-<<<<<<< HEAD
 	color: #00a0d2;
-=======
-	color: #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 #wp-link-close:focus {
@@ -1400,10 +1290,7 @@ i.mce-i-wp_code:before {
 }
 
 #wp-link-wrap.search-panel-visible #link-selector {
-<<<<<<< HEAD
 	-webkit-overflow-scrolling: touch;
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	padding: 0 16px;
 	position: absolute;
 	top: 36px;
@@ -1488,12 +1375,7 @@ i.mce-i-wp_code:before {
 }
 
 #wp-link .link-search-wrapper .spinner {
-<<<<<<< HEAD
 	margin-top: 5px;
-=======
-	display: none;
-	vertical-align: text-bottom;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 #wp-link .link-target {
@@ -1516,13 +1398,10 @@ i.mce-i-wp_code:before {
 	right: 16px;
 	left: 16px;
 	bottom: 16px;
-<<<<<<< HEAD
 	top: 172px;
 }
 
 .has-text-field #wp-link .query-results {
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	top: 205px;
 }
 
@@ -1530,11 +1409,7 @@ i.mce-i-wp_code:before {
 	clear: both;
 	margin-bottom: 0;
 	border-bottom: 1px solid #f1f1f1;
-<<<<<<< HEAD
 	color: #32373c;
-=======
-	color: #333;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	padding: 4px 10px 4px 6px;
 	cursor: pointer;
 	position: relative;
@@ -1551,11 +1426,7 @@ i.mce-i-wp_code:before {
 #wp-link .query-notice .query-notice-hint {
 	display: block;
 	padding: 6px;
-<<<<<<< HEAD
 	border-right: 4px solid #00a0d2;
-=======
-	border-right: 4px solid #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 #wp-link .unselectable.no-matches-found {
@@ -1586,20 +1457,12 @@ i.mce-i-wp_code:before {
 #wp-link li.unselectable:hover {
 	background: #fff;
 	cursor: auto;
-<<<<<<< HEAD
 	color: #32373c;
-=======
-	color: #333;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 #wp-link li.selected {
 	background: #ddd;
-<<<<<<< HEAD
 	color: #32373c;
-=======
-	color: #333;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 #wp-link li.selected .item-title {
@@ -1615,10 +1478,7 @@ i.mce-i-wp_code:before {
 	width: 80%;
 	width: -webkit-calc(100% - 68px);
 	width: calc(100% - 68px);
-<<<<<<< HEAD
 	word-wrap: break-word;
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 #wp-link .item-info {
@@ -1644,15 +1504,6 @@ i.mce-i-wp_code:before {
 	padding: 10px 0;
 }
 
-<<<<<<< HEAD
-=======
-#wp-link .river-waiting .spinner {
-	margin: 0 auto;
-	display: block;
-	float: none;
-}
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 #wp-link .submitbox {
 	padding: 8px 16px;
 	background: #fcfcfc;
@@ -1680,21 +1531,14 @@ i.mce-i-wp_code:before {
 
 @media screen and ( max-width: 782px ) {
 	#wp-link-wrap {
-<<<<<<< HEAD
-=======
-		height: 280px;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		margin-top: -140px;
 	}
 
 	#wp-link-wrap.search-panel-visible .query-results {
-<<<<<<< HEAD
 		top: 195px;
 	}
 
 	#wp-link-wrap.search-panel-visible.has-text-field .query-results {
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		top: 235px;
 	}
 
@@ -1850,11 +1694,7 @@ i.mce-i-wp_code:before {
 
 .clearlooks2 .mceTop span,
 .clearlooks2 .mceFocus .mceTop span {
-<<<<<<< HEAD
 	color: #23282d;
-=======
-	color: #222;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .clearlooks2 .mceClose:before {
@@ -1862,11 +1702,7 @@ i.mce-i-wp_code:before {
 }
 
 .clearlooks2 .mceClose:hover:before {
-<<<<<<< HEAD
 	color: #00a0d2;
-=======
-	color: #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 */
 /* Distraction-Free Writing mode
@@ -1981,11 +1817,7 @@ i.mce-i-wp_code:before {
 }
 
 #wp-fullscreen-tagline {
-<<<<<<< HEAD
 	color: #82878c;
-=======
-	color: #888;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	font-size: 18px;
 	float: left;
 	padding: 4px 0 0;
@@ -2069,11 +1901,7 @@ i.mce-i-wp_code:before {
     white-space: nowrap;
     width: auto;
     background: none;
-<<<<<<< HEAD
 	color: #32373c;
-=======
-	color: #333333;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
     cursor: pointer;
     font-size: 18px;
     line-height: 20px;
@@ -2289,20 +2117,12 @@ i.mce-i-wp_code:before {
 	font-family: Tahoma, sans-serif;
 }
 
-<<<<<<< HEAD
 /* rtl:ignore */
-=======
-/* @noflip */
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .mce-rtl .mce-flow-layout .mce-flow-layout-item > div {
 	direction: rtl;
 }
 
-<<<<<<< HEAD
 /* rtl:ignore */
-=======
-/* @noflip */
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 .mce-rtl .mce-listbox i.mce-caret {
 	left: 6px;
 }
@@ -2314,10 +2134,6 @@ html:lang(he-il) .rtl .quicktags-toolbar input  {
 
 /* HiDPI */
 @media print,
-<<<<<<< HEAD
-=======
-  (-o-min-device-pixel-ratio: 5/4),
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
   (-webkit-min-device-pixel-ratio: 1.25),
   (min-resolution: 120dpi) {
 	.wp-media-buttons .add_media span.wp-media-buttons-icon,

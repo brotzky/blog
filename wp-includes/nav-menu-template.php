@@ -673,7 +673,3 @@ function _nav_menu_item_id_use_once( $id, $item ) {
 	$_used_ids[] = $item->ID;
 	return $id;
 }
-<<<<<<< HEAD
-=======
-add_filter( 'nav_menu_item_id', '_nav_menu_item_id_use_once', 10, 2 );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

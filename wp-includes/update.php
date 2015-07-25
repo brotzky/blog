@@ -659,10 +659,6 @@ function wp_clean_update_cache() {
 	} else {
 		delete_site_transient( 'update_plugins' );
 	}
-<<<<<<< HEAD
-=======
-	wp_clean_plugins_cache();
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	wp_clean_themes_cache();
 	delete_site_transient( 'update_core' );
 }
@@ -693,8 +689,4 @@ add_action( 'update_option_WPLANG', 'wp_clean_update_cache' , 10, 0 );
 
 add_action( 'wp_maybe_auto_update', 'wp_maybe_auto_update' );
 
-<<<<<<< HEAD
 add_action( 'init', 'wp_schedule_update_checks' );
-=======
-add_action('init', 'wp_schedule_update_checks');
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135

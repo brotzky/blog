@@ -363,17 +363,11 @@ class WP_Admin_Bar {
 		}
 
 		?>
-<<<<<<< HEAD
 		<div id="wpadminbar" class="<?php echo $class; ?>">
 			<?php if ( ! is_admin() ) { ?>
 				<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1"><?php _e( 'Skip to toolbar' ); ?></a>
 			<?php } ?>
 			<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="<?php esc_attr_e( 'Toolbar' ); ?>" tabindex="0">
-=======
-		<div id="wpadminbar" class="<?php echo $class; ?>" role="navigation">
-			<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1"><?php _e('Skip to toolbar'); ?></a>
-			<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="<?php esc_attr_e('Top navigation toolbar.'); ?>" tabindex="0">
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				<?php foreach ( $root->children as $group ) {
 					$this->_render_group( $group );
 				} ?>

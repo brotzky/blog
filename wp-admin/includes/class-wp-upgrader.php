@@ -263,13 +263,8 @@ class WP_Upgrader {
 				$wp_filesystem->delete($upgrade_folder . $file['name'], true);
 		}
 
-<<<<<<< HEAD
 		// We need a working directory - Strip off any .tmp or .zip suffixes
 		$working_dir = $upgrade_folder . basename( basename( $package, '.tmp' ), '.zip' );
-=======
-		//We need a working directory
-		$working_dir = $upgrade_folder . basename($package, '.zip');
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		// Clean up working directory
 		if ( $wp_filesystem->is_dir($working_dir) )
@@ -436,11 +431,7 @@ class WP_Upgrader {
 
 			if ( is_wp_error($removed) ) {
 				return $removed;
-<<<<<<< HEAD
 			} elseif ( ! $removed ) {
-=======
-			} else if ( ! $removed ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				return new WP_Error('remove_old_failed', $this->strings['remove_old_failed']);
 			}
 		} elseif ( $args['abort_if_destination_exists'] && $wp_filesystem->exists($remote_destination) ) {
@@ -478,11 +469,7 @@ class WP_Upgrader {
 			$destination_name = '';
 		}
 
-<<<<<<< HEAD
 		$this->result = compact( 'source', 'source_files', 'destination', 'destination_name', 'local_destination', 'remote_destination', 'clear_destination' );
-=======
-		$this->result = compact('local_source', 'source', 'source_name', 'source_files', 'destination', 'destination_name', 'local_destination', 'remote_destination', 'clear_destination', 'delete_source_dir');
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 		/**
 		 * Filter the install response after the installation has finished.
@@ -650,11 +637,7 @@ class WP_Upgrader {
 			$maintenance_string = '<?php $upgrading = ' . time() . '; ?>';
 			$wp_filesystem->delete($file);
 			$wp_filesystem->put_contents($file, $maintenance_string, FS_CHMOD_FILE);
-<<<<<<< HEAD
 		} elseif ( ! $enable && $wp_filesystem->exists( $file ) ) {
-=======
-		} else if ( !$enable && $wp_filesystem->exists($file) ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$this->skin->feedback('maintenance_end');
 			$wp_filesystem->delete($file);
 		}
@@ -702,10 +685,7 @@ class Plugin_Upgrader extends WP_Upgrader {
 		$this->strings['remove_old_failed'] = __('Could not remove the old plugin.');
 		$this->strings['process_failed'] = __('Plugin update failed.');
 		$this->strings['process_success'] = __('Plugin updated successfully.');
-<<<<<<< HEAD
 		$this->strings['process_bulk_success'] = __('Plugins updated successfully.');
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -845,13 +825,8 @@ class Plugin_Upgrader extends WP_Upgrader {
 	 * @since 2.8.0
 	 * @since 3.7.0 The `$args` parameter was added, making clearing the plugin update cache optional.
 	 *
-<<<<<<< HEAD
 	 * @param array $plugins Array of the basename paths of the plugins' main files.
 	 * @param array $args {
-=======
-	 * @param string $plugins Array of the basename paths of the plugins' main files.
-	 * @param array  $args {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 *     Optional. Other arguments for upgrading several plugins at once. Default empty array.
 	 *
 	 *     @type bool $clear_update_cache Whether to clear the plugin updates cache if successful.
@@ -1377,13 +1352,8 @@ class Theme_Upgrader extends WP_Upgrader {
 	 * @since 3.0.0
 	 * @since 3.7.0 The `$args` parameter was added, making clearing the update cache optional.
 	 *
-<<<<<<< HEAD
 	 * @param array $themes The theme slugs.
 	 * @param array $args {
-=======
-	 * @param string $themes The theme slugs.
-	 * @param array  $args {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 *     Optional. Other arguments for upgrading several themes at once. Default empty array.
 	 *
 	 *     @type bool $clear_update_cache Whether to clear the update cache if successful.
@@ -1927,11 +1897,7 @@ class Language_Pack_Upgrader extends WP_Upgrader {
 		switch ( $update->type ) {
 			case 'core':
 				return 'WordPress'; // Not translated
-<<<<<<< HEAD
 
-=======
-				break;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			case 'theme':
 				$theme = wp_get_theme( $update->slug );
 				if ( $theme->exists() )
@@ -1939,11 +1905,7 @@ class Language_Pack_Upgrader extends WP_Upgrader {
 				break;
 			case 'plugin':
 				$plugin_data = get_plugins( '/' . $update->slug );
-<<<<<<< HEAD
 				$plugin_data = reset( $plugin_data );
-=======
-				$plugin_data = array_shift( $plugin_data );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				if ( $plugin_data )
 					return $plugin_data['Name'];
 				break;
@@ -3204,13 +3166,8 @@ class WP_Automatic_Updater {
 
 		$site_title = wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );
 		if ( $failures ) {
-<<<<<<< HEAD
 			$body[] = trim( __(
 "BETA TESTING?
-=======
-			$body[] = trim( __( "
-BETA TESTING?
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 =============
 
 This debugging email is sent when you are using a development version of WordPress.
@@ -3227,13 +3184,8 @@ Thanks! -- The WordPress Team" ) );
 			$subject = sprintf( __( '[%s] Background updates have finished' ), $site_title );
 		}
 
-<<<<<<< HEAD
 		$body[] = trim( __(
 'UPDATE LOG
-=======
-		$body[] = trim( __( '
-UPDATE LOG
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 ==========' ) );
 		$body[] = '';
 

@@ -406,10 +406,7 @@ function search_theme_directories( $force = false ) {
 	$found_themes = array();
 
 	$wp_theme_directories = (array) $wp_theme_directories;
-<<<<<<< HEAD
 	$relative_theme_roots = array();
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	// Set up maybe-relative, maybe-absolute array of theme directories.
 	// We always want to return absolute, but we need to cache relative
@@ -679,10 +676,6 @@ function preview_theme() {
 
 	ob_start( 'preview_theme_ob_filter' );
 }
-<<<<<<< HEAD
-=======
-add_action('setup_theme', 'preview_theme');
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 /**
  * Private function to modify the current template when previewing a theme
@@ -941,11 +934,7 @@ function get_theme_mod( $name, $default = false ) {
  * @since 2.1.0
  *
  * @param string $name Theme modification name.
-<<<<<<< HEAD
  * @param mixed  $value theme modification value.
-=======
- * @param string $value theme modification value.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function set_theme_mod( $name, $value ) {
 	$mods = get_theme_mods();
@@ -1046,7 +1035,6 @@ function display_header_text() {
 }
 
 /**
-<<<<<<< HEAD
  * Check whether a header image is set or not.
  *
  * @since 4.2.0
@@ -1060,17 +1048,11 @@ function has_header_image() {
 }
 
 /**
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * Retrieve header image for custom header.
  *
  * @since 2.1.0
  *
-<<<<<<< HEAD
  * @return string|false
-=======
- * @return string
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function get_header_image() {
 	$url = get_theme_mod( 'header_image', get_theme_support( 'custom-header', 'default-image' ) );
@@ -1173,14 +1155,10 @@ function is_random_header_image( $type = 'any' ) {
  * @since 2.1.0
  */
 function header_image() {
-<<<<<<< HEAD
 	$image = get_header_image();
 	if ( $image ) {
 		echo esc_url( $image );
 	}
-=======
-	echo esc_url( get_header_image() );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
@@ -1700,10 +1678,6 @@ function _custom_header_background_just_in_time() {
 		}
 	}
 }
-<<<<<<< HEAD
-=======
-add_action( 'wp_loaded', '_custom_header_background_just_in_time' );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 /**
  * Gets the theme support arguments passed when registering that support
@@ -1912,11 +1886,6 @@ function _delete_attachment_theme_mod( $id ) {
 		remove_theme_mod( 'background_image' );
 }
 
-<<<<<<< HEAD
-=======
-add_action( 'delete_attachment', '_delete_attachment_theme_mod' );
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 /**
  * Checks if a theme has been changed and runs 'after_switch_theme' hook on the next WP load
  *
@@ -1973,10 +1942,6 @@ function _wp_customize_include() {
 	// Init Customize class
 	$GLOBALS['wp_customize'] = new WP_Customize_Manager;
 }
-<<<<<<< HEAD
-=======
-add_action( 'plugins_loaded', '_wp_customize_include' );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 /**
  * Adds settings for the customize-loader script.
@@ -2000,12 +1965,8 @@ function _wp_customize_loader_settings() {
 		'isCrossDomain' => $cross_domain,
 		'browser'       => $browser,
 		'l10n'          => array(
-<<<<<<< HEAD
 			'saveAlert'       => __( 'The changes you made will be lost if you navigate away from this page.' ),
 			'mainIframeTitle' => __( 'Customizer' ),
-=======
-			'saveAlert' => __( 'The changes you made will be lost if you navigate away from this page.' ),
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		),
 	);
 
@@ -2017,10 +1978,6 @@ function _wp_customize_loader_settings() {
 
 	$wp_scripts->add_data( 'customize-loader', 'data', $script );
 }
-<<<<<<< HEAD
-=======
-add_action( 'admin_enqueue_scripts', '_wp_customize_loader_settings' );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 /**
  * Returns a URL to load the Customizer.
@@ -2087,9 +2044,5 @@ function wp_customize_support_script() {
 function is_customize_preview() {
 	global $wp_customize;
 
-<<<<<<< HEAD
 	return ( $wp_customize instanceof WP_Customize_Manager ) && $wp_customize->is_preview();
-=======
-	return is_a( $wp_customize, 'WP_Customize_Manager' ) && $wp_customize->is_preview();
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }

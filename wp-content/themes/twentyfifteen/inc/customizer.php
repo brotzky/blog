@@ -327,12 +327,8 @@ function twentyfifteen_get_color_scheme_css( $colors ) {
 	.hentry,
 	.page-header,
 	.page-content,
-<<<<<<< HEAD
 	.comments-area,
 	.widecolumn {
-=======
-	.comments-area {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		background-color: {$colors['box_background_color']};
 	}
 
@@ -463,13 +459,9 @@ function twentyfifteen_get_color_scheme_css( $colors ) {
 	.site-info a,
 	.wp-caption-text,
 	.gallery-caption,
-<<<<<<< HEAD
 	.comment-list .reply a,
 	.widecolumn label,
 	.widecolumn .mu_register label {
-=======
-	.comment-list .reply a {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		color: {$colors['textcolor']}; /* Fallback for IE7 and IE8 */
 		color: {$colors['secondary_textcolor']};
 	}

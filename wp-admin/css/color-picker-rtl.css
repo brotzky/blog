@@ -51,22 +51,13 @@
 .wp-color-result:focus {
 	background: #fafafa;
 	border-color: #999;
-<<<<<<< HEAD
 	color: #23282d;
-=======
-	color: #222;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .wp-color-result:hover:after,
 .wp-color-result:focus:after {
-<<<<<<< HEAD
 	color: #23282d;
 	border-color: #a0a5aa;
-=======
-	color: #222;
-	border-color: #aaa;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	border-right: 1px solid #999;
 }
 

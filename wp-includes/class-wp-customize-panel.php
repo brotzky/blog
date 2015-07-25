@@ -1,6 +1,5 @@
 <?php
 /**
-<<<<<<< HEAD
  * WordPress Customize Panel classes
  *
  * @package WordPress
@@ -16,15 +15,6 @@
  * @since 4.0.0
  *
  * @see WP_Customize_Manager
-=======
- * Customize Panel Class.
- *
- * A UI container for sections, managed by the WP_Customize_Manager.
- *
- * @package WordPress
- * @subpackage Customize
- * @since 4.0.0
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 class WP_Customize_Panel {
 
@@ -172,11 +162,6 @@ class WP_Customize_Panel {
 		$this->instance_number = self::$instance_count;
 
 		$this->sections = array(); // Users cannot customize the $sections array.
-<<<<<<< HEAD
-=======
-
-		return $this;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	}
 
 	/**
@@ -187,11 +172,7 @@ class WP_Customize_Panel {
 	 *
 	 * @return bool Whether the panel is active to the current preview.
 	 */
-<<<<<<< HEAD
 	final public function active() {
-=======
-	public final function active() {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$panel = $this;
 		$active = call_user_func( $this->active_callback, $this );
 
@@ -246,11 +227,7 @@ class WP_Customize_Panel {
 	 *
 	 * @return bool False if theme doesn't support the panel or the user doesn't have the capability.
 	 */
-<<<<<<< HEAD
 	final public function check_capabilities() {
-=======
-	public final function check_capabilities() {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		if ( $this->capability && ! call_user_func_array( 'current_user_can', (array) $this->capability ) ) {
 			return false;
 		}
@@ -269,11 +246,7 @@ class WP_Customize_Panel {
 	 *
 	 * @return string Content for the panel.
 	 */
-<<<<<<< HEAD
 	final public function get_content() {
-=======
-	public final function get_content() {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		ob_start();
 		$this->maybe_render();
 		$template = trim( ob_get_contents() );
@@ -286,11 +259,7 @@ class WP_Customize_Panel {
 	 *
 	 * @since 4.0.0
 	 */
-<<<<<<< HEAD
 	final public function maybe_render() {
-=======
-	public final function maybe_render() {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		if ( ! $this->check_capabilities() ) {
 			return;
 		}

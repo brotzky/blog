@@ -49,11 +49,7 @@
 
 .deleting .widget-title,
 .deleting .widget-top a.widget-action:after {
-<<<<<<< HEAD
 	color: #a0a5aa;
-=======
-	color: #aaa;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /* Widget Dragging Helpers */
@@ -66,11 +62,7 @@
 }
 
 .widget-placeholder {
-<<<<<<< HEAD
 	border: 1px dashed #b4b9be;
-=======
-	border: 1px dashed #bbb;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	margin: 0 auto 10px;
 	height: 45px;
 	width: 100%;
@@ -279,15 +271,10 @@ div#widgets-right .closed .widgets-sortables {
 }
 
 .sidebar-name .spinner {
-<<<<<<< HEAD
 	float: none;
 	position: relative;
 	top: -2px;
 	margin: -5px 5px;
-=======
-	margin: -5px 5px;
-	float: none;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /* Dragging a widget over a closed sidebar */
@@ -363,6 +350,10 @@ div#widgets-right .closed .widgets-sortables {
 	display: none;
 }
 
+.js .widgets-holder-wrap.closed .widget.ui-sortable-helper {
+	display: block;
+}
+
 /* Hide Widget Settings by Default */
 .widget-inside,
 .widget-description {
@@ -384,11 +375,7 @@ div#widgets-right .closed .widgets-sortables {
 }
 
 .js #removing-widget {
-<<<<<<< HEAD
 	color: #00a0d2;
-=======
-	color: #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 .widget-control-noform,
@@ -494,11 +481,7 @@ div#widgets-right .widget-top:hover,
 }
 
 .widgets-chooser li.widgets-chooser-selected {
-<<<<<<< HEAD
 	background: #00a0d2;
-=======
-	background: #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	color: #fff;
 }
 
@@ -525,6 +508,10 @@ div#widgets-right .widget-top:hover,
 
 #available-widgets .widget .widget-top {
 	cursor: pointer;
+}
+
+#available-widgets .widget.ui-draggable-dragging .widget-top {
+	cursor: move;
 }
 
 /* =Media Queries

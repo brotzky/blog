@@ -57,11 +57,7 @@ function install_theme_search_form( $type_selector = true ) {
 	if ( ! $type_selector )
 		echo '<p class="install-help">' . __( 'Search for themes by keyword.' ) . '</p>';
 	?>
-<<<<<<< HEAD
 <form id="search-themes" method="get">
-=======
-<form id="search-themes" method="get" action="">
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	<input type="hidden" name="tab" value="search" />
 	<?php if ( $type_selector ) : ?>
 	<label class="screen-reader-text" for="typeselector"><?php _e('Type of search'); ?></label>
@@ -103,11 +99,7 @@ function install_themes_dashboard() {
 <h4><?php _e('Feature Filter') ?></h4>
 <p class="install-help"><?php _e( 'Find a theme based on specific features.' ); ?></p>
 
-<<<<<<< HEAD
 <form method="get">
-=======
-<form method="get" action="">
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	<input type="hidden" name="tab" value="search" />
 	<?php
 	$feature_list = get_theme_feature_list();

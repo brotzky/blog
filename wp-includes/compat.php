@@ -13,7 +13,6 @@ if ( !function_exists('_') ) {
 	}
 }
 
-<<<<<<< HEAD
 /**
  * Returns whether PCRE/u (PCRE_UTF8 modifier) is available for use.
  *
@@ -149,25 +148,6 @@ function _mb_strlen( $str, $encoding = null ) {
 
 	// Fencepost: preg_split() always returns one extra item in the array
 	return --$count;
-=======
-if ( !function_exists('mb_substr') ):
-	function mb_substr( $str, $start, $length=null, $encoding=null ) {
-		return _mb_substr($str, $start, $length, $encoding);
-	}
-endif;
-
-function _mb_substr( $str, $start, $length=null, $encoding=null ) {
-	// the solution below, works only for utf-8, so in case of a different
-	// charset, just use built-in substr
-	$charset = get_option( 'blog_charset' );
-	if ( !in_array( $charset, array('utf8', 'utf-8', 'UTF8', 'UTF-8') ) ) {
-		return is_null( $length )? substr( $str, $start ) : substr( $str, $start, $length);
-	}
-	// use the regex unicode support to separate the UTF-8 characters into an array
-	preg_match_all( '/./us', $str, $match );
-	$chars = is_null( $length )? array_slice( $match[0], $start ) : array_slice( $match[0], $start, $length );
-	return implode( '', $chars );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 if ( !function_exists('hash_hmac') ):
@@ -203,11 +183,7 @@ if ( !function_exists('json_encode') ) {
 	function json_encode( $string ) {
 		global $wp_json;
 
-<<<<<<< HEAD
 		if ( ! ( $wp_json instanceof Services_JSON ) ) {
-=======
-		if ( !is_a($wp_json, 'Services_JSON') ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			require_once( ABSPATH . WPINC . '/class-json.php' );
 			$wp_json = new Services_JSON();
 		}
@@ -220,11 +196,7 @@ if ( !function_exists('json_decode') ) {
 	function json_decode( $string, $assoc_array = false ) {
 		global $wp_json;
 
-<<<<<<< HEAD
 		if ( ! ($wp_json instanceof Services_JSON ) ) {
-=======
-		if ( !is_a($wp_json, 'Services_JSON') ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			require_once( ABSPATH . WPINC . '/class-json.php' );
 			$wp_json = new Services_JSON();
 		}

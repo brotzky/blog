@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 /* global plugininstallL10n, tb_click */
-=======
-/* global plugininstallL10n, tb_click, confirm */
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 /* Plugin Browser Thickbox related JS*/
 var tb_position;
@@ -45,11 +41,7 @@ jQuery( document ).ready( function( $ ) {
 	$( '.plugin-card, .plugins .column-description' ).on( 'click', 'a.thickbox', function() {
 		tb_click.call(this);
 
-<<<<<<< HEAD
 		$('#TB_title').css({'background-color':'#23282d','color':'#cfcfcf'});
-=======
-		$('#TB_title').css({'background-color':'#222','color':'#cfcfcf'});
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$('#TB_ajaxWindowTitle').html( '<strong>' + plugininstallL10n.plugin_information + '</strong>&nbsp;' + $(this).data( 'title' ) );
 		$('#TB_iframeContent').attr( 'title', plugininstallL10n.plugin_information + ' ' + $(this).data( 'title' ) );
 		$('#TB_closeWindowButton').focus();
@@ -77,11 +69,4 @@ jQuery( document ).ready( function( $ ) {
 		$( '#section-holder div.section' ).hide(); // Hide 'em all.
 		$( '#section-' + tab ).show();
 	});
-<<<<<<< HEAD
-=======
-
-	$( 'a.install-now' ).click( function() {
-		return confirm( plugininstallL10n.ays );
-	});
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 });

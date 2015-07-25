@@ -111,11 +111,6 @@ class WP_Links_List_Table extends WP_List_Table {
 	public function display_rows() {
 		global $cat_id;
 
-<<<<<<< HEAD
-=======
-		$alt = 0;
-
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		foreach ( $this->items as $link ) {
 			$link = sanitize_bookmark( $link );
 			$link->link_name = esc_attr( $link->link_name );
@@ -125,18 +120,10 @@ class WP_Links_List_Table extends WP_List_Table {
 
 			$visible = ( $link->link_visible == 'Y' ) ? __( 'Yes' ) : __( 'No' );
 			$rating  = $link->link_rating;
-<<<<<<< HEAD
 
 			$edit_link = get_edit_bookmark_link( $link );
 ?>
 		<tr id="link-<?php echo $link->link_id; ?>">
-=======
-			$style = ( $alt++ % 2 ) ? '' : ' class="alternate"';
-
-			$edit_link = get_edit_bookmark_link( $link );
-?>
-		<tr id="link-<?php echo $link->link_id; ?>" <?php echo $style; ?>>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <?php
 
 			list( $columns, $hidden ) = $this->get_column_info();

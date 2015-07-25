@@ -441,11 +441,7 @@ function wp_update_nav_menu_item( $menu_id = 0, $menu_item_db_id = 0, $menu_item
 	 *
 	 * @since 3.0.0
 	 *
-<<<<<<< HEAD
 	 * @see wp_update_nav_menu_item()
-=======
-	 * @see wp_update_nav_menu_items()
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 *
 	 * @param int   $menu_id         ID of the updated menu.
 	 * @param int   $menu_item_db_id ID of the updated menu item.
@@ -692,11 +688,7 @@ function wp_setup_nav_menu_item( $menu_item ) {
 				$menu_item->title = '' == $menu_item->post_title ? $original_title : $menu_item->post_title;
 
 			} else {
-<<<<<<< HEAD
 				$menu_item->type_label = __('Custom Link');
-=======
-				$menu_item->type_label = __('Custom');
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				$menu_item->title = $menu_item->post_title;
 				$menu_item->url = empty( $menu_item->url ) ? get_post_meta( $menu_item->ID, '_menu_item_url', true ) : $menu_item->url;
 			}
@@ -814,11 +806,7 @@ function wp_get_associated_nav_menu_items( $object_id = 0, $object_type = 'post_
 				'post_type' == $menu_item_type
 			) {
 				$menu_item_ids[] = (int) $menu_item->ID;
-<<<<<<< HEAD
 			} elseif (
-=======
-			} else if (
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				'taxonomy' == $object_type &&
 				'taxonomy' == $menu_item_type &&
 				get_post_meta( $menu_item->ID, '_menu_item_object', true ) == $taxonomy

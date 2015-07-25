@@ -444,12 +444,8 @@
 	content: "\f163";
 }
 
-<<<<<<< HEAD
 .dashicons-exerpt-view:before, /* Misspelled. Use .dashicons-excerpt-view instead. */
 .dashicons-excerpt-view:before {
-=======
-.dashicons-exerpt-view:before {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	content: "\f164";
 }
 

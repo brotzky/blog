@@ -18,10 +18,6 @@
 	<!--[if lt IE 9]>
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
 	<![endif]-->
-<<<<<<< HEAD
-=======
-	<script>(function(){document.documentElement.className='js'})();</script>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	<?php wp_head(); ?>
 </head>
 

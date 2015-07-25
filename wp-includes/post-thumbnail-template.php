@@ -2,13 +2,8 @@
 /**
  * WordPress Post Thumbnail Template Functions.
  *
-<<<<<<< HEAD
  * Support for post thumbnails.
  * Theme's functions.php must call add_theme_support( 'post-thumbnails' ) to use these.
-=======
- * Support for post thumbnails
- * Themes function.php must call add_theme_support( 'post-thumbnails' ) to use these.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  *
  * @package WordPress
  * @subpackage Template
@@ -40,7 +35,6 @@ function get_post_thumbnail_id( $post_id = null ) {
 }
 
 /**
-<<<<<<< HEAD
  * Display the post thumbnail.
  *
  * When a theme adds 'post-thumbnail' support, a special 'post-thumbnail' image size
@@ -57,14 +51,6 @@ function get_post_thumbnail_id( $post_id = null ) {
  * @param string|array $size Optional. Registered image size to use, or flat array of height
  *                           and width values. Default 'post-thumbnail'.
  * @param string|array $attr Optional. Query string or array of attributes. Default empty.
-=======
- * Display Post Thumbnail.
- *
- * @since 2.9.0
- *
- * @param string|array $size Optional. Image size. Defaults to 'post-thumbnail', which theme sets using set_post_thumbnail_size( $width, $height, $crop_flag );.
- * @param string|array $attr Optional. Query string or array of attributes.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function the_post_thumbnail( $size = 'post-thumbnail', $attr = '' ) {
 	echo get_the_post_thumbnail( null, $size, $attr );
@@ -98,7 +84,6 @@ function update_post_thumbnail_cache( $wp_query = null ) {
 }
 
 /**
-<<<<<<< HEAD
  * Retrieve the post thumbnail.
  *
  * When a theme adds 'post-thumbnail' support, a special 'post-thumbnail' image size
@@ -114,15 +99,6 @@ function update_post_thumbnail_cache( $wp_query = null ) {
  * @param string|array $size Optional. Registered image size to use, or flat array of height
  *                           and width values. Default 'post-thumbnail'.
  * @param string|array $attr Optional. Query string or array of attributes. Default empty.
-=======
- * Retrieve Post Thumbnail.
- *
- * @since 2.9.0
- *
- * @param int $post_id Optional. Post ID.
- * @param string $size Optional. Image size. Defaults to 'post-thumbnail'.
- * @param string|array $attr Optional. Query string or array of attributes.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  */
 function get_the_post_thumbnail( $post_id = null, $size = 'post-thumbnail', $attr = '' ) {
 	$post_id = ( null === $post_id ) ? get_the_ID() : $post_id;

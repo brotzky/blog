@@ -16,20 +16,12 @@ body {
 }
 
 a {
-<<<<<<< HEAD
 	color: #0073aa;
-=======
-	color: #0074a2;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	text-decoration: none;
 }
 
 a:hover {
-<<<<<<< HEAD
 	color: #00a0d2;
-=======
-	color: #2ea2cc;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 h1 {
@@ -245,11 +237,7 @@ submit {
 	background-color: #ffebe8;
 }
 
-<<<<<<< HEAD
 /* rtl:ignore */
-=======
-/* @noflip */
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 #dbname,
 #uname,
 #pwd,
@@ -345,11 +333,7 @@ body.language-chooser {
 	display: block;
 	border: 1px solid #ddd;
 	background-color: #fff;
-<<<<<<< HEAD
 	color: #32373c;
-=======
-	color: #333;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	font-size: 16px;
 	font-family: Arial, sans-serif;
 	font-weight: normal;
@@ -394,10 +378,6 @@ body.language-chooser {
  * HiDPI Displays
  */
 @media print,
-<<<<<<< HEAD
-=======
-  (-o-min-device-pixel-ratio: 5/4),
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
   (-webkit-min-device-pixel-ratio: 1.25),
   (min-resolution: 120dpi) {
 

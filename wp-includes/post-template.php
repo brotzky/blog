@@ -129,11 +129,7 @@ function get_the_title( $post = 0 ) {
 			 */
 			$protected_title_format = apply_filters( 'protected_title_format', __( 'Protected: %s' ), $post );
 			$title = sprintf( $protected_title_format, $title );
-<<<<<<< HEAD
 		} elseif ( isset( $post->post_status ) && 'private' == $post->post_status ) {
-=======
-		} else if ( isset( $post->post_status ) && 'private' == $post->post_status ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 			/**
 			 * Filter the text prepended to the post title of private posts.
@@ -176,7 +172,6 @@ function get_the_title( $post = 0 ) {
  * @param int|WP_Post $id Optional. Post ID or post object.
  */
 function the_guid( $id = 0 ) {
-<<<<<<< HEAD
 	/**
 	 * Filter the escaped Global Unique Identifier (guid) of the post.
 	 *
@@ -187,9 +182,6 @@ function the_guid( $id = 0 ) {
 	 * @param string $post_guid Escaped Global Unique Identifier (guid) of the post.
 	 */
 	echo apply_filters( 'the_guid', get_the_guid( $id ) );
-=======
-	echo esc_url( get_the_guid( $id ) );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 }
 
 /**
@@ -406,7 +398,6 @@ function post_class( $class = '', $post_id = null ) {
  *
  * The class names are many. If the post is a sticky, then the 'sticky'
  * class name. The class 'hentry' is always added to each post. If the post has a
-<<<<<<< HEAD
  * post thumbnail, 'has-post-thumbnail' is added as a class. For each taxonomy that
  * the post belongs to, a class will be added of the format '{$taxonomy}-{$slug}' -
  * eg 'category-foo' or 'my_custom_taxonomy-bar'. The 'post_tag' taxonomy is a special
@@ -436,28 +427,6 @@ function get_post_class( $class = '', $post_id = null ) {
 	if ( ! $post ) {
 		return $classes;
 	}
-=======
- * post thumbnail, 'has-post-thumbnail' is added as a class. For each
- * category, the class will be added with 'category-' with category slug is
- * added. The tags are the same way as the categories with 'tag-' before the tag
- * slug. All classes are passed through the filter, 'post_class' with the list
- * of classes, followed by $class parameter value, with the post ID as the last
- * parameter.
- *
- * @since 2.7.0
- *
- * @param string|array $class One or more classes to add to the class list.
- * @param int|WP_Post $post_id Optional. Post ID or post object.
- * @return array Array of classes.
- */
-function get_post_class( $class = '', $post_id = null ) {
-	$post = get_post($post_id);
-
-	$classes = array();
-
-	if ( empty($post) )
-		return $classes;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	$classes[] = 'post-' . $post->ID;
 	if ( ! is_admin() )
@@ -495,7 +464,6 @@ function get_post_class( $class = '', $post_id = null ) {
 	// hentry for hAtom compliance
 	$classes[] = 'hentry';
 
-<<<<<<< HEAD
 	// All public taxonomies
 	$taxonomies = get_taxonomies( array( 'public' => true ) );
 	foreach ( (array) $taxonomies as $taxonomy ) {
@@ -521,33 +489,6 @@ function get_post_class( $class = '', $post_id = null ) {
 	}
 
 	$classes = array_map( 'esc_attr', $classes );
-=======
-	// Categories
-	if ( is_object_in_taxonomy( $post->post_type, 'category' ) ) {
-		foreach ( (array) get_the_category($post->ID) as $cat ) {
-			if ( empty($cat->slug ) )
-				continue;
-			$classes[] = 'category-' . sanitize_html_class($cat->slug, $cat->term_id);
-		}
-	}
-
-	// Tags
-	if ( is_object_in_taxonomy( $post->post_type, 'post_tag' ) ) {
-		foreach ( (array) get_the_tags($post->ID) as $tag ) {
-			if ( empty($tag->slug ) )
-				continue;
-			$classes[] = 'tag-' . sanitize_html_class($tag->slug, $tag->term_id);
-		}
-	}
-
-	if ( !empty($class) ) {
-		if ( !is_array( $class ) )
-			$class = preg_split('#\s+#', $class);
-		$classes = array_merge($classes, $class);
-	}
-
-	$classes = array_map('esc_attr', $classes);
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	/**
 	 * Filter the list of CSS classes for the current post.
@@ -643,11 +584,7 @@ function get_body_class( $class = '' ) {
 			if ( is_array( $post_type ) )
 				$post_type = reset( $post_type );
 			$classes[] = 'post-type-archive-' . sanitize_html_class( $post_type );
-<<<<<<< HEAD
 		} elseif ( is_author() ) {
-=======
-		} else if ( is_author() ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			$author = $wp_query->get_queried_object();
 			$classes[] = 'author';
 			if ( isset( $author->user_nicename ) ) {
@@ -658,7 +595,6 @@ function get_body_class( $class = '' ) {
 			$cat = $wp_query->get_queried_object();
 			$classes[] = 'category';
 			if ( isset( $cat->term_id ) ) {
-<<<<<<< HEAD
 				$cat_class = sanitize_html_class( $cat->slug, $cat->term_id );
 				if ( is_numeric( $cat_class ) || ! trim( $cat_class, '-' ) ) {
 					$cat_class = $cat->term_id;
@@ -678,22 +614,10 @@ function get_body_class( $class = '' ) {
 
 				$classes[] = 'tag-' . $tag_class;
 				$classes[] = 'tag-' . $tag->term_id;
-=======
-				$classes[] = 'category-' . sanitize_html_class( $cat->slug, $cat->term_id );
-				$classes[] = 'category-' . $cat->term_id;
-			}
-		} elseif ( is_tag() ) {
-			$tags = $wp_query->get_queried_object();
-			$classes[] = 'tag';
-			if ( isset( $tags->term_id ) ) {
-				$classes[] = 'tag-' . sanitize_html_class( $tags->slug, $tags->term_id );
-				$classes[] = 'tag-' . $tags->term_id;
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			}
 		} elseif ( is_tax() ) {
 			$term = $wp_query->get_queried_object();
 			if ( isset( $term->term_id ) ) {
-<<<<<<< HEAD
 				$term_class = sanitize_html_class( $term->slug, $term->term_id );
 				if ( is_numeric( $term_class ) || ! trim( $term_class, '-' ) ) {
 					$term_class = $term->term_id;
@@ -701,10 +625,6 @@ function get_body_class( $class = '' ) {
 
 				$classes[] = 'tax-' . sanitize_html_class( $term->taxonomy );
 				$classes[] = 'term-' . $term_class;
-=======
-				$classes[] = 'tax-' . sanitize_html_class( $term->taxonomy );
-				$classes[] = 'term-' . sanitize_html_class( $term->slug, $term->term_id );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 				$classes[] = 'term-' . $term->term_id;
 			}
 		}
@@ -748,11 +668,7 @@ function get_body_class( $class = '' ) {
 		$classes[] = 'no-customize-support';
 	}
 
-<<<<<<< HEAD
 	if ( get_background_color() !== get_theme_support( 'custom-background', 'default-color' ) || get_background_image() )
-=======
-	if ( get_theme_mod( 'background_color' ) || get_background_image() )
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$classes[] = 'custom-background';
 
 	$page = $wp_query->get( 'page' );
@@ -1057,7 +973,6 @@ function the_meta() {
  * Retrieve or display list of pages as a dropdown (select list).
  *
  * @since 2.1.0
-<<<<<<< HEAD
  * @since 4.2.0 The `$value_field` argument was added.
  *
  * @param array|string $args {
@@ -1078,10 +993,6 @@ function the_meta() {
  *     @type string       $value_field           Post field used to populate the 'value' attribute of the option
  *                                               elements. Accepts any valid post field. Default 'ID'.
  * }
-=======
- *
- * @param array|string $args Optional. Override default arguments.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @return string HTML content, if not displaying.
  */
 function wp_dropdown_pages( $args = '' ) {
@@ -1090,12 +1001,8 @@ function wp_dropdown_pages( $args = '' ) {
 		'selected' => 0, 'echo' => 1,
 		'name' => 'page_id', 'id' => '',
 		'show_option_none' => '', 'show_option_no_change' => '',
-<<<<<<< HEAD
 		'option_none_value' => '',
 		'value_field' => 'ID',
-=======
-		'option_none_value' => ''
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	);
 
 	$r = wp_parse_args( $args, $defaults );
@@ -1253,7 +1160,6 @@ function wp_list_pages( $args = '' ) {
  * @since 2.7.0
  *
  * @param array|string $args {
-<<<<<<< HEAD
  *     Optional. Arguments to generate a page menu. See wp_list_pages() for additional arguments.
  *
  *     @type string          $sort_column How to short the list of pages. Accepts post column names.
@@ -1265,20 +1171,6 @@ function wp_list_pages( $args = '' ) {
  *     @type string          $link_after  The HTML or text to append to $show_home text. Default empty.
  *     @type int|bool|string $show_home   Whether to display the link to the home page. Can just enter the text
  *                                        you'd like shown for the home link. 1|true defaults to 'Home'.
-=======
- *     Optional. Arguments to generate a page menu. {@see wp_list_pages()}
- *     for additional arguments.
- *
- * @type string     $sort_column How to short the list of pages. Accepts post column names.
- *                               Default 'menu_order, post_title'.
- * @type string     $menu_class  Class to use for the div ID containing the page list. Default 'menu'.
- * @type bool       $echo        Whether to echo the list or return it. Accepts true (echo) or false (return).
- *                               Default true.
- * @type string     $link_before The HTML or text to prepend to $show_home text. Default empty.
- * @type string     $link_after  The HTML or text to append to $show_home text. Default empty.
- * @type int|string $show_home   Whether to display the link to the home page. Can just enter the text
- *                               you'd like shown for the home link. 1|true defaults to 'Home'.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * }
  * @return string html menu
  */
@@ -1563,30 +1455,20 @@ class Walker_PageDropdown extends Walker {
 	 * @since 2.1.0
 	 *
 	 * @param string $output Passed by reference. Used to append additional content.
-<<<<<<< HEAD
 	 * @param object $page   Page data object.
 	 * @param int    $depth  Depth of page in reference to parent pages. Used for padding.
 	 * @param array  $args   Uses 'selected' argument for selected page to set selected HTML attribute for option
 	 *              element. Uses 'value_field' argument to fill "value" attribute. See {@see wp_dropdown_pages()}.
-=======
-	 * @param object $page Page data object.
-	 * @param int $depth Depth of page in reference to parent pages. Used for padding.
-	 * @param array $args Uses 'selected' argument for selected page to set selected HTML attribute for option element.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	 * @param int $id
 	 */
 	public function start_el( &$output, $page, $depth = 0, $args = array(), $id = 0 ) {
 		$pad = str_repeat('&nbsp;', $depth * 3);
 
-<<<<<<< HEAD
 		if ( ! isset( $args['value_field'] ) || ! isset( $page->{$args['value_field']} ) ) {
 			$args['value_field'] = 'ID';
 		}
 
 		$output .= "\t<option class=\"level-$depth\" value=\"" . esc_attr( $page->{$args['value_field']} ) . "\"";
-=======
-		$output .= "\t<option class=\"level-$depth\" value=\"$page->ID\"";
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		if ( $page->ID == $args['selected'] )
 			$output .= ' selected="selected"';
 		$output .= '>';
@@ -1697,11 +1579,7 @@ function prepend_attachment($content) {
 	if ( empty($post->post_type) || $post->post_type != 'attachment' )
 		return $content;
 
-<<<<<<< HEAD
 	if ( wp_attachment_is( 'video', $post ) ) {
-=======
-	if ( 0 === strpos( $post->post_mime_type, 'video' ) ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$meta = wp_get_attachment_metadata( get_the_ID() );
 		$atts = array( 'src' => wp_get_attachment_url() );
 		if ( ! empty( $meta['width'] ) && ! empty( $meta['height'] ) ) {
@@ -1712,11 +1590,7 @@ function prepend_attachment($content) {
 			$atts['poster'] = wp_get_attachment_url( get_post_thumbnail_id() );
 		}
 		$p = wp_video_shortcode( $atts );
-<<<<<<< HEAD
 	} elseif ( wp_attachment_is( 'audio', $post ) ) {
-=======
-	} elseif ( 0 === strpos( $post->post_mime_type, 'audio' ) ) {
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 		$p = wp_audio_shortcode( array( 'src' => wp_get_attachment_url() ) );
 	} else {
 		$p = '<p class="attachment">';
@@ -1777,7 +1651,6 @@ function get_the_password_form( $post = 0 ) {
  * Whether currently in a page template.
  *
  * This template tag allows you to determine if you are in a page template.
-<<<<<<< HEAD
  * You can optionally provide a template name or array of template names
  * and then the check will be specific to that template.
  *
@@ -1785,14 +1658,6 @@ function get_the_password_form( $post = 0 ) {
  * @since 4.2.0 The `$template` parameter was changed to also accept an array of page templates.
  *
  * @param string|array $template The specific template name or array of templates to match.
-=======
- * You can optionally provide a template name and then the check will be
- * specific to that template.
- *
- * @since 2.5.0
- *
- * @param string $template The specific template name if specific matching is required.
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
  * @return bool True on success, false on failure.
  */
 function is_page_template( $template = '' ) {
@@ -1807,7 +1672,6 @@ function is_page_template( $template = '' ) {
 	if ( $template == $page_template )
 		return true;
 
-<<<<<<< HEAD
 	if ( is_array( $template ) ) {
 		if ( ( in_array( 'default', $template, true ) && ! $page_template )
 			|| in_array( $page_template, $template, true )
@@ -1816,8 +1680,6 @@ function is_page_template( $template = '' ) {
 		}
 	}
 
-=======
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	if ( 'default' == $template && ! $page_template )
 		return true;
 
@@ -1860,11 +1722,7 @@ function wp_post_revision_title( $revision, $link = true ) {
 		return false;
 
 	/* translators: revision date format, see http://php.net/date */
-<<<<<<< HEAD
 	$datef = _x( 'F j, Y @ H:i:s', 'revision date format' );
-=======
-	$datef = _x( 'j F, Y @ G:i', 'revision date format');
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	/* translators: 1: date */
 	$autosavef = _x( '%1$s [Autosave]', 'post revision title extra' );
 	/* translators: 1: date */
@@ -1900,11 +1758,7 @@ function wp_post_revision_title_expanded( $revision, $link = true ) {
 
 	$author = get_the_author_meta( 'display_name', $revision->post_author );
 	/* translators: revision date format, see http://php.net/date */
-<<<<<<< HEAD
 	$datef = _x( 'F j, Y @ H:i:s', 'revision date format' );
-=======
-	$datef = _x( 'j F, Y @ G:i:s', 'revision date format');
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 	$gravatar = get_avatar( $revision->post_author, 24 );
 

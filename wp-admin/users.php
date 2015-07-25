@@ -17,11 +17,7 @@ $pagenum = $wp_list_table->get_pagenum();
 $title = __('Users');
 $parent_file = 'users.php';
 
-<<<<<<< HEAD
 add_screen_option( 'per_page' );
-=======
-add_screen_option( 'per_page', array('label' => _x( 'Users', 'users per page (screen options)' )) );
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 // contextual help - choose Help on the top right of admin panel to preview this.
 get_current_screen()->add_help_tab( array(
@@ -62,13 +58,8 @@ unset( $help );
 
 get_current_screen()->set_help_sidebar(
     '<p><strong>' . __('For more information:') . '</strong></p>' .
-<<<<<<< HEAD
     '<p>' . __('<a href="https://codex.wordpress.org/Users_Screen" target="_blank">Documentation on Managing Users</a>') . '</p>' .
     '<p>' . __('<a href="https://codex.wordpress.org/Roles_and_Capabilities" target="_blank">Descriptions of Roles and Capabilities</a>') . '</p>' .
-=======
-    '<p>' . __('<a href="http://codex.wordpress.org/Users_Screen" target="_blank">Documentation on Managing Users</a>') . '</p>' .
-    '<p>' . __('<a href="http://codex.wordpress.org/Roles_and_Capabilities" target="_blank">Descriptions of Roles and Capabilities</a>') . '</p>' .
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
     '<p>' . __('<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>'
 );
 
@@ -218,18 +209,13 @@ case 'delete':
 
 	include( ABSPATH . 'wp-admin/admin-header.php' );
 ?>
-<<<<<<< HEAD
 <form method="post" name="updateusers" id="updateusers">
-=======
-<form action="" method="post" name="updateusers" id="updateusers">
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <?php wp_nonce_field('delete-users') ?>
 <?php echo $referer; ?>
 
 <div class="wrap">
 <h2><?php _e('Delete Users'); ?></h2>
 <?php if ( isset( $_REQUEST['error'] ) ) : ?>
-<<<<<<< HEAD
 	<div class="error">
 		<p><strong><?php _e( 'ERROR:' ); ?></strong> <?php _e( 'Please select an option.' ); ?></p>
 	</div>
@@ -241,13 +227,6 @@ case 'delete':
 	<p><?php _e( 'You have specified these users for deletion:' ); ?></p>
 <?php endif; ?>
 
-=======
-<div class="error">
-	<p><strong><?php _e( 'ERROR:' ); ?></strong> <?php _e( 'Please select an option.' ); ?></p>
-</div>
-<?php endif; ?>
-<p><?php echo _n( 'You have specified this user for deletion:', 'You have specified these users for deletion:', count( $userids ) ); ?></p>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <ul>
 <?php
 	$go_delete = 0;
@@ -263,15 +242,11 @@ case 'delete':
 	?>
 	</ul>
 <?php if ( $go_delete ) : ?>
-<<<<<<< HEAD
 	<?php if ( 1 == $go_delete ) : ?>
 		<fieldset><p><legend><?php _e( 'What should be done with content owned by this user?' ); ?></legend></p>
 	<?php else : ?>
 		<fieldset><p><legend><?php _e( 'What should be done with content owned by these users?' ); ?></legend></p>
 	<?php endif; ?>
-=======
-	<fieldset><p><legend><?php echo _n( 'What should be done with content owned by this user?', 'What should be done with content owned by these users?', $go_delete ); ?></legend></p>
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 	<ul style="list-style:none;">
 		<li><label><input type="radio" id="delete_option0" name="delete_option" value="delete" />
 		<?php _e('Delete all content.'); ?></label></li>
@@ -356,11 +331,7 @@ case 'remove':
 
 	include( ABSPATH . 'wp-admin/admin-header.php' );
 ?>
-<<<<<<< HEAD
 <form method="post" name="updateusers" id="updateusers">
-=======
-<form action="" method="post" name="updateusers" id="updateusers">
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 <?php wp_nonce_field('remove-users') ?>
 <?php echo $referer; ?>
 
@@ -418,7 +389,6 @@ default:
 		case 'del':
 		case 'del_many':
 			$delete_count = isset($_GET['delete_count']) ? (int) $_GET['delete_count'] : 0;
-<<<<<<< HEAD
 			if ( 1 == $delete_count ) {
 				$message = __( 'User deleted.' );
 			} else {
@@ -452,36 +422,6 @@ default:
 		case 'err_admin_remove':
 			$messages[] = '<div id="message" class="error notice is-dismissible"><p>' . __("You can't remove the current user.") . '</p></div>';
 			$messages[] = '<div id="message" class="updated notice is-dismissible fade"><p>' . __('Other users have been removed.') . '</p></div>';
-=======
-			$messages[] = '<div id="message" class="updated"><p>' . sprintf( _n( 'User deleted.', '%s users deleted.', $delete_count ), number_format_i18n( $delete_count ) ) . '</p></div>';
-			break;
-		case 'add':
-			if ( isset( $_GET['id'] ) && ( $user_id = $_GET['id'] ) && current_user_can( 'edit_user', $user_id ) ) {
-				$messages[] = '<div id="message" class="updated"><p>' . sprintf( __( 'New user created. <a href="%s">Edit user</a>' ),
-					esc_url( add_query_arg( 'wp_http_referer', urlencode( wp_unslash( $_SERVER['REQUEST_URI'] ) ),
-						self_admin_url( 'user-edit.php?user_id=' . $user_id ) ) ) ) . '</p></div>';
-			} else {
-				$messages[] = '<div id="message" class="updated"><p>' . __( 'New user created.' ) . '</p></div>';
-			}
-			break;
-		case 'promote':
-			$messages[] = '<div id="message" class="updated"><p>' . __('Changed roles.') . '</p></div>';
-			break;
-		case 'err_admin_role':
-			$messages[] = '<div id="message" class="error"><p>' . __('The current user&#8217;s role must have user editing capabilities.') . '</p></div>';
-			$messages[] = '<div id="message" class="updated"><p>' . __('Other user roles have been changed.') . '</p></div>';
-			break;
-		case 'err_admin_del':
-			$messages[] = '<div id="message" class="error"><p>' . __('You can&#8217;t delete the current user.') . '</p></div>';
-			$messages[] = '<div id="message" class="updated"><p>' . __('Other users have been deleted.') . '</p></div>';
-			break;
-		case 'remove':
-			$messages[] = '<div id="message" class="updated fade"><p>' . __('User removed from this site.') . '</p></div>';
-			break;
-		case 'err_admin_remove':
-			$messages[] = '<div id="message" class="error"><p>' . __("You can't remove the current user.") . '</p></div>';
-			$messages[] = '<div id="message" class="updated fade"><p>' . __('Other users have been removed.') . '</p></div>';
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 			break;
 		}
 	endif; ?>
@@ -518,11 +458,7 @@ if ( $usersearch )
 
 <?php $wp_list_table->views(); ?>
 
-<<<<<<< HEAD
 <form method="get">
-=======
-<form action="" method="get">
->>>>>>> 785b53a76ca09e05a97442b02dd60c4cb2060135
 
 <?php $wp_list_table->search_box( __( 'Search Users' ), 'user' ); ?>
 
