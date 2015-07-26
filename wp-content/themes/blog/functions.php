@@ -1,5 +1,5 @@
 <?php
-
+        add_theme_support( 'post-thumbnails' );
 
 	function blog_themes() {
 
@@ -15,6 +15,9 @@
 		// if(is_page('home')) {
 		// 	wp_enqueue_style('flexslider')
 		// }
+
+             // Featured Image support
+
 
             // Live Reload
             if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {
@@ -48,4 +51,6 @@
           'primary' => __( 'Primary Menu'),
           'footer' => __('Footer Menu'),
         ))
+
+
 ?>
