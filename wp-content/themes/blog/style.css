@@ -220,6 +220,9 @@ footer p {
   color:  rgba(0,0,0,0.65);
   margin: 10px 0px 30px;
 }
+.blog-content .blog-media img {
+      width: 100%;
+}
 .blog-content .blog-text {
    padding: 50px 125px 50px;
 }
