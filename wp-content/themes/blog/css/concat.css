@@ -2435,6 +2435,9 @@ footer p {
 .blog-content .blog-text {
    padding: 50px 125px 50px;
 }
+.wp-post-image {
+    border-radius: 0px;
+}
 a {
   color: #1976D2;
    -webkit-transition: all 250ms ease-in-out;
