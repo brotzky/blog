@@ -35,9 +35,5 @@
     <!-- Site Navigation -->
     <nav class="fixed-nav">
       <!-- Site Header -->
-    <header>
-        <!-- change info in the settings -->
-        <h1 class="blog-home"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-    </header><!-- /Site Header -->
       <?php wp_nav_menu($args); ?>
     </nav>

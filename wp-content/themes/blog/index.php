@@ -14,7 +14,6 @@
                 <div class="blog-content" onclick="location.href='<?php the_permalink();?>';" style="cursor: pointer;">
   			<h2><a href='<?php the_permalink(); ?>'><?php the_title();?></a></h2>
                     <div class="post-date">Posted: <?php the_time('F j, Y'); ?></div>
-  			<?php the_content(); ?>
                 </div>
 		</article>
 		<!-- / Main article posts -->
