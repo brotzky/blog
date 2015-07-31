@@ -2219,7 +2219,16 @@ ul.pagination {
   This theme, like WordPress, is licensed under the GPL.
   Use it to make something cool, have fun, and share what you've learned with others.
 */
-
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
 * { -webkit-box-sizing:     border-box;
     -moz-box-sizing:         border-box;
     box-sizing:                  border-box;
@@ -2232,7 +2241,7 @@ html, body {
     box-sizing:                  border-box;
   margin: 0;
   padding: 0;
-  background-color: #EEE;
+  background-color: #eeecec;
 
   color: #4A4A4A;
   text-rendering: optimizeLegibility;
@@ -2245,7 +2254,13 @@ html, body {
 
 }
 .single-post {
-    background-color: #EEE;
+    -webkit-box-sizing:     border-box;
+      -moz-box-sizing:         border-box;
+      box-sizing:                  border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #eeecec;
+    background-color: #eeecec;
     background-position: left top;
     background-repeat: no-repeat;
     background-image: -moz-linear-gradient(left, #323538 0%, #323538 100%);
@@ -2260,6 +2275,203 @@ html, body {
     padding: 0;
     text-align: center;
 }
+.introduction-container {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    margin: 0px 0px 50px 0px;
+    padding: 100px 200px;
+    background-color: #323538;
+}
+.introduction-hi {
+    position: relative;
+    float: left;
+    margin: 0px 0px 20px 45px;
+    display: inline-block;
+    padding: 3px 12px;
+    font-weight: 700;
+    color: #f9f9f9;
+    font-size: 5em;
+}
+.introduction-star {
+    float: left;
+    display: inline-block;
+    padding:  3px 26px 3px 50px;
+    margin-left: 100px;
+    font-weight: 700;
+    color: #646464;
+    font-size: 4em;
+    border-right: 8px solid rgba(71, 71, 71, 0.5);
+}
+.rotating-hi_1 {
+    position: absolute;
+    height: 125%;
+    width: 125%;
+    top: -12.5%;
+    right: -12.5%;
+    border-radius: 50px;
+    border: 8px solid rgba(255,255,255,0.1);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation:spin 16s linear infinite;
+    -moz-animation:spin 16s linear infinite;
+    animation:spin 16s linear infinite;
+}
+.rotating-hi_2 {
+    position: absolute;
+    height: 125%;
+    width: 125%;
+    top: -12.5%;
+    right: -12.5%;
+
+    border-radius: 50px;
+    border: 8px solid rgba(255,255,255,0.1);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation:backwards-spin 16s linear infinite;
+    -moz-animation:backwards-spin 16s linear infinite;
+    animation:backwards-spin 16s linear infinite;
+}
+.rotating-hi_3 {
+    position: absolute;
+    height: 125%;
+    width: 125%;
+    top: -12.5%;
+    right: -12.5%;
+    border-radius: 50px;
+    border: 8px solid rgba(255,255,255,0.1);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: rotate(90deg);
+    -webkit-animation:backwards-spin 16s linear infinite;
+    -moz-animation:backwards-spin 16s linear infinite;
+    animation:backwards-spin 16s linear infinite;
+}
+.rotating-hi_4 {
+    position: absolute;
+    height: 125%;
+    width: 125%;
+    top: -12.5%;
+    right: -12.5%;
+    border-radius: 50px;
+    border: 8px solid rgba(255,255,255,0.1);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: rotate(-90deg);
+    -webkit-animation:spin 16s linear infinite;
+    -moz-animation:spin 16s linear infinite;
+    animation:spin 16s linear infinite;
+}
+.rotating-hi_5 {
+    position: absolute;
+    height: 125%;
+    width: 125%;
+    top: -12.5%;
+    right: -12.5%;
+    border-radius: 50px;
+    border: 8px solid rgba(255,255,255,0.1);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: rotate(60deg);
+    -webkit-animation:backwards-spin 30s linear infinite;
+    -moz-animation:backwards-spin 30s linear infinite;
+    animation:backwards-spin 30s linear infinite;
+}
+.rotating-hi_6 {
+    position: absolute;
+    height: 125%;
+    width: 125%;
+    top: -12.5%;
+    right: -12.5%;
+    border-radius: 50px;
+    border: 8px solid rgba(255,255,255,0.1);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: rotate(-60deg);
+    -webkit-animation:spin 30s linear infinite;
+    -moz-animation:spin 30s linear infinite;
+    animation:spin 30s linear infinite;
+}
+.rotating-hi_7 {
+    position: absolute;
+    height: 125%;
+    width: 125%;
+    top: -12.5%;
+    right: -12.5%;
+    border-radius: 50px;
+    border: 8px solid rgba(255,255,255,0.1);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: rotate(270deg);
+    -webkit-animation:backwards-spin 30s linear infinite;
+    -moz-animation:backwards-spin 30s linear infinite;
+    animation:backwards-spin 30s linear infinite;
+}
+.rotating-hi_8 {
+    position: absolute;
+    height: 125%;
+    width: 125%;
+    top: -12.5%;
+    right: -12.5%;
+    border-radius: 50px;
+    border: 8px solid rgba(255,255,255,0.1);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: rotate(-270deg);
+    -webkit-animation:spin 30s linear infinite;
+    -moz-animation:spin 30s linear infinite;
+    animation:spin 30s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-moz-keyframes backwards-spin { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes backwards-spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes backwards-spin { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
+.introduction-disclaimer {
+    float: right;
+    padding: 10px ;
+    width: 54%;
+    font-weight: 700;
+    color: #4C4C4C;
+    font-style: italic;
+    font-size: 1.3em;
+}
+.introduction-blurb {
+    float: left;
+    display: inline-block;
+    padding: 3px 26px;
+    font-weight: 700;
+    color: rgba(249, 249, 249, 0.81);
+    font-size: 2em;
+    border-right: 8px solid #f9f9f9;
+}
+.introduction-test {
+    float: left;
+    display: inline-block;
+    padding: 3px 26px;
+    font-weight: 700;
+    color: #f9f9f9;
+    font-size: 2em;
+    border-left: 8px solid #f9f9f9;
+}
 h1 {
   font-size: 1rem;
 }
@@ -2271,63 +2483,13 @@ a img {
     max-width: 960px;
     width: 57%;
 }
-body.postid-164 .hero-image {
-  position: relative;
-  top: 60px;
-  background: url(../../img/responsive-design-hero-image-opt.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-body.postid-140 .hero-image {
-  position: relative;
-  top: 60px;
-  background: url(../../img/middleman-hero-image.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-body.postid-127 .hero-image{
-  position: relative;
-  top: 60px;
-  background: url(../../img/foundation-five.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-body.postid-7 .hero-image{
-  position: relative;
-  top: 60px;
-  background: url(../../img/grunt-hero-image-opt.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-body.postid-4 .hero-image{
-  position: relative;
-  top: 60px;
-  background: url(../../img/svg-hero-image-opt.png) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-body.postid-1 .hero-image{
-  position: relative;
-  top: 60px;
-  background: url(../../img/wordpress-hero-image-opt.png) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 .container {
-
   top: 61px;
+}
+.blog-content-container {
+    width: 70%;
+    margin: 0 auto;
+    border: 8px solid #f9f9f9;
 }
 .blog-home {
   display: inline-block;
@@ -2375,6 +2537,7 @@ body.postid-1 .hero-image{
     text-align: center;
 }
 .unordered-list li {
+    text-align: left;
       padding: 4px 6px;
       margin: 5px auto;
       list-style-type: disc;
@@ -2392,13 +2555,13 @@ body.postid-1 .hero-image{
 }
 .fixed-nav ul li a {
   text-decoration: none;
-  color: #999999;
-  padding: 40px 0px;
-  margin-left: 35px;
+  color: #6F6F6F;
+  padding: 23px 15px;
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  line-height: 4.2;
+  letter-spacing: 1.5px;
+  line-height: 4;
   -webkit-transition: all 150ms ease-in-out;
   -moz-transition:     all 150ms ease-in-out;
   -ms-transition:       all 150ms ease-in-out;
@@ -2410,7 +2573,7 @@ body.postid-1 .hero-image{
 
 }
 .fixed-nav ul li a:hover {
-  color: rgba(255,255,255,.7);
+  box-shadow: inset 0px 4px 0px #6F6F6F;
 }
 footer {
   position: relative;
@@ -2436,8 +2599,15 @@ footer p {
   background-color: #f9f9f9;
 }
 .home .blog-content {
-    padding: 40px 60px 50px;
-    margin: 30px auto;
+    padding: 30px 60px 35px;
+    margin: 1% 1% 0px;
+    max-width:  100%;
+    width:  98%;
+    border: 8px solid #f9f9f9;
+    box-shadow: inset 0px 0px 0px 8px #eeecec;
+}
+.home .blog-content:last-of-type {
+    margin: 1%;
 }
 .home .blog-content h2 {
     margin: 10px auto;
