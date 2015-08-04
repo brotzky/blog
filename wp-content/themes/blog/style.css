@@ -174,9 +174,9 @@ html, body {
     -o-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
     -webkit-transform: rotate(60deg);
-    -webkit-animation:backwards-spin 30s linear infinite;
-    -moz-animation:backwards-spin 30s linear infinite;
-    animation:backwards-spin 30s linear infinite;
+    -webkit-animation:backwards-spin 16s linear infinite;
+    -moz-animation:backwards-spin 16s linear infinite;
+    animation:backwards-spin 16s linear infinite;
 }
 .rotating-hi_6 {
     position: absolute;
@@ -191,9 +191,9 @@ html, body {
     -o-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
     -webkit-transform: rotate(-60deg);
-    -webkit-animation:spin 30s linear infinite;
-    -moz-animation:spin 30s linear infinite;
-    animation:spin 30s linear infinite;
+    -webkit-animation:spin 16s linear infinite;
+    -moz-animation:spin 16s linear infinite;
+    animation:spin 16s linear infinite;
 }
 .rotating-hi_7 {
     position: absolute;
@@ -208,9 +208,9 @@ html, body {
     -o-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
     -webkit-transform: rotate(270deg);
-    -webkit-animation:backwards-spin 30s linear infinite;
-    -moz-animation:backwards-spin 30s linear infinite;
-    animation:backwards-spin 30s linear infinite;
+    -webkit-animation: spin 16s linear infinite;
+    -moz-animation: spin 16s linear infinite;
+    animation: spin 16s linear infinite;
 }
 .rotating-hi_8 {
     position: absolute;
@@ -225,9 +225,9 @@ html, body {
     -o-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
     -webkit-transform: rotate(-270deg);
-    -webkit-animation:spin 30s linear infinite;
-    -moz-animation:spin 30s linear infinite;
-    animation:spin 30s linear infinite;
+    -webkit-animation:spin 16s linear infinite;
+    -moz-animation:spin 16s linear infinite;
+    animation:spin 16s linear infinite;
 }
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
