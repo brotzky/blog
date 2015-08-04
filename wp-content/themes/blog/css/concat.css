@@ -2219,16 +2219,7 @@ ul.pagination {
   This theme, like WordPress, is licensed under the GPL.
   Use it to make something cool, have fun, and share what you've learned with others.
 */
-html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
-  }
+
 * { -webkit-box-sizing:     border-box;
     -moz-box-sizing:         border-box;
     box-sizing:                  border-box;
@@ -2241,8 +2232,8 @@ html, body {
     box-sizing:                  border-box;
   margin: 0;
   padding: 0;
-  background-color: #eeecec;
-
+  background-color: #EEE;
+  background-image: url('../../img/header-background.png');
   color: #4A4A4A;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
@@ -2251,226 +2242,6 @@ html, body {
   height: 100%;
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   word-spacing: 0.1em;
-
-}
-.single-post {
-    -webkit-box-sizing:     border-box;
-      -moz-box-sizing:         border-box;
-      box-sizing:                  border-box;
-    margin: 0;
-    padding: 0;
-    background-color: #eeecec;
-    background-color: #eeecec;
-    background-position: left top;
-    background-repeat: no-repeat;
-    background-image: -moz-linear-gradient(left, #323538 0%, #323538 100%);
-    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%,#323538), color-stop(100%,#323538));
-    background-image: -webkit-linear-gradient(left, #323538 0%,#323538 100%) background-image: -o-linear-gradient(left, #323538 0%,#323538 100%);
-    background-image: -ms-linear-gradient(left, #323538 0%,#323538 100%);
-    background-image: linear-gradient(to right, #323538 0%,#323538 100%);
-    background-size: 100% 550px;
-}
-#menu-footer-menu-link {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-.introduction-container {
-    position: relative;
-    height: 500px;
-    width: 100%;
-    margin: 0px 0px 50px 0px;
-    padding: 100px 200px;
-    background-color: #323538;
-}
-.introduction-hi {
-    position: relative;
-    float: left;
-    margin: 0px 0px 20px 45px;
-    display: inline-block;
-    padding: 3px 12px;
-    font-weight: 700;
-    color: #f9f9f9;
-    font-size: 5em;
-}
-.introduction-star {
-    float: left;
-    display: inline-block;
-    padding:  3px 26px 3px 50px;
-    margin-left: 100px;
-    font-weight: 700;
-    color: #646464;
-    font-size: 4em;
-    border-right: 8px solid rgba(71, 71, 71, 0.5);
-}
-.rotating-hi_1 {
-    position: absolute;
-    height: 125%;
-    width: 125%;
-    top: -12.5%;
-    right: -12.5%;
-    border-radius: 50px;
-    border: 8px solid rgba(255,255,255,0.1);
-    -webkit-transform-origin: 50% 50%;
-    -moz-transform-origin: 50% 50%;
-    -o-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    -webkit-animation:spin 16s linear infinite;
-    -moz-animation:spin 16s linear infinite;
-    animation:spin 16s linear infinite;
-}
-.rotating-hi_2 {
-    position: absolute;
-    height: 125%;
-    width: 125%;
-    top: -12.5%;
-    right: -12.5%;
-
-    border-radius: 50px;
-    border: 8px solid rgba(255,255,255,0.1);
-    -webkit-transform-origin: 50% 50%;
-    -moz-transform-origin: 50% 50%;
-    -o-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    -webkit-animation:backwards-spin 16s linear infinite;
-    -moz-animation:backwards-spin 16s linear infinite;
-    animation:backwards-spin 16s linear infinite;
-}
-.rotating-hi_3 {
-    position: absolute;
-    height: 125%;
-    width: 125%;
-    top: -12.5%;
-    right: -12.5%;
-    border-radius: 50px;
-    border: 8px solid rgba(255,255,255,0.1);
-    -webkit-transform-origin: 50% 50%;
-    -moz-transform-origin: 50% 50%;
-    -o-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    -webkit-transform: rotate(90deg);
-    -webkit-animation:backwards-spin 16s linear infinite;
-    -moz-animation:backwards-spin 16s linear infinite;
-    animation:backwards-spin 16s linear infinite;
-}
-.rotating-hi_4 {
-    position: absolute;
-    height: 125%;
-    width: 125%;
-    top: -12.5%;
-    right: -12.5%;
-    border-radius: 50px;
-    border: 8px solid rgba(255,255,255,0.1);
-    -webkit-transform-origin: 50% 50%;
-    -moz-transform-origin: 50% 50%;
-    -o-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    -webkit-transform: rotate(-90deg);
-    -webkit-animation:spin 16s linear infinite;
-    -moz-animation:spin 16s linear infinite;
-    animation:spin 16s linear infinite;
-}
-.rotating-hi_5 {
-    position: absolute;
-    height: 125%;
-    width: 125%;
-    top: -12.5%;
-    right: -12.5%;
-    border-radius: 50px;
-    border: 8px solid rgba(255,255,255,0.1);
-    -webkit-transform-origin: 50% 50%;
-    -moz-transform-origin: 50% 50%;
-    -o-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    -webkit-transform: rotate(60deg);
-    -webkit-animation:backwards-spin 16s linear infinite;
-    -moz-animation:backwards-spin 16s linear infinite;
-    animation:backwards-spin 16s linear infinite;
-}
-.rotating-hi_6 {
-    position: absolute;
-    height: 125%;
-    width: 125%;
-    top: -12.5%;
-    right: -12.5%;
-    border-radius: 50px;
-    border: 8px solid rgba(255,255,255,0.1);
-    -webkit-transform-origin: 50% 50%;
-    -moz-transform-origin: 50% 50%;
-    -o-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    -webkit-transform: rotate(-60deg);
-    -webkit-animation:spin 16s linear infinite;
-    -moz-animation:spin 16s linear infinite;
-    animation:spin 16s linear infinite;
-}
-.rotating-hi_7 {
-    position: absolute;
-    height: 125%;
-    width: 125%;
-    top: -12.5%;
-    right: -12.5%;
-    border-radius: 50px;
-    border: 8px solid rgba(255,255,255,0.1);
-    -webkit-transform-origin: 50% 50%;
-    -moz-transform-origin: 50% 50%;
-    -o-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    -webkit-transform: rotate(270deg);
-    -webkit-animation: spin 16s linear infinite;
-    -moz-animation: spin 16s linear infinite;
-    animation: spin 16s linear infinite;
-}
-.rotating-hi_8 {
-    position: absolute;
-    height: 125%;
-    width: 125%;
-    top: -12.5%;
-    right: -12.5%;
-    border-radius: 50px;
-    border: 8px solid rgba(255,255,255,0.1);
-    -webkit-transform-origin: 50% 50%;
-    -moz-transform-origin: 50% 50%;
-    -o-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    -webkit-transform: rotate(-270deg);
-    -webkit-animation:spin 16s linear infinite;
-    -moz-animation:spin 16s linear infinite;
-    animation:spin 16s linear infinite;
-}
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-
-@-moz-keyframes backwards-spin { 100% { -moz-transform: rotate(-360deg); } }
-@-webkit-keyframes backwards-spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes backwards-spin { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
-.introduction-disclaimer {
-    float: right;
-    padding: 10px ;
-    width: 54%;
-    font-weight: 700;
-    color: #4C4C4C;
-    font-style: italic;
-    font-size: 1.3em;
-}
-.introduction-blurb {
-    float: left;
-    display: inline-block;
-    padding: 3px 26px;
-    font-weight: 700;
-    color: rgba(249, 249, 249, 0.81);
-    font-size: 2em;
-    border-right: 8px solid #f9f9f9;
-}
-.introduction-test {
-    float: left;
-    display: inline-block;
-    padding: 3px 26px;
-    font-weight: 700;
-    color: #f9f9f9;
-    font-size: 2em;
-    border-left: 8px solid #f9f9f9;
 }
 h1 {
   font-size: 1rem;
@@ -2480,28 +2251,91 @@ a img {
   height: auto;
 }
 .hero-image-one {
-    max-width: 960px;
-    width: 57%;
+    position: relative;
+    height: 0;
+    padding-bottom: 55%;
+    z-index: 1;
+}
+
+body.postid-383 .hero-image {
+  position: relative;
+  top: 60px;
+  background: url(../../img/lightspeed-navigation-animation-prototype-hero-image-1.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body.postid-164 .hero-image {
+  position: relative;
+  top: 60px;
+  background: url(../../img/responsive-design-hero-image-opt.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body.postid-140 .hero-image {
+  position: relative;
+  top: 60px;
+  background: url(../../img/middleman-hero-image.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body.postid-127 .hero-image{
+  position: relative;
+  top: 60px;
+  background: url(../../img/foundation-five.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body.postid-7 .hero-image{
+  position: relative;
+  top: 60px;
+  background: url(../../img/grunt-hero-image-opt.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body.postid-4 .hero-image{
+  position: relative;
+  top: 60px;
+  background: url(../../img/svg-hero-image-opt.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body.postid-1 .hero-image{
+  position: relative;
+  top: 60px;
+  background: url(../../img/wordpress-hero-image-opt.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .container {
+  background-image: url(../../img/header-background.png);
+  background-color: #eee;
   top: 61px;
-}
-.blog-content-container {
-    width: 70%;
-    margin: 0 auto;
-    border: 8px solid #f9f9f9;
 }
 .blog-home {
   display: inline-block;
   float: left;
+  margin: 9px auto auto 22px;
 }
 .blog-home a {
   text-decoration: none;
-  color: rgba(255,255,255,0.7);
+  color: #4A4A4A;
   position: relative;
   bottom: 6px;
   font-size: 2.25rem;
-  letter-spacing: 1px;
   -webkit-transition: all 150ms ease-in-out;
   -moz-transition:     all 150ms ease-in-out;
   -ms-transition:       all 150ms ease-in-out;
@@ -2511,33 +2345,23 @@ a img {
 .blog-home a:hover {
   color: #1976D2;
 }
-.single-post .fixed-nav {
-  z-index: 99999;
-  position: relative;
-  margin: 0 auto;
-  top: 0px;
-  height: 60px;
-   width: 100%;
-   max-width: 960px;
-  background-color: #323538;
-  color: #f9f9f9;
-}
 .fixed-nav {
   z-index: 99999;
-  position: relative;
-  margin: 0 auto;
+  position: fixed;
   top: 0px;
   height: 60px;
    width: 100%;
-   max-width: 960px;
-  color: #4e4e4e;
+  background-color: #f9f9f9;
+}
+.nav-box-shadow {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.26);
 }
 .unordered-list {
+    width: 90%;
     margin: 20px auto;
-    text-align: center;
+    margin-left: 6%;
 }
 .unordered-list li {
-    text-align: left;
       padding: 4px 6px;
       margin: 5px auto;
       list-style-type: disc;
@@ -2551,29 +2375,28 @@ a img {
 }
 .fixed-nav ul li {
   display: inline-block;
+  float: right;
   line-height: 1;
 }
 .fixed-nav ul li a {
   text-decoration: none;
-  color: #6F6F6F;
-  padding: 23px 15px;
-  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  color: #4A4A4A;
+  padding: 19px 20px;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  line-height: 4;
+  letter-spacing: 0.1px;
+  line-height: 1.6;
   -webkit-transition: all 150ms ease-in-out;
   -moz-transition:     all 150ms ease-in-out;
   -ms-transition:       all 150ms ease-in-out;
   -o-transition:          all 150ms ease-in-out;
   transition:              all 150ms ease-in-out;
 }
-.post .fixed-nav ul li a {
-  color: #f9f9f9;
-
+.menu-item-16 {
+  margin-right: 10px;
 }
 .fixed-nav ul li a:hover {
-  box-shadow: inset 0px 4px 0px #6F6F6F;
+  color: #111111;
+  box-shadow: inset 0px 5px 0px #1976D2;
 }
 footer {
   position: relative;
@@ -2590,49 +2413,27 @@ footer p {
 }
 .blog-content {
   position: relative;
-  top: 0px;
+  top: 61px;
   bottom: 80px;
   max-width: 960px;
-  width: 75%;
-  margin: 20px auto 20px;
-  padding: 00px 0px 20px;
+  width: 57%;
+  margin: 20px auto;
+  padding: 20px 40px;
   background-color: #f9f9f9;
-}
-.home .blog-content {
-    padding: 30px 60px 35px;
-    margin: 1% 1% 0px;
-    max-width:  100%;
-    width:  98%;
-    border: 8px solid #f9f9f9;
-    box-shadow: inset 0px 0px 0px 8px #eeecec;
-}
-.home .blog-content:last-of-type {
-    margin: 1%;
-}
-.home .blog-content h2 {
-    margin: 10px auto;
-}
-.home .blog-content h2 a {
-    color: #434343;
+  border-radius: 2px;
+  border: 1px solid #DADADA;
+  border-bottom: 2px solid #CBCBCB;
+  border-top: 1px solid #E2E2E2;
+  box-shadow: 0px 2px 5px #D0D0D0;
 }
 .post-date {
   opacity: 0.6;
 }
 .blog-content p {
-  font-family: "Halant", Georgia,Cambria,"Times New Roman",Times,serif;
-  font-size: 1.225rem;
-  line-height: 1.7;
-  color:  rgba(0,0,0,0.65);
-  margin: 10px 0px 30px;
-}
-.blog-content .blog-media img {
-      width: 100%;
-}
-.blog-content .blog-text {
-   padding: 50px 125px 50px;
-}
-.wp-post-image {
-    border-radius: 0px;
+  font-family: "Droid Serif", Georgia,Cambria,"Times New Roman",Times,serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color:  rgba(0,0,0,0.8);
 }
 a {
   color: #1976D2;
@@ -2646,15 +2447,15 @@ a:hover {
   color: #2196F3;
 }
 h2 {
-  margin: 45px auto 20px;
-  font-size: 2rem;
+  margin: 10px auto;
+  font-size: 2.75rem;
   line-height: 1;
 }
 h2 a {
   text-decoration: none;
   color: #0D47A1;
   letter-spacing: 1px;
-  font-size: 2rem;
+  font-size: 2.75rem;
   line-height: 1;
    -webkit-transition: all 250ms ease-in-out;
   -moz-transition:     all 250ms ease-in-out;
@@ -2667,8 +2468,8 @@ h2 a {
 }
 .post-title a {
    text-decoration: none;
-  color: #434343;
-  font-size: 2rem;
+  color: #0D47A1;
+  font-size: 3rem;
   line-height: 1;
    -webkit-transition: all 250ms ease-in-out;
   -moz-transition:     all 250ms ease-in-out;
