@@ -2,6 +2,7 @@
 	get_header();
 ?>
 <div class="blog-content-container">
+    <div class="blog-content animation-start"></div>
 <?php
 	// The Loop
 

@@ -6,6 +6,7 @@
 
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
     <div class="hero-image hero-image-one"></div>
+      <div class="blog-content animation-start"></div>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <div class="blog-content">
       <div class="blog-media">
@@ -49,5 +50,5 @@
   </section>
   </main>
 
-
+  
 <?php get_footer(); ?>
