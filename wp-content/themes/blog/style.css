@@ -266,8 +266,8 @@ footer p {
 }
 .home .blog-wrapper:hover {
   background-color: rgba(0,0,0,0.033);
-  box-shadow: inset 5px 0px 12px -5px rgba(0,0,0,0.0.11),
-             inset -5px 0px 12px -5px rgba(0,0,0,0.0.11);
+  box-shadow: inset 9px 0 9pt -9px rgba(0,0,0,.11),
+              inset -9px 0 9pt -9px rgba(0,0,0,.11);
 
 }
 .post-date {
