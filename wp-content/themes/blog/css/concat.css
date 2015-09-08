@@ -2377,7 +2377,7 @@ a img {
 
 }
 .fixed-nav ul li a:hover {
-  box-shadow: inset 0px 4px 0px #D5D7DA;
+  box-shadow: inset 0px 4px 0px rgba(77,89,99,1);
 }
 footer {
   position: absolute;
@@ -2402,7 +2402,7 @@ footer p {
   padding: 00px 0px 20px;
   margin: 0 auto 10px;
   background-color: #f9f9f9;
-  opacity: 0;
+  /*opacity: 0;
   -webkit-transform: translate(0,5em);
   -moz-transform: translate(0,5em);
   -o-transform: translate(0,5em);
@@ -2411,7 +2411,7 @@ footer p {
   -moz-transition:    all 333ms cubic-bezier(0.39, 0.575, 0.565, 1);
   -ms-transition:     all 333ms cubic-bezier(0.39, 0.575, 0.565, 1);
   -o-transition:      all 333ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  transition:         all 333ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition:         all 333ms cubic-bezier(0.39, 0.575, 0.565, 1);*/
 }
 .home .blog-content {
   max-width: 960px;
@@ -2434,7 +2434,7 @@ footer p {
 }
 .page-id-9 .blog-content{
   opacity: 1;
-  top: -69px;
+  top: 0px;
   padding: 16px 61px 25px;
   margin: 0 auto 10px;
 }
@@ -2444,7 +2444,7 @@ footer p {
   -moz-transform: translate(0,0) !important;
   -o-transform: translate(0,0) !important;
   transform: translate(0,0) !important;
-  
+
 }
 .animation-start{
   display: none;
@@ -2474,9 +2474,9 @@ footer p {
     transition:          all 222ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .home .blog-wrapper:hover {
-  background-color: rgba(0,0,0,0.033);
+  background-color: rgba(77,89,99,0.088);
   box-shadow: inset 9px 0 9pt -9px rgba(0,0,0,.11),
-              inset -9px 0 9pt -9px rgba(0,0,0,.11)
+              inset -9px 0 9pt -9px rgba(0,0,0,.11);
 
 }
 .post-date {
@@ -2491,6 +2491,8 @@ footer p {
 }
 .blog-content .blog-media img {
       width: 100%;
+      height: 575px;
+      background-color: #323538;
 }
 .blog-content .blog-text {
    padding: 50px 125px 50px;

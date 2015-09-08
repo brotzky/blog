@@ -6,7 +6,6 @@
 
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
     <div class="hero-image hero-image-one"></div>
-      <div class="blog-content animation-start"></div>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <div class="blog-content">
       <div class="blog-media">
@@ -24,7 +23,7 @@
       </h1>
 
       <span class="post-date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-      
+
 
       <?php the_content(); // Dynamic Content ?>
         </div>
@@ -50,5 +49,5 @@
   </section>
   </main>
 
-  
+
 <?php get_footer(); ?>
