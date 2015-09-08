@@ -13,14 +13,12 @@
     <meta name="google-site-verification" content="DKyz7VnkbOa5LINwu-cpRANpBCRSpo2B5cEIBMtpPeM" />
     <meta name="author" content="Dennis Brotzky" />
     <meta name="copyright" content="Copyright Dennis Brotzky 2015" />
-    <meta name="description" content="Dennis Brotzky is a Web Designer / Front-End Developer with a focus on design and aesthetic. He is able
-                                                                        to bring together the technicality of programming with the simplicity of aesthetics." />
+    <meta name="description" content="Dennis Brotzky is a Front End Developer with a focus on clean code, beautiful interfaces, high converting pages, and optimized performance." />
     <meta property="og:title" content="Dennis Brotzky" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://dennisbrotzky.co/blog" />
     <meta property="og:image" content="http://dennisbrotzky.me/img/dennis_introduction.png" />
-    <meta property="og:description" content="Dennis Brotzky is a Web Designer / Front-End Developer with a focus on design and aesthetic. He is able
-                                                                        to bring together the technicality of programming with the simplicity of aesthetics." />
+    <meta property="og:description" content="Dennis Brotzky is a Front End Developer with a focus on clean code, beautiful interfaces, high converting pages, and optimized performance." />
   </head>
   <body <?php body_class(); ?>>
     <div class="container">
