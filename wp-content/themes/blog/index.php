@@ -1,6 +1,4 @@
-<?php
-	get_header();
-?>
+<?php get_header(); ?>
 <div class="svg-container">
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          width="100%" height="100%" viewBox="0 0 1942.606 142.376" enable-background="new 0 0 1942.606 142.376"
@@ -174,37 +172,30 @@
             c-9.757,0.071-14.423-3.85-14.43-11.9C370.785,5.961,375.429,2.062,385.138,2z"/>
     </g>
     </svg>
-
 </div>
 <div class="blog-content-container">
     <div class="blog-content animation-start"></div>
 <?php
-	// The Loop
-
-	if(have_posts()) :
-		// Execute while have posts. Do the posts
-		while (have_posts()) : the_post(); ?>
-		<article>
-
+    // The Loop
+    if(have_posts()) :
+    	// Execute while have posts. Do the posts
+    	while (have_posts()) : the_post(); ?>
+    <article>
                 <div class="blog-content" onclick="location.href='<?php the_permalink();?>';">
-  			       <div class="blog-wrapper">
+    	         <div class="blog-wrapper">
                        <h2><a href='<?php the_permalink(); ?>'><?php the_title();?></a></h2>
                         <div class="post-date"><?php the_time('F j, Y'); ?></div>
                     </div>
                 </div>
-		</article>
-
-		<?php endwhile;
-		 else :
+    </article>
+    <?php endwhile;
+       else :
             endif;
              ?>
     </div>
     <!-- jquery dependent svg animation -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script>
-    document.addEventListener("DOMContentLoaded",function(){function e(){o>n&&(setTimeout(e,c),t[n].className+=" is-active"),c*=1.069,n++}var t=document.querySelectorAll(".blog-content"),n=0,o=t.length,c=28;e()});
+    document.addEventListener("DOMContentLoaded",function(){function e(){o>n&&(setTimeout(e,c),t[n].className+=" is-active"),op[0].className+=" is-active",c*=1.069,n++}var op=document.querySelectorAll(".svg-container"); var t=document.querySelectorAll(".blog-content"),n=0,o=t.length,c=28;e()});
    function SVG(t){return document.createElementNS("http://www.w3.org/2000/svg",t)}function replaceRectsWithPaths(t){var a=$(t).find("rect");$.each(a,function(){var t=$(this).attr("x"),a=$(this).attr("y"),r=parseFloat(t)+parseFloat($(this).attr("width")),i=parseFloat(a)+parseFloat($(this).attr("height")),s="M"+t+","+a+" "+r+","+a+" "+r+","+i+" "+t+","+i+" "+t+","+a;$(SVG("path")).attr("d",s).attr("fill",$(this).attr("fill")).attr("stroke",$(this).attr("stroke")).attr("stroke-width",$(this).attr("stroke-width")).insertAfter(this)}),$(a).remove()}function replaceLinesWithPaths(t){var a=$(t).find("line");$.each(a,function(){var t=$(this).attr("x1"),a=$(this).attr("y1"),r=$(this).attr("x2"),i=$(this).attr("y2"),s="M"+t+","+a+" "+r+","+i;$(SVG("path")).attr("d",s).attr("fill",$(this).attr("fill")).attr("stroke",$(this).attr("stroke")).attr("stroke-width",$(this).attr("stroke-width")).insertAfter(this)}),$(a).remove()}function replaceCirclesWithPaths(t){var a=$(t).find("circle");$.each(a,function(){var t=$(this).attr("cx"),a=$(this).attr("cy"),r=$(this).attr("r"),i=parseFloat(2*r),s="M"+t+", "+a+" m"+-r+", 0 a "+r+", "+r+" 0 1,0 "+i+",0 a "+r+", "+r+" 0 1,0 "+-i+",0 ";$(SVG("path")).attr("d",s).attr("fill",$(this).attr("fill")).attr("stroke",$(this).attr("stroke")).attr("stroke-width",$(this).attr("stroke-width")).insertAfter(this)}),$(a).remove()}function replaceEllipsesWithPaths(t){var a=$(t).find("ellipse");$.each(a,function(){var t=$(this).attr("cx"),a=$(this).attr("cy"),r=$(this).attr("rx"),i=$(this).attr("ry"),s="M"+t+", "+a+" m"+-r+", 0 a "+r+", "+i+" 0 1,0 "+2*r+",0 a "+r+", "+i+" 0 1,0 "+2*-r+",0 ";$(SVG("path")).attr("d",s).attr("fill",$(this).attr("fill")).attr("stroke",$(this).attr("stroke")).attr("stroke-width",$(this).attr("stroke-width")).insertAfter(this)}),$(a).remove()}function replacePolygonsWithPaths(t){var a=$(t).find("polygon");$.each(a,function(){var t=$(this).attr("points"),a=t.split(/[ ,]+/),r=a[0]+", "+a[1];$(SVG("path")).attr("d","M"+t+" "+r).attr("fill",$(this).attr("fill")).attr("stroke",$(this).attr("stroke")).attr("stroke-width",$(this).attr("stroke-width")).insertAfter(this)}),$(a).remove()}function replacePolylinesWithPaths(t){var a=$(t).find("polyline");$.each(a,function(){var t=$(this).attr("points");$(SVG("path")).attr("d","M"+t).attr("fill",$(this).attr("fill")).attr("stroke",$(this).attr("stroke")).attr("stroke-width",$(this).attr("stroke-width")).insertAfter(this)}),$(a).remove()}function hideSVGPaths(t){var a=$(t).find("path");$.each(a,function(){var t=this.getTotalLength();$(this).css({"stroke-dashoffset":t,"stroke-dasharray":t+" "+t})})}function drawSVGPaths(t,a,r,i){var s=$(t).find("path");$.each(s,function(t){var s=this.getTotalLength();$(this).css({"stroke-dashoffset":s,"stroke-dasharray":s+" "+s}),$(this).delay(i*t).animate({"stroke-dashoffset":0},{duration:Math.floor(Math.random()*r)+a,easing:"easeInOutQuad"})})}function replaceWithPaths(t){replaceRectsWithPaths(t),replaceLinesWithPaths(t),replaceEllipsesWithPaths(t),replaceCirclesWithPaths(t),replacePolygonsWithPaths(t),replacePolylinesWithPaths(t)}function startSVGAnimation(t){drawSVGPaths(t,600,1100,22)}jQuery.extend(jQuery.easing,{easeInOutQuad:function(t,a,r,i,s){return(a/=s/2)<1?i/2*a*a+r:-i/2*(--a*(a-2)-1)+r}}),replaceWithPaths($("svg")),startSVGAnimation($("svg"));</script>
- <?php
-	get_footer ();
-
-?>
+ <?php get_footer (); ?>
