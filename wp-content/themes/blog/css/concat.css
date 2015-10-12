@@ -2559,7 +2559,10 @@ h2 a:hover {
 }
 .code {
   background-color: #E3F2FD;
-  padding: 2px 5px;
+  padding: 2px 10px 3px 8px;
+  font-family: monospace;
+  border: 1px solid #D0DBE2;
+  border-radius: 6px;
 }
 
 .blog-home-container {
